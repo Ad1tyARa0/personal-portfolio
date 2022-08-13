@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { Header } from './Header';
 import { Footer } from './Footer';
 
-export const Layout = ({ children }) => {
+interface LayoutProps {
+  children: JSX.Element;
+}
+
+export const Layout: FC<LayoutProps> = ({ children }) => {
   return (
     <div>
       <Header />

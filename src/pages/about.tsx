@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { FC } from 'react';
 
-const About = () => {
+interface AboutInterface {}
+
+const About: FC<AboutInterface> = () => {
   return (
     <div>
       <h1>My About Page</h1>

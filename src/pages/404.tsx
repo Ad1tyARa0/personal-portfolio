@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { Link } from 'gatsby';
 
-const NotFound = () => {
+interface NotFoundProps {}
+
+const NotFound: FC<NotFoundProps> = () => {
   return (
     <div>
       <h1>Oh no!</h1>
