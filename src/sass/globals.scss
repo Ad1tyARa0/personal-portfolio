@@ -1,8 +1,10 @@
 @import 'src/sass/fonts';
+@import 'src/sass/colors';
 
 html {
-  background-color: #f9fafb;
-  font-family: 'Fira Regular';
+  // background-color: #f9fafb;
+  background-color: $color-background-light;
+  font-family: 'Plain Light';
   // font-family: 'Fira Bold';
 }
 
