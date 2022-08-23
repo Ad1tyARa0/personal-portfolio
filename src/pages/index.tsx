@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import { PageContainer } from '../components/layout/container/PageContainer';
-import { ThemeContext, ThemeContextInterface } from '../context/ThemeContext';
 
 const Index = () => {
   return (

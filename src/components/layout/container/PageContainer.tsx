@@ -16,11 +16,21 @@ interface PageContainerProps {
 const css_prefix = 'c--l--c--p-c__';
 
 export const PageContainer: FC<PageContainerProps> = ({ children }) => {
-  const { darkMode } = React.useContext(ThemeContext) as ThemeContextInterface;
+  const { darkMode, toggleDarkMode } = React.useContext(
+    ThemeContext
+  ) as ThemeContextInterface;
 
   return (
     <ThemeProvider>
-      <Header title='Ãditya S Rao' />
+      <Header
+        darkMode={darkMode}
+        toggleDarkMode={toggleDarkMode}
+        title='Ãditya S Rao'
+      />
+
+      <button onClick={toggleDarkMode}>toggle</button>
+
+      <span>{darkMode ? 'true' : 'false'}</span>
 
       <main>{children}</main>
 
