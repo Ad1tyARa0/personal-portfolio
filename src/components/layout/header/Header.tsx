@@ -12,15 +12,11 @@ const css_prefix = 'c--l--h__';
 // Component props.
 interface HeaderProps {
   title: string;
-  toggleDarkMode: () => void;
+  setDarkMode: React.Dispatch<React.SetStateAction<boolean>>;
   darkMode: boolean;
 }
 
-const HeaderComponent: FC<HeaderProps> = ({
-  title,
-  toggleDarkMode,
-  darkMode,
-}) => {
+const HeaderComponent: FC<HeaderProps> = ({ title, setDarkMode, darkMode }) => {
   return (
     <header className={`${css_prefix}main`}>
       <Link to='/'>
@@ -37,7 +33,7 @@ const HeaderComponent: FC<HeaderProps> = ({
         />
       </Link>
 
-      <div className={`${css_prefix}header-button`} onClick={toggleDarkMode}>
+      <div className={`${css_prefix}header-button`}>
         <div
           className={`${css_prefix}icon ${
             darkMode ? css_prefix + 'icon-selected' : ''

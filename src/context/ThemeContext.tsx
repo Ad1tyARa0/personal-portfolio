@@ -1,13 +1,22 @@
-import React, { createContext, FC, useEffect, useState } from 'react';
+import React, {
+  createContext,
+  Dispatch,
+  FC,
+  SetStateAction,
+  useEffect,
+  useState,
+} from 'react';
 
 export interface ThemeContextInterface {
   darkMode: boolean;
-  toggleDarkMode: () => void;
+  setDarkMode: any;
 }
+
+// Dispatch<SetStateAction<boolean>>
 
 const defaultState: ThemeContextInterface = {
   darkMode: false,
-  toggleDarkMode: () => {},
+  setDarkMode: console.log('234'),
 };
 
 export const ThemeContext = createContext<ThemeContextInterface>(defaultState);
@@ -15,14 +24,8 @@ export const ThemeContext = createContext<ThemeContextInterface>(defaultState);
 const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
   const [darkMode, setDarkMode] = useState<boolean>(false);
 
-  useEffect(() => {}, [darkMode]);
-
-  const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
-  };
-
   return (
-    <ThemeContext.Provider value={{ darkMode, toggleDarkMode }}>
+    <ThemeContext.Provider value={{ darkMode, setDarkMode }}>
       {children}
     </ThemeContext.Provider>
   );
