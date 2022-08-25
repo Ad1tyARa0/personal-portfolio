@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, Fragment } from 'react';
 
 import { Header } from '../header/Header';
 import { Footer } from '../footer/Footer';
@@ -10,37 +10,35 @@ import ThemeProvider, {
 
 interface PageContainerProps {
   children: JSX.Element;
+  // darkMode: boolean;
+  // setDarkMode: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 // Components -- layout -- container -- page - container
 const css_prefix = 'c--l--c--p-c__';
 
-export const PageContainer: FC<PageContainerProps> = ({ children }) => {
-  const { darkMode, setDarkMode } = React.useContext(ThemeContext);
-
-  console.log(setDarkMode, darkMode);
-
-  const onClick = () => {
-    console.log('clicked');
-
-    setDarkMode(true);
-  };
-
+export const PageContainer: FC<PageContainerProps> = ({
+  children,
+  // darkMode,
+  // setDarkMode,
+}) => {
   return (
     <ThemeProvider>
-      <Header
+      <ThemeContext.Consumer>
+        {({ darkMode, setDarkMode }) => (
+          <Fragment>
+            {/* <Header
         darkMode={darkMode}
         setDarkMode={setDarkMode}
         title='Ãditya S Rao'
-      />
+      /> */}
 
-      <button onClick={onClick}>toggle</button>
+            <main>{children}</main>
 
-      <span>{darkMode ? 'true' : 'false'}</span>
-
-      <main>{children}</main>
-
-      <Footer />
+            <Footer />
+          </Fragment>
+        )}
+      </ThemeContext.Consumer>
     </ThemeProvider>
   );
 };

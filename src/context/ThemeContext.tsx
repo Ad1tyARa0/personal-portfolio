@@ -9,19 +9,19 @@ import React, {
 
 export interface ThemeContextInterface {
   darkMode: boolean;
-  setDarkMode: any;
+  setDarkMode: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 // Dispatch<SetStateAction<boolean>>
 
 const defaultState: ThemeContextInterface = {
   darkMode: false,
-  setDarkMode: console.log('234'),
+  setDarkMode: () => {},
 };
 
 export const ThemeContext = createContext<ThemeContextInterface>(defaultState);
 
-const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
+const ThemeProvider = ({ children }: { children: JSX.Element }) => {
   const [darkMode, setDarkMode] = useState<boolean>(false);
 
   return (
