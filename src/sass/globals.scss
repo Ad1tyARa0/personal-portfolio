@@ -12,20 +12,3 @@ body {
   margin: 0;
   padding: 0;
 }
-
-.colorTheme {
-  height: 100vh;
-  transition: 0.3s ease-in-out;
-}
-
-.darkTheme {
-  @extend .colorTheme;
-  background-color: #1a202c;
-  color: #fff;
-}
-
-.lightTheme {
-  @extend .colorTheme;
-  background-color: #fff;
-  color: #000;
-}

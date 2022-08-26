@@ -6,15 +6,15 @@ import ThemeProvider, { ThemeContext } from '../context/ThemeContext';
 const Index = () => {
   return (
     <PageContainer>
-      <>
-        <h1>My landing page</h1>
+      <div>
+        <div>My landing page</div>
 
         <p>This is my landing page</p>
 
         {/* <button onClick={() => setDarkMode(true)}>Toggle Theme</button> */}
 
         <Link to='/about'>About Me</Link>
-      </>
+      </div>
     </PageContainer>
   );
 };

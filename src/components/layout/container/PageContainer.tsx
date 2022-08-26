@@ -3,42 +3,23 @@ import React, { FC, Fragment } from 'react';
 import { Header } from '../header/Header';
 import { Footer } from '../footer/Footer';
 
-import ThemeProvider, {
-  ThemeContext,
-  ThemeContextInterface,
-} from '../../../context/ThemeContext';
+import './PageContainer.scss';
 
 interface PageContainerProps {
   children: JSX.Element;
-  // darkMode: boolean;
-  // setDarkMode: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 // Components -- layout -- container -- page - container
 const css_prefix = 'c--l--c--p-c__';
 
-export const PageContainer: FC<PageContainerProps> = ({
-  children,
-  // darkMode,
-  // setDarkMode,
-}) => {
+export const PageContainer: FC<PageContainerProps> = ({ children }) => {
   return (
-    <ThemeProvider>
-      <ThemeContext.Consumer>
-        {({ darkMode, setDarkMode }) => (
-          <Fragment>
-            {/* <Header
-        darkMode={darkMode}
-        setDarkMode={setDarkMode}
-        title='Ãditya S Rao'
-      /> */}
+    <div className={`${css_prefix}container`}>
+      <Header title='ADITYA S RAO' />
 
-            <main>{children}</main>
+      <main className={`${css_prefix}main`}>{children}</main>
 
-            <Footer />
-          </Fragment>
-        )}
-      </ThemeContext.Consumer>
-    </ThemeProvider>
+      <Footer />
+    </div>
   );
 };

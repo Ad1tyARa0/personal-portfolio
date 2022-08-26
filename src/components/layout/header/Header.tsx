@@ -1,7 +1,8 @@
-import { Link } from 'gatsby';
+import { navigate } from 'gatsby';
 import React, { FC } from 'react';
 import { Logo } from '../../../assets';
-import { TbSun, TbMoon } from 'react-icons/tb';
+import { BsArrowUpRight } from 'react-icons/bs';
+import { VscMenu } from 'react-icons/vsc';
 
 // SCSS.
 import './Header.scss';
@@ -12,43 +13,19 @@ const css_prefix = 'c--l--h__';
 // Component props.
 interface HeaderProps {
   title: string;
-  setDarkMode: React.Dispatch<React.SetStateAction<boolean>>;
-  darkMode: boolean;
 }
 
-const HeaderComponent: FC<HeaderProps> = ({ title, setDarkMode, darkMode }) => {
+const HeaderComponent: FC<HeaderProps> = ({ title }) => {
   return (
     <header className={`${css_prefix}main`}>
-      <Link to='/'>
-        <p className={`${css_prefix}title`}>{title}</p>
-      </Link>
+      <div className={`${css_prefix}title-main`}>
+        <p className={`${css_prefix}title`} onClick={() => navigate('/')}>
+          {title}
+        </p>
 
-      <Link to='/'>
-        <img
-          alt='logo'
-          src={Logo}
-          width={50}
-          height={50}
-          className={`${css_prefix}logo`}
-        />
-      </Link>
+        <BsArrowUpRight className={`${css_prefix}link`} />
 
-      <div className={`${css_prefix}header-button`}>
-        <div
-          className={`${css_prefix}icon ${
-            darkMode ? css_prefix + 'icon-selected' : ''
-          }`}
-        >
-          <TbMoon />
-        </div>
-
-        <div
-          className={`${css_prefix}icon  ${
-            darkMode ? css_prefix + 'icon-selected' : ''
-          }`}
-        >
-          <TbSun />
-        </div>
+        <VscMenu className={`${css_prefix}menu`} />
       </div>
     </header>
   );
