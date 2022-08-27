@@ -6,6 +6,7 @@ import { VscMenu } from 'react-icons/vsc';
 
 // SCSS.
 import './Header.scss';
+import { HamburgerIcon } from '../../common/hamburger-icon/HamburgerIcon';
 
 // Components -- layout -- header
 const css_prefix = 'c--l--h__';
@@ -25,7 +26,9 @@ const HeaderComponent: FC<HeaderProps> = ({ title }) => {
 
         <BsArrowUpRight className={`${css_prefix}link`} />
 
-        <VscMenu className={`${css_prefix}menu`} />
+        {/* <VscMenu className={`${css_prefix}menu`} /> */}
+
+        <HamburgerIcon />
       </div>
     </header>
   );
