@@ -2,7 +2,7 @@ import { navigate } from 'gatsby';
 import React, { FC } from 'react';
 import { Logo } from '../../../assets';
 import { BsArrowUpRight } from 'react-icons/bs';
-import { VscMenu } from 'react-icons/vsc';
+import { GrLanguage } from 'react-icons/gr';
 
 // SCSS.
 import './Header.scss';
@@ -19,6 +19,12 @@ interface HeaderProps {
 const HeaderComponent: FC<HeaderProps> = ({ title }) => {
   return (
     <header className={`${css_prefix}main`}>
+      <div className={`${css_prefix}lang-main`}>
+        <GrLanguage className={`${css_prefix}icon`} />
+
+        <div className={`${css_prefix}text`}>EN</div>
+      </div>
+
       <div className={`${css_prefix}title-main`}>
         <p className={`${css_prefix}title`} onClick={() => navigate('/')}>
           {title}

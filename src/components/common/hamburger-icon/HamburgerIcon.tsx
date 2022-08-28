@@ -42,7 +42,7 @@ const HamburgerIconComponent: React.FunctionComponent<
         </div>
       </div>
 
-      {renderMenu()}
+      {/* {renderMenu()} */}
     </div>
   );
 };

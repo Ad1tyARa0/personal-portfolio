@@ -5,7 +5,8 @@ $css_prefix: 'c--l--h__';
 $class_css_prefix: '.#{$css_prefix}';
 
 #{$class_css_prefix}main {
-  @include glass;
+  // @include glass;
+  background-color: $color-background-light;
   padding: 0;
   max-width: 100%;
   height: 25px;
@@ -14,6 +15,22 @@ $class_css_prefix: '.#{$css_prefix}';
   position: sticky;
   top: 0;
   z-index: 10;
+}
+
+#{$class_css_prefix}lang-main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-inline: 20px;
+  // background-color: red;
+
+  #{$class_css_prefix}icon {
+    @include display-flex-center;
+  }
+
+  #{$class_css_prefix}text {
+    margin: 5px 0 0 10px;
+  }
 }
 
 #{$class_css_prefix}title-main {

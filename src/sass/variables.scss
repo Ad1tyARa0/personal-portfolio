@@ -12,7 +12,7 @@
   position: relative;
   background: inherit;
   overflow: hidden;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3), 0 6px 20px rgba(0, 0, 0, 0.15);
+  // box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3), 0 6px 20px rgba(0, 0, 0, 0.15);
   z-index: 1;
 
   &::before {
@@ -24,8 +24,14 @@
     right: 0;
     bottom: 0;
     margin: -20px;
-    box-shadow: inset 0 0 500px rgba(255, 255, 255, 0.899);
+    box-shadow: inset 0 0 500px rgba(255, 255, 255, 0.5);
     filter: blur(10px);
     z-index: -1;
   }
+}
+
+@mixin display-flex-center() {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

@@ -5,10 +5,8 @@
 $maxWidth: 1500px;
 
 html {
-  // background-color: #f9fafb;
   background-color: $color-background-light;
   font-family: 'Plain Light';
-  // font-family: 'Fira Bold';
 }
 
 body {
@@ -19,7 +17,11 @@ body {
 #___gatsby {
   max-width: $maxWidth;
   margin: 0 auto;
-  background-image: url('../assets/images/background.jpg');
-  background-size: cover;
   height: 100vh;
+
+  // background-image: linear-gradient(
+  //   109.6deg,
+  //   rgba(209, 0, 116, 1) 11.2%,
+  //   rgba(110, 44, 107, 1) 91.1%
+  // );
 }
