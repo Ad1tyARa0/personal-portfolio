@@ -1,0 +1,8 @@
+@import 'src/globals/colors';
+@import 'src/globals/variables';
+
+$css_prefix: 'c--c--m__';
+$class_css_prefix: '.#{$css_prefix}';
+
+#{$class_css_prefix}main {
+}

@@ -11,7 +11,7 @@ interface FooterProps {}
 
 const FooterComponent: FC<FooterProps> = () => {
   return (
-    <footer>
+    <footer className={`${css_prefix}main`}>
       <p>footer</p>
     </footer>
   );

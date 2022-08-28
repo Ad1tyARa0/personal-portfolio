@@ -1,5 +1,8 @@
 @import 'src/sass/fonts';
 @import 'src/sass/colors';
+@import 'src/sass/variables';
+
+$maxWidth: 1500px;
 
 html {
   // background-color: #f9fafb;
@@ -11,4 +14,12 @@ html {
 body {
   margin: 0;
   padding: 0;
+}
+
+#___gatsby {
+  max-width: $maxWidth;
+  margin: 0 auto;
+  background-image: url('../assets/images/background.jpg');
+  background-size: cover;
+  height: 100vh;
 }

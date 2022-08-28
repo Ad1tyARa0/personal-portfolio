@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { Fragment, useState } from 'react';
 
 // SCSS.
 import './HamburgerIcon.scss';
@@ -14,22 +14,35 @@ const HamburgerIconComponent: React.FunctionComponent<
 > = () => {
   const [show, setShow] = useState<boolean>(false);
 
+  const onClickToggleMenu = () => {
+    setShow(!show);
+  };
+
   console.log(show);
 
+  const renderMenu = () => {
+    if (show) {
+      return (
+        <div style={{ position: 'absolute' }}>
+          <h1>hello world</h1>
+        </div>
+      );
+    } else {
+      return null;
+    }
+  };
+
   return (
-    <div className={`${css_prefix}menu-icon`}>
-      <input
-        className={`${css_prefix}menu-icon-checkbox ${
-          show ? css_prefix + 'menu-icon-checkbox-active' : ''
-        }`}
-        type='checkbox'
-        checked={show}
-        onChange={() => setShow(!show)}
-      />
-      <div className={`${css_prefix}menu-item-main`}>
-        <span className={`${css_prefix}menu-item`}></span>
-        <span className={`${css_prefix}menu-item`}></span>
+    <div className={`${css_prefix}main`}>
+      <div className={`${css_prefix}wrapper`}>
+        <input type='checkbox' checked={show} onChange={onClickToggleMenu} />
+
+        <div className={`${css_prefix}bun`}>
+          <div className={`${css_prefix}burger`} />
+        </div>
       </div>
+
+      {renderMenu()}
     </div>
   );
 };

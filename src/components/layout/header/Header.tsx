@@ -26,9 +26,9 @@ const HeaderComponent: FC<HeaderProps> = ({ title }) => {
 
         <BsArrowUpRight className={`${css_prefix}link`} />
 
-        {/* <VscMenu className={`${css_prefix}menu`} /> */}
-
-        <HamburgerIcon />
+        <div className={`${css_prefix}menu-wrapper`}>
+          <HamburgerIcon />
+        </div>
       </div>
     </header>
   );
