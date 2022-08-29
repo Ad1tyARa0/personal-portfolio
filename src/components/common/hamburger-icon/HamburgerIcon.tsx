@@ -24,7 +24,7 @@ const HamburgerIconComponent: React.FunctionComponent<
     if (show) {
       return (
         <div style={{ position: 'absolute' }}>
-          <h1>hello world</h1>
+          <h1>hello 123</h1>
         </div>
       );
     } else {
