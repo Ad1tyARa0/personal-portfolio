@@ -8,12 +8,12 @@ import {
 
 export interface ThemeContextInterface {
   theme: string;
-  // switchTheme: () => void;
+  switchTheme: () => void;
 }
 
 const defaultState: ThemeContextInterface = {
   theme: 'light',
-  // switchTheme: () => {},
+  switchTheme: () => {},
 };
 
 const defaultDispatchValue = () => {};
@@ -24,10 +24,20 @@ export const ThemeDispatchContext =
 export const ThemeContext = createContext<ThemeContextInterface>(defaultState);
 
 const ThemeProvider = ({ children }: { children: JSX.Element }) => {
-  const [state, dispatch] = useReducer(
-    ThemeReducer,
-    THEME_REDUCER_INITIAL_STATE
-  );
+  // const [state, dispatch] = useReducer(
+  //   ThemeReducer,
+  //   THEME_REDUCER_INITIAL_STATE
+  // );
+
+  const [theme, setTheme] = useState<string>('light');
+
+  const switchTheme = () => {
+    if (theme === 'light') {
+      setTheme('dark');
+    } else {
+      setTheme('light');
+    }
+  };
 
   // const theme = state.theme;
 
@@ -38,13 +48,19 @@ const ThemeProvider = ({ children }: { children: JSX.Element }) => {
   //   });
   // };
 
-  const memoizedValues: ThemeContextInterface = useMemo(() => state, []);
+  const memoizedValues: ThemeContextInterface = useMemo(
+    () => ({
+      theme,
+      switchTheme,
+    }),
+    []
+  );
 
   return (
     <ThemeContext.Provider value={memoizedValues}>
-      <ThemeDispatchContext.Provider value={dispatch}>
-        {children}
-      </ThemeDispatchContext.Provider>
+      {/* <ThemeDispatchContext.Provider value={setTheme}> */}
+      {children}
+      {/* </ThemeDispatchContext.Provider> */}
     </ThemeContext.Provider>
   );
 };

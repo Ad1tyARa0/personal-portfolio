@@ -18,8 +18,6 @@ const HamburgerIconComponent: React.FunctionComponent<
     setShow(!show);
   };
 
-  console.log(show);
-
   const renderMenu = () => {
     if (show) {
       return (

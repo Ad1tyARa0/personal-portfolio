@@ -23,17 +23,15 @@ interface HeaderProps {
 }
 
 const HeaderComponent: FC<HeaderProps> = ({ title }) => {
-  const { theme } = useContext(ThemeContext);
+  const { theme, switchTheme } = useContext(ThemeContext);
 
-  const dispatch = useContext(ThemeDispatchContext);
+  // const dispatch = useContext(ThemeDispatchContext);
 
-  const switchTheme = () => {
-    dispatch({
-      type: 'SET_THEME',
-    });
-  };
-
-  console.log(dispatch);
+  // const switchTheme = () => {
+  //   dispatch({
+  //     type: 'SET_THEME',
+  //   });
+  // };
 
   return (
     <header className={`${css_prefix}main`}>
