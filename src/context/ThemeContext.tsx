@@ -1,32 +1,50 @@
-import React, {
-  createContext,
-  Dispatch,
-  FC,
-  SetStateAction,
-  useEffect,
-  useState,
-} from 'react';
+import React, { createContext, useMemo, useReducer, useState } from 'react';
+import {
+  SET_THEME,
+  ThemeReducer,
+  ThemeReducerActionType,
+  THEME_REDUCER_INITIAL_STATE,
+} from './ThemeReducer';
 
 export interface ThemeContextInterface {
-  darkMode: boolean;
-  setDarkMode: React.Dispatch<React.SetStateAction<boolean>>;
+  theme: string;
+  // switchTheme: () => void;
 }
 
-// Dispatch<SetStateAction<boolean>>
-
 const defaultState: ThemeContextInterface = {
-  darkMode: false,
-  setDarkMode: () => {},
+  theme: 'light',
+  // switchTheme: () => {},
 };
+
+const defaultDispatchValue = () => {};
+
+export const ThemeDispatchContext =
+  createContext<React.Dispatch<ThemeReducerActionType>>(defaultDispatchValue);
 
 export const ThemeContext = createContext<ThemeContextInterface>(defaultState);
 
 const ThemeProvider = ({ children }: { children: JSX.Element }) => {
-  const [darkMode, setDarkMode] = useState<boolean>(false);
+  const [state, dispatch] = useReducer(
+    ThemeReducer,
+    THEME_REDUCER_INITIAL_STATE
+  );
+
+  // const theme = state.theme;
+
+  // const switchTheme = () => {
+  //   console.log('124');
+  //   dispatch({
+  //     type: SET_THEME,
+  //   });
+  // };
+
+  const memoizedValues: ThemeContextInterface = useMemo(() => state, []);
 
   return (
-    <ThemeContext.Provider value={{ darkMode, setDarkMode }}>
-      {children}
+    <ThemeContext.Provider value={memoizedValues}>
+      <ThemeDispatchContext.Provider value={dispatch}>
+        {children}
+      </ThemeDispatchContext.Provider>
     </ThemeContext.Provider>
   );
 };
