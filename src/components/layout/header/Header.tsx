@@ -56,7 +56,10 @@ const HeaderComponent: FC<HeaderProps> = ({ title, theme, switchTheme }) => {
 
       {/* <div>{theme}</div> */}
       <div className={`${css_prefix}title-main`}>
-        <div className={`${css_prefix}title`} onClick={() => navigate('/')}>
+        <div
+          className={`${css_prefix}title`}
+          onClick={() => navigate('/contact-me')}
+        >
           {title}
         </div>
 
