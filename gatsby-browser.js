@@ -1,8 +1,8 @@
 import './src/sass/globals.scss';
 
-const React = require('react');
-const ThemeProvider = require('./src/context/ThemeContext');
+import ThemeProvider from './src/context/ThemeContext';
+import React from 'react';
 
-export const WrapRootElement = ({ element }) => {
+export const wrapRootElement = ({ element }) => {
   return <ThemeProvider>{element}</ThemeProvider>;
 };

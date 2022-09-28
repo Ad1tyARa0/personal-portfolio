@@ -1,14 +1,9 @@
 import React, { createContext, useMemo, useReducer, useState } from 'react';
-import {
-  SET_THEME,
-  ThemeReducer,
-  ThemeReducerActionType,
-  THEME_REDUCER_INITIAL_STATE,
-} from './ThemeReducer';
+import { getInitialColorMode } from '../utils/functions/getInitialColorMode';
 
 export interface ThemeContextInterface {
   theme: string;
-  switchTheme: () => void;
+  switchTheme: (payload: string) => void;
 }
 
 const defaultState: ThemeContextInterface = {
@@ -16,52 +11,24 @@ const defaultState: ThemeContextInterface = {
   switchTheme: () => {},
 };
 
-const defaultDispatchValue = () => {};
-
-export const ThemeDispatchContext =
-  createContext<React.Dispatch<ThemeReducerActionType>>(defaultDispatchValue);
-
 export const ThemeContext = createContext<ThemeContextInterface>(defaultState);
 
 const ThemeProvider = ({ children }: { children: JSX.Element }) => {
-  // const [state, dispatch] = useReducer(
-  //   ThemeReducer,
-  //   THEME_REDUCER_INITIAL_STATE
-  // );
+  const [theme, setTheme] = useState<string>(getInitialColorMode);
 
-  const [theme, setTheme] = useState<string>('light');
+  const switchTheme = (payload: string) => {
+    setTheme(payload);
 
-  const switchTheme = () => {
-    if (theme === 'light') {
-      setTheme('dark');
-    } else {
-      setTheme('light');
-    }
+    window.localStorage.setItem('color-mode', payload);
   };
 
-  // const theme = state.theme;
-
-  // const switchTheme = () => {
-  //   console.log('124');
-  //   dispatch({
-  //     type: SET_THEME,
-  //   });
-  // };
-
-  const memoizedValues: ThemeContextInterface = useMemo(
-    () => ({
-      theme,
-      switchTheme,
-    }),
-    []
-  );
+  const value: ThemeContextInterface = {
+    theme,
+    switchTheme,
+  };
 
   return (
-    <ThemeContext.Provider value={memoizedValues}>
-      {/* <ThemeDispatchContext.Provider value={setTheme}> */}
-      {children}
-      {/* </ThemeDispatchContext.Provider> */}
-    </ThemeContext.Provider>
+    <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>
   );
 };
 

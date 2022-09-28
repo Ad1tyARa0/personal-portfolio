@@ -1,18 +1,17 @@
+import React, { FC } from 'react';
 import { navigate } from 'gatsby';
-import React, { FC, useContext } from 'react';
-import { Logo } from '../../../assets';
+import { BiWorld } from 'react-icons/bi';
 import { BsArrowUpRight } from 'react-icons/bs';
-import { GrLanguage } from 'react-icons/gr';
+import { MdDarkMode, MdLightMode } from 'react-icons/md';
 
+// Components.
 import { HamburgerIcon } from '../../common/hamburger-icon/HamburgerIcon';
+
+// Contexts
+import { ThemeContext } from '../../../context/ThemeContext';
 
 // SCSS.
 import './Header.scss';
-import {
-  ThemeContext,
-  ThemeDispatchContext,
-  // ThemeDispatchContext,
-} from '../../../context/ThemeContext';
 
 // Components -- layout -- header
 const css_prefix = 'c--l--h__';
@@ -23,34 +22,43 @@ interface HeaderProps {
 }
 
 const HeaderComponent: FC<HeaderProps> = ({ title }) => {
-  const { theme, switchTheme } = useContext(ThemeContext);
-
-  // const dispatch = useContext(ThemeDispatchContext);
-
-  // const switchTheme = () => {
-  //   dispatch({
-  //     type: 'SET_THEME',
-  //   });
-  // };
+  const { theme, switchTheme } = React.useContext(ThemeContext);
 
   return (
-    <header className={`${css_prefix}main`}>
+    <header
+      className={`${css_prefix}main ${
+        theme === 'dark' ? css_prefix + 'main-dark' : ''
+      }  `}
+    >
       <div className={`${css_prefix}lang-main`}>
-        <GrLanguage className={`${css_prefix}icon`} />
+        <BiWorld className={`${css_prefix}icon`} />
 
         <div className={`${css_prefix}text`}>EN</div>
       </div>
 
-      <div style={{ display: 'flex' }}>
-        <button onClick={switchTheme}>Toggle</button>
-
-        <div>{theme}</div>
+      <div className={`${css_prefix}toggle-theme-container`}>
+        {theme === 'light' ? (
+          <div
+            className={`${css_prefix}button`}
+            onClick={() => switchTheme('dark')}
+          >
+            <MdDarkMode />
+          </div>
+        ) : (
+          <div
+            className={`${css_prefix}button`}
+            onClick={() => switchTheme('light')}
+          >
+            <MdLightMode />
+          </div>
+        )}
       </div>
 
+      {/* <div>{theme}</div> */}
       <div className={`${css_prefix}title-main`}>
-        <p className={`${css_prefix}title`} onClick={() => navigate('/')}>
+        <div className={`${css_prefix}title`} onClick={() => navigate('/')}>
           {title}
-        </p>
+        </div>
 
         <BsArrowUpRight className={`${css_prefix}link`} />
 

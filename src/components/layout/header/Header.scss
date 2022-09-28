@@ -17,6 +17,11 @@ $class_css_prefix: '.#{$css_prefix}';
   z-index: 10;
 }
 
+#{$class_css_prefix}main-dark {
+  background-color: $color-green-700;
+  color: $color-background-light;
+}
+
 #{$class_css_prefix}lang-main {
   display: flex;
   align-items: center;
@@ -51,7 +56,6 @@ $class_css_prefix: '.#{$css_prefix}';
     font-family: 'Plain Light';
     text-decoration: none;
     margin: 5px 5px 0 15px;
-    color: $color-dark-800;
     padding: 0;
     cursor: pointer;
     align-self: center;
@@ -76,4 +80,14 @@ $class_css_prefix: '.#{$css_prefix}';
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+#{$class_css_prefix}toggle-theme-container {
+  display: flex;
+
+  #{$class_css_prefix}button {
+    @include display-flex-center;
+
+    cursor: pointer;
+  }
 }
