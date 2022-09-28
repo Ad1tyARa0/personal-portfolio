@@ -6,4 +6,16 @@ $class_css_prefix: '.#{$css_prefix}';
 
 #{$class_css_prefix}main {
   padding: 15px;
+  flex: 1;
+  height: calc(100vh - 200px);
+}
+
+#{$class_css_prefix}main-dark {
+  background-color: $color-background-dark;
+  color: $color-background-light;
+}
+
+#{$class_css_prefix}main-light {
+  background-color: $color-background-light;
+  color: $color-background-dark;
 }

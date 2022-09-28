@@ -1,9 +1,17 @@
 @import 'src/sass/colors';
+@import 'src/sass/variables';
 
 $css_prefix: 'c--l--f__';
 $class_css_prefix: '.#{$css_prefix}';
 
 #{$class_css_prefix}main {
   //   background-color: red;
-  height: 200px;
+  // height: 11vh;
+  height: 145px;
+  @include display-flex-center;
+}
+
+#{$class_css_prefix}main-dark {
+  background-color: $color-background-dark;
+  color: $color-background-light;
 }

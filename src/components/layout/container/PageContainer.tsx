@@ -2,7 +2,7 @@ import React, { FC, Fragment } from 'react';
 
 import { Header } from '../header/Header';
 import { Footer } from '../footer/Footer';
-import ThemeProvider from '../../../context/ThemeContext';
+import ThemeProvider, { ThemeContext } from '../../../context/ThemeContext';
 
 import './PageContainer.scss';
 
@@ -14,14 +14,24 @@ interface PageContainerProps {
 const css_prefix = 'c--l--c--p-c__';
 
 export const PageContainer: FC<PageContainerProps> = ({ children }) => {
+  const { theme, switchTheme } = React.useContext(ThemeContext);
+
   return (
     <ThemeProvider>
       <Fragment>
-        <Header title='CONTACT ME' />
+        <Header title='CONTACT ME' theme={theme} switchTheme={switchTheme} />
 
-        <main className={`${css_prefix}main`}>{children}</main>
+        <main
+          className={`${css_prefix}main ${
+            theme === 'dark'
+              ? css_prefix + 'main-dark'
+              : css_prefix + 'main-light'
+          }`}
+        >
+          {children}
+        </main>
 
-        <Footer />
+        <Footer theme={theme} />
       </Fragment>
     </ThemeProvider>
   );

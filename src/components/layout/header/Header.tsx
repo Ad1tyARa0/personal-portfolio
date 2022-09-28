@@ -19,11 +19,11 @@ const css_prefix = 'c--l--h__';
 // Component props.
 interface HeaderProps {
   title: string;
+  theme: string;
+  switchTheme: (payload: string) => void;
 }
 
-const HeaderComponent: FC<HeaderProps> = ({ title }) => {
-  const { theme, switchTheme } = React.useContext(ThemeContext);
-
+const HeaderComponent: FC<HeaderProps> = ({ title, theme, switchTheme }) => {
   return (
     <header
       className={`${css_prefix}main ${

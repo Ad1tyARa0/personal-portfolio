@@ -7,12 +7,18 @@ import './Footer.scss';
 const css_prefix = 'c--l--f__';
 
 // Component props.
-interface FooterProps {}
+interface FooterProps {
+  theme: string;
+}
 
-const FooterComponent: FC<FooterProps> = () => {
+const FooterComponent: FC<FooterProps> = ({ theme }) => {
   return (
-    <footer className={`${css_prefix}main`}>
-      <p>footer</p>
+    <footer
+      className={`${css_prefix}main ${
+        theme === 'dark' ? css_prefix + 'main-dark' : ''
+      }`}
+    >
+      <div>footer</div>
     </footer>
   );
 };
