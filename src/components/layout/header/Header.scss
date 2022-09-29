@@ -18,7 +18,7 @@ $class_css_prefix: '.#{$css_prefix}';
 }
 
 #{$class_css_prefix}main-dark {
-  background-color: #2e7d32;
+  background-color: #005fff;
   color: $color-background-light;
 }
 
@@ -39,6 +39,8 @@ $class_css_prefix: '.#{$css_prefix}';
 }
 
 #{$class_css_prefix}title-main {
+  @include select-none;
+
   display: flex;
   max-height: 20px;
   margin-left: auto;
