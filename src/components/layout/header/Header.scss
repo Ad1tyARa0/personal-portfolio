@@ -18,7 +18,7 @@ $class_css_prefix: '.#{$css_prefix}';
 }
 
 #{$class_css_prefix}main-dark {
-  background-color: #005fff;
+  background-color: $color-blue-700;
   color: $color-background-light;
 }
 

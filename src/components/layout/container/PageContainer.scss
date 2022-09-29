@@ -4,10 +4,15 @@
 $css_prefix: 'c--l--c--p-c__';
 $class_css_prefix: '.#{$css_prefix}';
 
+#{$class_css_prefix}container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
 #{$class_css_prefix}main {
   padding: 15px;
   flex: 1;
-  height: calc(100vh - 200px);
 }
 
 #{$class_css_prefix}main-dark {

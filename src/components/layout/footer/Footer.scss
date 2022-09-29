@@ -5,13 +5,29 @@ $css_prefix: 'c--l--f__';
 $class_css_prefix: '.#{$css_prefix}';
 
 #{$class_css_prefix}main {
-  //   background-color: red;
-  // height: 11vh;
-  height: 145px;
   @include display-flex-center;
+
+  padding: 20px;
 }
 
 #{$class_css_prefix}main-dark {
   background-color: $color-background-dark;
   color: $color-background-light;
+}
+
+#{$class_css_prefix}body {
+  display: flex;
+
+  align-items: center;
+}
+
+#{$class_css_prefix}text {
+  margin-right: 6px;
+  margin-top: 3px;
+  font-size: 13px;
+}
+
+#{$class_css_prefix}body-logo {
+  height: 20px;
+  width: 20px;
 }

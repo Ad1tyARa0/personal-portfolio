@@ -1,4 +1,5 @@
 import React, { FC } from 'react';
+import { gatsbyLogo } from '../../../assets/svg';
 
 // SCSS.
 import './Footer.scss';
@@ -18,7 +19,13 @@ const FooterComponent: FC<FooterProps> = ({ theme }) => {
         theme === 'dark' ? css_prefix + 'main-dark' : ''
       }`}
     >
-      <div>footer</div>
+      <div className={`${css_prefix}body`}>
+        <div className={`${css_prefix}text`}>Built With</div>
+
+        <div className={`${css_prefix}body-logo`}>
+          <img src={gatsbyLogo} alt='Gatsby' />
+        </div>
+      </div>
     </footer>
   );
 };
