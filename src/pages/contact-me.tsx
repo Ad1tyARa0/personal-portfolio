@@ -7,7 +7,7 @@ const ContactMe: FC<ContactMeInterface> = () => {
   return (
     <PageContainer>
       <div>
-        <h1>My Contact Me Page</h1>
+        <h1>My Contact me Page</h1>
       </div>
     </PageContainer>
   );

@@ -18,7 +18,6 @@ body::-webkit-scrollbar-thumb {
 
 html {
   background-color: $color-background-light;
-  // background-color: red;
   font-family: 'Plain Light';
 }
 
@@ -28,13 +27,6 @@ body {
 }
 
 #___gatsby {
-  // max-width: $maxWidth;
   margin: 0 auto;
   height: 100vh;
-
-  // background-image: linear-gradient(
-  //   109.6deg,
-  //   rgba(209, 0, 116, 1) 11.2%,
-  //   rgba(110, 44, 107, 1) 91.1%
-  // );
 }
