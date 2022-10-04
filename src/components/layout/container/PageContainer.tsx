@@ -29,7 +29,7 @@ export const PageContainer: FC<PageContainerProps> = ({ children }) => {
                 : css_prefix + 'main-light'
             }`}
           >
-            {children}
+            <div className={`${css_prefix}inner-main`}>{children}</div>
           </main>
 
           <Footer theme={theme} />

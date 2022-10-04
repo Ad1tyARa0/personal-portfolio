@@ -24,18 +24,18 @@ interface HeaderProps {
 }
 
 const HeaderComponent: FC<HeaderProps> = ({ title, theme, switchTheme }) => {
-  return (
-    <header
-      className={`${css_prefix}main ${
-        theme === 'dark' ? css_prefix + 'main-dark' : ''
-      }  `}
-    >
+  const _renderLanguageIcon = () => {
+    return (
       <div className={`${css_prefix}lang-main`}>
         <BiWorld className={`${css_prefix}icon`} />
 
         <div className={`${css_prefix}text`}>EN</div>
       </div>
+    );
+  };
 
+  const _renderToggleThemeButton = () => {
+    return (
       <div className={`${css_prefix}toggle-theme-container`}>
         {theme === 'light' ? (
           <div
@@ -53,8 +53,11 @@ const HeaderComponent: FC<HeaderProps> = ({ title, theme, switchTheme }) => {
           </div>
         )}
       </div>
+    );
+  };
 
-      {/* <div>{theme}</div> */}
+  const _renderHeaderLink = () => {
+    return (
       <div className={`${css_prefix}title-main`}>
         <div
           className={`${css_prefix}title`}
@@ -68,6 +71,22 @@ const HeaderComponent: FC<HeaderProps> = ({ title, theme, switchTheme }) => {
         <div className={`${css_prefix}menu-wrapper`}>
           <HamburgerIcon />
         </div>
+      </div>
+    );
+  };
+
+  return (
+    <header
+      className={`${css_prefix}main ${
+        theme === 'dark' ? css_prefix + 'main-dark' : ''
+      }  `}
+    >
+      <div className={`${css_prefix}inner-main`}>
+        {_renderLanguageIcon()}
+
+        {_renderToggleThemeButton()}
+
+        {_renderHeaderLink()}
       </div>
     </header>
   );

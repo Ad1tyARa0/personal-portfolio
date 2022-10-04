@@ -24,3 +24,8 @@ $class_css_prefix: '.#{$css_prefix}';
   background-color: $color-background-light;
   color: $color-background-dark;
 }
+
+#{$class_css_prefix}inner-main {
+  max-width: $maxWidth;
+  margin: 0 auto;
+}
