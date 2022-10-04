@@ -1,0 +1,7 @@
+$css_prefix: 'c-m__';
+$class_css_prefix: '.#{$css_prefix}';
+
+#{$class_css_prefix}main {
+  background-color: red;
+  //   height: 100vh;
+}
