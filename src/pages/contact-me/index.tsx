@@ -13,7 +13,13 @@ interface ContactMeInterface {}
 const ContactMe: FC<ContactMeInterface> = () => {
   return (
     <PageContainer>
-      <div className={`${css_prefix}main`}>Hell oworld</div>
+      <div className={`${css_prefix}main`}>
+        <div className={`${css_prefix}container`}>
+          <div>Name</div>
+
+          <div>EMail</div>
+        </div>
+      </div>
     </PageContainer>
   );
 };

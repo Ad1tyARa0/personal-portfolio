@@ -2,6 +2,14 @@ $css_prefix: 'c-m__';
 $class_css_prefix: '.#{$css_prefix}';
 
 #{$class_css_prefix}main {
-  background-color: red;
-  //   height: 100vh;
+  height: 100%;
+  padding: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#{$class_css_prefix}container {
+  padding: 20px;
 }
