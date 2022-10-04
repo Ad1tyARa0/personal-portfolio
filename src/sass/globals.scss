@@ -27,3 +27,16 @@ body {
   margin: 0 auto;
   height: 100vh;
 }
+
+input,
+textarea {
+  border: none;
+  outline: none;
+  background-color: inherit;
+}
+
+input:disabled,
+textarea:disabled {
+  background-color: inherit;
+  background: inherit;
+}

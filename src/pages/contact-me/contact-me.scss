@@ -1,3 +1,6 @@
+@import 'src/sass/colors';
+@import 'src/sass/variables';
+
 $css_prefix: 'c-m__';
 $class_css_prefix: '.#{$css_prefix}';
 
@@ -8,8 +11,20 @@ $class_css_prefix: '.#{$css_prefix}';
   display: flex;
   align-items: center;
   justify-content: center;
+  background-image: url('../../assets/images/contact-me-light.jpg');
+  background-size: cover;
+}
+
+#{$class_css_prefix}main-dark {
+  background-image: url('../../assets/images/contact-me-dark.jpg');
+  background-size: cover;
 }
 
 #{$class_css_prefix}container {
-  padding: 20px;
+  @include glass;
+
+  padding: 40px;
+  height: 400px;
+  width: 500px;
+  border-radius: 10px;
 }
