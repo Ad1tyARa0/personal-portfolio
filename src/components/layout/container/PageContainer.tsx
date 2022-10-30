@@ -18,23 +18,19 @@ export const PageContainer: FC<PageContainerProps> = ({ children }) => {
 
   return (
     <ThemeProvider>
-      <Fragment>
-        <div className={`${css_prefix}container`}>
-          <Header title='CONTACT ME' theme={theme} switchTheme={switchTheme} />
+      <main
+        className={`${css_prefix}main ${
+          theme === 'dark'
+            ? css_prefix + 'main-dark'
+            : css_prefix + 'main-light'
+        }`}
+      >
+        <Header theme={theme} switchTheme={switchTheme} />
 
-          <main
-            className={`${css_prefix}main ${
-              theme === 'dark'
-                ? css_prefix + 'main-dark'
-                : css_prefix + 'main-light'
-            }`}
-          >
-            <div className={`${css_prefix}inner-main`}>{children}</div>
-          </main>
+        <div className={`${css_prefix}container`}>{children}</div>
 
-          <Footer theme={theme} />
-        </div>
-      </Fragment>
+        <Footer theme={theme} />
+      </main>
     </ThemeProvider>
   );
 };

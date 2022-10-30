@@ -1,0 +1,20 @@
+@import 'src/sass/colors';
+@import 'src/sass/variables';
+
+$css_prefix: 'c--c--t-b__';
+$class_css_prefix: '.#{$css_prefix}';
+
+#{$class_css_prefix}main {
+  cursor: pointer;
+  padding: 0 3px;
+}
+
+#{$class_css_prefix}light {
+  rotate: 0 deg;
+  transition: all 500ms linear;
+}
+
+#{$class_css_prefix}dark {
+  rotate: 180deg;
+  transition: all 500ms linear;
+}

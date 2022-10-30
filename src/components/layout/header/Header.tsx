@@ -12,28 +12,18 @@ import { ThemeContext } from '../../../context/ThemeContext';
 
 // SCSS.
 import './Header.scss';
+import { ThemeButton } from '../../common/theme-button/ThemeButton';
 
 // Components -- layout -- header
 const css_prefix = 'c--l--h__';
 
 // Component props.
 interface HeaderProps {
-  title: string;
   theme: string;
   switchTheme: (payload: string) => void;
 }
 
-const HeaderComponent: FC<HeaderProps> = ({ title, theme, switchTheme }) => {
-  const _renderLanguageIcon = () => {
-    return (
-      <div className={`${css_prefix}lang-main`}>
-        <BiWorld className={`${css_prefix}icon`} />
-
-        <div className={`${css_prefix}text`}>EN</div>
-      </div>
-    );
-  };
-
+const HeaderComponent: FC<HeaderProps> = ({ theme, switchTheme }) => {
   const _renderToggleThemeButton = () => {
     return (
       <div className={`${css_prefix}toggle-theme-container`}>
@@ -59,15 +49,6 @@ const HeaderComponent: FC<HeaderProps> = ({ title, theme, switchTheme }) => {
   const _renderHeaderLink = () => {
     return (
       <div className={`${css_prefix}title-main`}>
-        <div
-          className={`${css_prefix}title`}
-          onClick={() => navigate('/contact-me')}
-        >
-          {title}
-        </div>
-
-        <BsArrowUpRight className={`${css_prefix}link`} />
-
         <div className={`${css_prefix}menu-wrapper`}>
           <HamburgerIcon />
         </div>
@@ -82,9 +63,7 @@ const HeaderComponent: FC<HeaderProps> = ({ title, theme, switchTheme }) => {
       }  `}
     >
       <div className={`${css_prefix}inner-main`}>
-        {_renderLanguageIcon()}
-
-        {_renderToggleThemeButton()}
+        <ThemeButton theme={theme} switchTheme={switchTheme} />
 
         {_renderHeaderLink()}
       </div>

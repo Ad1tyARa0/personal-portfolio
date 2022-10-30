@@ -5,25 +5,24 @@ $css_prefix: 'c--l--h__';
 $class_css_prefix: '.#{$css_prefix}';
 
 #{$class_css_prefix}main {
-  background-color: $color-background-light;
-  padding: 0;
-  height: 25px;
+  padding: 10px 5px;
+  // height: 100px;
   position: sticky;
   top: 0;
   z-index: 10;
+  border-bottom: 1px solid $color-background-dark;
 }
 
 #{$class_css_prefix}inner-main {
   display: flex;
   align-items: center;
-  justify-content: space-around;
-  margin: 0 auto;
-  max-width: $maxWidth;
+  justify-content: space-between;
 }
 
 #{$class_css_prefix}main-dark {
-  background-color: $color-cyan-700;
-  color: $color-background-light;
+  // background-color: $color-cyan-700;
+  // color: $color-font-light;
+  border-bottom: 1px solid $color-background-light;
 }
 
 #{$class_css_prefix}lang-main {
@@ -46,26 +45,9 @@ $class_css_prefix: '.#{$css_prefix}';
   @include select-none;
 
   display: flex;
-  max-height: 20px;
-  margin-left: auto;
-
-  #{$class_css_prefix}link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: 20px;
-    font-size: 12px;
-    margin-top: 3px;
-  }
-
-  #{$class_css_prefix}title {
-    font-family: 'Plain Light';
-    text-decoration: none;
-    margin: 5px 5px 0 15px;
-    padding: 0;
-    cursor: pointer;
-    align-self: center;
-  }
+  align-items: center;
+  justify-content: center;
+  max-width: 40px;
 
   #{$class_css_prefix}menu {
     font-size: 19px;

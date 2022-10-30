@@ -7,12 +7,13 @@ $class_css_prefix: '.#{$css_prefix}';
 #{$class_css_prefix}main {
   @include display-flex-center;
 
+  // background-color: red;
   padding: 20px;
 }
 
 #{$class_css_prefix}main-dark {
-  background-color: $color-background-dark;
-  color: $color-background-light;
+  // background-color: $color-font-dark;
+  color: $color-font-light;
 }
 
 #{$class_css_prefix}body {

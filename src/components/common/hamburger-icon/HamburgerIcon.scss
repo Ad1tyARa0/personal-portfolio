@@ -4,15 +4,15 @@
 $css_prefix: 'c--c--h-i__';
 $class_css_prefix: '.#{$css_prefix}';
 
-$color: #c04400;
-$size: 17px;
+$color: #ff3f02;
+$size: 32px;
 
 #{$class_css_prefix}main {
   position: relative;
 }
 
 #{$class_css_prefix}wrapper {
-  display: block;
+  // display: block;
   position: relative;
   width: $size;
   height: $size;
