@@ -27,7 +27,6 @@ $class_css_prefix: '.#{$css_prefix}';
 }
 
 #{$class_css_prefix}dark-item {
-  //   border-bottom: 1px solid $color-background-light;
   color: $color-font-light;
 
   &:hover {
@@ -36,7 +35,6 @@ $class_css_prefix: '.#{$css_prefix}';
 }
 
 #{$class_css_prefix}light-item {
-  //   border-bottom: 1px solid $color-background-dark;
   color: $color-font-dark;
 }
 

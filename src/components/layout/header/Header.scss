@@ -30,7 +30,6 @@ $class_css_prefix: '.#{$css_prefix}';
   align-items: center;
   justify-content: center;
   margin-inline: 20px;
-  // background-color: red;
 
   #{$class_css_prefix}icon {
     @include display-flex-center;

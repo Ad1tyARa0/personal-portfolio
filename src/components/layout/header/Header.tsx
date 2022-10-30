@@ -1,18 +1,12 @@
 import React, { FC, useState } from 'react';
-import { navigate } from 'gatsby';
-import { BiWorld } from 'react-icons/bi';
-import { MdDarkMode, MdLightMode } from 'react-icons/md';
 
 // Components.
+import { Dropdown } from '../../common/dropdown/Dropdown';
+import { ThemeButton } from '../../common/theme-button/ThemeButton';
 import { HamburgerIcon } from '../../common/hamburger-icon/HamburgerIcon';
-
-// Contexts
-import { ThemeContext } from '../../../context/ThemeContext';
 
 // SCSS.
 import './Header.scss';
-import { ThemeButton } from '../../common/theme-button/ThemeButton';
-import { Dropdown } from '../../common/dropdown/Dropdown';
 
 // Components -- layout -- header
 const css_prefix = 'c--l--h__';
@@ -24,49 +18,19 @@ interface HeaderProps {
 }
 
 const HeaderComponent: FC<HeaderProps> = ({ theme, switchTheme }) => {
-  const [showDropdown, setShowDropdown] = useState<boolean>(false);
+  const [showDropdown, setShowDropdown] = useState<boolean>(true);
 
   const onClickToggleDropdown = () => {
     setShowDropdown(!showDropdown);
   };
 
-  const _renderToggleThemeButton = () => {
-    return (
-      <div className={`${css_prefix}toggle-theme-container`}>
-        {theme === 'light' ? (
-          <div
-            className={`${css_prefix}button`}
-            onClick={() => switchTheme('dark')}
-          >
-            <MdDarkMode />
-          </div>
-        ) : (
-          <div
-            className={`${css_prefix}button`}
-            onClick={() => switchTheme('light')}
-          >
-            <MdLightMode />
-          </div>
-        )}
-      </div>
-    );
-  };
-
-  const _renderHeaderLink = () => {
-    return (
-      <div className={`${css_prefix}menu`} onClick={onClickToggleDropdown}>
-        <HamburgerIcon />
-      </div>
-    );
-  };
-
-  const _renderDropdown = () => {
-    if (!showDropdown) {
-      return null;
-    } else {
-      return <Dropdown theme={theme} />;
-    }
-  };
+  // const _renderDropdown = () => {
+  //   if (!showDropdown) {
+  //     return null;
+  //   } else {
+  //     return;
+  //   }
+  // };
 
   return (
     <header
@@ -77,9 +41,12 @@ const HeaderComponent: FC<HeaderProps> = ({ theme, switchTheme }) => {
       <div className={`${css_prefix}inner-main`}>
         <ThemeButton theme={theme} switchTheme={switchTheme} />
 
-        {_renderHeaderLink()}
+        <HamburgerIcon
+          show={showDropdown}
+          onClickToggleMenu={onClickToggleDropdown}
+        />
 
-        {_renderDropdown()}
+        {showDropdown ? <Dropdown theme={theme} /> : null}
       </div>
     </header>
   );

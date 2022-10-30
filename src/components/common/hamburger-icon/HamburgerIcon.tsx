@@ -7,29 +7,15 @@ import './HamburgerIcon.scss';
 const css_prefix = 'c--c--h-i__';
 
 // Component props.
-interface HamburgerIconProps {}
+interface HamburgerIconProps {
+  show: boolean;
+  onClickToggleMenu: () => void;
+}
 
-const HamburgerIconComponent: React.FunctionComponent<
-  HamburgerIconProps
-> = () => {
-  const [show, setShow] = useState<boolean>(false);
-
-  const onClickToggleMenu = () => {
-    setShow(!show);
-  };
-
-  const renderMenu = () => {
-    if (show) {
-      return (
-        <div style={{ position: 'absolute' }}>
-          <h1>hello 123</h1>
-        </div>
-      );
-    } else {
-      return null;
-    }
-  };
-
+const HamburgerIconComponent: React.FunctionComponent<HamburgerIconProps> = ({
+  show,
+  onClickToggleMenu,
+}) => {
   return (
     <div className={`${css_prefix}main`}>
       <div className={`${css_prefix}wrapper`}>
@@ -39,8 +25,6 @@ const HamburgerIconComponent: React.FunctionComponent<
           <div className={`${css_prefix}burger`} />
         </div>
       </div>
-
-      {/* {renderMenu()} */}
     </div>
   );
 };
