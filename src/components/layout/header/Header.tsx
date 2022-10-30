@@ -1,7 +1,6 @@
-import React, { FC } from 'react';
+import React, { FC, useState } from 'react';
 import { navigate } from 'gatsby';
 import { BiWorld } from 'react-icons/bi';
-import { BsArrowUpRight } from 'react-icons/bs';
 import { MdDarkMode, MdLightMode } from 'react-icons/md';
 
 // Components.
@@ -13,6 +12,7 @@ import { ThemeContext } from '../../../context/ThemeContext';
 // SCSS.
 import './Header.scss';
 import { ThemeButton } from '../../common/theme-button/ThemeButton';
+import { Dropdown } from '../../common/dropdown/Dropdown';
 
 // Components -- layout -- header
 const css_prefix = 'c--l--h__';
@@ -24,6 +24,12 @@ interface HeaderProps {
 }
 
 const HeaderComponent: FC<HeaderProps> = ({ theme, switchTheme }) => {
+  const [showDropdown, setShowDropdown] = useState<boolean>(false);
+
+  const onClickToggleDropdown = () => {
+    setShowDropdown(!showDropdown);
+  };
+
   const _renderToggleThemeButton = () => {
     return (
       <div className={`${css_prefix}toggle-theme-container`}>
@@ -48,12 +54,18 @@ const HeaderComponent: FC<HeaderProps> = ({ theme, switchTheme }) => {
 
   const _renderHeaderLink = () => {
     return (
-      <div className={`${css_prefix}title-main`}>
-        <div className={`${css_prefix}menu-wrapper`}>
-          <HamburgerIcon />
-        </div>
+      <div className={`${css_prefix}menu`} onClick={onClickToggleDropdown}>
+        <HamburgerIcon />
       </div>
     );
+  };
+
+  const _renderDropdown = () => {
+    if (!showDropdown) {
+      return null;
+    } else {
+      return <Dropdown theme={theme} />;
+    }
   };
 
   return (
@@ -66,6 +78,8 @@ const HeaderComponent: FC<HeaderProps> = ({ theme, switchTheme }) => {
         <ThemeButton theme={theme} switchTheme={switchTheme} />
 
         {_renderHeaderLink()}
+
+        {_renderDropdown()}
       </div>
     </header>
   );

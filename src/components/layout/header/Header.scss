@@ -6,11 +6,11 @@ $class_css_prefix: '.#{$css_prefix}';
 
 #{$class_css_prefix}main {
   padding: 10px 5px;
-  // height: 100px;
   position: sticky;
   top: 0;
   z-index: 10;
   border-bottom: 1px solid $color-background-dark;
+  background-color: $color-background-light;
 }
 
 #{$class_css_prefix}inner-main {
@@ -20,8 +20,8 @@ $class_css_prefix: '.#{$css_prefix}';
 }
 
 #{$class_css_prefix}main-dark {
-  // background-color: $color-cyan-700;
-  // color: $color-font-light;
+  transition: all 500ms linear;
+  background-color: $color-background-dark;
   border-bottom: 1px solid $color-background-light;
 }
 
@@ -41,29 +41,11 @@ $class_css_prefix: '.#{$css_prefix}';
   }
 }
 
-#{$class_css_prefix}title-main {
-  @include select-none;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  max-width: 40px;
-
-  #{$class_css_prefix}menu {
-    font-size: 19px;
-    display: flex;
-    align-items: center;
-    justify-items: center;
-    margin-right: 20px;
-  }
+#{$class_css_prefix}menu {
+  position: relative;
+  margin-right: 5px;
 }
 
-#{$class_css_prefix}menu-wrapper {
-  margin-inline: 20px;
-  margin-top: 2px;
-  // background-color: red;
-  // width: 200px;
-}
 #{$class_css_prefix}icon {
   display: flex;
   align-items: center;

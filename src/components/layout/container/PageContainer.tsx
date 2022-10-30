@@ -3,6 +3,7 @@ import React, { FC, Fragment } from 'react';
 import { Header } from '../header/Header';
 import { Footer } from '../footer/Footer';
 import ThemeProvider, { ThemeContext } from '../../../context/ThemeContext';
+import { Scrollbars } from 'react-custom-scrollbars-2';
 
 import './PageContainer.scss';
 
@@ -27,7 +28,9 @@ export const PageContainer: FC<PageContainerProps> = ({ children }) => {
       >
         <Header theme={theme} switchTheme={switchTheme} />
 
-        <div className={`${css_prefix}container`}>{children}</div>
+        <div className={`${css_prefix}container`}>
+          <Scrollbars>{children}</Scrollbars>
+        </div>
 
         <Footer theme={theme} />
       </main>

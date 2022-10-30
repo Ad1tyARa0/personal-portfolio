@@ -11,10 +11,10 @@ $class_css_prefix: '.#{$css_prefix}';
 
 #{$class_css_prefix}light {
   rotate: 0 deg;
-  transition: all 500ms linear;
+  transition: rotate 500ms linear;
 }
 
 #{$class_css_prefix}dark {
   rotate: 180deg;
-  transition: all 500ms linear;
+  transition: rotate 500ms linear;
 }
