@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'gatsby';
 import { PageContainer } from '../../components/layout/container/PageContainer';
 
 import './experience.scss';
