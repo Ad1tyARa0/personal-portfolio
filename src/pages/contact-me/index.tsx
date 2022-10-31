@@ -14,22 +14,22 @@ interface ContactMeInterface {}
 const ContactMe: FC<ContactMeInterface> = () => {
   const { theme } = React.useContext(ThemeContext);
 
-  const [firstName, setFirstName] = useState<string>('');
-  const [lastName, setLastName] = useState<string>('');
-  const [phoneNumber, setPhoneNumber] = useState<string>();
+  // const [firstName, setFirstName] = useState<string>('');
+  // const [lastName, setLastName] = useState<string>('');
+  // const [phoneNumber, setPhoneNumber] = useState<string>();
   const [email, setEmail] = useState<string>('');
 
-  const onChangeFirstName = (payload: string) => {
-    setFirstName(payload);
-  };
+  // const onChangeFirstName = (payload: string) => {
+  //   setFirstName(payload);
+  // };
 
-  const onChangeLastName = (payload: string) => {
-    setLastName(payload);
-  };
+  // const onChangeLastName = (payload: string) => {
+  //   setLastName(payload);
+  // };
 
-  const onChangePhoneNumber = (payload: string) => {
-    setPhoneNumber(payload);
-  };
+  // const onChangePhoneNumber = (payload: string) => {
+  //   setPhoneNumber(payload);
+  // };
 
   const onChangeEmail = (payload: string) => {
     setEmail(payload);
@@ -67,7 +67,7 @@ const ContactMe: FC<ContactMeInterface> = () => {
           <div className={`${css_prefix}container-heading`}>Contact Me</div>
 
           <div className={`${css_prefix}container-line-1`}>
-            {_renderInputComponent('Name', firstName, onChangeFirstName)}
+            {_renderInputComponent('Name', email, onChangeEmail)}
           </div>
         </div>
       </div>
