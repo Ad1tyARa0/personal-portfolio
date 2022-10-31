@@ -1,0 +1,8 @@
+@import 'src/sass/colors';
+@import 'src/sass/variables';
+
+$css_prefix: 'p--e__';
+$class_css_prefix: '.#{$css_prefix}';
+
+#{$class_css_prefix}main {
+}
