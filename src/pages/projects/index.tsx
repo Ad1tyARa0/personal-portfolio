@@ -1,6 +1,9 @@
 import React from 'react';
+
+// Components.
 import { PageContainer } from '../../components/layout/container/PageContainer';
 
+// SCSS.
 import './projects.scss';
 
 // Pages -- projects
