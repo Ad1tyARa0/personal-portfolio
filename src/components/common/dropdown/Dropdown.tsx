@@ -35,13 +35,6 @@ const DropdownComponent: React.FunctionComponent<DropdownProps> = ({
     },
 
     {
-      id: 1,
-      title: 'Contact Me',
-      icon: <FaPhoneSquareAlt />,
-      to: '/contact-me',
-    },
-
-    {
       id: 2,
       title: 'Skills',
       icon: <FaToolbox />,
@@ -60,6 +53,13 @@ const DropdownComponent: React.FunctionComponent<DropdownProps> = ({
       title: 'Experience',
       icon: <FaUserTie />,
       to: '/experience',
+    },
+
+    {
+      id: 1,
+      title: 'Contact Me',
+      icon: <FaPhoneSquareAlt />,
+      to: '/contact-me',
     },
   ];
 
