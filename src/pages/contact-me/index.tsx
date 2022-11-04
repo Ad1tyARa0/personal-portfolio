@@ -18,60 +18,93 @@ interface ContactMeInterface {}
 const ContactMe: FC<ContactMeInterface> = () => {
   const { theme } = React.useContext(ThemeContext);
 
-  // const [firstName, setFirstName] = useState<string>('');
-  // const [lastName, setLastName] = useState<string>('');
-  // const [phoneNumber, setPhoneNumber] = useState<string>();
+  const [fullName, setFullName] = useState<string>('');
   const [email, setEmail] = useState<string>('');
+  const [message, setMessage] = useState<string>('');
 
-  // const onChangeFirstName = (payload: string) => {
-  //   setFirstName(payload);
-  // };
+  const onChangeFullName = (payload: string) => {
+    setFullName(payload);
+  };
 
-  // const onChangeLastName = (payload: string) => {
-  //   setLastName(payload);
-  // };
-
-  // const onChangePhoneNumber = (payload: string) => {
-  //   setPhoneNumber(payload);
-  // };
+  const onChangeMessage = (payload: string) => {
+    setMessage(payload);
+  };
 
   const onChangeEmail = (payload: string) => {
     setEmail(payload);
   };
 
-  const _renderInputComponent = (
+  const _renderFormComponent = (
     title: string,
     value: string,
-    onChange: (payload: string) => void
+    onChange: (payload: string) => void,
+    formType: 'textarea' | 'input',
+    type: string
   ) => {
     return (
       <div className={`${css_prefix}input-main`}>
         <div className={`${css_prefix}input-title`}>{title}</div>
 
-        <div className={`${css_prefix}input-value`}>
+        {formType === 'input' ? (
           <input
-            placeholder='Name'
             value={value}
             onChange={({ currentTarget }) => onChange(currentTarget.value)}
-            type='text'
+            type={type}
+            className={`${css_prefix}input-value  ${
+              theme === 'dark'
+                ? css_prefix + 'input-dark'
+                : css_prefix + 'input-light'
+            }`}
           />
-        </div>
+        ) : formType === 'textarea' ? (
+          <textarea
+            value={value}
+            onChange={({ currentTarget }) => onChange(currentTarget.value)}
+            className={`${css_prefix}textarea-value  ${
+              theme === 'dark'
+                ? css_prefix + 'input-dark'
+                : css_prefix + 'input-light'
+            }`}
+          />
+        ) : null}
       </div>
     );
   };
 
   return (
     <PageContainer>
-      <div
-        className={`${css_prefix}main ${
-          theme === 'dark' ? css_prefix + 'main-dark' : ''
-        }`}
-      >
-        <div className={`${css_prefix}container`}>
-          <div className={`${css_prefix}container-heading`}>Contact Me</div>
+      <div className={`${css_prefix}main`}>
+        <div className={`${css_prefix}title`}>Contact Me</div>
 
-          <div className={`${css_prefix}container-line-1`}>
-            {_renderInputComponent('Name', email, onChangeEmail)}
+        <div className={`${css_prefix}inner-main`}>
+          <div className={`${css_prefix}container`}>
+            {_renderFormComponent(
+              'Full Name',
+              fullName,
+              onChangeFullName,
+              'input',
+              'text'
+            )}
+
+            {_renderFormComponent(
+              'Email Address',
+              email,
+              onChangeEmail,
+              'input',
+              'email'
+            )}
+
+            {_renderFormComponent(
+              'Message',
+              message,
+              onChangeMessage,
+              'textarea',
+              'text'
+            )}
+
+            <div className={`${css_prefix}submit-button`}>
+              <div className={`${css_prefix}submit-text`}>Submit</div>
+            </div>
           </div>
         </div>
       </div>

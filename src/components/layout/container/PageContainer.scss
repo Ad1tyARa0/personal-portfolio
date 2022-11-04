@@ -14,18 +14,19 @@ $class_css_prefix: '.#{$css_prefix}';
 #{$class_css_prefix}container {
   flex: 1;
   // background-color: red;
-  padding: 15px;
+  // padding: 15px;
 }
 
 #{$class_css_prefix}main-dark {
   background-color: $color-background-dark;
   color: $color-font-light;
+  transition: background-color 200ms linear;
 }
 
 #{$class_css_prefix}main-light {
   background-color: $color-background-light;
   color: $color-font-dark;
-  // transition: background-color 500ms linear;
+  transition: background-color 200ms linear;
 }
 
 #{$class_css_prefix}inner-main {

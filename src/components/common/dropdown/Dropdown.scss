@@ -5,13 +5,14 @@ $css_prefix: 'c--c--d__';
 $class_css_prefix: '.#{$css_prefix}';
 
 #{$class_css_prefix}main {
+  @include box-shadow-ver1;
+
   position: absolute;
   top: 60px;
   right: 5px;
   min-width: 150px;
   padding: 5px 10px;
   border-radius: 4px;
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
 #{$class_css_prefix}link-main {

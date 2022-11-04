@@ -5,7 +5,91 @@ $css_prefix: 'c-m__';
 $class_css_prefix: '.#{$css_prefix}';
 
 #{$class_css_prefix}main {
+  height: calc(100% - 100px);
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
 }
 
-#{$class_css_prefix}main-dark {
+#{$class_css_prefix}inner-main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#{$class_css_prefix}title {
+  font-size: 8em;
+  font-family: 'Plain Ultra Bold';
+}
+
+#{$class_css_prefix}inner-main {
+  @include display-flex-center;
+
+  flex: 1;
+}
+
+#{$class_css_prefix}container {
+  @include box-shadow-ver1;
+
+  //   border: 1px solid $accentColor30;
+  border-width: 0.2em;
+  border-radius: 20px;
+  padding: 30px 15px;
+  min-width: 300px;
+}
+
+#{$class_css_prefix}input-main {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  padding: 5px 10px;
+}
+
+#{$class_css_prefix}input-title {
+  margin-bottom: 8px;
+  padding: 3px 8px;
+  font-family: 'Light Italic';
+  opacity: 0.7;
+}
+
+#{$class_css_prefix}input-value {
+  border-bottom: 1px solid $accentColor30;
+  font-family: 'Regular';
+  padding: 3px 8px;
+}
+
+#{$class_css_prefix}input-dark {
+  color: $color-font-light;
+}
+
+#{$class_css_prefix}input-light {
+  color: $color-font-dark;
+}
+
+#{$class_css_prefix}textarea-value {
+  border: 1px solid $accentColor30;
+  resize: none;
+  border-radius: 10px;
+  height: 170px;
+  padding: 8px;
+  font-family: 'Regular';
+}
+
+#{$class_css_prefix}submit-button {
+  @include display-flex-center;
+  @include box-shadow-ver2;
+
+  font-family: 'Plain Ultra Bold';
+  font-size: 1.3em;
+  color: $color-font-dark;
+  background-color: $accentColor10;
+  padding: 5px 8px;
+  border-radius: 5px;
+  max-width: 100px;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+#{$class_css_prefix}submit-text {
+  padding-top: 4px;
 }
