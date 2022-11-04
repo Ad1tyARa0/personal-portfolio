@@ -78,6 +78,7 @@ $class_css_prefix: '.#{$css_prefix}';
 #{$class_css_prefix}submit-button {
   @include display-flex-center;
   @include box-shadow-ver2;
+  @include select-none;
 
   font-family: 'Plain Ultra Bold';
   font-size: 1.3em;
