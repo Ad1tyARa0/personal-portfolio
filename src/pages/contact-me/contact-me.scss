@@ -28,7 +28,7 @@ $class_css_prefix: '.#{$css_prefix}';
   border-radius: 20px;
   padding: 30px 15px;
   max-width: 450px;
-  margin-inline: auto;
+  margin: 20px auto;
 }
 
 #{$class_css_prefix}input-main {
@@ -68,6 +68,10 @@ $class_css_prefix: '.#{$css_prefix}';
   padding: 8px;
   font-family: 'Regular';
   font-size: 2em;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 #{$class_css_prefix}submit-button {
@@ -94,11 +98,27 @@ $class_css_prefix: '.#{$css_prefix}';
   #{$class_css_prefix}title {
     font-size: 6em;
   }
+
+  #{$class_css_prefix}input-value {
+    font-size: 1.5em;
+  }
+
+  #{$class_css_prefix}textarea-value {
+    font-size: 1.5em;
+  }
 }
 
 @media only screen and (max-width: 650px) {
   #{$class_css_prefix}title {
     font-size: 5em;
+  }
+
+  #{$class_css_prefix}input-value {
+    font-size: 1.2em;
+  }
+
+  #{$class_css_prefix}textarea-value {
+    font-size: 1.2em;
   }
 }
 
@@ -106,16 +126,40 @@ $class_css_prefix: '.#{$css_prefix}';
   #{$class_css_prefix}title {
     font-size: 4em;
   }
+
+  #{$class_css_prefix}input-value {
+    font-size: 1em;
+  }
+
+  #{$class_css_prefix}textarea-value {
+    font-size: 1em;
+  }
 }
 
 @media only screen and (max-width: 450px) {
   #{$class_css_prefix}title {
     font-size: 3em;
   }
+
+  #{$class_css_prefix}input-value {
+    font-size: 0.8em;
+  }
+
+  #{$class_css_prefix}textarea-value {
+    font-size: 0.8em;
+  }
 }
 
 @media only screen and (max-width: 350px) {
   #{$class_css_prefix}title {
     font-size: 2em;
+  }
+
+  #{$class_css_prefix}input-value {
+    font-size: 0.5em;
+  }
+
+  #{$class_css_prefix}textarea-value {
+    font-size: 0.5em;
   }
 }
