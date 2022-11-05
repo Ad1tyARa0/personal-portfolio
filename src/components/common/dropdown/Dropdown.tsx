@@ -14,6 +14,7 @@ import {
 
 // SCSS.
 import './Dropdown.scss';
+import { useOnClickOutside } from '../../../hooks/useOnClickOutside';
 
 // Components -- common -- dropdown
 const css_prefix = 'c--c--d__';
@@ -21,11 +22,15 @@ const css_prefix = 'c--c--d__';
 // Component props.
 interface DropdownProps {
   theme: string;
+  onClickHideDropdown: () => void;
 }
 
 const DropdownComponent: React.FunctionComponent<DropdownProps> = ({
   theme,
+  onClickHideDropdown,
 }) => {
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
   const ITEMS = [
     {
       id: 2,
@@ -63,11 +68,14 @@ const DropdownComponent: React.FunctionComponent<DropdownProps> = ({
     },
   ];
 
+  useOnClickOutside(dropdownRef, onClickHideDropdown);
+
   return (
     <div
       className={`${css_prefix}main ${
         theme === 'dark' ? css_prefix + 'dark' : css_prefix + 'light'
       }`}
+      ref={dropdownRef}
     >
       {ITEMS.map(e => {
         return (

@@ -24,13 +24,9 @@ const HeaderComponent: FC<HeaderProps> = ({ theme, switchTheme }) => {
     setShowDropdown(!showDropdown);
   };
 
-  // const _renderDropdown = () => {
-  //   if (!showDropdown) {
-  //     return null;
-  //   } else {
-  //     return;
-  //   }
-  // };
+  const onClickHideDropdown = () => {
+    setShowDropdown(false);
+  };
 
   return (
     <header
@@ -46,7 +42,9 @@ const HeaderComponent: FC<HeaderProps> = ({ theme, switchTheme }) => {
           onClickToggleMenu={onClickToggleDropdown}
         />
 
-        {showDropdown ? <Dropdown theme={theme} /> : null}
+        {showDropdown ? (
+          <Dropdown theme={theme} onClickHideDropdown={onClickHideDropdown} />
+        ) : null}
       </div>
     </header>
   );
