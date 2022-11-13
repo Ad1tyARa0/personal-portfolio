@@ -1,8 +1,23 @@
-@import 'src/sass/colors';
-@import 'src/sass/variables';
+@import "src/sass/colors";
+@import "src/sass/variables";
 
-$css_prefix: 'p--p__';
-$class_css_prefix: '.#{$css_prefix}';
+$css_prefix: "p--p__";
+$class_css_prefix: ".#{$css_prefix}";
 
 #{$class_css_prefix}main {
+  height: calc(100% - 100px);
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+#{$class_css_prefix}title {
+  font-size: 8em;
+  font-family: "Plain Ultra Bold";
+}
+
+@media only screen and (max-width: 650px) {
+  #{$class_css_prefix}title {
+    font-size: 4em;
+  }
 }

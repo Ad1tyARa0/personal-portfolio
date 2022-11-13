@@ -1,7 +1,7 @@
 @import "src/sass/colors";
 @import "src/sass/variables";
 
-$css_prefix: "c-m__";
+$css_prefix: "p--c-m__";
 $class_css_prefix: ".#{$css_prefix}";
 
 #{$class_css_prefix}main {
@@ -83,6 +83,33 @@ $class_css_prefix: ".#{$css_prefix}";
     left: -30px;
     box-shadow: 0 0 0 -3px $color-background-light,
       0 0 0 0 $color-background-light;
-    // color: $color-font-dark;
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  #{$class_css_prefix}title {
+    font-size: 6em;
+  }
+
+  #{$class_css_prefix}card-title {
+    font-size: 2em;
+  }
+
+  #{$class_css_prefix}card-icon {
+    font-size: 2em;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  #{$class_css_prefix}title {
+    font-size: 4em;
+  }
+
+  #{$class_css_prefix}card-title {
+    font-size: 1.5em;
+  }
+
+  #{$class_css_prefix}card-icon {
+    font-size: 1.5em;
   }
 }

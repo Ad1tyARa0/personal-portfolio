@@ -1,16 +1,19 @@
-import React from 'react';
-import { Link } from 'gatsby';
-import { PageContainer } from '../components/layout/container/PageContainer';
+import React from "react";
+
+// Components.
+import { PageContainer } from "./../components/layout/container/PageContainer";
+
+// SCSS.
+import "./index.scss";
+
+// Pages -- home
+const css_prefix = "p--h__";
 
 const Index = () => {
   return (
     <PageContainer>
-      <div>
-        <div>My landing page</div>
-
-        <p>This is my landing page</p>
-
-        <Link to='/about'>About Me</Link>
+      <div className={`${css_prefix}main`}>
+        <div className={`${css_prefix}title`}>Home</div>
       </div>
     </PageContainer>
   );

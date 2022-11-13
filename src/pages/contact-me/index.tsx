@@ -11,7 +11,7 @@ interface ContactMeInterface {}
 // SCSS.
 import "./contact-me.scss";
 
-const css_prefix = "c-m__";
+const css_prefix = "p--c-m__";
 
 interface ContactMeInterface {}
 

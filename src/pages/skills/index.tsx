@@ -1,19 +1,19 @@
-import React from 'react';
+import React from "react";
 
 // Components.
-import { PageContainer } from '../../components/layout/container/PageContainer';
+import { PageContainer } from "../../components/layout/container/PageContainer";
 
 // SCSS.
-import './skills.scss';
+import "./skills.scss";
 
 // Pages -- skills
-const css_prefix = 'p--s__';
+const css_prefix = "p--s__";
 
 const Skills = () => {
   return (
     <PageContainer>
-      <div>
-        <div>My Skills page</div>
+      <div className={`${css_prefix}main`}>
+        <div className={`${css_prefix}title`}>Skills</div>
       </div>
     </PageContainer>
   );
