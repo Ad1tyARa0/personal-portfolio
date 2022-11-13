@@ -1,11 +1,11 @@
-@import 'src/sass/colors';
-@import 'src/sass/variables';
+@import "src/sass/colors";
+@import "src/sass/variables";
 
-$css_prefix: 'c--l--h__';
-$class_css_prefix: '.#{$css_prefix}';
+$css_prefix: "c--l--h__";
+$class_css_prefix: ".#{$css_prefix}";
 
 #{$class_css_prefix}main {
-  padding: 10px 5px;
+  padding: 10px 15px;
   position: sticky;
   top: 0;
   z-index: 10;

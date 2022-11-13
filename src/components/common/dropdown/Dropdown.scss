@@ -1,8 +1,8 @@
-@import 'src/sass/colors';
-@import 'src/sass/variables';
+@import "src/sass/colors";
+@import "src/sass/variables";
 
-$css_prefix: 'c--c--d__';
-$class_css_prefix: '.#{$css_prefix}';
+$css_prefix: "c--c--d__";
+$class_css_prefix: ".#{$css_prefix}";
 
 #{$class_css_prefix}main {
   @include box-shadow-ver1;
@@ -66,5 +66,6 @@ $class_css_prefix: '.#{$css_prefix}';
 }
 
 #{$class_css_prefix}item-title {
-  font-family: 'Ultra Bold';
+  font-family: "Ultra Bold";
+  color: $color-font-dark;
 }

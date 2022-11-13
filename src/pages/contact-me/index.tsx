@@ -18,19 +18,49 @@ interface ContactMeInterface {}
 const ContactMe: FC<ContactMeInterface> = () => {
   const { theme } = React.useContext(ThemeContext);
 
-  const renderContainer = (title: string, icon: JSX.Element) => {
+  const renderContainer = (
+    title: string,
+    icon: JSX.Element,
+    key: number,
+    link: string
+  ) => {
     return (
-      <div
-        className={`${css_prefix}card ${
-          theme === "dark" ? css_prefix + "card-dark" : ""
-        }`}
-      >
-        <div className={`${css_prefix}card-title`}>{title}</div>
+      <a href={link} key={key} className={`${css_prefix}link`}>
+        <div
+          className={`${css_prefix}card ${
+            theme === "dark" ? css_prefix + "card-dark" : ""
+          }`}
+        >
+          <div className={`${css_prefix}card-title`}>{title}</div>
 
-        <div className={`${css_prefix}card-icon`}>{icon}</div>
-      </div>
+          <div className={`${css_prefix}card-icon`}>{icon}</div>
+        </div>
+      </a>
     );
   };
+
+  let contactMeList = [
+    {
+      id: 1,
+      title: "LinkedIn",
+      icon: <SiLinkedin />,
+      link: "https://www.linkedin.com/in/aditya-sathish-rao/",
+    },
+
+    {
+      id: 2,
+      title: "GitHub",
+      icon: <SiGithub />,
+      link: "https://www.github.com/Ad1tyARa0/",
+    },
+
+    {
+      id: 3,
+      title: "Email",
+      icon: <SiMinutemailer />,
+      link: "mailto: aditya.s.rao1995@outlook.com",
+    },
+  ];
 
   return (
     <PageContainer>
@@ -38,11 +68,9 @@ const ContactMe: FC<ContactMeInterface> = () => {
         <div className={`${css_prefix}title`}>Contact Me</div>
 
         <div className={`${css_prefix}inner-main`}>
-          {renderContainer("LinkedIn", <SiLinkedin />)}
-
-          {renderContainer("GitHub", <SiGithub />)}
-
-          {renderContainer("Email", <SiMinutemailer />)}
+          {contactMeList.map(e =>
+            renderContainer(e.title, e.icon, e.id, e.link)
+          )}
         </div>
       </div>
     </PageContainer>
