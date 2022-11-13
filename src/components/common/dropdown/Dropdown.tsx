@@ -1,6 +1,6 @@
-import React, { useRef } from 'react';
-import { BsArrowUpRight } from 'react-icons/bs';
-import { Link } from 'gatsby';
+import React, { useRef } from "react";
+import { BsArrowUpRight } from "react-icons/bs";
+import { Link } from "gatsby";
 
 import {
   FaClipboardList,
@@ -10,14 +10,14 @@ import {
   FaToolbox,
   FaUser,
   FaUserTie,
-} from 'react-icons/fa';
+} from "react-icons/fa";
 
 // SCSS.
-import './Dropdown.scss';
-import { useOnClickOutside } from '../../../hooks/useOnClickOutside';
+import "./Dropdown.scss";
+import { useOnClickOutside } from "../../../hooks/useOnClickOutside";
 
 // Components -- common -- dropdown
-const css_prefix = 'c--c--d__';
+const css_prefix = "c--c--d__";
 
 // Component props.
 interface DropdownProps {
@@ -34,37 +34,37 @@ const DropdownComponent: React.FunctionComponent<DropdownProps> = ({
   const ITEMS = [
     {
       id: 2,
-      title: 'Home',
+      title: "Home",
       icon: <FaHome />,
-      to: '/',
+      to: "/",
     },
 
     {
       id: 2,
-      title: 'Skills',
+      title: "Skills",
       icon: <FaToolbox />,
-      to: '/skills',
+      to: "/skills",
     },
 
     {
       id: 3,
-      title: 'Projects',
+      title: "Projects",
       icon: <FaCode />,
-      to: '/projects',
+      to: "/projects",
     },
 
     {
       id: 4,
-      title: 'Experience',
+      title: "Experience",
       icon: <FaUserTie />,
-      to: '/experience',
+      to: "/experience",
     },
 
     {
       id: 1,
-      title: 'Contact Me',
+      title: "Contact Me",
       icon: <FaPhoneSquareAlt />,
-      to: '/contact-me',
+      to: "/contact-me",
     },
   ];
 
@@ -73,7 +73,7 @@ const DropdownComponent: React.FunctionComponent<DropdownProps> = ({
   return (
     <div
       className={`${css_prefix}main ${
-        theme === 'dark' ? css_prefix + 'dark' : css_prefix + 'light'
+        theme === "dark" ? css_prefix + "dark" : css_prefix + "light"
       }`}
       ref={dropdownRef}
     >
@@ -82,14 +82,14 @@ const DropdownComponent: React.FunctionComponent<DropdownProps> = ({
           <Link to={e.to} key={e.id} className={`${css_prefix}link-main`}>
             <div
               className={`${css_prefix}item-main ${
-                theme === 'dark'
-                  ? css_prefix + 'dark-item'
-                  : css_prefix + 'light-item'
+                theme === "dark"
+                  ? css_prefix + "dark-item"
+                  : css_prefix + "light-item"
               }`}
             >
-              <div className={`${css_prefix}item-title`}>{e.title}</div>
-
               <div className={`${css_prefix}item-icon`}>{e.icon}</div>
+
+              <div className={`${css_prefix}item-title`}>{e.title}</div>
             </div>
           </Link>
         );

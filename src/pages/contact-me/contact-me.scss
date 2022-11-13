@@ -14,12 +14,9 @@ $class_css_prefix: ".#{$css_prefix}";
 #{$class_css_prefix}title {
   font-size: 8em;
   font-family: "Plain Ultra Bold";
-  // flex: 1;
 }
 
 #{$class_css_prefix}inner-main {
-  // flex: 1;
-
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -30,6 +27,9 @@ $class_css_prefix: ".#{$css_prefix}";
 #{$class_css_prefix}link {
   color: inherit;
   text-decoration: none;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
 }
 
 #{$class_css_prefix}card-title {
@@ -44,7 +44,7 @@ $class_css_prefix: ".#{$css_prefix}";
 #{$class_css_prefix}card-icon {
   @include display-flex-center;
 
-  font-size: 2.5em;
+  font-size: 3em;
   margin-left: 15px;
   margin-left: auto;
 }
@@ -54,8 +54,7 @@ $class_css_prefix: ".#{$css_prefix}";
   display: flex;
   flex-direction: column;
   min-width: 250px;
-  // flex: 1;
-  padding: 20px;
+  flex: 1;
   margin: 30px;
   box-shadow: -30px 30px $color-background-dark;
   border: 0.5em solid $color-background-dark;

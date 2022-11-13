@@ -42,13 +42,12 @@ $class_css_prefix: ".#{$css_prefix}";
 #{$class_css_prefix}item-main {
   display: flex;
   align-items: center;
-  padding: 6px 8px 3px 8px;
+  padding: 10px 8px 3px 8px;
   justify-content: space-between;
   cursor: pointer;
   border-radius: 2px;
   margin-bottom: 5px;
-
-  --c: #90fe22; /* the color */
+  --c: #90fe22;
   background: linear-gradient(90deg, #fff 50%, var(--c) 0)
       calc(100% - var(--_p, 0%)) / 200% 100%,
     linear-gradient(var(--c) 0 0) 0% 100% / var(--_p, 0%) 100% no-repeat;
@@ -58,6 +57,11 @@ $class_css_prefix: ".#{$css_prefix}";
 
   &:hover {
     --_p: 100%;
+
+    #{$class_css_prefix}item-title {
+      font-family: "Plain Ultra Bold";
+      font-size: 1.4em;
+    }
   }
 
   &:last-of-type {
@@ -66,6 +70,13 @@ $class_css_prefix: ".#{$css_prefix}";
 }
 
 #{$class_css_prefix}item-title {
-  font-family: "Ultra Bold";
-  color: $color-font-dark;
+  font-family: "Plain Light";
+  font-size: 1.5em;
+  flex: 1;
+  min-width: 180px;
+}
+
+#{$class_css_prefix}item-icon {
+  font-size: 1.5em;
+  margin-right: 15px;
 }

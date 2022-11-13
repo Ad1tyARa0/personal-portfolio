@@ -25,17 +25,17 @@ const ContactMe: FC<ContactMeInterface> = () => {
     link: string
   ) => {
     return (
-      <a href={link} key={key} className={`${css_prefix}link`}>
-        <div
-          className={`${css_prefix}card ${
-            theme === "dark" ? css_prefix + "card-dark" : ""
-          }`}
-        >
+      <div
+        className={`${css_prefix}card ${
+          theme === "dark" ? css_prefix + "card-dark" : ""
+        }`}
+      >
+        <a href={link} key={key} className={`${css_prefix}link`}>
           <div className={`${css_prefix}card-title`}>{title}</div>
 
           <div className={`${css_prefix}card-icon`}>{icon}</div>
-        </div>
-      </a>
+        </a>
+      </div>
     );
   };
 
