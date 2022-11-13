@@ -21,3 +21,10 @@ $class_css_prefix: ".#{$css_prefix}";
     font-size: 4em;
   }
 }
+
+@media only screen and (max-width: 2000px) {
+  #{$class_css_prefix}title {
+    // font-size: 12em;
+    background-color: red;
+  }
+}

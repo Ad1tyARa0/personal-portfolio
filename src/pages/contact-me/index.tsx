@@ -29,8 +29,9 @@ const ContactMe: FC<ContactMeInterface> = () => {
         className={`${css_prefix}card ${
           theme === "dark" ? css_prefix + "card-dark" : ""
         }`}
+        key={key}
       >
-        <a href={link} key={key} className={`${css_prefix}link`}>
+        <a href={link} className={`${css_prefix}link`}>
           <div className={`${css_prefix}card-title`}>{title}</div>
 
           <div className={`${css_prefix}card-icon`}>{icon}</div>
