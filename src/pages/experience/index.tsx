@@ -4,7 +4,7 @@ import React from "react";
 import { PageContainer } from "../../components/layout/container/PageContainer";
 
 // SCSS.
-import "./experience.scss";
+import "./index.scss";
 
 // Pages -- experience
 const css_prefix = "p--e__";

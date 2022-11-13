@@ -51,12 +51,34 @@ $class_css_prefix: ".#{$css_prefix}";
   justify-content: center;
 }
 
-#{$class_css_prefix}toggle-theme-container {
+#{$class_css_prefix}toggle-theme-main {
   display: flex;
+  align-items: center;
 
-  #{$class_css_prefix}button {
-    @include display-flex-center;
+  &:hover {
+    #{$class_css_prefix}toggle-theme-title {
+      opacity: 1;
+      animation: fadeInLeft 500ms linear;
+      display: flex;
+      transition: opacity 500ms linear;
+    }
+  }
+}
 
-    cursor: pointer;
+#{$class_css_prefix}toggle-theme-title {
+  margin-left: 5px;
+  opacity: 0;
+  display: none;
+  transition: opacity 500ms linear;
+}
+
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
   }
 }

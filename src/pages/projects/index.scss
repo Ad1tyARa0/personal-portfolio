@@ -1,10 +1,12 @@
 @import "src/sass/colors";
 @import "src/sass/variables";
 
-$css_prefix: "p--e__";
+$css_prefix: "p--p__";
 $class_css_prefix: ".#{$css_prefix}";
 
 #{$class_css_prefix}main {
+  @include select-none;
+
   height: calc(100% - 100px);
   display: flex;
   flex-direction: column;
@@ -14,12 +16,6 @@ $class_css_prefix: ".#{$css_prefix}";
 #{$class_css_prefix}title {
   font-size: 8em;
   font-family: "Plain Ultra Bold";
-}
-
-@media only screen and (max-width: 850px) {
-  #{$class_css_prefix}title {
-    font-size: 6em;
-  }
 }
 
 @media only screen and (max-width: 650px) {

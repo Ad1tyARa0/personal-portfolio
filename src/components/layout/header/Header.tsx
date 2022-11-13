@@ -1,15 +1,15 @@
-import React, { FC, useState } from 'react';
+import React, { FC, useRef, useState } from "react";
 
 // Components.
-import { Dropdown } from '../../common/dropdown/Dropdown';
-import { ThemeButton } from '../../common/theme-button/ThemeButton';
-import { HamburgerIcon } from '../../common/hamburger-icon/HamburgerIcon';
+import { Dropdown } from "../../common/dropdown/Dropdown";
+import { ThemeButton } from "../../common/theme-button/ThemeButton";
+import { HamburgerIcon } from "../../common/hamburger-icon/HamburgerIcon";
 
 // SCSS.
-import './Header.scss';
+import "./Header.scss";
 
 // Components -- layout -- header
-const css_prefix = 'c--l--h__';
+const css_prefix = "c--l--h__";
 
 // Component props.
 interface HeaderProps {
@@ -18,6 +18,8 @@ interface HeaderProps {
 }
 
 const HeaderComponent: FC<HeaderProps> = ({ theme, switchTheme }) => {
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
   const [showDropdown, setShowDropdown] = useState<boolean>(true);
 
   const onClickToggleDropdown = () => {
@@ -31,11 +33,15 @@ const HeaderComponent: FC<HeaderProps> = ({ theme, switchTheme }) => {
   return (
     <header
       className={`${css_prefix}main ${
-        theme === 'dark' ? css_prefix + 'main-dark' : ''
+        theme === "dark" ? css_prefix + "main-dark" : ""
       }  `}
     >
       <div className={`${css_prefix}inner-main`}>
-        <ThemeButton theme={theme} switchTheme={switchTheme} />
+        <div className={`${css_prefix}toggle-theme-main`}>
+          <ThemeButton theme={theme} switchTheme={switchTheme} />
+
+          <div className={`${css_prefix}toggle-theme-title`}>invert colors</div>
+        </div>
 
         <HamburgerIcon
           show={showDropdown}
@@ -43,7 +49,11 @@ const HeaderComponent: FC<HeaderProps> = ({ theme, switchTheme }) => {
         />
 
         {showDropdown ? (
-          <Dropdown theme={theme} onClickHideDropdown={onClickHideDropdown} />
+          <Dropdown
+            theme={theme}
+            onClickHideDropdown={onClickHideDropdown}
+            dropdownRef={dropdownRef}
+          />
         ) : null}
       </div>
     </header>

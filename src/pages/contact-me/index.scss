@@ -12,6 +12,8 @@ $class_css_prefix: ".#{$css_prefix}";
 }
 
 #{$class_css_prefix}title {
+  @include select-none;
+
   font-size: 8em;
   font-family: "Plain Ultra Bold";
 }
@@ -39,6 +41,10 @@ $class_css_prefix: ".#{$css_prefix}";
   font-family: "Plain Ultra Bold";
   padding: 10px 0;
   margin-right: auto;
+}
+
+#{$class_css_prefix}card-title-dark {
+  color: $color-font-light;
 }
 
 #{$class_css_prefix}card-icon {

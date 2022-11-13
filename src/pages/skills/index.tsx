@@ -4,7 +4,7 @@ import React from "react";
 import { PageContainer } from "../../components/layout/container/PageContainer";
 
 // SCSS.
-import "./skills.scss";
+import "./index.scss";
 
 // Pages -- skills
 const css_prefix = "p--s__";

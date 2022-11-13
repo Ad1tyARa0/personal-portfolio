@@ -9,7 +9,7 @@ import { ThemeContext } from "../../context/ThemeContext";
 interface ContactMeInterface {}
 
 // SCSS.
-import "./contact-me.scss";
+import "./index.scss";
 
 const css_prefix = "p--c-m__";
 
@@ -32,9 +32,21 @@ const ContactMe: FC<ContactMeInterface> = () => {
         key={key}
       >
         <a href={link} className={`${css_prefix}link`}>
-          <div className={`${css_prefix}card-title`}>{title}</div>
+          <div
+            className={`${css_prefix}card-title ${
+              theme === "dark" ? css_prefix + "card-title-dark" : ""
+            }`}
+          >
+            {title}
+          </div>
 
-          <div className={`${css_prefix}card-icon`}>{icon}</div>
+          <div
+            className={`${css_prefix}card-icon ${
+              theme === "dark" ? css_prefix + "card-title-dark" : ""
+            }`}
+          >
+            {icon}
+          </div>
         </a>
       </div>
     );
@@ -66,7 +78,9 @@ const ContactMe: FC<ContactMeInterface> = () => {
   return (
     <PageContainer>
       <div className={`${css_prefix}main`}>
-        <div className={`${css_prefix}title`}>Contact Me</div>
+        <div className={`${css_prefix}title`}>
+          Follow me and hit me up for future projects. Or just to chat
+        </div>
 
         <div className={`${css_prefix}inner-main`}>
           {contactMeList.map(e =>
