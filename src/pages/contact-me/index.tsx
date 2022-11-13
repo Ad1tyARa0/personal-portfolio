@@ -1,72 +1,33 @@
-import React, { FC, useState } from 'react';
-
+import React, { FC, useState } from "react";
+import { SiLinkedin, SiGithub, SiMinutemailer } from "react-icons/si";
 // Components.
-import { PageContainer } from '../../components/layout/container/PageContainer';
+import { PageContainer } from "../../components/layout/container/PageContainer";
 
 // Context.
-import { ThemeContext } from '../../context/ThemeContext';
+import { ThemeContext } from "../../context/ThemeContext";
 
 interface ContactMeInterface {}
 
 // SCSS.
-import './contact-me.scss';
+import "./contact-me.scss";
 
-const css_prefix = 'c-m__';
+const css_prefix = "c-m__";
 
 interface ContactMeInterface {}
 
 const ContactMe: FC<ContactMeInterface> = () => {
   const { theme } = React.useContext(ThemeContext);
 
-  const [fullName, setFullName] = useState<string>('');
-  const [email, setEmail] = useState<string>('');
-  const [message, setMessage] = useState<string>('');
-
-  const onChangeFullName = (payload: string) => {
-    setFullName(payload);
-  };
-
-  const onChangeMessage = (payload: string) => {
-    setMessage(payload);
-  };
-
-  const onChangeEmail = (payload: string) => {
-    setEmail(payload);
-  };
-
-  const _renderFormComponent = (
-    title: string,
-    value: string,
-    onChange: (payload: string) => void,
-    formType: 'textarea' | 'input',
-    type: string
-  ) => {
+  const renderContainer = (title: string, icon: JSX.Element) => {
     return (
-      <div className={`${css_prefix}input-main`}>
-        <div className={`${css_prefix}input-title`}>{title}</div>
+      <div
+        className={`${css_prefix}card ${
+          theme === "dark" ? css_prefix + "card-dark" : ""
+        }`}
+      >
+        <div className={`${css_prefix}card-title`}>{title}</div>
 
-        {formType === 'input' ? (
-          <input
-            value={value}
-            onChange={({ currentTarget }) => onChange(currentTarget.value)}
-            type={type}
-            className={`${css_prefix}input-value  ${
-              theme === 'dark'
-                ? css_prefix + 'input-dark'
-                : css_prefix + 'input-light'
-            }`}
-          />
-        ) : formType === 'textarea' ? (
-          <textarea
-            value={value}
-            onChange={({ currentTarget }) => onChange(currentTarget.value)}
-            className={`${css_prefix}textarea-value  ${
-              theme === 'dark'
-                ? css_prefix + 'input-dark'
-                : css_prefix + 'input-light'
-            }`}
-          />
-        ) : null}
+        <div className={`${css_prefix}card-icon`}>{icon}</div>
       </div>
     );
   };
@@ -77,35 +38,11 @@ const ContactMe: FC<ContactMeInterface> = () => {
         <div className={`${css_prefix}title`}>Contact Me</div>
 
         <div className={`${css_prefix}inner-main`}>
-          <div className={`${css_prefix}container`}>
-            {_renderFormComponent(
-              'Full Name',
-              fullName,
-              onChangeFullName,
-              'input',
-              'text'
-            )}
+          {renderContainer("LinkedIn", <SiLinkedin />)}
 
-            {_renderFormComponent(
-              'Email Address',
-              email,
-              onChangeEmail,
-              'input',
-              'email'
-            )}
+          {renderContainer("GitHub", <SiGithub />)}
 
-            {_renderFormComponent(
-              'Message',
-              message,
-              onChangeMessage,
-              'textarea',
-              'text'
-            )}
-
-            <div className={`${css_prefix}submit-button`}>
-              <div className={`${css_prefix}submit-text`}>Submit</div>
-            </div>
-          </div>
+          {renderContainer("Email", <SiMinutemailer />)}
         </div>
       </div>
     </PageContainer>

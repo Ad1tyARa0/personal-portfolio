@@ -1,8 +1,8 @@
-@import 'src/sass/colors';
-@import 'src/sass/variables';
+@import "src/sass/colors";
+@import "src/sass/variables";
 
-$css_prefix: 'c-m__';
-$class_css_prefix: '.#{$css_prefix}';
+$css_prefix: "c-m__";
+$class_css_prefix: ".#{$css_prefix}";
 
 #{$class_css_prefix}main {
   height: calc(100% - 100px);
@@ -13,154 +13,72 @@ $class_css_prefix: '.#{$css_prefix}';
 
 #{$class_css_prefix}title {
   font-size: 8em;
-  font-family: 'Plain Ultra Bold';
-  flex: 1;
+  font-family: "Plain Ultra Bold";
+  // flex: 1;
 }
 
 #{$class_css_prefix}inner-main {
-  flex: 2;
+  // flex: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  margin: auto 0;
 }
 
-#{$class_css_prefix}container {
-  @include box-shadow-ver1;
+#{$class_css_prefix}card-title {
+  @include display-flex-center;
 
-  border-width: 0.2em;
-  border-radius: 20px;
-  padding: 30px 15px;
-  max-width: 450px;
-  margin: 20px auto;
+  font-size: 3em;
+  font-family: "Plain Ultra Bold";
+  padding: 10px 0;
+  margin-right: auto;
 }
 
-#{$class_css_prefix}input-main {
+#{$class_css_prefix}card-icon {
+  @include display-flex-center;
+
+  font-size: 2.5em;
+  margin-left: 15px;
+  margin-left: auto;
+}
+
+#{$class_css_prefix}card {
+  background-color: $accentColor10;
   display: flex;
   flex-direction: column;
-  margin-bottom: 10px;
-  padding: 5px 10px;
-}
-
-#{$class_css_prefix}input-title {
-  margin-bottom: 8px;
-  padding: 3px 8px;
-  font-family: 'Light';
-  opacity: 0.7;
-}
-
-#{$class_css_prefix}input-value {
-  border-bottom: 2px solid $accentColor30;
-  font-family: 'Regular';
-  padding: 3px 8px;
-  font-size: 2em;
-}
-
-#{$class_css_prefix}input-dark {
-  color: $color-font-light;
-}
-
-#{$class_css_prefix}input-light {
-  color: $color-font-dark;
-}
-
-#{$class_css_prefix}textarea-value {
-  border: 2px solid $accentColor30;
-  resize: none;
-  border-radius: 10px;
-  height: 170px;
-  padding: 8px;
-  font-family: 'Regular';
-  font-size: 2em;
-  line-height: 1.5em;
-
-  &::-webkit-scrollbar {
-    display: none;
-  }
-}
-
-#{$class_css_prefix}submit-button {
-  @include display-flex-center;
-  @include box-shadow-ver2;
-  @include select-none;
-
-  font-family: 'Plain Ultra Bold';
-  font-size: 1.3em;
-  color: $color-font-dark;
-  background-color: $accentColor10;
-  padding: 5px 8px;
-  border-radius: 5px;
-  max-width: 100px;
-  margin: 0 auto;
+  min-width: 250px;
+  flex: 1;
+  padding: 20px;
+  margin: 30px;
+  box-shadow: -30px 30px $color-background-dark;
+  border: 0.5em solid $color-background-dark;
+  transition: all 500ms, top 500ms, left 500ms;
+  position: relative;
+  top: 0;
+  left: 0;
   cursor: pointer;
-}
 
-#{$class_css_prefix}submit-text {
-  padding-top: 4px;
-}
-
-@media only screen and (max-width: 768px) {
-  #{$class_css_prefix}title {
-    font-size: 6em;
-  }
-
-  #{$class_css_prefix}input-value {
-    font-size: 1.5em;
-  }
-
-  #{$class_css_prefix}textarea-value {
-    font-size: 1.5em;
+  &:hover {
+    top: 30px;
+    left: -30px;
+    box-shadow: 0 0 0 -3px $color-background-dark,
+      0 0 0 0 $color-background-dark;
   }
 }
 
-@media only screen and (max-width: 650px) {
-  #{$class_css_prefix}title {
-    font-size: 5em;
-  }
+#{$class_css_prefix}card-dark {
+  box-shadow: -30px 30px $color-background-light;
+  border: 0.5em solid $color-background-light;
+  background-color: $accentColor30;
+  color: $color-font-light;
 
-  #{$class_css_prefix}input-value {
-    font-size: 1.2em;
-  }
-
-  #{$class_css_prefix}textarea-value {
-    font-size: 1.2em;
-  }
-}
-
-@media only screen and (max-width: 550px) {
-  #{$class_css_prefix}title {
-    font-size: 4em;
-  }
-
-  #{$class_css_prefix}input-value {
-    font-size: 1em;
-  }
-
-  #{$class_css_prefix}textarea-value {
-    font-size: 1em;
-  }
-}
-
-@media only screen and (max-width: 450px) {
-  #{$class_css_prefix}title {
-    font-size: 3em;
-  }
-
-  #{$class_css_prefix}input-value {
-    font-size: 0.8em;
-  }
-
-  #{$class_css_prefix}textarea-value {
-    font-size: 0.8em;
-  }
-}
-
-@media only screen and (max-width: 350px) {
-  #{$class_css_prefix}title {
-    font-size: 2em;
-  }
-
-  #{$class_css_prefix}input-value {
-    font-size: 0.5em;
-  }
-
-  #{$class_css_prefix}textarea-value {
-    font-size: 0.5em;
+  &:hover {
+    top: 30px;
+    left: -30px;
+    box-shadow: 0 0 0 -3px $color-background-light,
+      0 0 0 0 $color-background-light;
+    // color: $color-font-dark;
   }
 }
