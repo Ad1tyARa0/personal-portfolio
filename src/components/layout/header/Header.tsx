@@ -1,4 +1,4 @@
-import React, { FC, useRef, useState } from "react";
+import React, { FC, useState } from "react";
 
 // Components.
 import { Dropdown } from "../../common/dropdown/Dropdown";
@@ -18,9 +18,7 @@ interface HeaderProps {
 }
 
 const HeaderComponent: FC<HeaderProps> = ({ theme, switchTheme }) => {
-  const dropdownRef = useRef<HTMLDivElement>(null);
-
-  const [showDropdown, setShowDropdown] = useState<boolean>(true);
+  const [showDropdown, setShowDropdown] = useState<boolean>(false);
 
   const onClickToggleDropdown = () => {
     setShowDropdown(!showDropdown);
@@ -49,11 +47,7 @@ const HeaderComponent: FC<HeaderProps> = ({ theme, switchTheme }) => {
         />
 
         {showDropdown ? (
-          <Dropdown
-            theme={theme}
-            onClickHideDropdown={onClickHideDropdown}
-            dropdownRef={dropdownRef}
-          />
+          <Dropdown theme={theme} onClickHideDropdown={onClickHideDropdown} />
         ) : null}
       </div>
     </header>

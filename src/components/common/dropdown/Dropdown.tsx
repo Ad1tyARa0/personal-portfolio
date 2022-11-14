@@ -23,14 +23,14 @@ const css_prefix = "c--c--d__";
 interface DropdownProps {
   theme: string;
   onClickHideDropdown: () => void;
-  dropdownRef: React.RefObject<HTMLDivElement>;
 }
 
 const DropdownComponent: React.FunctionComponent<DropdownProps> = ({
   theme,
   onClickHideDropdown,
-  dropdownRef,
 }) => {
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
   const ITEMS = [
     {
       id: 1,

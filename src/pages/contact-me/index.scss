@@ -92,7 +92,7 @@ $class_css_prefix: ".#{$css_prefix}";
   }
 }
 
-@media only screen and (max-width: 850px) {
+@media only screen and (max-width: 1050px) {
   #{$class_css_prefix}title {
     font-size: 6em;
   }
@@ -106,7 +106,7 @@ $class_css_prefix: ".#{$css_prefix}";
   }
 }
 
-@media only screen and (max-width: 650px) {
+@media only screen and (max-width: 850px) {
   #{$class_css_prefix}title {
     font-size: 4em;
   }
@@ -117,5 +117,25 @@ $class_css_prefix: ".#{$css_prefix}";
 
   #{$class_css_prefix}card-icon {
     font-size: 1.5em;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  #{$class_css_prefix}title {
+    font-size: 3em;
+  }
+
+  #{$class_css_prefix}card-title {
+    font-size: 1em;
+  }
+
+  #{$class_css_prefix}card-icon {
+    font-size: 1em;
+  }
+}
+
+@media only screen and (min-width: 2000px) {
+  #{$class_css_prefix}title {
+    font-size: 10em;
   }
 }

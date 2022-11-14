@@ -12,12 +12,53 @@ $class_css_prefix: ".#{$css_prefix}";
 }
 
 #{$class_css_prefix}title {
+  @include select-none;
+
   font-size: 8em;
   font-family: "Plain Ultra Bold";
 }
 
-@media only screen and (max-width: 650px) {
+#{$class_css_prefix}role {
+  font-size: 6em;
+  font-family: "Plain Light";
+}
+
+@media only screen and (max-width: 1050px) {
+  #{$class_css_prefix}title {
+    font-size: 6em;
+  }
+
+  #{$class_css_prefix}role {
+    font-size: 4em;
+  }
+}
+
+@media only screen and (max-width: 850px) {
   #{$class_css_prefix}title {
     font-size: 4em;
+  }
+
+  #{$class_css_prefix}role {
+    font-size: 2.5em;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  #{$class_css_prefix}title {
+    font-size: 3em;
+  }
+
+  #{$class_css_prefix}role {
+    font-size: 1.5em;
+  }
+}
+
+@media only screen and (min-width: 2000px) {
+  #{$class_css_prefix}title {
+    font-size: 10em;
+  }
+
+  #{$class_css_prefix}role {
+    font-size: 8em;
   }
 }
