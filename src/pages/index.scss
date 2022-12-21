@@ -16,11 +16,13 @@ $class_css_prefix: ".#{$css_prefix}";
 
   font-size: 8em;
   font-family: "Plain Ultra Bold";
+  transition: font-size 300ms linear;
 }
 
 #{$class_css_prefix}role {
   font-size: 6em;
   font-family: "Plain Light";
+  transition: font-size 300ms linear;
 }
 
 @media only screen and (max-width: 1050px) {

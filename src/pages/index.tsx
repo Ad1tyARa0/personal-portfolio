@@ -23,8 +23,6 @@ interface IndexInterface {
 }
 
 const Index: React.FC<IndexInterface> = ({ data }) => {
-  console.log(data);
-
   const {
     site: {
       siteMetadata: { name, role, bio },

@@ -14,6 +14,7 @@ $class_css_prefix: ".#{$css_prefix}";
 #{$class_css_prefix}title {
   font-size: 8em;
   font-family: "Plain Ultra Bold";
+  transition: font-size 300ms linear;
 }
 
 @media only screen and (max-width: 650px) {
