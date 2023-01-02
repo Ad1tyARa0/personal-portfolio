@@ -16,7 +16,6 @@ interface IndexInterface {
       siteMetadata: {
         name: string;
         role: string;
-        bio: string;
       };
     };
   };
@@ -25,7 +24,7 @@ interface IndexInterface {
 const Index: React.FC<IndexInterface> = ({ data }) => {
   const {
     site: {
-      siteMetadata: { name, role, bio },
+      siteMetadata: { name, role },
     },
   } = data;
 
