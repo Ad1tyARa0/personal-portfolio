@@ -1,4 +1,5 @@
 import React from "react";
+import { graphql } from "gatsby";
 
 // Components.
 import { PageContainer } from "../../components/layout/container/PageContainer";
@@ -9,7 +10,19 @@ import "./index.scss";
 // Pages -- experience
 const css_prefix = "p--e__";
 
-const Experience = () => {
+interface ExperienceProps {
+  data: any;
+}
+
+const Experience: React.FC<ExperienceProps> = ({ data }) => {
+  const {
+    prismicIcebreaker: {
+      data: { hobbies },
+    },
+  } = data;
+
+  console.log(data);
+
   return (
     <PageContainer>
       <div className={`${css_prefix}main`}>
@@ -20,3 +33,15 @@ const Experience = () => {
 };
 
 export default Experience;
+
+export const query = graphql`
+  prismicIcebreaker {
+    data {
+      hobbies {
+        hobby {
+          text
+        }
+      }
+    }
+  }
+`;

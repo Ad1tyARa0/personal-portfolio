@@ -7,12 +7,22 @@ module.exports = {
 
   plugins: [
     "gatsby-plugin-sass",
+    "gatsby-plugin-mdx",
     "gatsby-transformer-remark",
     {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "markdown-bio",
         path: `${__dirname}/md`,
+      },
+    },
+    {
+      resolve: "gatsby-source-prismic",
+      options: {
+        repositoryName: "aditya-rao-dev-portoflio",
+        schemas: {
+          icebreaker: require("./src/schemas/icebreaker.json"),
+        },
       },
     },
   ],
