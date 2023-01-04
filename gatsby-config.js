@@ -9,6 +9,7 @@ module.exports = {
     "gatsby-plugin-sass",
     "gatsby-plugin-mdx",
     "gatsby-transformer-remark",
+    "gatsby-plugin-image",
     {
       resolve: "gatsby-source-filesystem",
       options: {
@@ -22,6 +23,8 @@ module.exports = {
         repositoryName: "aditya-rao-dev-portoflio",
         schemas: {
           icebreaker: require("./src/schemas/icebreaker.json"),
+          employment_history: require("./src/schemas/employment_history.json"),
+          new_employment_history: require("./src/schemas/new_employment_history.json"),
         },
       },
     },

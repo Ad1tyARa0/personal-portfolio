@@ -15,11 +15,11 @@ interface ExperienceProps {
 }
 
 const Experience: React.FC<ExperienceProps> = ({ data }) => {
-  const {
-    prismicIcebreaker: {
-      data: { hobbies },
-    },
-  } = data;
+  // const {
+  //   prismicIcebreaker: {
+  //     data: { hobbies },
+  //   },
+  // } = data;
 
   console.log(data);
 
@@ -35,11 +35,13 @@ const Experience: React.FC<ExperienceProps> = ({ data }) => {
 export default Experience;
 
 export const query = graphql`
-  prismicIcebreaker {
-    data {
-      hobbies {
-        hobby {
-          text
+  query hobbies {
+    prismicIcebreaker {
+      data {
+        hobbies {
+          hobby {
+            text
+          }
         }
       }
     }
