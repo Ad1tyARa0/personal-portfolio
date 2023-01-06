@@ -47,7 +47,7 @@
           "technologies_used": {
             "type": "StructuredText",
             "config": {
-              "multi": "list-item",
+              "multi": "o-list-item",
               "label": "Technologies Used",
               "placeholder": "Technologies Used"
             }

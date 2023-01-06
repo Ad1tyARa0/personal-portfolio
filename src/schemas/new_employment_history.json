@@ -1,1 +1,89 @@
-{}
+{
+  "Main": {
+    "employment_item": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "company_name": {
+            "type": "StructuredText",
+            "config": {
+              "single": "heading5,heading6",
+              "label": "Company Name",
+              "placeholder": "Company Name"
+            }
+          },
+          "company_description": {
+            "type": "StructuredText",
+            "config": {
+              "multi": "paragraph",
+              "label": "Company Description",
+              "placeholder": "Company Description"
+            }
+          },
+          "company_logo": {
+            "type": "Image",
+            "config": {
+              "constraint": {
+                "width": 400,
+                "height": 400
+              },
+              "thumbnails": [],
+              "label": "Company Logo"
+            }
+          },
+          "timestamp": {
+            "type": "Timestamp",
+            "config": {
+              "label": "Timestamp",
+              "placeholder": "Timestamp"
+            }
+          },
+          "location": {
+            "type": "GeoPoint",
+            "config": {
+              "label": "Location"
+            }
+          },
+          "technologies_used": {
+            "type": "StructuredText",
+            "config": {
+              "multi": "o-list-item",
+              "label": "Technologies Used",
+              "placeholder": "Technologies Used"
+            }
+          },
+          "core_responsibilities": {
+            "type": "StructuredText",
+            "config": {
+              "multi": "list-item",
+              "label": "Core Responsibilities",
+              "placeholder": "Core Responsibilities"
+            }
+          },
+          "is_current": {
+            "type": "Boolean",
+            "config": {
+              "default_value": false,
+              "label": "Is Current"
+            }
+          },
+          "to_date": {
+            "type": "Date",
+            "config": {
+              "label": "To Date",
+              "placeholder": "To"
+            }
+          },
+          "from_date": {
+            "type": "Date",
+            "config": {
+              "label": "From Date",
+              "placeholder": "From"
+            }
+          }
+        },
+        "label": "employment_item"
+      }
+    }
+  }
+}
