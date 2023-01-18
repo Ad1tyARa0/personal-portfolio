@@ -15,13 +15,18 @@ interface ExperienceProps {
 }
 
 const Experience: React.FC<ExperienceProps> = ({ data }) => {
-  // const {
-  //   prismicIcebreaker: {
-  //     data: { hobbies },
-  //   },
-  // } = data;
+  const {
+    allPrismicNewEmploymentHistory: {
+      nodes: {
+        0: {
+          data: { employment_item },
+        },
+      },
+    },
+  } = data;
 
-  console.log(data);
+  let employmentItem =
+    data.allPrismicNewEmploymentHistory.nodes[0].data.employment_item;
 
   return (
     <PageContainer>
@@ -35,12 +40,34 @@ const Experience: React.FC<ExperienceProps> = ({ data }) => {
 export default Experience;
 
 export const query = graphql`
-  query hobbies {
-    prismicIcebreaker {
-      data {
-        hobbies {
-          hobby {
-            text
+  query EmpHistory {
+    allPrismicNewEmploymentHistory {
+      nodes {
+        data {
+          employment_item {
+            company_name {
+              text
+            }
+            company_description {
+              text
+            }
+            company_logo {
+              url
+            }
+            location {
+              longitude
+              latitude
+            }
+            technologies_used {
+              text
+            }
+            core_responsibilities {
+              text
+            }
+            from_date
+            to_date
+            is_current
+            timestamp
           }
         }
       }

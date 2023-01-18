@@ -38,9 +38,9 @@ const FooterComponent: FC<FooterProps> = ({ theme }) => {
           <img src={gatsbyLogo} alt="Gatsby" />
         </div>
 
-        <div className={`${css_prefix}typescript-logo`}>
+        {/* <div className={`${css_prefix}typescript-logo`}>
           <SiTypescript />
-        </div>
+        </div> */}
       </div>
     </footer>
   );
