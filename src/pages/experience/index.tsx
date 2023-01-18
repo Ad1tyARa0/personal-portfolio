@@ -6,6 +6,7 @@ import { PageContainer } from "../../components/layout/container/PageContainer";
 
 // SCSS.
 import "./index.scss";
+import { Arrow } from "../../components/common/arrow/Arrow";
 
 // Pages -- experience
 const css_prefix = "p--e__";
@@ -32,6 +33,9 @@ const Experience: React.FC<ExperienceProps> = ({ data }) => {
     <PageContainer>
       <div className={`${css_prefix}main`}>
         <div className={`${css_prefix}title`}>Experience</div>
+
+        <Arrow orientation="left" />
+        <Arrow orientation="right" />
       </div>
     </PageContainer>
   );
