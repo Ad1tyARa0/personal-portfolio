@@ -1,11 +1,13 @@
 import React from "react";
 import { graphql } from "gatsby";
+import { navigate } from "gatsby";
 
 // Components.
 import { PageContainer } from "./../components/layout/container/PageContainer";
 
 // SCSS.
 import "./index.scss";
+import { Arrow } from "../components/common/arrow/Arrow";
 
 // Pages -- home
 const css_prefix = "p--h__";
@@ -29,6 +31,14 @@ const Index: React.FC<IndexInterface> = ({ data }) => {
     },
   } = data;
 
+  const handleRightArrowClick = () => {
+    navigate("/skills");
+  };
+
+  const handleLeftArrowClick = () => {
+    navigate("/contact-me");
+  };
+
   return (
     <PageContainer>
       <div className={`${css_prefix}main`}>
@@ -37,6 +47,9 @@ const Index: React.FC<IndexInterface> = ({ data }) => {
         </div>
 
         <div className={`${css_prefix}role`}>{data.site.siteMetadata.role}</div>
+
+        <Arrow orientation="left" onClick={handleLeftArrowClick} />
+        <Arrow orientation="right" onClick={handleRightArrowClick} />
       </div>
     </PageContainer>
   );

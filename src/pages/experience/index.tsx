@@ -1,5 +1,5 @@
 import React from "react";
-import { graphql } from "gatsby";
+import { graphql, navigate } from "gatsby";
 
 // Components.
 import { PageContainer } from "../../components/layout/container/PageContainer";
@@ -19,6 +19,14 @@ interface ExperienceProps {
 const Experience: React.FC<ExperienceProps> = ({ data }) => {
   const { theme } = React.useContext(ThemeContext);
 
+  const handleRightArrowClick = () => {
+    navigate("/contact-me");
+  };
+
+  const handleLeftArrowClick = () => {
+    navigate("/projects");
+  };
+
   const {
     allPrismicNewEmploymentHistory: {
       nodes: {
@@ -37,8 +45,8 @@ const Experience: React.FC<ExperienceProps> = ({ data }) => {
       <div className={`${css_prefix}main`}>
         <div className={`${css_prefix}title`}>Experience</div>
 
-        <Arrow orientation="left" />
-        <Arrow orientation="right" />
+        <Arrow orientation="left" onClick={handleLeftArrowClick} />
+        <Arrow orientation="right" onClick={handleRightArrowClick} />
       </div>
     </PageContainer>
   );

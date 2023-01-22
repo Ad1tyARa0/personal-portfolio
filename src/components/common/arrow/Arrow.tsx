@@ -9,11 +9,12 @@ const css_prefix = "c--c--a__";
 // Component props.
 interface ArrowProps {
   orientation: "left" | "right";
-  //   onClick: () => void;
+  onClick: () => void;
 }
 
 const ArrowComponent: React.FunctionComponent<ArrowProps> = ({
   orientation,
+  onClick,
 }) => {
   return (
     <div
@@ -24,6 +25,7 @@ const ArrowComponent: React.FunctionComponent<ArrowProps> = ({
           ? css_prefix + "arrow-right"
           : ""
       }`}
+      onClick={onClick}
     >
       <div
         className={`${css_prefix}arrow-top ${

@@ -1,5 +1,7 @@
 import React, { FC, useState } from "react";
+import { navigate } from "gatsby";
 import { SiLinkedin, SiGithub, SiMinutemailer } from "react-icons/si";
+import { Arrow } from "../../components/common/arrow/Arrow";
 // Components.
 import { PageContainer } from "../../components/layout/container/PageContainer";
 
@@ -17,6 +19,14 @@ interface ContactMeInterface {}
 
 const ContactMe: FC<ContactMeInterface> = () => {
   const { theme } = React.useContext(ThemeContext);
+
+  const handleRightArrowClick = () => {
+    navigate("/");
+  };
+
+  const handleLeftArrowClick = () => {
+    navigate("/experience");
+  };
 
   const renderContainer = (
     title: string,
@@ -87,6 +97,9 @@ const ContactMe: FC<ContactMeInterface> = () => {
             renderContainer(e.title, e.icon, e.id, e.link)
           )}
         </div>
+
+        <Arrow orientation="left" onClick={handleLeftArrowClick} />
+        <Arrow orientation="right" onClick={handleRightArrowClick} />
       </div>
     </PageContainer>
   );
