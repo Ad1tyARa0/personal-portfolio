@@ -40,11 +40,11 @@ $class_css_prefix: ".#{$css_prefix}";
 #{$class_css_prefix}item-main {
   display: flex;
   align-items: center;
-  padding: 10px 8px 3px 8px;
+  padding: 10px 8px 6px 8px;
   justify-content: space-between;
   cursor: pointer;
   border-radius: 2px;
-  margin-bottom: 5px;
+  margin-top: 5px;
   background: linear-gradient(90deg, #fff 50%, var(--c) 0)
       calc(100% - var(--_p, 0%)) / 200% 100%,
     linear-gradient(var(--c) 0 0) 0% 100% / var(--_p, 0%) 100% no-repeat;

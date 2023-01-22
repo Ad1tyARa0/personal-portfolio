@@ -7,6 +7,7 @@ import { PageContainer } from "../../components/layout/container/PageContainer";
 // SCSS.
 import "./index.scss";
 import { Arrow } from "../../components/common/arrow/Arrow";
+import { ThemeContext } from "../../context/ThemeContext";
 
 // Pages -- experience
 const css_prefix = "p--e__";
@@ -16,6 +17,8 @@ interface ExperienceProps {
 }
 
 const Experience: React.FC<ExperienceProps> = ({ data }) => {
+  const { theme } = React.useContext(ThemeContext);
+
   const {
     allPrismicNewEmploymentHistory: {
       nodes: {

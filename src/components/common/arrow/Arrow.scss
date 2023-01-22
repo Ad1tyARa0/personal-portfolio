@@ -5,8 +5,7 @@ $css_prefix: "c--c--a__";
 $class_css_prefix: ".#{$css_prefix}";
 
 #{$class_css_prefix}arrow-left {
-  left: 3%;
-  //   transform: scaleX(1);
+  left: 4%;
 }
 
 #{$class_css_prefix}arrow-right {
@@ -14,15 +13,13 @@ $class_css_prefix: ".#{$css_prefix}";
 }
 
 #{$class_css_prefix}arrow {
-  background-color: red;
   cursor: pointer;
   height: 120px;
   position: absolute;
-  top: 50%;
+  top: 55%;
   transform: translateX(-50%) translateY(-50%);
   transition: transform 0.1s;
   width: 80px;
-
   $transition-time: 0.15s;
 
   &-top,
@@ -35,7 +32,7 @@ $class_css_prefix: ".#{$css_prefix}";
     width: 100%;
 
     &:after {
-      background-color: #fff;
+      background-color: $accentColor30;
       content: "";
       height: 100%;
       position: absolute;
@@ -47,18 +44,6 @@ $class_css_prefix: ".#{$css_prefix}";
   &-top {
     transform: rotate(45deg);
     transform-origin: bottom right;
-
-    &:after {
-      left: 100%;
-      right: 0;
-      transition-delay: 0s;
-    }
-  }
-
-  &-top-left {
-    // background-color: yellow;
-    transform: rotate(-45deg);
-    transform-origin: top left;
 
     &:after {
       left: 100%;
@@ -81,11 +66,24 @@ $class_css_prefix: ".#{$css_prefix}";
   &-bottom-left {
     transform: rotate(45deg);
     transform-origin: top left;
+    left: 5px;
+
+    &:after {
+      left: 100%;
+      right: 0;
+      transition-delay: $transition-time;
+    }
+  }
+
+  &-top-left {
+    transform: rotate(-45deg);
+    transform-origin: top left;
+    left: 5px;
 
     &:after {
       left: 0;
       right: 100%;
-      transition-delay: $transition-time;
+      transition-delay: 0s;
     }
   }
 
@@ -99,9 +97,25 @@ $class_css_prefix: ".#{$css_prefix}";
       right: 0;
       transition-delay: 0s;
     }
+
+    &-top-left:after {
+      right: 0;
+      transition-delay: $transition-time;
+    }
+
+    &-bottom-left:after {
+      left: 0;
+      transition-delay: 0s;
+    }
   }
 
   &:active {
     transform: translateX(-50%) translateY(-50%) scale(0.9);
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  #{$class_css_prefix}arrow {
+    width: 40px;
   }
 }
