@@ -1,8 +1,8 @@
-import { navigate } from "gatsby";
 import React from "react";
-import { Arrow } from "../../components/common/arrow/Arrow";
+import { navigate } from "gatsby";
 
 // Components.
+import { Arrow } from "../../components/common/arrow/Arrow";
 import { PageContainer } from "../../components/layout/container/PageContainer";
 
 // SCSS.

@@ -1,8 +1,9 @@
 import React, { FC, useState } from "react";
 import { navigate } from "gatsby";
 import { SiLinkedin, SiGithub, SiMinutemailer } from "react-icons/si";
-import { Arrow } from "../../components/common/arrow/Arrow";
+
 // Components.
+import { Arrow } from "../../components/common/arrow/Arrow";
 import { PageContainer } from "../../components/layout/container/PageContainer";
 
 // Context.

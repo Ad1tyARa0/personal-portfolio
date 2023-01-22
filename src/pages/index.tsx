@@ -3,11 +3,11 @@ import { graphql } from "gatsby";
 import { navigate } from "gatsby";
 
 // Components.
+import { Arrow } from "../components/common/arrow/Arrow";
 import { PageContainer } from "./../components/layout/container/PageContainer";
 
 // SCSS.
 import "./index.scss";
-import { Arrow } from "../components/common/arrow/Arrow";
 
 // Pages -- home
 const css_prefix = "p--h__";
