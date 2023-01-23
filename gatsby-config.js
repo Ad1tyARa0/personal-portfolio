@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     siteUrl: "https://test.website.com",
     name: "Aditya S Rao",
-    role: "Computer Enthusiast / Professional button masher & bug squasher",
+    role: "Software Engineer & Computer Enthusiast",
   },
 
   plugins: [

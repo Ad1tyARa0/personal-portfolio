@@ -1,6 +1,5 @@
 import React from "react";
 import { graphql } from "gatsby";
-import { navigate } from "gatsby";
 
 // Components.
 import { Arrow } from "../components/common/arrow/Arrow";
@@ -24,20 +23,11 @@ interface IndexInterface {
 }
 
 const Index: React.FC<IndexInterface> = ({ data }) => {
-  console.log(data);
   const {
     site: {
       siteMetadata: { name, role },
     },
   } = data;
-
-  const handleRightArrowClick = () => {
-    navigate("/skills");
-  };
-
-  const handleLeftArrowClick = () => {
-    navigate("/contact-me");
-  };
 
   return (
     <PageContainer>
@@ -47,9 +37,6 @@ const Index: React.FC<IndexInterface> = ({ data }) => {
         </div>
 
         <div className={`${css_prefix}role`}>{data.site.siteMetadata.role}</div>
-
-        <Arrow orientation="left" onClick={handleLeftArrowClick} />
-        <Arrow orientation="right" onClick={handleRightArrowClick} />
       </div>
     </PageContainer>
   );

@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { gatsbyLogo } from "../../../assets/svg";
+import { gatsbyLogo, githubLogo } from "../../../assets/svg";
 import { SiTypescript } from "react-icons/si";
 import { AiOutlineCopyrightCircle } from "react-icons/ai";
 
@@ -32,15 +32,16 @@ const FooterComponent: FC<FooterProps> = ({ theme }) => {
           </div>
         </div>
 
-        <div className={`${css_prefix}text`}>Built With</div>
+        {/* <div className={`${css_prefix}text`}>Built With</div>
 
+<img src={gatsbyLogo} alt="Gatsby" />
+</div> */}
+
+        {/* <div className={`${css_prefix}typescript-logo`}> */}
+        {/* <SiTypescript /> */}
         <div className={`${css_prefix}body-logo`}>
-          <img src={gatsbyLogo} alt="Gatsby" />
+          <img src={githubLogo} alt="Github" />
         </div>
-
-        {/* <div className={`${css_prefix}typescript-logo`}>
-          <SiTypescript />
-        </div> */}
       </div>
     </footer>
   );

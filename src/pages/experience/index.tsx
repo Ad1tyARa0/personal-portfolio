@@ -1,12 +1,14 @@
 import React from "react";
-import { graphql, navigate } from "gatsby";
+import { graphql } from "gatsby";
 
 // Components.
-import { Arrow } from "../../components/common/arrow/Arrow";
 import { PageContainer } from "../../components/layout/container/PageContainer";
 
 // Context.
 import { ThemeContext } from "../../context/ThemeContext";
+
+// Types.
+import { EmploymentHistoryType } from "../../utils/types/employment-history";
 
 // SCSS.
 import "./index.scss";
@@ -21,25 +23,7 @@ interface ExperienceProps {
 const Experience: React.FC<ExperienceProps> = ({ data }) => {
   const { theme } = React.useContext(ThemeContext);
 
-  const handleRightArrowClick = () => {
-    navigate("/contact-me");
-  };
-
-  const handleLeftArrowClick = () => {
-    navigate("/projects");
-  };
-
-  const {
-    allPrismicNewEmploymentHistory: {
-      nodes: {
-        0: {
-          data: { employment_item },
-        },
-      },
-    },
-  } = data;
-
-  let employmentItem =
+  let employmentItems: EmploymentHistoryType[] =
     data.allPrismicNewEmploymentHistory.nodes[0].data.employment_item;
 
   return (
@@ -47,8 +31,15 @@ const Experience: React.FC<ExperienceProps> = ({ data }) => {
       <div className={`${css_prefix}main`}>
         <div className={`${css_prefix}title`}>Experience</div>
 
-        <Arrow orientation="left" onClick={handleLeftArrowClick} />
-        <Arrow orientation="right" onClick={handleRightArrowClick} />
+        <div>
+          {employmentItems.map((e, idx) => {
+            return (
+              <div key={idx}>
+                <div>{e.company_name.text}</div>
+              </div>
+            );
+          })}
+        </div>
       </div>
     </PageContainer>
   );
