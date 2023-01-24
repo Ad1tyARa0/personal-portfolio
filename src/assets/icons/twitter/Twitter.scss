@@ -1,0 +1,29 @@
+@import "src/sass/colors";
+@import "src/sass/variables";
+
+$css_prefix: "a--i--t__";
+$class_css_prefix: ".#{$css_prefix}";
+
+#{$class_css_prefix}main {
+  cursor: pointer;
+  top: 0;
+  position: relative;
+  transition: top 500ms ease;
+
+  &:hover {
+    top: -5px;
+    transition: top 500ms ease;
+  }
+}
+
+#{$class_css_prefix}twitter {
+  stroke: slategray;
+}
+
+#{$class_css_prefix}twitter-dark {
+  stroke: $accentColor10;
+}
+
+#{$class_css_prefix}twitter-light {
+  stroke: $accentColor30;
+}

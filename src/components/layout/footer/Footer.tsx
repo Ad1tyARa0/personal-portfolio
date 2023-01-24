@@ -5,6 +5,9 @@ import { AiOutlineCopyrightCircle } from "react-icons/ai";
 
 // SCSS.
 import "./Footer.scss";
+import { Github } from "../../../assets/icons/github/Github";
+import { LinkedIn } from "../../../assets/icons/linkedin/LinkedIn";
+import { Twitter } from "../../../assets/icons/twitter/Twitter";
 
 // Components -- layout -- footer
 const css_prefix = "c--l--f__";
@@ -15,6 +18,7 @@ interface FooterProps {
 }
 
 const FooterComponent: FC<FooterProps> = ({ theme }) => {
+  console.log(theme);
   return (
     <footer
       className={`${css_prefix}main ${
@@ -32,15 +36,16 @@ const FooterComponent: FC<FooterProps> = ({ theme }) => {
           </div>
         </div>
 
-        {/* <div className={`${css_prefix}text`}>Built With</div>
+        <div className={`${css_prefix}icons`}>
+          <LinkedIn theme={theme} />
+        </div>
 
-<img src={gatsbyLogo} alt="Gatsby" />
-</div> */}
+        <div className={`${css_prefix}icons`}>
+          <Github theme={theme} />
+        </div>
 
-        {/* <div className={`${css_prefix}typescript-logo`}> */}
-        {/* <SiTypescript /> */}
-        <div className={`${css_prefix}body-logo`}>
-          <img src={githubLogo} alt="Github" />
+        <div className={`${css_prefix}icons`}>
+          <Twitter theme={theme} />
         </div>
       </div>
     </footer>

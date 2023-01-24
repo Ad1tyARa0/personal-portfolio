@@ -14,7 +14,6 @@ $class_css_prefix: ".#{$css_prefix}";
 
 #{$class_css_prefix}body {
   display: flex;
-  // opacity: 0.1;
   align-items: center;
   justify-content: flex-end;
   padding: 10px 5px 5px;
@@ -22,7 +21,6 @@ $class_css_prefix: ".#{$css_prefix}";
   width: 100%;
 
   &:hover {
-    opacity: 1;
     transition: opacity 500ms linear;
   }
 }
@@ -62,4 +60,8 @@ $class_css_prefix: ".#{$css_prefix}";
   font-size: 13px;
   margin-top: 5px;
   margin-left: 5px;
+}
+
+#{$class_css_prefix}icons {
+  margin-left: 10px;
 }
