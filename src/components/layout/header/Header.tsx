@@ -41,14 +41,20 @@ const HeaderComponent: FC<HeaderProps> = ({ theme, switchTheme }) => {
           <div className={`${css_prefix}toggle-theme-title`}>invert colors</div>
         </div>
 
-        <HamburgerIcon
-          show={showDropdown}
-          onClickToggleMenu={onClickToggleDropdown}
-        />
+        <div className={`${css_prefix}menu`}>
+          <HamburgerIcon
+            show={showDropdown}
+            onClickToggleMenu={onClickToggleDropdown}
+          />
 
-        {showDropdown ? (
-          <Dropdown theme={theme} onClickHideDropdown={onClickHideDropdown} />
-        ) : null}
+          {/* {showDropdown ? ( */}
+          <Dropdown
+            theme={theme}
+            onClickHideDropdown={onClickHideDropdown}
+            showDropdown={showDropdown}
+          />
+          {/* ) : null} */}
+        </div>
       </div>
     </header>
   );

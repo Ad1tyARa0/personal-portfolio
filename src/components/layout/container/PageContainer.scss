@@ -9,12 +9,11 @@ $class_css_prefix: ".#{$css_prefix}";
   height: 100vh;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 
 #{$class_css_prefix}container {
   flex: 1;
-  // background-color: red;
-  // padding: 15px;
 }
 
 #{$class_css_prefix}main-dark {

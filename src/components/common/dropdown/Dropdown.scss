@@ -8,15 +8,34 @@ $class_css_prefix: ".#{$css_prefix}";
   @include box-shadow-ver1;
 
   position: absolute;
-  top: 50px;
-  right: 15px;
+  top: 38px;
   min-width: 150px;
   padding: 5px 10px;
   border-radius: 4px;
 }
 
+#{$class_css_prefix}main-active {
+  right: -25px;
+  transition: right 500ms ease;
+}
+
+#{$class_css_prefix}main-inactive {
+  right: -350px;
+  transition: right 500ms ease;
+}
+
+#{$class_css_prefix}body {
+  height: calc(100vh - 85px);
+  display: flex;
+  min-width: 300px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 #{$class_css_prefix}link-main {
   text-decoration: none;
+  width: 100%;
 }
 
 #{$class_css_prefix}dark {
@@ -39,6 +58,7 @@ $class_css_prefix: ".#{$css_prefix}";
 
 #{$class_css_prefix}item-main {
   display: flex;
+  flex-direction: column;
   align-items: center;
   padding: 10px 8px 6px 8px;
   justify-content: space-between;
@@ -56,8 +76,9 @@ $class_css_prefix: ".#{$css_prefix}";
     --_p: 100%;
 
     #{$class_css_prefix}item-title {
-      font-family: "Plain Ultra Bold";
-      font-size: 1.4em;
+      // font-family: "Plain Ultra Bold";
+      // font-size: 1.4em;
+      // text-align: end;
     }
   }
 
@@ -70,10 +91,11 @@ $class_css_prefix: ".#{$css_prefix}";
   font-family: "Plain Light";
   font-size: 1.5em;
   flex: 1;
+  text-align: center;
   min-width: 180px;
 }
 
 #{$class_css_prefix}item-icon {
   font-size: 1.5em;
-  margin-right: 15px;
+  margin-bottom: 5px;
 }
