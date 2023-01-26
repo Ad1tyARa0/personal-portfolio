@@ -3,19 +3,17 @@ import { Link } from "gatsby";
 
 // Icons.
 import {
-  IoCallOutline,
   IoPrismOutline,
   IoFolderOutline,
-  IoPersonOutline,
   IoBriefcaseOutline,
 } from "react-icons/io5";
+import { AiOutlinePhone, AiOutlineUser } from "react-icons/ai";
 
 // Custom hooks.
 import { useOnClickOutside } from "../../../hooks/useOnClickOutside";
 
 // SCSS.
 import "./Dropdown.scss";
-import { AiOutlinePhone, AiOutlineUser } from "react-icons/ai";
 
 // Components -- common -- dropdown
 const css_prefix = "c--c--d__";
