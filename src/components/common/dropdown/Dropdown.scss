@@ -76,7 +76,6 @@ $class_css_prefix: ".#{$css_prefix}";
     --_p: 100%;
 
     #{$class_css_prefix}item-title {
-      // font-family: "Plain Ultra Bold";
       // font-size: 1.4em;
       // text-align: end;
     }
@@ -88,7 +87,8 @@ $class_css_prefix: ".#{$css_prefix}";
 }
 
 #{$class_css_prefix}item-title {
-  font-family: "Plain Light";
+  // font-family: "Plain Light";
+  font-family: "Plain Light Italic";
   font-size: 1.5em;
   flex: 1;
   text-align: center;

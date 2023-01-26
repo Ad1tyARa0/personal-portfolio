@@ -50,6 +50,12 @@ $class_css_prefix: ".#{$css_prefix}";
   margin-right: 10px;
   display: flex;
   align-items: center;
+  opacity: 0.4;
+
+  &:hover {
+    opacity: 1;
+    transition: opacity 500ms ease;
+  }
 }
 
 #{$class_css_prefix}copyright-icon {
@@ -63,5 +69,13 @@ $class_css_prefix: ".#{$css_prefix}";
 }
 
 #{$class_css_prefix}icons {
-  margin-left: 10px;
+  @include display-flex-center;
+
+  margin-left: 7px;
+}
+
+@media only screen and (max-width: 600px) {
+  #{$class_css_prefix}copyright-text {
+    display: none;
+  }
 }

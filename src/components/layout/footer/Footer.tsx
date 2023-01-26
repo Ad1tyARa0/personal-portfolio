@@ -2,12 +2,14 @@ import React, { FC } from "react";
 import { gatsbyLogo, githubLogo } from "../../../assets/svg";
 import { SiTypescript } from "react-icons/si";
 import { AiOutlineCopyrightCircle } from "react-icons/ai";
+import { MdAlternateEmail } from "react-icons/md";
 
 // SCSS.
 import "./Footer.scss";
 import { Github } from "../../../assets/icons/github/Github";
 import { LinkedIn } from "../../../assets/icons/linkedin/LinkedIn";
 import { Twitter } from "../../../assets/icons/twitter/Twitter";
+import { Email } from "../../../assets/icons/email/Email";
 
 // Components -- layout -- footer
 const css_prefix = "c--l--f__";
@@ -34,6 +36,10 @@ const FooterComponent: FC<FooterProps> = ({ theme }) => {
           <div className={`${css_prefix}copyright-text`}>
             2022 Developer Portoflio. All Rights Reserved
           </div>
+        </div>
+
+        <div className={`${css_prefix}icons`}>
+          <Email theme={theme} />
         </div>
 
         <div className={`${css_prefix}icons`}>

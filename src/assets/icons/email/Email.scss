@@ -1,0 +1,31 @@
+@import "src/sass/colors";
+@import "src/sass/variables";
+
+$css_prefix: "a--i--e__";
+$class_css_prefix: ".#{$css_prefix}";
+
+#{$class_css_prefix}main {
+  @include display-flex-center;
+
+  cursor: pointer;
+  top: 0;
+  position: relative;
+  transition: top 500ms ease;
+
+  &:hover {
+    top: -5px;
+    transition: top 500ms ease;
+  }
+}
+
+#{$class_css_prefix}email {
+  fill: slategray;
+}
+
+#{$class_css_prefix}email-dark {
+  fill: $accentColor10;
+}
+
+#{$class_css_prefix}email-light {
+  fill: $accentColor30;
+}

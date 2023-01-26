@@ -1,23 +1,21 @@
 import React, { useRef } from "react";
-import { BsArrowUpRight } from "react-icons/bs";
 import { Link } from "gatsby";
 
 // Icons.
 import {
-  FaUser,
-  FaCode,
-  FaHome,
-  FaToolbox,
-  FaUserTie,
-  FaClipboardList,
-  FaPhoneSquareAlt,
-} from "react-icons/fa";
+  IoCallOutline,
+  IoPrismOutline,
+  IoFolderOutline,
+  IoPersonOutline,
+  IoBriefcaseOutline,
+} from "react-icons/io5";
 
 // Custom hooks.
 import { useOnClickOutside } from "../../../hooks/useOnClickOutside";
 
 // SCSS.
 import "./Dropdown.scss";
+import { AiOutlinePhone, AiOutlineUser } from "react-icons/ai";
 
 // Components -- common -- dropdown
 const css_prefix = "c--c--d__";
@@ -39,36 +37,40 @@ const DropdownComponent: React.FunctionComponent<DropdownProps> = ({
   const ITEMS = [
     {
       id: 1,
-      title: "Home",
-      icon: <FaHome />,
+      title: "About",
+      icon: <AiOutlineUser />,
       to: "/",
-    },
-
-    {
-      id: 2,
-      title: "Skills",
-      icon: <FaToolbox />,
-      to: "/skills",
-    },
-
-    {
-      id: 3,
-      title: "Projects",
-      icon: <FaCode />,
-      to: "/projects",
     },
 
     {
       id: 4,
       title: "Experience",
-      icon: <FaUserTie />,
+      icon: <IoBriefcaseOutline />,
       to: "/experience",
+    },
+
+    {
+      id: 2,
+      title: "Skills",
+      icon: (
+        <div style={{ rotate: "220deg" }}>
+          <IoPrismOutline />
+        </div>
+      ),
+      to: "/skills",
+    },
+
+    {
+      id: 3,
+      title: "Work",
+      icon: <IoFolderOutline />,
+      to: "/projects",
     },
 
     {
       id: 5,
       title: "Contact Me",
-      icon: <FaPhoneSquareAlt />,
+      icon: <AiOutlinePhone />,
       to: "/contact-me",
     },
   ];
