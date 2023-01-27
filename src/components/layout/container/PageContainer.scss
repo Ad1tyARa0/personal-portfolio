@@ -9,7 +9,7 @@ $class_css_prefix: ".#{$css_prefix}";
   height: 100vh;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 #{$class_css_prefix}container {

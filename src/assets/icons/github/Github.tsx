@@ -18,8 +18,6 @@ const GithubComponent: React.FunctionComponent<GithubProps> = ({
   width = "20px",
   theme,
 }) => {
-  console.log(theme);
-
   return (
     <div
       className={`${css_prefix}main`}

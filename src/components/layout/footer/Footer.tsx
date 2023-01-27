@@ -20,7 +20,6 @@ interface FooterProps {
 }
 
 const FooterComponent: FC<FooterProps> = ({ theme }) => {
-  console.log(theme);
   return (
     <footer
       className={`${css_prefix}main ${

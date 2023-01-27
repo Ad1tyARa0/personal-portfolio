@@ -72,6 +72,34 @@ $class_css_prefix: ".#{$css_prefix}";
   transition: opacity 500ms linear;
 }
 
+#{$class_css_prefix}links {
+  display: flex;
+}
+
+#{$class_css_prefix}link-item {
+  @include select-none;
+
+  margin-left: 20px;
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+#{$class_css_prefix}link-item-number {
+  margin-right: 5px;
+  color: $accentColor30;
+  font-family: "Plain Ultra Bold Italic";
+}
+
+#{$class_css_prefix}link-item-number-dark {
+  color: $accentColor10;
+}
+
+#{$class_css_prefix}link-item-title {
+  font-family: "Plain Light";
+}
+
 @keyframes fadeInLeft {
   0% {
     opacity: 0;
@@ -90,5 +118,9 @@ $class_css_prefix: ".#{$css_prefix}";
 @media only screen and (max-width: 600px) {
   #{$class_css_prefix}menu {
     display: flex;
+  }
+
+  #{$class_css_prefix}links {
+    display: none;
   }
 }
