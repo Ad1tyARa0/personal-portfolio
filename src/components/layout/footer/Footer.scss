@@ -71,7 +71,7 @@ $class_css_prefix: ".#{$css_prefix}";
 #{$class_css_prefix}icons {
   @include display-flex-center;
 
-  margin-left: 7px;
+  margin-inline: 5px;
 }
 
 @media only screen and (max-width: 600px) {

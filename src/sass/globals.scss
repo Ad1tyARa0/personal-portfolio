@@ -1,6 +1,6 @@
-@import 'src/sass/fonts';
-@import 'src/sass/colors';
-@import 'src/sass/variables';
+@import "src/sass/fonts";
+@import "src/sass/colors";
+@import "src/sass/variables";
 
 body::-webkit-scrollbar {
   width: 0.3em;
@@ -14,8 +14,17 @@ body::-webkit-scrollbar-thumb {
   background-color: $accentColor10;
 }
 
+::selection {
+  background: $accentColor10; /* WebKit/Blink Browsers */
+  color: black;
+}
+
+::-moz-selection {
+  background: #ffb7b7; /* Gecko Browsers */
+}
+
 html {
-  font-family: 'Plain Light';
+  font-family: "Plain Light";
 }
 
 body {

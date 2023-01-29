@@ -49,9 +49,8 @@ const DropdownComponent: React.FunctionComponent<DropdownProps> = ({
                     : css_prefix + "light-item"
                 }`}
               >
-                <div className={`${css_prefix}item-icon`}>{e.icon}</div>
-
                 <div className={`${css_prefix}item-title`}>{e.title}</div>
+                <div className={`${css_prefix}item-icon`}>{e.icon}</div>
               </div>
             </Link>
           );

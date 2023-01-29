@@ -58,10 +58,10 @@ $class_css_prefix: ".#{$css_prefix}";
 
 #{$class_css_prefix}item-main {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  // flex-direction: column;
+  align-items: flex-start;
   padding: 10px 8px 6px 8px;
-  justify-content: space-between;
+  justify-content: center;
   cursor: pointer;
   border-radius: 2px;
   margin-top: 5px;
@@ -75,9 +75,8 @@ $class_css_prefix: ".#{$css_prefix}";
   &:hover {
     --_p: 100%;
 
-    #{$class_css_prefix}item-title {
-      // font-size: 1.4em;
-      // text-align: end;
+    #{$class_css_prefix}item-icon {
+      animation: infiniteRotation 2500ms linear infinite;
     }
   }
 
@@ -87,15 +86,26 @@ $class_css_prefix: ".#{$css_prefix}";
 }
 
 #{$class_css_prefix}item-title {
-  // font-family: "Plain Light";
-  font-family: "Plain Light Italic";
-  font-size: 1.5em;
-  flex: 1;
+  font-family: "Plain Ultra Bold";
+  font-size: 2.2em;
   text-align: center;
-  min-width: 180px;
+  text-transform: uppercase;
 }
 
 #{$class_css_prefix}item-icon {
-  font-size: 1.5em;
-  margin-bottom: 5px;
+  @include display-flex-center;
+
+  transform: rotate(-30deg);
+  font-size: 1.4em;
+  margin-left: 10px;
+  margin-bottom: 4px;
+}
+
+@keyframes infiniteRotation {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
 }

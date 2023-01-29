@@ -17,6 +17,7 @@ import { HamburgerIcon } from "../../common/hamburger-icon/HamburgerIcon";
 import "./Header.scss";
 import { ItemsArrayType } from "../../../utils/types/common";
 import { navigate } from "gatsby";
+import { BsArrowRightCircle } from "react-icons/bs";
 
 // Components -- layout -- header
 const css_prefix = "c--l--h__";
@@ -42,40 +43,36 @@ const HeaderComponent: FC<HeaderProps> = ({ theme, switchTheme }) => {
     {
       id: 1,
       title: "About",
-      icon: <AiOutlineUser />,
+      icon: <BsArrowRightCircle />,
       to: "/",
     },
 
     {
       id: 2,
       title: "Experience",
-      icon: <IoBriefcaseOutline />,
+      icon: <BsArrowRightCircle />,
       to: "/experience",
     },
 
     {
       id: 3,
       title: "Skills",
-      icon: (
-        <div style={{ rotate: "220deg" }}>
-          <IoPrismOutline />
-        </div>
-      ),
+      icon: <BsArrowRightCircle />,
       to: "/skills",
     },
 
     {
       id: 4,
-      title: "Projects",
-      icon: <IoFolderOutline />,
-      to: "/projects",
+      title: "Work",
+      icon: <BsArrowRightCircle />,
+      to: "/work",
     },
 
     {
       id: 5,
-      title: "Contact Me",
-      icon: <AiOutlinePhone />,
-      to: "/contact-me",
+      title: "Contact",
+      icon: <BsArrowRightCircle />,
+      to: "/contact",
     },
   ];
 
@@ -100,14 +97,6 @@ const HeaderComponent: FC<HeaderProps> = ({ theme, switchTheme }) => {
                 key={e.id}
                 onClick={() => navigate(e.to)}
               >
-                <div
-                  className={`${css_prefix}link-item-number ${
-                    theme === "dark" ? css_prefix + "link-item-number-dark" : ""
-                  }`}
-                >
-                  {e.id}.
-                </div>
-
                 <div className={`${css_prefix}link-item-title`}>{e.title}</div>
               </div>
             );

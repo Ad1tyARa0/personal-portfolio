@@ -86,18 +86,18 @@ $class_css_prefix: ".#{$css_prefix}";
   cursor: pointer;
 }
 
-#{$class_css_prefix}link-item-number {
-  margin-right: 5px;
-  color: $accentColor30;
-  font-family: "Plain Ultra Bold Italic";
-}
-
-#{$class_css_prefix}link-item-number-dark {
-  color: $accentColor10;
-}
-
 #{$class_css_prefix}link-item-title {
-  font-family: "Plain Light";
+  font-family: "Regular";
+  transition: color 200ms ease;
+
+  &:hover {
+    transition: color 200ms ease;
+    color: $accentColor10;
+  }
+}
+
+#{$class_css_prefix}menu {
+  display: none;
 }
 
 @keyframes fadeInLeft {
@@ -109,10 +109,6 @@ $class_css_prefix: ".#{$css_prefix}";
     opacity: 1;
     transform: translateX(0);
   }
-}
-
-#{$class_css_prefix}menu {
-  display: none;
 }
 
 @media only screen and (max-width: 600px) {

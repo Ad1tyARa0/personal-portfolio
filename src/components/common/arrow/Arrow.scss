@@ -19,7 +19,6 @@ $class_css_prefix: ".#{$css_prefix}";
   top: 90%;
   transform: translateX(-50%) translateY(-50%);
   transition: transform 0.1s;
-  width: 80px;
   $transition-time: 0.15s;
 
   &-top,

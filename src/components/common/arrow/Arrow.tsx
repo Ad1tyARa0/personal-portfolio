@@ -10,11 +10,13 @@ const css_prefix = "c--c--a__";
 interface ArrowProps {
   orientation: "left" | "right";
   onClick: () => void;
+  width?: string;
 }
 
 const ArrowComponent: React.FunctionComponent<ArrowProps> = ({
   orientation,
   onClick,
+  width = "80px",
 }) => {
   return (
     <div
@@ -25,6 +27,7 @@ const ArrowComponent: React.FunctionComponent<ArrowProps> = ({
           ? css_prefix + "arrow-right"
           : ""
       }`}
+      style={{ width: width }}
       onClick={onClick}
     >
       <div

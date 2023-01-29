@@ -7,16 +7,16 @@ import { PageContainer } from "../../components/layout/container/PageContainer";
 // Context.
 import { ThemeContext } from "../../context/ThemeContext";
 
-interface ContactMeInterface {}
+interface ContactInterface {}
 
 // SCSS.
 import "./index.scss";
 
 const css_prefix = "p--c-m__";
 
-interface ContactMeInterface {}
+interface ContactInterface {}
 
-const ContactMe: FC<ContactMeInterface> = () => {
+const Contact: FC<ContactInterface> = () => {
   const { theme } = React.useContext(ThemeContext);
 
   const renderContainer = (
@@ -53,7 +53,7 @@ const ContactMe: FC<ContactMeInterface> = () => {
     );
   };
 
-  let contactMeList = [
+  let contactList = [
     {
       id: 1,
       title: "LinkedIn",
@@ -84,13 +84,11 @@ const ContactMe: FC<ContactMeInterface> = () => {
         </div>
 
         <div className={`${css_prefix}inner-main`}>
-          {contactMeList.map(e =>
-            renderContainer(e.title, e.icon, e.id, e.link)
-          )}
+          {contactList.map(e => renderContainer(e.title, e.icon, e.id, e.link))}
         </div>
       </div>
     </PageContainer>
   );
 };
 
-export default ContactMe;
+export default Contact;
