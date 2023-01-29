@@ -1,0 +1,32 @@
+@import "src/sass/colors";
+@import "src/sass/variables";
+
+$css_prefix: "c--c--b__";
+$class_css_prefix: ".#{$css_prefix}";
+
+#{$class_css_prefix}main {
+  @include select-none;
+  @include display-flex-center;
+
+  padding: 10px 12px 6px 12px;
+  width: fit-content;
+  cursor: pointer;
+}
+
+#{$class_css_prefix}main-light {
+  background-color: rgba($color: $accentColor30, $alpha: 0.3);
+  border-bottom: 4px solid $accentColor30;
+}
+
+#{$class_css_prefix}main-dark {
+  background-color: rgba($color: $accentColor10, $alpha: 0.3);
+  border-bottom: 4px solid $accentColor10;
+}
+
+#{$class_css_prefix}title {
+  margin-top: 3px;
+}
+
+#{$class_css_prefix}body {
+  margin-left: 10px;
+}
