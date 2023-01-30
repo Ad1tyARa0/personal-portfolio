@@ -5,38 +5,36 @@ import { Link } from "gatsby";
 import { useOnClickOutside } from "../../../hooks/useOnClickOutside";
 
 // SCSS.
-import "./Dropdown.scss";
+import "./Sidebar.scss";
 import { ItemsArrayType } from "../../../utils/types/common";
 
-// Components -- common -- dropdown
-const css_prefix = "c--c--d__";
+// Components -- common -- sidebar
+const css_prefix = "c--c--s__";
 
 // Component props.
-interface DropdownProps {
+interface SidebarProps {
   theme: string;
-  showDropdown: boolean;
-  onClickHideDropdown: () => void;
+  showSidebar: boolean;
+  onClickHideSidebar: () => void;
   items: ItemsArrayType[];
+  sidebarRef: React.RefObject<HTMLDivElement>;
 }
 
-const DropdownComponent: React.FunctionComponent<DropdownProps> = ({
+const SidebarComponent: React.FunctionComponent<SidebarProps> = ({
   theme,
-  showDropdown,
-  onClickHideDropdown,
+  showSidebar,
+  onClickHideSidebar,
   items,
+  sidebarRef,
 }) => {
-  const dropdownRef = useRef<HTMLDivElement>(null);
-
-  // useOnClickOutside(dropdownRef, onClickHideDropdown);
+  useOnClickOutside(sidebarRef, onClickHideSidebar);
 
   return (
     <div
-      className={`${css_prefix}main       
-      ${
-        showDropdown ? css_prefix + "main-active" : css_prefix + "main-inactive"
-      }
+      className={`${css_prefix}main
+      ${showSidebar ? css_prefix + "main-active" : css_prefix + "main-inactive"}
       ${theme === "dark" ? css_prefix + "dark" : css_prefix + "light"}`}
-      ref={dropdownRef}
+      ref={sidebarRef}
     >
       <div className={`${css_prefix}body`}>
         {items.map(e => {
@@ -60,4 +58,4 @@ const DropdownComponent: React.FunctionComponent<DropdownProps> = ({
   );
 };
 
-export const Dropdown = DropdownComponent;
+export const Sidebar = SidebarComponent;

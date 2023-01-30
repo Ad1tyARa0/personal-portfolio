@@ -1,7 +1,7 @@
 @import "src/sass/colors";
 @import "src/sass/variables";
 
-$css_prefix: "c--c--d__";
+$css_prefix: "c--c--s__";
 $class_css_prefix: ".#{$css_prefix}";
 
 #{$class_css_prefix}main {
@@ -74,10 +74,6 @@ $class_css_prefix: ".#{$css_prefix}";
 
   &:hover {
     --_p: 100%;
-
-    #{$class_css_prefix}item-icon {
-      animation: infiniteRotation 2500ms linear infinite;
-    }
   }
 
   &:last-of-type {
@@ -88,6 +84,7 @@ $class_css_prefix: ".#{$css_prefix}";
 #{$class_css_prefix}item-title {
   font-family: "Plain Ultra Bold";
   font-size: 2.2em;
+  margin-top: 6px;
   text-align: center;
   text-transform: uppercase;
 }
@@ -98,6 +95,7 @@ $class_css_prefix: ".#{$css_prefix}";
   transform: rotate(-30deg);
   font-size: 1.4em;
   margin-left: 10px;
+  opacity: 0.3;
   margin-bottom: 4px;
 }
 

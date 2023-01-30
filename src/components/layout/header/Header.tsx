@@ -1,4 +1,4 @@
-import React, { FC, useState } from "react";
+import React, { FC, useRef, useState } from "react";
 
 // Icons.
 import {
@@ -9,7 +9,7 @@ import {
 import { AiOutlinePhone, AiOutlineUser } from "react-icons/ai";
 
 // Components.
-import { Dropdown } from "../../common/dropdown/Dropdown";
+import { Sidebar } from "../../common/sidebar/Sidebar";
 import { ThemeButton } from "../../common/theme-button/ThemeButton";
 import { HamburgerIcon } from "../../common/hamburger-icon/HamburgerIcon";
 
@@ -29,14 +29,16 @@ interface HeaderProps {
 }
 
 const HeaderComponent: FC<HeaderProps> = ({ theme, switchTheme }) => {
-  const [showDropdown, setShowDropdown] = useState<boolean>(false);
+  const sidebarRef = useRef<HTMLDivElement>(null);
 
-  const onClickToggleDropdown = () => {
-    setShowDropdown(!showDropdown);
+  const [showSidebar, setShowSidebar] = useState<boolean>(false);
+
+  const onClickToggleSidebar = () => {
+    setShowSidebar(!showSidebar);
   };
 
-  const onClickHideDropdown = () => {
-    setShowDropdown(false);
+  const onClickHideSidebar = () => {
+    setShowSidebar(false);
   };
 
   const ITEMS: ItemsArrayType[] = [
@@ -104,16 +106,19 @@ const HeaderComponent: FC<HeaderProps> = ({ theme, switchTheme }) => {
         </div>
 
         <div className={`${css_prefix}menu`}>
-          <HamburgerIcon
-            show={showDropdown}
-            onClickToggleMenu={onClickToggleDropdown}
-          />
+          <div ref={sidebarRef}>
+            <HamburgerIcon
+              show={showSidebar}
+              onClickToggleMenu={onClickToggleSidebar}
+            />
+          </div>
 
-          <Dropdown
+          <Sidebar
+            sidebarRef={sidebarRef}
             theme={theme}
             items={ITEMS}
-            onClickHideDropdown={onClickHideDropdown}
-            showDropdown={showDropdown}
+            onClickHideSidebar={onClickHideSidebar}
+            showSidebar={showSidebar}
           />
         </div>
       </div>

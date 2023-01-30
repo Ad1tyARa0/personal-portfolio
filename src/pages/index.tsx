@@ -103,6 +103,13 @@ const Index: React.FC<IndexInterface> = ({ data }) => {
               />
             </div>
           </div>
+
+          <div className={`${css_prefix}tech`}>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ea iste
+            repellendus itaque aut possimus dolorum consectetur, distinctio ad
+            voluptatibus sed blanditiis, corporis culpa aperiam eius. Ut eaque
+            omnis eum accusamus.
+          </div>
         </div>
       </div>
     </PageContainer>
