@@ -16,15 +16,41 @@ $class_css_prefix: ".#{$css_prefix}";
 #{$class_css_prefix}main-light {
   background-color: rgba($color: $accentColor30, $alpha: 0.3);
   border-bottom: 4px solid $accentColor30;
+
+  transition: background-color 200ms ease;
+
+  &:hover {
+    background-color: rgba($color: $accentColor30, $alpha: 1);
+    transition: background-color 200ms ease;
+
+    #{$class_css_prefix}title {
+      color: white;
+    }
+  }
 }
 
 #{$class_css_prefix}main-dark {
   background-color: rgba($color: $accentColor10, $alpha: 0.3);
+  transition: all 200ms ease;
   border-bottom: 4px solid $accentColor10;
+
+  &:hover {
+    transition: all 200ms ease;
+    background-color: rgba($color: $accentColor10, $alpha: 1);
+
+    #{$class_css_prefix}title {
+      color: white;
+    }
+  }
+}
+
+#{$class_css_prefix}main-with-shadow {
+  @include box-shadow-ver2;
 }
 
 #{$class_css_prefix}title {
   margin-top: 3px;
+  font-family: "Plain Ultra Bold";
 }
 
 #{$class_css_prefix}body {

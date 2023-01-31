@@ -12,6 +12,7 @@ interface ButtonProps {
   title: string;
   children?: JSX.Element;
   handleClick: () => void;
+  withShadow?: boolean;
 }
 
 const ButtonComponent: React.FunctionComponent<ButtonProps> = ({
@@ -19,12 +20,13 @@ const ButtonComponent: React.FunctionComponent<ButtonProps> = ({
   title,
   children,
   handleClick,
+  withShadow,
 }) => {
   return (
     <div
       className={`${css_prefix}main ${
         theme === "dark" ? css_prefix + "main-dark" : css_prefix + "main-light"
-      }`}
+      } ${withShadow ? css_prefix + "main-with-shadow" : ""}`}
       onClick={handleClick}
     >
       <div className={`${css_prefix}title`}>{title}</div>
