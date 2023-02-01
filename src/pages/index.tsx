@@ -10,6 +10,7 @@ import "./index.scss";
 import { Button } from "../components/common/button/Button";
 import { ThemeContext } from "../context/ThemeContext";
 import { IoIosArrowUp } from "react-icons/io";
+import { ProfileImage } from "../assets/images";
 
 // Pages -- home
 const css_prefix = "p--h__";
@@ -51,7 +52,7 @@ const Index: React.FC<IndexInterface> = ({ data }) => {
 
         <div className={`${css_prefix}body`}>
           <div className={`${css_prefix}inner-body`}>
-            <Button
+            {/* <Button
               theme={theme}
               title="About Me"
               handleClick={handleClickToggleDescription}
@@ -63,9 +64,9 @@ const Index: React.FC<IndexInterface> = ({ data }) => {
               >
                 <IoIosArrowUp />
               </div>
-            </Button>
+            </Button> */}
 
-            <div
+            {/* <div
               className={`${css_prefix}card ${
                 showDescription
                   ? css_prefix + "card-shown"
@@ -77,7 +78,8 @@ const Index: React.FC<IndexInterface> = ({ data }) => {
                   ? css_prefix + "card-light"
                   : ""
               }`}
-            >
+            > */}
+            <div className={`${css_prefix}card`}>
               <div className={`${css_prefix}description`}>
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem
                 vero vitae unde, ducimus doloremque ipsam totam assumenda
@@ -97,19 +99,19 @@ const Index: React.FC<IndexInterface> = ({ data }) => {
               </div>
 
               <img
-                src="https://picsum.photos/200"
+                src={ProfileImage}
                 alt="pic"
                 className={`${css_prefix}image`}
               />
             </div>
           </div>
 
-          <div className={`${css_prefix}tech`}>
+          {/* <div className={`${css_prefix}tech`}>
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ea iste
             repellendus itaque aut possimus dolorum consectetur, distinctio ad
             voluptatibus sed blanditiis, corporis culpa aperiam eius. Ut eaque
             omnis eum accusamus.
-          </div>
+          </div> */}
         </div>
       </div>
     </PageContainer>

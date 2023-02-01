@@ -42,66 +42,90 @@ $class_css_prefix: ".#{$css_prefix}";
 }
 
 #{$class_css_prefix}body {
-  // @include display-flex-center;
-
   display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  margin: 0 auto;
+  // align-items: flex-start;
+  // justify-content: center;
+  // margin: 0 auto;
   height: 100%;
   flex-direction: column;
-
-  #{$class_css_prefix}card {
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-    max-width: 700px;
-    // padding: 15px 20px;
-    // border-bottom-left-radius: 8px;
-    // border-bottom-right-radius: 8px;
-    // border-top-right-radius: 8px;
-
-    // @include box-shadow-ver1;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-
-    margin-top: -1px;
-    -webkit-transition: max-height 1s;
-    -moz-transition: max-height 1s;
-    -ms-transition: max-height 1s;
-    -o-transition: max-height 1s;
-    transition: max-height 1s;
-    background: inherit;
-    overflow: hidden;
-
-    #{$class_css_prefix}image {
-      aspect-ratio: 1/1;
-      padding: 10px 15px 10px 0;
-    }
-
-    #{$class_css_prefix}description {
-      padding: 10px 15px;
-    }
-  }
-
-  #{$class_css_prefix}card-shown {
-    transition: max-height 500ms ease;
-    max-height: 350px;
-  }
-
-  #{$class_css_prefix}card-hidden {
-    max-height: 0px;
-    transition: max-height 500ms ease;
-    box-shadow: none;
-  }
-
-  #{$class_css_prefix}card-light {
-    border: 1px solid $accentColor30;
-  }
-
-  #{$class_css_prefix}card-dark {
-    border: 1px solid $accentColor10;
-  }
+  align-items: center;
+  justify-content: center;
 }
+
+#{$class_css_prefix}card {
+  display: flex;
+  justify-content: center;
+  // background-color: red;
+  align-items: flex-start;
+  padding: 15px;
+  // border: 1px solid white;
+  // position: relative;
+}
+
+#{$class_css_prefix}description {
+  z-index: 10;
+  font-family: "Light";
+  margin-right: 20px;
+  max-width: 500px;
+}
+
+#{$class_css_prefix}image {
+  // position: absolute;
+  right: -150px;
+  height: 300px;
+  width: 300px;
+}
+
+// #{$class_css_prefix}card {
+//   display: flex;
+//   align-items: flex-start;
+//   justify-content: flex-start;
+//   max-width: 700px;
+//   // padding: 15px 20px;
+//   // border-bottom-left-radius: 8px;
+//   // border-bottom-right-radius: 8px;
+//   // border-top-right-radius: 8px;
+
+//   // @include box-shadow-ver1;
+//   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+
+//   margin-top: -1px;
+//   -webkit-transition: max-height 1s;
+//   -moz-transition: max-height 1s;
+//   -ms-transition: max-height 1s;
+//   -o-transition: max-height 1s;
+//   transition: max-height 1s;
+//   background: inherit;
+//   overflow: hidden;
+
+//   #{$class_css_prefix}image {
+//     aspect-ratio: 1/1;
+//     padding: 10px 15px 10px 0;
+//   }
+
+//   #{$class_css_prefix}description {
+//     padding: 10px 15px;
+//   }
+// }
+
+// #{$class_css_prefix}card-shown {
+//   transition: max-height 500ms ease;
+//   max-height: 350px;
+// }
+
+// #{$class_css_prefix}card-hidden {
+//   max-height: 0px;
+//   transition: max-height 500ms ease;
+//   box-shadow: none;
+// }
+
+// #{$class_css_prefix}card-light {
+//   border: 1px solid $accentColor30;
+// }
+
+// #{$class_css_prefix}card-dark {
+//   border: 1px solid $accentColor10;
+// }
 
 #{$class_css_prefix}tech {
   max-width: 700px;
