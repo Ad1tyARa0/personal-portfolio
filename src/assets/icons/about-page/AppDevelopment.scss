@@ -1,0 +1,20 @@
+@import "src/sass/colors";
+@import "src/sass/variables";
+
+$css_prefix: "a--i--a-d__";
+$class_css_prefix: ".#{$css_prefix}";
+
+#{$class_css_prefix}main {
+}
+
+#{$class_css_prefix}rect {
+  stroke: black;
+  fill: $accentColor10;
+  stroke-width: 3px;
+}
+
+#{$class_css_prefix}rect-dark {
+  stroke: white;
+  fill: $accentColor30;
+  stroke-width: 3px;
+}

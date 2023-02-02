@@ -11,6 +11,8 @@ import { Button } from "../components/common/button/Button";
 import { ThemeContext } from "../context/ThemeContext";
 import { IoIosArrowUp } from "react-icons/io";
 import { ProfileImage } from "../assets/images";
+import { appDevelopmentSvg } from "../assets/svg";
+import { AppDevelopment } from "../assets/icons/about-page/AppDevelopment";
 
 // Pages -- home
 const css_prefix = "p--h__";
@@ -79,6 +81,10 @@ const Index: React.FC<IndexInterface> = ({ data }) => {
                   : ""
               }`}
             > */}
+            <div className={`${css_prefix}card-images`}>
+              <AppDevelopment theme={theme} />
+            </div>
+
             <div className={`${css_prefix}card`}>
               <div className={`${css_prefix}description`}>
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem

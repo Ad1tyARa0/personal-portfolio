@@ -127,8 +127,11 @@ $class_css_prefix: ".#{$css_prefix}";
 //   border: 1px solid $accentColor10;
 // }
 
-#{$class_css_prefix}tech {
-  max-width: 700px;
+#{$class_css_prefix}test {
+  height: 100px;
+  width: 100px;
+  background-color: rgba($color: $accentColor10, $alpha: 0.5);
+  padding: 20px;
 }
 
 @media only screen and (max-width: 1050px) {
