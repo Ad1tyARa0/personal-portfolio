@@ -14,6 +14,7 @@ import { ProfileImage } from "../assets/images";
 import { appDevelopmentSvg } from "../assets/svg";
 import { AppDevelopment } from "../assets/icons/about-page/AppDevelopment";
 import { WebDevelopment } from "../assets/icons/about-page/WebDevelopment";
+import { SiAltiumdesigner } from "react-icons/si";
 
 // Pages -- home
 const css_prefix = "p--h__";
@@ -44,6 +45,30 @@ const Index: React.FC<IndexInterface> = ({ data }) => {
     },
   } = data;
 
+  const MAIN_SKILLS = [
+    {
+      id: 1,
+      icon: <WebDevelopment theme={theme} />,
+      title: "Web Development",
+    },
+
+    {
+      id: 2,
+      icon: <AppDevelopment theme={theme} />,
+      title: "App Development",
+    },
+
+    {
+      id: 3,
+      icon: (
+        <div className={`${css_prefix}temp-icon`}>
+          <SiAltiumdesigner />
+        </div>
+      ),
+      title: "UI / UX",
+    },
+  ];
+
   return (
     <PageContainer>
       <div className={`${css_prefix}main`}>
@@ -55,39 +80,6 @@ const Index: React.FC<IndexInterface> = ({ data }) => {
 
         <div className={`${css_prefix}body`}>
           <div className={`${css_prefix}inner-body`}>
-            {/* <Button
-              theme={theme}
-              title="About Me"
-              handleClick={handleClickToggleDescription}
-            >
-              <div
-                className={`${css_prefix}button ${
-                  showDescription ? css_prefix + "active" : ""
-                }`}
-              >
-                <IoIosArrowUp />
-              </div>
-            </Button> */}
-
-            {/* <div
-              className={`${css_prefix}card ${
-                showDescription
-                  ? css_prefix + "card-shown"
-                  : css_prefix + "card-hidden"
-              } ${
-                theme === "dark"
-                  ? css_prefix + "card-dark"
-                  : theme === "light"
-                  ? css_prefix + "card-light"
-                  : ""
-              }`}
-            > */}
-            <div className={`${css_prefix}card-images`}>
-              <AppDevelopment theme={theme} />
-
-              <WebDevelopment theme={theme} />
-            </div>
-
             <div className={`${css_prefix}card`}>
               <div className={`${css_prefix}description`}>
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem
@@ -113,14 +105,19 @@ const Index: React.FC<IndexInterface> = ({ data }) => {
                 className={`${css_prefix}image`}
               />
             </div>
-          </div>
 
-          {/* <div className={`${css_prefix}tech`}>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ea iste
-            repellendus itaque aut possimus dolorum consectetur, distinctio ad
-            voluptatibus sed blanditiis, corporis culpa aperiam eius. Ut eaque
-            omnis eum accusamus.
-          </div> */}
+            <div className={`${css_prefix}expertise`}>
+              {MAIN_SKILLS.map(e => {
+                return (
+                  <div key={e.id} className={`${css_prefix}item-main`}>
+                    <div className={`${css_prefix}image`}>{e.icon}</div>
+
+                    <div className={`${css_prefix}title`}>{e.title}</div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
         </div>
       </div>
     </PageContainer>

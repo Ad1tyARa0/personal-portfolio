@@ -14,8 +14,8 @@ interface WebDevelopmentProps {
 }
 
 const WebDevelopmentComponent: React.FunctionComponent<WebDevelopmentProps> = ({
-  width = "300px",
-  height = "200px",
+  width = "200px",
+  height = "150px",
   theme,
 }) => {
   return (
