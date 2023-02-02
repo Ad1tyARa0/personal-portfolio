@@ -3,8 +3,8 @@ import React from "react";
 // SCSS.
 import "./AppDevelopment.scss";
 
-// assets -- icons -- app - development
-const css_prefix = "a--i--a-d__";
+// assets -- icons -- about - page -- app - development
+const css_prefix = "a--i--a-p--a-d__";
 
 // Component props.
 interface AppDevelopmentProps {
@@ -48,12 +48,12 @@ const AppDevelopmentComponent: React.FunctionComponent<AppDevelopmentProps> = ({
           />
           <rect
             id="rect2476"
-            width="191.59708"
-            height="404.72534"
-            x="-281.44406"
-            y="-56.010059"
-            ry="37.837067"
-            rx="32.706341"
+            width="185.59708"
+            height="398.72534"
+            x="-278.44406"
+            y="-53.010059"
+            ry="30.837067"
+            rx="30.706341"
             className={`${css_prefix}rect ${
               theme === "dark" ? css_prefix + "rect-dark" : ""
             }`}
@@ -63,7 +63,7 @@ const AppDevelopmentComponent: React.FunctionComponent<AppDevelopmentProps> = ({
             width="60.40205"
             height="17.556526"
             x="-215.84654"
-            y="-49.74379"
+            y="-39.74379"
             ry="8.7782631"
             className={`${css_prefix}rect ${
               theme === "dark" ? css_prefix + "rect-dark" : ""
