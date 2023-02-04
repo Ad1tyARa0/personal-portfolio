@@ -15,6 +15,7 @@ import { appDevelopmentSvg } from "../assets/svg";
 import { AppDevelopment } from "../assets/icons/about-page/AppDevelopment";
 import { WebDevelopment } from "../assets/icons/about-page/WebDevelopment";
 import { SiAltiumdesigner } from "react-icons/si";
+import { UiUx } from "../assets/icons/about-page/UiUx";
 
 // Pages -- home
 const css_prefix = "p--h__";
@@ -60,11 +61,7 @@ const Index: React.FC<IndexInterface> = ({ data }) => {
 
     {
       id: 3,
-      icon: (
-        <div className={`${css_prefix}temp-icon`}>
-          <SiAltiumdesigner />
-        </div>
-      ),
+      icon: <UiUx theme={theme} />,
       title: "UI / UX",
     },
   ];

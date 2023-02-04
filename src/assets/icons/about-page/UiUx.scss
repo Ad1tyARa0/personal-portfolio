@@ -1,0 +1,29 @@
+@import "src/sass/colors";
+@import "src/sass/variables";
+
+$css_prefix: "a--i--a-p--u-u__";
+$class_css_prefix: ".#{$css_prefix}";
+
+#{$class_css_prefix}rect {
+  stroke: $accentColor30;
+  fill: none;
+  stroke-width: 1.5px;
+}
+
+#{$class_css_prefix}rect-dark {
+  stroke: $accentColor10;
+  fill: none;
+  stroke-width: 1.5px;
+}
+
+#{$class_css_prefix}path {
+  stroke: $accentColor30;
+  fill: none;
+  stroke-width: 1.5px;
+}
+
+#{$class_css_prefix}path-dark {
+  stroke: $accentColor10;
+  fill: none;
+  stroke-width: 1.5px;
+}
