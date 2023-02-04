@@ -37,9 +37,9 @@ $class_css_prefix: ".#{$css_prefix}";
   transition: transform 200ms ease;
 }
 
-#{$class_css_prefix}inner-body {
-  min-height: 50%;
-}
+// #{$class_css_prefix}inner-body {
+//   min-height: 50%;
+// }
 
 #{$class_css_prefix}body {
   display: flex;
@@ -78,13 +78,20 @@ $class_css_prefix: ".#{$css_prefix}";
 
   #{$class_css_prefix}item-main {
     min-width: 200px;
-    margin-right: 20px;
+    // margin-right: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 15px;
-    border: 1px solid white;
+    padding: 20px 0;
+    flex: 1;
+    border-left: 1px solid white;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+
+    &:last-of-type {
+      border-right: 1px solid white;
+    }
   }
 
   #{$class_css_prefix}title {
