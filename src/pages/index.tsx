@@ -77,7 +77,11 @@ const Index: React.FC<IndexInterface> = ({ data }) => {
 
         <div className={`${css_prefix}body`}>
           <div className={`${css_prefix}inner-body`}>
-            <div className={`${css_prefix}card`}>
+            <div
+              className={`${css_prefix}card ${
+                theme === "light" ? css_prefix + "card-light" : ""
+              }`}
+            >
               <div className={`${css_prefix}description`}>
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem
                 vero vitae unde, ducimus doloremque ipsam totam assumenda
@@ -106,7 +110,12 @@ const Index: React.FC<IndexInterface> = ({ data }) => {
             <div className={`${css_prefix}expertise`}>
               {MAIN_SKILLS.map(e => {
                 return (
-                  <div key={e.id} className={`${css_prefix}item-main`}>
+                  <div
+                    key={e.id}
+                    className={`${css_prefix}item-main ${
+                      theme === "light" ? css_prefix + "item-main-light" : ""
+                    }`}
+                  >
                     <div className={`${css_prefix}image`}>{e.icon}</div>
 
                     <div className={`${css_prefix}title`}>{e.title}</div>

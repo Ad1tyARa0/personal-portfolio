@@ -20,7 +20,7 @@ $class_css_prefix: ".#{$css_prefix}";
 }
 
 #{$class_css_prefix}role {
-  font-size: 6em;
+  font-size: 5em;
   font-family: "Plain Light";
   transition: font-size 300ms linear;
 }
@@ -37,62 +37,49 @@ $class_css_prefix: ".#{$css_prefix}";
   transition: transform 200ms ease;
 }
 
-// #{$class_css_prefix}inner-body {
-//   min-height: 50%;
-// }
+#{$class_css_prefix}inner-body {
+  padding: 20px 0;
+}
 
 #{$class_css_prefix}body {
   display: flex;
-  height: 100%;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  flex: 1;
 }
 
 #{$class_css_prefix}card {
   display: flex;
   justify-content: center;
-  align-items: flex-start;
-  padding: 15px;
+  border: 1px solid white;
+  border-bottom: none;
 
   #{$class_css_prefix}description {
-    z-index: 10;
     font-family: "Light";
-    margin-right: 20px;
     max-width: 500px;
+    line-height: 1.1em;
+    flex: 1;
+    padding: 15px 0 15px 15px;
+    text-align: right;
   }
 
   #{$class_css_prefix}image {
-    // position: absolute;
-    right: -150px;
     height: 300px;
     width: 300px;
+    padding: 15px;
   }
+}
+
+#{$class_css_prefix}card-light {
+  border: 1px solid black;
+  border-bottom: none;
 }
 
 #{$class_css_prefix}expertise {
   display: flex;
-  padding: 15px;
   align-items: center;
   justify-content: center;
-
-  #{$class_css_prefix}item-main {
-    min-width: 200px;
-    // margin-right: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 20px 0;
-    flex: 1;
-    border-left: 1px solid white;
-    border-top: 1px solid white;
-    border-bottom: 1px solid white;
-
-    &:last-of-type {
-      border-right: 1px solid white;
-    }
-  }
 
   #{$class_css_prefix}title {
     font-size: 1.3em;
@@ -100,10 +87,33 @@ $class_css_prefix: ".#{$css_prefix}";
   }
 }
 
-#{$class_css_prefix}temp-icon {
-  @include display-flex-center;
+#{$class_css_prefix}item-main {
+  min-width: 250px;
+  max-width: 300px;
 
-  font-size: 155px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+  flex: 1;
+  border-left: 1px solid white;
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+
+  &:last-of-type {
+    border-right: 1px solid white;
+  }
+}
+
+#{$class_css_prefix}item-main-light {
+  border-left: 1px solid black;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+
+  &:last-of-type {
+    border-right: 1px solid black;
+  }
 }
 
 @media only screen and (max-width: 1050px) {
