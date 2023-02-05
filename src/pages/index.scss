@@ -38,7 +38,9 @@ $class_css_prefix: ".#{$css_prefix}";
 }
 
 #{$class_css_prefix}inner-body {
-  padding: 20px 0;
+  // padding: 20px 0;
+  @include box-shadow-ver1;
+  margin: 20px 0 50px 0;
 }
 
 #{$class_css_prefix}body {
@@ -83,7 +85,7 @@ $class_css_prefix: ".#{$css_prefix}";
 
   #{$class_css_prefix}title {
     font-size: 1.3em;
-    margin-top: 10px;
+    margin-bottom: 10px;
   }
 }
 

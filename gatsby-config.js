@@ -25,6 +25,7 @@ module.exports = {
           icebreaker: require("./src/schemas/icebreaker.json"),
           employment_history: require("./src/schemas/employment_history.json"),
           new_employment_history: require("./src/schemas/new_employment_history.json"),
+          about: require("./src/schemas/about.json"),
         },
       },
     },

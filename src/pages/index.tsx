@@ -2,49 +2,35 @@ import React, { useState } from "react";
 import { graphql } from "gatsby";
 
 // Components.
-import { Arrow } from "../components/common/arrow/Arrow";
+import { UiUx } from "../assets/icons/about-page/UiUx";
+import { WebDevelopment } from "../assets/icons/about-page/WebDevelopment";
+import { AppDevelopment } from "../assets/icons/about-page/AppDevelopment";
 import { PageContainer } from "./../components/layout/container/PageContainer";
+
+// Types and interfaces.
+import { AboutType } from "../utils/types/about";
+import { ThemeContext } from "../context/ThemeContext";
 
 // SCSS.
 import "./index.scss";
-import { Button } from "../components/common/button/Button";
-import { ThemeContext } from "../context/ThemeContext";
-import { IoIosArrowUp } from "react-icons/io";
-import { ProfileImage } from "../assets/images";
-import { appDevelopmentSvg } from "../assets/svg";
-import { AppDevelopment } from "../assets/icons/about-page/AppDevelopment";
-import { WebDevelopment } from "../assets/icons/about-page/WebDevelopment";
-import { SiAltiumdesigner } from "react-icons/si";
-import { UiUx } from "../assets/icons/about-page/UiUx";
 
 // Pages -- home
 const css_prefix = "p--h__";
 
 interface IndexInterface {
-  data: {
-    site: {
-      siteMetadata: {
-        name: string;
-        role: string;
-      };
-    };
-  };
+  data: AboutType;
 }
 
 const Index: React.FC<IndexInterface> = ({ data }) => {
   const { theme } = React.useContext(ThemeContext);
+
+  const bioData = data.allPrismicAbout.nodes[0].data;
 
   const [showDescription, setShowDescription] = useState<boolean>(true);
 
   const handleClickToggleDescription = () => {
     setShowDescription(!showDescription);
   };
-
-  const {
-    site: {
-      siteMetadata: { name, role },
-    },
-  } = data;
 
   const MAIN_SKILLS = [
     {
@@ -62,7 +48,7 @@ const Index: React.FC<IndexInterface> = ({ data }) => {
     {
       id: 3,
       icon: <UiUx theme={theme} />,
-      title: "UI / UX",
+      title: "UI and UX",
     },
   ];
 
@@ -83,26 +69,12 @@ const Index: React.FC<IndexInterface> = ({ data }) => {
               }`}
             >
               <div className={`${css_prefix}description`}>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem
-                vero vitae unde, ducimus doloremque ipsam totam assumenda
-                consequatur nemo error repellendus cum magni repellat deserunt
-                fugit provident dignissimos animi odit! Lorem ipsum, dolor sit
-                amet consectetur adipisicing elit. Numquam dolores cum expedita
-                saepe culpa laborum nisi quasi perspiciatis ratione amet
-                possimus a enim corporis quidem quaerat nobis commodi, fugiat
-                inventore? Lorem ipsum dolor sit amet consectetur adipisicing
-                elit. Dolorem debitis, temporibus ipsa architecto porro,
-                inventore esse ipsum itaque deserunt consequatur ducimus eum
-                veritatis nihil voluptate alias delectus amet nostrum dicta.
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo
-                non repudiandae facilis placeat optio eos, odio quaerat
-                distinctio aliquid illo illum officia, quod adipisci, hic
-                voluptate saepe esse deleniti. Voluptatibus.
+                {bioData.bio.text}
               </div>
 
               <img
-                src={ProfileImage}
-                alt="pic"
+                src={bioData.profile_picture.url}
+                alt={bioData.profile_picture.alt}
                 className={`${css_prefix}image`}
               />
             </div>
@@ -116,9 +88,9 @@ const Index: React.FC<IndexInterface> = ({ data }) => {
                       theme === "light" ? css_prefix + "item-main-light" : ""
                     }`}
                   >
-                    <div className={`${css_prefix}image`}>{e.icon}</div>
-
                     <div className={`${css_prefix}title`}>{e.title}</div>
+
+                    <div className={`${css_prefix}image`}>{e.icon}</div>
                   </div>
                 );
               })}
@@ -138,6 +110,20 @@ export const query = graphql`
       siteMetadata {
         name
         role
+      }
+    }
+
+    allPrismicAbout {
+      nodes {
+        data {
+          bio {
+            text
+          }
+          profile_picture {
+            alt
+            url
+          }
+        }
       }
     }
   }

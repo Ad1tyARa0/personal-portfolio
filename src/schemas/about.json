@@ -1,0 +1,23 @@
+{
+  "Main": {
+    "bio": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "paragraph",
+        "label": "bio",
+        "placeholder": "Bio"
+      }
+    },
+    "profile_picture": {
+      "type": "Image",
+      "config": {
+        "constraint": {
+          "width": 300,
+          "height": 300
+        },
+        "thumbnails": [],
+        "label": "profile_picture"
+      }
+    }
+  }
+}

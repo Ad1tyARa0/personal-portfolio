@@ -38,7 +38,7 @@ const AppDevelopmentComponent: React.FunctionComponent<AppDevelopmentProps> = ({
           <rect
             id="rect2328"
             width="202.11789"
-            height="400.89801"
+            height="360.89801"
             x="-286.70447"
             y="-62.096394"
             ry="38.975067"
@@ -49,7 +49,7 @@ const AppDevelopmentComponent: React.FunctionComponent<AppDevelopmentProps> = ({
           <rect
             id="rect2476"
             width="185.59708"
-            height="382.72534"
+            height="342.72534"
             x="-278.44406"
             y="-53.010059"
             ry="30.837067"
