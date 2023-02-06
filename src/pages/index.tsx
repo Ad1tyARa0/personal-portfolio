@@ -35,19 +35,19 @@ const Index: React.FC<IndexInterface> = ({ data }) => {
   const MAIN_SKILLS = [
     {
       id: 1,
-      icon: <WebDevelopment theme={theme} />,
+      icon: <WebDevelopment theme={theme} width="180px" height="120px" />,
       title: "Web Development",
     },
 
     {
       id: 2,
-      icon: <AppDevelopment theme={theme} />,
+      icon: <AppDevelopment theme={theme} width="120px" height="120px" />,
       title: "App Development",
     },
 
     {
       id: 3,
-      icon: <UiUx theme={theme} />,
+      icon: <UiUx theme={theme} width="120px" height="120px" />,
       title: "UI and UX",
     },
   ];
