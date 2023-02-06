@@ -11,6 +11,14 @@ import "./index.scss";
 const css_prefix = "p--s__";
 
 const Skills = () => {
+  const SKILLS = [
+    {
+      id: 1,
+      title: "TypeScript",
+      icon: <></>,
+    },
+  ];
+
   return (
     <PageContainer>
       <div className={`${css_prefix}main`}>
