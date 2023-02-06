@@ -17,6 +17,11 @@ $class_css_prefix: ".#{$css_prefix}";
   transition: font-size 300ms linear;
 }
 
+#{$class_css_prefix}image {
+  width: 150px;
+  height: 150px;
+}
+
 @media only screen and (max-width: 650px) {
   #{$class_css_prefix}title {
     font-size: 4em;
