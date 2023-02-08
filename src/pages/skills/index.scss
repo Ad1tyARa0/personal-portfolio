@@ -22,6 +22,12 @@ $class_css_prefix: ".#{$css_prefix}";
   height: 150px;
 }
 
+#{$class_css_prefix}skills-tabs {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
 @media only screen and (max-width: 650px) {
   #{$class_css_prefix}title {
     font-size: 4em;

@@ -1,4 +1,4 @@
-import gatsby from "./gatsby.svg";
+import gatsby from "./gatsby1.svg";
 import github from "./github.svg";
 import apollo from "./apollo.svg";
 import cloudfront from "./aws-cloudfront.svg";
