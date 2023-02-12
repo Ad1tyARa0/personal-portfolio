@@ -89,20 +89,9 @@ const Skills: React.FC<SkillsInterface> = () => {
 
     frameworks_libraries: [
       {
-        title: "React",
+        title: "React & React Native",
         icon: (
           <img src={reactLogo} alt="React" className={`${css_prefix}image`} />
-        ),
-      },
-
-      {
-        title: "React Native",
-        icon: (
-          <img
-            src={reactNativeLogo}
-            alt="React Native"
-            className={`${css_prefix}image`}
-          />
         ),
       },
 

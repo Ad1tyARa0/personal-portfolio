@@ -1,0 +1,39 @@
+{
+  "Main": {
+    "category": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading5",
+        "label": "category",
+        "placeholder": "category"
+      }
+    },
+    "category_items": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "image": {
+            "type": "Image",
+            "config": {
+              "constraint": {
+                "width": 1200,
+                "height": 1200
+              },
+              "thumbnails": [],
+              "label": "image"
+            }
+          },
+          "title": {
+            "type": "StructuredText",
+            "config": {
+              "multi": "paragraph,heading4,heading5",
+              "label": "title",
+              "placeholder": "title"
+            }
+          }
+        },
+        "label": "category_items"
+      }
+    }
+  }
+}

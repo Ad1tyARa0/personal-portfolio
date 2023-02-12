@@ -28,6 +28,37 @@ $class_css_prefix: ".#{$css_prefix}";
   justify-content: space-around;
 }
 
+#{$class_css_prefix}skills-icons {
+  display: flex;
+  margin-top: 20px;
+}
+
+#{$class_css_prefix}skills-icon-item-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 150px;
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+  border-bottom: 1px solid black;
+  padding: 20px;
+
+  &:last-of-type {
+    border-right: 1px solid black;
+  }
+}
+
+#{$class_css_prefix}skills-icon-item-title {
+  @include display-flex-center;
+
+  font-family: "Plain Ultra Bold";
+  font-size: 1.3em;
+  text-align: center;
+  min-height: 50px;
+  margin-bottom: 10px;
+}
+
 @media only screen and (max-width: 650px) {
   #{$class_css_prefix}title {
     font-size: 4em;

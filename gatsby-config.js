@@ -26,6 +26,7 @@ module.exports = {
           employment_history: require("./src/schemas/employment_history.json"),
           new_employment_history: require("./src/schemas/new_employment_history.json"),
           about: require("./src/schemas/about.json"),
+          skills: require("./src/schemas/skills.json"),
         },
       },
     },
