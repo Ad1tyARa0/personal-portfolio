@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { navigate } from "gatsby";
+import { graphql, navigate } from "gatsby";
 
 // Components.
 import { PageContainer } from "../../components/layout/container/PageContainer";
@@ -23,10 +23,16 @@ import { SKILLS_CATEGORY_MAPPING } from "../../utils/constants/skills";
 // Pages -- skills
 const css_prefix = "p--s__";
 
-interface SkillsInterface {}
+interface SkillsInterface {
+  data: any;
+}
 
-const Skills: React.FC<SkillsInterface> = () => {
+const Skills: React.FC<SkillsInterface> = ({ data }) => {
   const { theme } = useContext(ThemeContext);
+
+  const skills = data.allPrismicSkills.nodes;
+
+  console.log(skills);
 
   const [tab, setTab] = useState<string>("programming_languages");
 
@@ -156,3 +162,26 @@ const Skills: React.FC<SkillsInterface> = () => {
 };
 
 export default Skills;
+
+export const query = graphql`
+  {
+    allPrismicSkills {
+      nodes {
+        data {
+          category {
+            text
+          }
+          category_items {
+            image {
+              url
+              alt
+            }
+            title {
+              text
+            }
+          }
+        }
+      }
+    }
+  }
+`;
