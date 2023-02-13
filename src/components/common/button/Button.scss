@@ -6,11 +6,16 @@ $class_css_prefix: ".#{$css_prefix}";
 
 #{$class_css_prefix}main {
   @include select-none;
-  @include display-flex-center;
+  display: flex;
+  align-items: center;
 
   padding: 10px 12px 6px 12px;
   width: fit-content;
   cursor: pointer;
+}
+
+#{$class_css_prefix}max-width {
+  width: 100%;
 }
 
 #{$class_css_prefix}main-light {
@@ -51,6 +56,7 @@ $class_css_prefix: ".#{$css_prefix}";
 #{$class_css_prefix}title {
   margin-top: 3px;
   font-family: "Plain Ultra Bold";
+  flex: 1;
 }
 
 #{$class_css_prefix}body {

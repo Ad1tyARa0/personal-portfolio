@@ -6,19 +6,12 @@ import { PageContainer } from "../../components/layout/container/PageContainer";
 
 // SCSS.
 import "./index.scss";
-import {
-  cssLogo,
-  gatsbyLogo,
-  htmlLogo,
-  javascriptLogo,
-  pyhonLogo,
-  reactLogo,
-  reactNativeLogo,
-  typescriptLogo,
-} from "../../assets/svg";
 import { Button } from "../../components/common/button/Button";
 import { ThemeContext } from "../../context/ThemeContext";
 import { SKILLS_CATEGORY_MAPPING } from "../../utils/constants/skills";
+import { SkillsType } from "../../utils/types/skills";
+
+import { RiArrowRightSLine } from "react-icons/ri";
 
 // Pages -- skills
 const css_prefix = "p--s__";
@@ -30,95 +23,29 @@ interface SkillsInterface {
 const Skills: React.FC<SkillsInterface> = ({ data }) => {
   const { theme } = useContext(ThemeContext);
 
-  const skills = data.allPrismicSkills.nodes;
+  const [dropdown, setDropdown] = useState<string[]>([
+    "programming_languages",
+    "frameworks_libraries",
+  ]);
+
+  const [skills, setSkills] = useState<SkillsType[]>(
+    data.allPrismicSkills.nodes.map((e: any) => {
+      console.log(e.data.category.text);
+      return {
+        ...e.data,
+        id: SKILLS_CATEGORY_MAPPING[e.data.category.text],
+      };
+    })
+  );
 
   console.log(skills);
 
-  const [tab, setTab] = useState<string>("programming_languages");
-
-  interface SkillsItemInterface {
-    title: string;
-    icon: JSX.Element;
-  }
-
-  const handleClickSelectTab = (payload: string) => {
-    setTab(payload);
-  };
-
-  interface SkillsCategoryInterface {
-    [m: string]: SkillsItemInterface[];
-  }
-
-  const SKILLS: SkillsCategoryInterface = {
-    programming_languages: [
-      {
-        title: "TypeScript",
-        icon: (
-          <img
-            src={typescriptLogo}
-            alt="TypeScript"
-            className={`${css_prefix}image`}
-          />
-        ),
-      },
-
-      {
-        title: "JavaScript",
-        icon: (
-          <img
-            src={javascriptLogo}
-            alt="JavaScript"
-            className={`${css_prefix}image`}
-          />
-        ),
-      },
-
-      {
-        title: "HTML",
-        icon: (
-          <img src={htmlLogo} alt="HTML" className={`${css_prefix}image`} />
-        ),
-      },
-
-      {
-        title: "CSS",
-        icon: <img src={cssLogo} alt="CSS" className={`${css_prefix}image`} />,
-      },
-
-      {
-        title: "Python",
-        icon: (
-          <img src={pyhonLogo} alt="Python" className={`${css_prefix}image`} />
-        ),
-      },
-    ],
-
-    frameworks_libraries: [
-      {
-        title: "React & React Native",
-        icon: (
-          <img src={reactLogo} alt="React" className={`${css_prefix}image`} />
-        ),
-      },
-
-      {
-        title: "Gatsby",
-        icon: (
-          <img src={gatsbyLogo} alt="Gatsby" className={`${css_prefix}image`} />
-        ),
-      },
-
-      {
-        title: "NextJS",
-        icon: (
-          <img
-            src={typescriptLogo}
-            alt="NextJS"
-            className={`${css_prefix}image`}
-          />
-        ),
-      },
-    ],
+  const onClickToggleDropdown = (payload: string) => {
+    if (dropdown.includes(payload)) {
+      setDropdown(dropdown.filter(e => e !== payload));
+    } else {
+      setDropdown([...dropdown, payload]);
+    }
   };
 
   return (
@@ -127,34 +54,59 @@ const Skills: React.FC<SkillsInterface> = ({ data }) => {
         <div className={`${css_prefix}title`}>Skills</div>
 
         <div className={`${css_prefix}skills-main`}>
-          <div className={`${css_prefix}skills-tabs`}>
-            {Object.keys(SKILLS).map(e => {
-              return (
-                <Button
-                  key={e}
-                  handleClick={() => handleClickSelectTab(e)}
-                  theme={theme}
-                  title={SKILLS_CATEGORY_MAPPING[e]}
-                />
-              );
-            })}
-          </div>
+          {skills.map(e => {
+            return (
+              <div key={e.category.text}>
+                <div className={`${css_prefix}skills-title`}>
+                  {/* {e.category.text} */}
 
-          <div className={`${css_prefix}skills-icons`}>
-            {SKILLS[tab].map(e => {
-              return (
-                <div className={`${css_prefix}skills-icon-item-main`}>
-                  <div className={`${css_prefix}skills-icon-item-title`}>
-                    {e.title}
-                  </div>
-
-                  <div className={`${css_prefix}skills-icon-item-icon`}>
-                    {e.icon}
-                  </div>
+                  <Button
+                    handleClick={() => onClickToggleDropdown(e.id)}
+                    theme={theme}
+                    title={e.category.text}
+                    maxWidth={true}
+                  >
+                    <div
+                      className={`${css_prefix}skills-title-icon ${
+                        dropdown.includes(e.id)
+                          ? css_prefix + "skills-title-icon-active"
+                          : ""
+                      }`}
+                    >
+                      <RiArrowRightSLine />
+                    </div>
+                  </Button>
                 </div>
-              );
-            })}
-          </div>
+
+                <div
+                  className={`${css_prefix}skills-items ${
+                    dropdown.includes(e.id)
+                      ? css_prefix + "skills-items-shown"
+                      : css_prefix + "skills-items-hidden"
+                  }`}
+                >
+                  {e.category_items.map(c => {
+                    return (
+                      <div
+                        className={`${css_prefix}skills-item-main`}
+                        key={c.image.url}
+                      >
+                        <div className={`${css_prefix}skills-item-title`}>
+                          {c.title.text}
+                        </div>
+
+                        <img
+                          alt={c.image.alt}
+                          src={c.image.url}
+                          className={`${css_prefix}skills-item-icon`}
+                        />
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
     </PageContainer>

@@ -13,6 +13,7 @@ interface ButtonProps {
   children?: JSX.Element;
   handleClick: () => void;
   withShadow?: boolean;
+  maxWidth?: boolean;
 }
 
 const ButtonComponent: React.FunctionComponent<ButtonProps> = ({
@@ -21,12 +22,15 @@ const ButtonComponent: React.FunctionComponent<ButtonProps> = ({
   children,
   handleClick,
   withShadow,
+  maxWidth,
 }) => {
   return (
     <div
       className={`${css_prefix}main ${
         theme === "dark" ? css_prefix + "main-dark" : css_prefix + "main-light"
-      } ${withShadow ? css_prefix + "main-with-shadow" : ""}`}
+      } ${withShadow ? css_prefix + "main-with-shadow" : ""} ${
+        maxWidth ? css_prefix + "max-width" : ""
+      }`}
       onClick={handleClick}
     >
       <div className={`${css_prefix}title`}>{title}</div>
