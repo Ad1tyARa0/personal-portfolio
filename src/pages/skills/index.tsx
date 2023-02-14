@@ -23,30 +23,9 @@ interface SkillsInterface {
 const Skills: React.FC<SkillsInterface> = ({ data }) => {
   const { theme } = useContext(ThemeContext);
 
-  const [dropdown, setDropdown] = useState<string[]>([
-    "programming_languages",
-    "frameworks_libraries",
-  ]);
-
   const [skills, setSkills] = useState<SkillsType[]>(
-    data.allPrismicSkills.nodes.map((e: any) => {
-      console.log(e.data.category.text);
-      return {
-        ...e.data,
-        id: SKILLS_CATEGORY_MAPPING[e.data.category.text],
-      };
-    })
+    data.allPrismicSkills.nodes.map((e: any) => e.data)
   );
-
-  console.log(skills);
-
-  const onClickToggleDropdown = (payload: string) => {
-    if (dropdown.includes(payload)) {
-      setDropdown(dropdown.filter(e => e !== payload));
-    } else {
-      setDropdown([...dropdown, payload]);
-    }
-  };
 
   return (
     <PageContainer>
@@ -58,51 +37,30 @@ const Skills: React.FC<SkillsInterface> = ({ data }) => {
             return (
               <div key={e.category.text}>
                 <div className={`${css_prefix}skills-title`}>
-                  {/* {e.category.text} */}
-
-                  <Button
-                    handleClick={() => onClickToggleDropdown(e.id)}
-                    theme={theme}
-                    title={e.category.text}
-                    maxWidth={true}
-                  >
-                    <div
-                      className={`${css_prefix}skills-title-icon ${
-                        dropdown.includes(e.id)
-                          ? css_prefix + "skills-title-icon-active"
-                          : ""
-                      }`}
-                    >
-                      <RiArrowRightSLine />
-                    </div>
-                  </Button>
+                  {e.category.text}
                 </div>
 
-                <div
-                  className={`${css_prefix}skills-items ${
-                    dropdown.includes(e.id)
-                      ? css_prefix + "skills-items-shown"
-                      : css_prefix + "skills-items-hidden"
-                  }`}
-                >
-                  {e.category_items.map(c => {
-                    return (
-                      <div
-                        className={`${css_prefix}skills-item-main`}
-                        key={c.image.url}
-                      >
-                        <div className={`${css_prefix}skills-item-title`}>
-                          {c.title.text}
-                        </div>
+                <div className={`${css_prefix}skills-items`}>
+                  <div className={`${css_prefix}skills-slider`}>
+                    {e.category_items.map(c => {
+                      return (
+                        <div
+                          className={`${css_prefix}skills-item-main`}
+                          key={c.image.url}
+                        >
+                          <div className={`${css_prefix}skills-item-title`}>
+                            {c.title.text}
+                          </div>
 
-                        <img
-                          alt={c.image.alt}
-                          src={c.image.url}
-                          className={`${css_prefix}skills-item-icon`}
-                        />
-                      </div>
-                    );
-                  })}
+                          <img
+                            alt={c.image.alt}
+                            src={c.image.url}
+                            className={`${css_prefix}skills-item-icon`}
+                          />
+                        </div>
+                      );
+                    })}
+                  </div>
                 </div>
               </div>
             );

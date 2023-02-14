@@ -23,18 +23,43 @@ $class_css_prefix: ".#{$css_prefix}";
 }
 
 #{$class_css_prefix}skills-title {
-  padding-right: 25px;
+  // padding-right: 25px;
+  font-family: "Plain Ultra Bold";
+  font-size: 2.2em;
+  margin-top: 20px;
+}
 
-  &:hover {
-    #{$class_css_prefix}skills-title-icon {
-      color: black;
-    }
+@mixin white-gradient {
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-250px * 8));
   }
 }
 
+$animationSpeed: 10s;
+
 #{$class_css_prefix}skills-items {
   display: flex;
-  flex-wrap: wrap;
+  align-items: center;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+#{$class_css_prefix}skills-slider {
+  animation: scroll $animationSpeed infinite;
+  display: flex;
+
+  // width: calc(250px * 20);
 }
 
 #{$class_css_prefix}skills-item-main {
@@ -43,7 +68,6 @@ $class_css_prefix: ".#{$css_prefix}";
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
   padding: 20px;
 }
 

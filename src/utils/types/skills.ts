@@ -1,5 +1,5 @@
 export type SkillsType = {
-  id: string;
+  id?: string;
 
   category: {
     text: string;
