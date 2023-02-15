@@ -23,35 +23,54 @@ $class_css_prefix: ".#{$css_prefix}";
 }
 
 #{$class_css_prefix}skills-title {
-  // padding-right: 25px;
+  @include select-none;
+
+  margin-top: 20px;
+  display: flex;
+  cursor: pointer;
+}
+
+#{$class_css_prefix}category-text {
   font-family: "Plain Ultra Bold";
   font-size: 2.2em;
-  margin-top: 20px;
+  flex: 1;
 }
 
-@keyframes slide {
-  0% {
-    transform: translate3d(0, 0, 0);
-  }
-  100% {
-    transform: translate3d(-1500px, 0, 0); /* The image width */
-  }
+#{$class_css_prefix}category-button {
+  @include display-flex-center;
+
+  font-size: 2.2em;
+  margin-left: 10px;
+  transition: transform 500ms linear;
+  transform: rotate(0deg);
 }
 
-#{$class_css_prefix}skills-items {
+#{$class_css_prefix}category-button-active {
+  transform: rotate(90deg);
+  transition: transform 500ms linear;
+}
+
+#{$class_css_prefix}skills-items-shown {
   display: flex;
   flex-wrap: wrap;
-  // align-items: center;
-  // background-color: red;
   justify-content: space-around;
+  // overflow: hidden;
+  // transition: transform 0.3s ease-out; // note that we're transitioning transform, not height!
+  // height: auto;
+  // transform: scaleY(1); // implicit, but good to specify explicitly
+  // transform-origin: top; // keep the top of the element in the same place. this is optional.
+}
+
+#{$class_css_prefix}skills-items-hidden {
+  // transform: scaleY(0); // *squish*
+  background-color: red;
+  padding: 20px;
 }
 
 #{$class_css_prefix}skills-item-main {
   display: flex;
   flex-direction: column;
-  // max-width: 180px;
-  // min-width: 180px;
-  margin: 10px 10px 20px 0;
+  margin: 10px 10px 0 0;
   align-items: center;
   justify-content: center;
   flex: 1;
@@ -114,5 +133,10 @@ $class_css_prefix: ".#{$css_prefix}";
 
   #{$class_css_prefix}skills-item-title {
     margin-bottom: 0;
+  }
+
+  #{$class_css_prefix}skills-item-icon {
+    width: 50px;
+    height: 50px;
   }
 }

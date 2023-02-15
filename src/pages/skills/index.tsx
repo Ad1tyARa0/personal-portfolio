@@ -8,7 +8,6 @@ import { PageContainer } from "../../components/layout/container/PageContainer";
 import "./index.scss";
 import { Button } from "../../components/common/button/Button";
 import { ThemeContext } from "../../context/ThemeContext";
-import { SKILLS_CATEGORY_MAPPING } from "../../utils/constants/skills";
 import { SkillsType } from "../../utils/types/skills";
 
 import { RiArrowRightSLine } from "react-icons/ri";
@@ -23,9 +22,21 @@ interface SkillsInterface {
 const Skills: React.FC<SkillsInterface> = ({ data }) => {
   const { theme } = useContext(ThemeContext);
 
+  const [toggleDropdown, setToggleDropdown] = useState<number[]>([0, 1]);
+
   const [skills, setSkills] = useState<SkillsType[]>(
     data.allPrismicSkills.nodes.map((e: any) => e.data)
   );
+
+  const handleClickToggleDropdown = (payload: number) => {
+    if (toggleDropdown.includes(payload)) {
+      setToggleDropdown(toggleDropdown.filter(e => e !== payload));
+    } else {
+      setToggleDropdown([...toggleDropdown, payload]);
+    }
+  };
+
+  console.log(toggleDropdown);
 
   return (
     <PageContainer>
@@ -33,14 +44,35 @@ const Skills: React.FC<SkillsInterface> = ({ data }) => {
         <div className={`${css_prefix}title`}>Skills</div>
 
         <div className={`${css_prefix}skills-main`}>
-          {skills.map(e => {
+          {skills.map((e, idx) => {
             return (
               <div key={e.category.text}>
-                <div className={`${css_prefix}skills-title`}>
-                  {e.category.text}
+                <div
+                  className={`${css_prefix}skills-title`}
+                  onClick={() => handleClickToggleDropdown(idx)}
+                >
+                  <div className={`${css_prefix}category-text`}>
+                    {e.category.text}
+                  </div>
+
+                  <div
+                    className={`${css_prefix}category-button ${
+                      toggleDropdown.includes(idx)
+                        ? css_prefix + "category-button-active"
+                        : ""
+                    }`}
+                  >
+                    <RiArrowRightSLine />
+                  </div>
                 </div>
 
-                <div className={`${css_prefix}skills-items`}>
+                <div
+                  className={`${css_prefix}skills-items-hidden ${
+                    toggleDropdown.includes(idx)
+                      ? css_prefix + "skills-items-shown"
+                      : ""
+                  }`}
+                >
                   {e.category_items.map(c => {
                     return (
                       <div
