@@ -41,26 +41,24 @@ const Skills: React.FC<SkillsInterface> = ({ data }) => {
                 </div>
 
                 <div className={`${css_prefix}skills-items`}>
-                  <div className={`${css_prefix}skills-slider`}>
-                    {e.category_items.map(c => {
-                      return (
-                        <div
-                          className={`${css_prefix}skills-item-main`}
-                          key={c.image.url}
-                        >
-                          <div className={`${css_prefix}skills-item-title`}>
-                            {c.title.text}
-                          </div>
-
-                          <img
-                            alt={c.image.alt}
-                            src={c.image.url}
-                            className={`${css_prefix}skills-item-icon`}
-                          />
+                  {e.category_items.map(c => {
+                    return (
+                      <div
+                        className={`${css_prefix}skills-item-main`}
+                        key={c.image.url}
+                      >
+                        <div className={`${css_prefix}skills-item-title`}>
+                          {c.title.text}
                         </div>
-                      );
-                    })}
-                  </div>
+
+                        <img
+                          alt={c.image.alt}
+                          src={c.image.url}
+                          className={`${css_prefix}skills-item-icon`}
+                        />
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
             );
