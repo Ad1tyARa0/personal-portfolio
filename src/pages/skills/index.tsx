@@ -36,7 +36,7 @@ const Skills: React.FC<SkillsInterface> = ({ data }) => {
     }
   };
 
-  console.log(toggleDropdown);
+  console.log(skills);
 
   return (
     <PageContainer>

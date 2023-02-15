@@ -17,11 +17,6 @@ $class_css_prefix: ".#{$css_prefix}";
   transition: font-size 300ms linear;
 }
 
-#{$class_css_prefix}image {
-  width: 150px;
-  height: 150px;
-}
-
 #{$class_css_prefix}skills-title {
   @include select-none;
 
@@ -54,17 +49,19 @@ $class_css_prefix: ".#{$css_prefix}";
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  // overflow: hidden;
-  // transition: transform 0.3s ease-out; // note that we're transitioning transform, not height!
   // height: auto;
-  // transform: scaleY(1); // implicit, but good to specify explicitly
-  // transform-origin: top; // keep the top of the element in the same place. this is optional.
+  min-height: 200px;
+  // padding: 20px;
+  transition: min-height 300ms;
 }
 
 #{$class_css_prefix}skills-items-hidden {
-  // transform: scaleY(0); // *squish*
-  background-color: red;
-  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 300ms;
 }
 
 #{$class_css_prefix}skills-item-main {
@@ -105,17 +102,6 @@ $class_css_prefix: ".#{$css_prefix}";
   height: 100px;
 }
 
-#{$class_css_prefix}skills-items-shown {
-  height: 100%;
-  transition: height 500ms linear;
-}
-
-#{$class_css_prefix}skills-items-hidden {
-  height: 0;
-  overflow: hidden;
-  transition: height 500ms linear;
-}
-
 @media only screen and (max-width: 650px) {
   #{$class_css_prefix}title {
     font-size: 4em;
@@ -128,6 +114,7 @@ $class_css_prefix: ".#{$css_prefix}";
     justify-content: space-between;
     align-items: center;
     margin-right: 0;
+    margin-bottom: 10px;
     min-width: 320px;
   }
 
