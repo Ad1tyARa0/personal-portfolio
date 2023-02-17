@@ -49,10 +49,7 @@ $class_css_prefix: ".#{$css_prefix}";
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  // height: auto;
-  min-height: 200px;
-  // padding: 20px;
-  transition: min-height 300ms;
+  max-height: 200px;
 }
 
 #{$class_css_prefix}skills-items-hidden {
@@ -61,7 +58,11 @@ $class_css_prefix: ".#{$css_prefix}";
   justify-content: space-around;
   max-height: 0;
   overflow: hidden;
-  transition: max-height 300ms;
+
+  /* Set our transitions up. */
+  -webkit-transition: max-height 0.8s;
+  -moz-transition: max-height 0.8s;
+  transition: max-height 0.8s;
 }
 
 #{$class_css_prefix}skills-item-main {
