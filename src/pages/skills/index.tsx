@@ -22,19 +22,9 @@ interface SkillsInterface {
 const Skills: React.FC<SkillsInterface> = ({ data }) => {
   const { theme } = useContext(ThemeContext);
 
-  const [toggleDropdown, setToggleDropdown] = useState<number[]>([0, 1]);
-
   const [skills, setSkills] = useState<SkillsType[]>(
     data.allPrismicSkills.nodes.map((e: any) => e.data)
   );
-
-  const handleClickToggleDropdown = (payload: number) => {
-    if (toggleDropdown.includes(payload)) {
-      setToggleDropdown(toggleDropdown.filter(e => e !== payload));
-    } else {
-      setToggleDropdown([...toggleDropdown, payload]);
-    }
-  };
 
   console.log(skills);
 
@@ -44,50 +34,32 @@ const Skills: React.FC<SkillsInterface> = ({ data }) => {
         <div className={`${css_prefix}title`}>Skills</div>
 
         <div className={`${css_prefix}skills-main`}>
-          {skills.map((e, idx) => {
+          {skills.map(e => {
             return (
-              <div key={e.category.text}>
-                <div
-                  className={`${css_prefix}skills-title`}
-                  onClick={() => handleClickToggleDropdown(idx)}
-                >
-                  <div className={`${css_prefix}category-text`}>
-                    {e.category.text}
-                  </div>
-
-                  <div
-                    className={`${css_prefix}category-button ${
-                      toggleDropdown.includes(idx)
-                        ? css_prefix + "category-button-active"
-                        : ""
-                    }`}
-                  >
-                    <RiArrowRightSLine />
-                  </div>
+              <div
+                key={e.category.text}
+                className={`${css_prefix}skills-inner-main`}
+              >
+                <div className={`${css_prefix}category-text`}>
+                  {e.category.text}
                 </div>
 
-                <div
-                  className={`${css_prefix}skills-items-hidden ${
-                    toggleDropdown.includes(idx)
-                      ? css_prefix + "skills-items-shown"
-                      : ""
-                  }`}
-                >
+                <div className={`${css_prefix}items-main`}>
                   {e.category_items.map(c => {
                     return (
                       <div
                         className={`${css_prefix}skills-item-main`}
                         key={c.image.url}
                       >
-                        <div className={`${css_prefix}skills-item-title`}>
-                          {c.title.text}
-                        </div>
-
                         <img
                           alt={c.image.alt}
                           src={c.image.url}
                           className={`${css_prefix}skills-item-icon`}
                         />
+
+                        <div className={`${css_prefix}skills-item-title`}>
+                          {c.title.text}
+                        </div>
                       </div>
                     );
                   })}
