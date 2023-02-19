@@ -33,7 +33,7 @@ const Skills: React.FC<SkillsInterface> = ({ data }) => {
       <div className={`${css_prefix}main`}>
         <div className={`${css_prefix}title`}>Skills</div>
 
-        <div className={`${css_prefix}skills-main`}>
+        <div>
           {skills.map(e => {
             return (
               <div
