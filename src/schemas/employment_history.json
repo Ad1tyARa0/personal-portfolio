@@ -1,88 +1,106 @@
 {
   "Main": {
-    "employment_item": {
+    "company_name": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "paragraph",
+        "label": "company_name",
+        "placeholder": "Company Name"
+      }
+    },
+    "company_description": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "paragraph",
+        "label": "company_description",
+        "placeholder": "Company Description"
+      }
+    },
+    "company_logo": {
+      "type": "Image",
+      "config": {
+        "constraint": {
+          "width": 1200,
+          "height": 1200
+        },
+        "thumbnails": [],
+        "label": "company_logo"
+      }
+    },
+    "timestamp": {
+      "type": "Timestamp",
+      "config": {
+        "label": "timestamp",
+        "placeholder": "timestamp"
+      }
+    },
+    "location": {
+      "type": "GeoPoint",
+      "config": {
+        "label": "location"
+      }
+    },
+    "technologies": {
       "type": "Group",
       "config": {
         "fields": {
-          "company_name": {
-            "type": "StructuredText",
-            "config": {
-              "single": "heading5,heading6",
-              "label": "Company Name",
-              "placeholder": "Company Name"
-            }
-          },
-          "company_description": {
-            "type": "StructuredText",
-            "config": {
-              "multi": "paragraph",
-              "label": "Company Description",
-              "placeholder": "Company Description"
-            }
-          },
-          "company_logo": {
+          "technology_image": {
             "type": "Image",
             "config": {
               "constraint": {
-                "width": 400,
-                "height": 400
+                "width": 1200,
+                "height": 1200
               },
               "thumbnails": [],
-              "label": "Company Logo"
+              "label": "technology_image"
             }
           },
-          "timestamp": {
-            "type": "Timestamp",
-            "config": {
-              "label": "Timestamp",
-              "placeholder": "Timestamp"
-            }
-          },
-          "location": {
-            "type": "GeoPoint",
-            "config": {
-              "label": "Location"
-            }
-          },
-          "technologies_used": {
+          "technology_title": {
             "type": "StructuredText",
             "config": {
-              "multi": "o-list-item",
-              "label": "Technologies Used",
-              "placeholder": "Technologies Used"
-            }
-          },
-          "core_responsibilities": {
-            "type": "StructuredText",
-            "config": {
-              "multi": "list-item",
-              "label": "Core Responsibilities",
-              "placeholder": "Core Responsibilities"
-            }
-          },
-          "is_current": {
-            "type": "Boolean",
-            "config": {
-              "default_value": false,
-              "label": "Is Current"
-            }
-          },
-          "to_date": {
-            "type": "Date",
-            "config": {
-              "label": "To Date",
-              "placeholder": "To"
-            }
-          },
-          "from_date": {
-            "type": "Date",
-            "config": {
-              "label": "From Date",
-              "placeholder": "From"
+              "multi": "paragraph",
+              "label": "technology_title",
+              "placeholder": "Technology Title"
             }
           }
         },
-        "label": "employment_item"
+        "label": "technologies"
+      }
+    },
+    "responsibilities": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "responsibility_text": {
+            "type": "StructuredText",
+            "config": {
+              "multi": "paragraph",
+              "label": "responsibility_text"
+            }
+          }
+        },
+        "label": "responsibilities"
+      }
+    },
+    "is_current": {
+      "type": "Boolean",
+      "config": {
+        "default_value": false,
+        "label": "is_current"
+      }
+    },
+    "from_date": {
+      "type": "Date",
+      "config": {
+        "label": "from_date",
+        "placeholder": "From Date"
+      }
+    },
+    "to_date": {
+      "type": "Date",
+      "config": {
+        "label": "to_date",
+        "placeholder": "To Date"
       }
     }
   }
