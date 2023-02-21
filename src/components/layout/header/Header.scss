@@ -104,6 +104,7 @@ $class_css_prefix: ".#{$css_prefix}";
 
 #{$class_css_prefix}menu {
   display: none;
+  margin-left: auto;
 }
 
 @keyframes fadeInLeft {

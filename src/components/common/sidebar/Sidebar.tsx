@@ -28,7 +28,7 @@ const SidebarComponent: React.FunctionComponent<SidebarProps> = ({
   items,
   sidebarRef,
 }) => {
-  useOnClickOutside(sidebarRef, onClickHideSidebar);
+  // useOnClickOutside(sidebarRef, onClickHideSidebar);
 
   return (
     <div
