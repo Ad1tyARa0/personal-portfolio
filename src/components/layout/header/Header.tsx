@@ -18,6 +18,7 @@ import "./Header.scss";
 import { ItemsArrayType } from "../../../utils/types/common";
 import { navigate } from "gatsby";
 import { BsArrowRightCircle } from "react-icons/bs";
+import { Button } from "../../common/button/Button";
 
 // Components -- layout -- header
 const css_prefix = "c--l--h__";
@@ -103,6 +104,10 @@ const HeaderComponent: FC<HeaderProps> = ({ theme, switchTheme }) => {
               </div>
             );
           })}
+        </div>
+
+        <div className={`${css_prefix}resume-button`}>
+          <Button handleClick={console.log} theme={theme} title="Resume" />
         </div>
 
         <div className={`${css_prefix}menu`}>

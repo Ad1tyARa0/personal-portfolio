@@ -5,7 +5,7 @@ $css_prefix: "c--l--h__";
 $class_css_prefix: ".#{$css_prefix}";
 
 #{$class_css_prefix}main {
-  padding: 5px 20px;
+  padding: 10px 20px;
   position: sticky;
   top: 0;
   z-index: 10;
@@ -16,7 +16,7 @@ $class_css_prefix: ".#{$css_prefix}";
 #{$class_css_prefix}inner-main {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
 }
 
 #{$class_css_prefix}main-dark {
@@ -74,6 +74,11 @@ $class_css_prefix: ".#{$css_prefix}";
 
 #{$class_css_prefix}links {
   display: flex;
+  margin-left: auto;
+}
+
+#{$class_css_prefix}resume-button {
+  margin-left: 20px;
 }
 
 #{$class_css_prefix}link-item {
@@ -82,12 +87,13 @@ $class_css_prefix: ".#{$css_prefix}";
   margin-left: 20px;
   margin-top: 5px;
   display: flex;
+  font-size: 1.6em;
   align-items: center;
   cursor: pointer;
 }
 
 #{$class_css_prefix}link-item-title {
-  font-family: "Regular";
+  font-family: "Light Italic";
   transition: color 200ms ease;
 
   &:hover {
@@ -117,6 +123,10 @@ $class_css_prefix: ".#{$css_prefix}";
   }
 
   #{$class_css_prefix}links {
+    display: none;
+  }
+
+  #{$class_css_prefix}resume-button {
     display: none;
   }
 }
