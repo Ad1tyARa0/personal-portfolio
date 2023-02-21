@@ -23,6 +23,7 @@ export const RESUME: ResumeType = {
         "Working with designers and product managers to understand requirements.",
         "Performs code review of other team members’ work and recommends changes to improve code quality.",
       ],
+      designation: "Front-End Software Engineer",
     },
 
     {
@@ -36,6 +37,7 @@ export const RESUME: ResumeType = {
         "Developed and maintained multiple features and pages",
         "Experience with writing clean and well-documented functional TypeScript",
       ],
+      designation: "Software Engineer",
     },
 
     {
@@ -48,6 +50,7 @@ export const RESUME: ResumeType = {
         "Developed a chatbot powered by IBM Watson that was able to understand customer queries and perform certain tasks based on a rule",
         "Experience with PowerShell, Citrix, and Active Directory",
       ],
+      designation: "System Engineer",
     },
   ],
 

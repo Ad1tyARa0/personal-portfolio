@@ -22,6 +22,7 @@ type ResumeExperienceType = {
   endDate: string;
   location: string;
   responsibilities: string[];
+  designation: string;
 };
 
 type ResumeSkillsType = {
