@@ -2,8 +2,6 @@ import React, { FC } from "react";
 
 // Components.
 import { PageContainer } from "../../components/layout/container/PageContainer";
-import { Resume } from "../../components/resume/Resume";
-import { RESUME } from "../../utils/constants/resume";
 
 // SCSS.
 import "./index.scss";
@@ -18,8 +16,6 @@ const Work: FC<WorkInterface> = () => {
     <PageContainer>
       <div className={`${css_prefix}main`}>
         <div className={`${css_prefix}title`}>Work</div>
-
-        <Resume payload={RESUME} />
       </div>
     </PageContainer>
   );

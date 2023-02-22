@@ -118,7 +118,7 @@ $class_css_prefix: ".#{$css_prefix}";
   }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 800px) {
   #{$class_css_prefix}menu {
     display: flex;
   }

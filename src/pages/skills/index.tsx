@@ -38,7 +38,7 @@ const Skills: React.FC<SkillsInterface> = ({ data }) => {
             return (
               <div
                 key={e.category.text}
-                className={`${css_prefix}skills-inner-main`}
+                className={`${css_prefix}skills-inner-main `}
               >
                 <div className={`${css_prefix}category-text`}>
                   {e.category.text}
