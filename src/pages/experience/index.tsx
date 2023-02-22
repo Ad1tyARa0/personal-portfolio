@@ -24,7 +24,9 @@ const Experience: React.FC<ExperienceProps> = ({ data }) => {
   const { theme } = React.useContext(ThemeContext);
 
   let employmentItems: EmploymentHistoryType[] =
-    data.allPrismicNewEmploymentHistory.nodes[0].data.employment_item;
+    data.allPrismicNewEmploymentHistory.nodes.map((e: any) => e.data);
+
+  console.log(employmentItems);
 
   return (
     <PageContainer>
@@ -48,35 +50,45 @@ const Experience: React.FC<ExperienceProps> = ({ data }) => {
 export default Experience;
 
 export const query = graphql`
-  query EmpHistory {
+  query MyQuery {
     allPrismicNewEmploymentHistory {
       nodes {
         data {
-          employment_item {
-            company_name {
-              text
-            }
-            company_description {
-              text
-            }
-            company_logo {
-              url
-            }
-            location {
-              longitude
-              latitude
-            }
-            technologies_used {
-              text
-            }
-            core_responsibilities {
-              text
-            }
-            from_date
-            to_date
-            is_current
-            timestamp
+          company_name {
+            text
           }
+          company_description {
+            text
+          }
+          company_logo {
+            alt
+            url
+          }
+          designation {
+            text
+          }
+          from_date
+          is_current
+          location {
+            latitude
+            longitude
+          }
+          responsibilities {
+            responsibility_text {
+              text
+            }
+          }
+          technologies {
+            technology_title {
+              text
+            }
+            technology_image {
+              url
+              alt
+            }
+          }
+          timestamp
+          to_date
         }
       }
     }

@@ -8,10 +8,7 @@ import {
 } from "react-icons/ai";
 import { VscGithubAlt } from "react-icons/vsc";
 // SCSS.
-import "./Resume.scss";
-
-// Components -- Resume
-const css_prefix = "c--r__";
+import "./Resume.css";
 
 // Component props.
 interface ResumeProps {
@@ -20,62 +17,50 @@ interface ResumeProps {
 
 const ResumeComponent: React.FunctionComponent<ResumeProps> = ({ payload }) => {
   return (
-    <div className={`${css_prefix}main`}>
-      <div className={`${css_prefix}basic-details`}>
-        <div className={`${css_prefix}name`}>{payload.basicDetails.name}</div>
-        <div className={`${css_prefix}designation`}>
-          {payload.basicDetails.title}
-        </div>
+    <div className="main">
+      <div className="basic-details">
+        <div className="name">{payload.basicDetails.name}</div>
+        <div className="designation">{payload.basicDetails.title}</div>
 
-        <div className={`${css_prefix}useful-links`}>
-          <div className={`${css_prefix}link-item`}>
-            <div className={`${css_prefix}link-icon`}>
+        <div className="useful-links">
+          <div className="link-item">
+            <div className="link-icon">
               <AiOutlineMail />
             </div>
 
-            <div className={`${css_prefix}link-text`}>
-              {payload.basicDetails.email}
-            </div>
+            <div className="link-text">{payload.basicDetails.email}</div>
           </div>
 
-          <div className={`${css_prefix}link-item`}>
-            <div className={`${css_prefix}link-icon`}>
+          <div className="link-item">
+            <div className="link-icon">
               <AiOutlinePhone />
             </div>
 
-            <div className={`${css_prefix}link-text`}>
-              {payload.basicDetails.phone}
-            </div>
+            <div className="link-text">{payload.basicDetails.phone}</div>
           </div>
 
-          <div className={`${css_prefix}link-item`}>
-            <div className={`${css_prefix}link-icon`}>
+          <div className="link-item">
+            <div className="link-icon">
               <AiOutlineHome />
             </div>
 
-            <div className={`${css_prefix}link-text`}>
-              {payload.basicDetails.website}
-            </div>
+            <div className="link-text">{payload.basicDetails.website}</div>
           </div>
 
-          <div className={`${css_prefix}link-item`}>
-            <div className={`${css_prefix}link-icon`}>
+          <div className="link-item">
+            <div className="link-icon">
               <VscGithubAlt />
             </div>
 
-            <div className={`${css_prefix}link-text`}>
-              {payload.basicDetails.github}
-            </div>
+            <div className="link-text">{payload.basicDetails.github}</div>
           </div>
 
-          <div className={`${css_prefix}link-item`}>
-            <div className={`${css_prefix}link-icon`}>
+          <div className="link-item">
+            <div className="link-icon">
               <AiFillLinkedin />
             </div>
 
-            <div className={`${css_prefix}link-text`}>
-              {payload.basicDetails.linkedIn}
-            </div>
+            <div className="link-text">{payload.basicDetails.linkedIn}</div>
           </div>
         </div>
       </div>

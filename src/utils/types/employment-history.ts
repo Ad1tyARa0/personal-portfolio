@@ -2,28 +2,40 @@ export type EmploymentHistoryType = {
   company_description: {
     text: string;
   };
-
   company_logo: {
+    alt: string;
     url: string;
   };
-
   company_name: {
     text: string;
   };
-
-  core_responsibilities: {
+  designation: {
     text: string;
   };
-
+  responsibilities: EmploymentResponsibilityType[];
+  technologies: EmploymnetTechnologyType[];
   from_date: string;
   to_date: string;
-  timestamp: string;
   is_current: boolean;
   location: {
     longitude: number;
     latitude: number;
   };
-  technologies_used: {
+  timestamp: string;
+};
+
+type EmploymentResponsibilityType = {
+  responsibility_text: {
     text: string;
+  };
+};
+
+type EmploymnetTechnologyType = {
+  technology_title: {
+    text: string;
+  };
+  technology_image: {
+    url: string;
+    alt: string;
   };
 };
