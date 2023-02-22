@@ -19,6 +19,66 @@ $class_css_prefix: ".#{$css_prefix}";
   transition: font-size 300ms linear;
 }
 
+#{$class_css_prefix}employment-main {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#{$class_css_prefix}employment-item-main {
+  @include box-shadow-ver2;
+
+  padding: 20px;
+  border: 1px solid black;
+  margin: 25px 25px 0 0;
+  flex: 1;
+  min-width: 500px;
+}
+
+#{$class_css_prefix}heading-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+#{$class_css_prefix}company-logo {
+  @include display-flex-center;
+  padding: 5px;
+  margin-left: 20px;
+}
+
+#{$class_css_prefix}logo {
+  height: 40px;
+  width: fit-content;
+  filter: grayscale(100%);
+}
+
+#{$class_css_prefix}company-name {
+  font-size: 3em;
+  font-family: "Plain Ultra Bold";
+}
+
+#{$class_css_prefix}designation {
+  font-size: 2em;
+  // background-color: red;
+  flex: 1;
+}
+
+#{$class_css_prefix}designation-container {
+  display: flex;
+  align-items: baseline;
+}
+
+#{$class_css_prefix}date-container {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+}
+
+#{$class_css_prefix}hypen {
+  margin-inline: 5px;
+}
+
 @media only screen and (max-width: 850px) {
   #{$class_css_prefix}title {
     font-size: 6em;

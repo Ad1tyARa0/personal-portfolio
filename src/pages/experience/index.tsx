@@ -1,5 +1,6 @@
 import React from "react";
 import { graphql } from "gatsby";
+import { DateTime } from "luxon";
 
 // Components.
 import { PageContainer } from "../../components/layout/container/PageContainer";
@@ -26,18 +27,53 @@ const Experience: React.FC<ExperienceProps> = ({ data }) => {
   let employmentItems: EmploymentHistoryType[] =
     data.allPrismicNewEmploymentHistory.nodes.map((e: any) => e.data);
 
-  console.log(employmentItems);
-
   return (
     <PageContainer>
       <div className={`${css_prefix}main`}>
         <div className={`${css_prefix}title`}>Experience</div>
 
-        <div>
+        <div className={`${css_prefix}employment-main`}>
           {employmentItems.map((e, idx) => {
             return (
-              <div key={idx}>
-                <div>{e.company_name.text}</div>
+              <div key={idx} className={`${css_prefix}employment-item-main`}>
+                <div className={`${css_prefix}heading-container`}>
+                  <div className={`${css_prefix}company-name`}>
+                    {e.company_name.text}
+                  </div>
+
+                  <div className={`${css_prefix}company-logo`}>
+                    <img
+                      src={e.company_logo.url}
+                      alt={e.company_logo.alt}
+                      className={`${css_prefix}logo`}
+                    />
+                  </div>
+                </div>
+
+                <div className={`${css_prefix}designation-container`}>
+                  <div className={`${css_prefix}designation`}>
+                    {e.designation.text}
+                  </div>
+                  <div className={`${css_prefix}date-container`}>
+                    (
+                    <div>
+                      {DateTime.fromJSDate(
+                        new Date(e.from_date)
+                      ).toLocaleString(DateTime.DATE_MED)}
+                    </div>
+                    <div className={`${css_prefix}hypen`}>-</div>
+                    {e.is_current ? (
+                      <div>Current</div>
+                    ) : (
+                      <div>
+                        {DateTime.fromJSDate(
+                          new Date(e.to_date)
+                        ).toLocaleString(DateTime.DATE_MED)}
+                      </div>
+                    )}
+                  </div>
+                  )
+                </div>
               </div>
             );
           })}
