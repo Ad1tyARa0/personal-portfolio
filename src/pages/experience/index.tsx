@@ -38,23 +38,10 @@ const Experience: React.FC<ExperienceProps> = ({ data }) => {
             return (
               <div key={idx} className={`${css_prefix}employment-item-main`}>
                 <div className={`${css_prefix}heading-container`}>
-                  <div className={`${css_prefix}company-name`}>
-                    {e.company_name.text}
-                  </div>
-
-                  <div className={`${css_prefix}company-logo`}>
-                    <img
-                      src={e.company_logo.url}
-                      alt={e.company_logo.alt}
-                      className={`${css_prefix}logo`}
-                    />
-                  </div>
-                </div>
-
-                <div className={`${css_prefix}designation-container`}>
                   <div className={`${css_prefix}designation`}>
                     {e.designation.text}
                   </div>
+
                   <div className={`${css_prefix}date-container`}>
                     (
                     <div>
@@ -72,8 +59,21 @@ const Experience: React.FC<ExperienceProps> = ({ data }) => {
                         ).toLocaleString(DateTime.DATE_MED)}
                       </div>
                     )}
+                    )
                   </div>
-                  )
+                </div>
+
+                <div className={`${css_prefix}designation-container`}>
+                  <div className={`${css_prefix}company-name`}>
+                    {e.company_name.text}
+                  </div>
+                  <div className={`${css_prefix}company-logo`}>
+                    <img
+                      src={e.company_logo.url}
+                      alt={e.company_logo.alt}
+                      className={`${css_prefix}logo`}
+                    />
+                  </div>
                 </div>
               </div>
             );
