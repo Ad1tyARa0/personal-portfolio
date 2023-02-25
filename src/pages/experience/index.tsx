@@ -1,7 +1,7 @@
 import React from "react";
 import { graphql } from "gatsby";
 import { DateTime } from "luxon";
-
+import { IoMdArrowDropright } from "react-icons/io";
 // Components.
 import { PageContainer } from "../../components/layout/container/PageContainer";
 
@@ -63,7 +63,7 @@ const Experience: React.FC<ExperienceProps> = ({ data }) => {
                   </div>
                 </div>
 
-                <div className={`${css_prefix}designation-container`}>
+                <div className={`${css_prefix}container`}>
                   <div className={`${css_prefix}company-name`}>
                     {e.company_name.text}
                   </div>
@@ -74,6 +74,41 @@ const Experience: React.FC<ExperienceProps> = ({ data }) => {
                       className={`${css_prefix}logo`}
                     />
                   </div>
+                </div>
+
+                <div className={`${css_prefix}container`}>
+                  {e.technologies.map(e => {
+                    return (
+                      <div
+                        key={e.technology_image.url}
+                        className={`${css_prefix}container`}
+                      >
+                        <img
+                          src={e.technology_image.url}
+                          alt={e.technology_image.alt}
+                          className={`${css_prefix}image`}
+                        />
+                      </div>
+                    );
+                  })}
+                </div>
+
+                <div>
+                  {e.responsibilities.map(e => {
+                    return (
+                      <div
+                        key={e.responsibility_text.text}
+                        className={`${css_prefix}role`}
+                      >
+                        <div className={`${css_prefix}role-icon`}>
+                          <IoMdArrowDropright />
+                        </div>
+                        <div className={`${css_prefix}role-text`}>
+                          {e.responsibility_text.text}
+                        </div>
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
             );

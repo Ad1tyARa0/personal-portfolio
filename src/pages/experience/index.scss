@@ -65,7 +65,7 @@ $class_css_prefix: ".#{$css_prefix}";
   flex: 1;
 }
 
-#{$class_css_prefix}designation-container {
+#{$class_css_prefix}container {
   display: flex;
   align-items: baseline;
 }
@@ -74,6 +74,25 @@ $class_css_prefix: ".#{$css_prefix}";
   display: flex;
   align-items: center;
   margin-left: 10px;
+}
+
+#{$class_css_prefix}image {
+  width: 25px;
+  height: 25px;
+  margin: 5px 5px 20px 0;
+  filter: grayscale(100%);
+}
+
+#{$class_css_prefix}role {
+  margin-top: 10px;
+  display: flex;
+  line-height: 1.5em;
+  align-items: flex-start;
+}
+
+#{$class_css_prefix}role-icon {
+  @include display-flex-center;
+  margin-top: 3px;
 }
 
 #{$class_css_prefix}hypen {
