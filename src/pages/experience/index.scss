@@ -11,6 +11,32 @@ $class_css_prefix: ".#{$css_prefix}";
   padding: 20px 20px 0 20px;
 }
 
+#{$class_css_prefix}body {
+  display: flex;
+  margin-top: 20px;
+}
+
+#{$class_css_prefix}tabs {
+  display: flex;
+  flex-direction: column;
+  margin-right: 20px;
+}
+
+#{$class_css_prefix}tab {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 15px 10px;
+  // max-width: 120px;
+  margin-bottom: 20px;
+}
+
+#{$class_css_prefix}tab-active {
+  border: 1px solid $accentColor10;
+  // border-radius: 10px;
+  // opacity: 0.7;
+}
+
 #{$class_css_prefix}title {
   @include select-none;
 
@@ -21,7 +47,9 @@ $class_css_prefix: ".#{$css_prefix}";
 
 #{$class_css_prefix}employment-main {
   display: flex;
-  flex-wrap: wrap;
+  // flex-wrap: wrap;
+  // background-color: red;
+  flex: 1;
 }
 
 #{$class_css_prefix}employment-item-main {
@@ -29,9 +57,6 @@ $class_css_prefix: ".#{$css_prefix}";
 
   padding: 20px;
   border: 1px solid black;
-  margin: 25px 25px 0 0;
-  flex: 1;
-  min-width: 500px;
 }
 
 #{$class_css_prefix}heading-container {
@@ -67,20 +92,24 @@ $class_css_prefix: ".#{$css_prefix}";
 
 #{$class_css_prefix}container {
   display: flex;
-  align-items: baseline;
+  align-items: center;
+  margin-bottom: 10px;
 }
 
 #{$class_css_prefix}date-container {
   display: flex;
   align-items: center;
-  margin-left: 10px;
+  margin-left: 5px;
 }
 
 #{$class_css_prefix}image {
   width: 25px;
   height: 25px;
-  margin: 5px 5px 20px 0;
-  filter: grayscale(100%);
+  margin-right: 10px;
+
+  &:first-of-type {
+    margin-left: 5px;
+  }
 }
 
 #{$class_css_prefix}role {
@@ -110,6 +139,10 @@ $class_css_prefix: ".#{$css_prefix}";
 
   #{$class_css_prefix}designation {
     font-size: 1.5em;
+  }
+
+  #{$class_css_prefix}tabs {
+    display: none;
   }
 }
 
