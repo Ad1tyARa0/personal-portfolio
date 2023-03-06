@@ -57,89 +57,92 @@ const Experience: React.FC<ExperienceProps> = ({ data }) => {
 
           <div className={`${css_prefix}employment-main`}>
             {employmentItems.map((e, idx) => {
-              if (e.company_name.text === tab) {
-                return (
-                  <div
-                    key={idx}
-                    className={`${css_prefix}employment-item-main ${
-                      theme == "dark"
-                        ? css_prefix + "employment-item-main-dark"
-                        : ""
-                    }`}
-                  >
-                    <div className={`${css_prefix}container`}>
-                      <div className={`${css_prefix}designation`}>
-                        {e.designation.text}
-                      </div>
-                    </div>
+              return (
+                <div
+                  key={idx}
+                  className={`${
+                    theme == "dark"
+                      ? css_prefix + "employment-item-main-dark"
+                      : ""
+                  }
+                  ${
+                    tab === e.company_name.text
+                      ? css_prefix + "employment-item-main-shown"
+                      : css_prefix + "employment-item-main"
+                  }
 
-                    <div className={`${css_prefix}container`}>
-                      (
-                      <div>
-                        {DateTime.fromJSDate(
-                          new Date(e.from_date)
-                        ).toLocaleString(DateTime.DATE_MED)}
-                      </div>
-                      <div className={`${css_prefix}hypen`}>-</div>
-                      {e.is_current ? (
-                        <div>Current</div>
-                      ) : (
-                        <div>
-                          {DateTime.fromJSDate(
-                            new Date(e.to_date)
-                          ).toLocaleString(DateTime.DATE_MED)}
-                        </div>
-                      )}
-                      )
-                    </div>
-
-                    <div className={`${css_prefix}container`}>
-                      {e.technologies.map(e => {
-                        return (
-                          <div
-                            key={e.technology_image.url}
-                            className={`${css_prefix}container`}
-                          >
-                            <img
-                              src={e.technology_image.url}
-                              alt={e.technology_image.alt}
-                              className={`${css_prefix}image`}
-                            />
-                          </div>
-                        );
-                      })}
-                    </div>
-
-                    <div>
-                      {e.responsibilities.map(e => {
-                        return (
-                          <div
-                            key={e.responsibility_text.text}
-                            className={`${css_prefix}role`}
-                          >
-                            <div className={`${css_prefix}role-icon`}>
-                              <IoMdArrowDropright />
-                            </div>
-                            <div className={`${css_prefix}role-text`}>
-                              {e.responsibility_text.text}
-                            </div>
-                          </div>
-                        );
-                      })}
-                    </div>
-
-                    <div className={`${css_prefix}company-logo`}>
-                      <img
-                        src={e.company_logo.url}
-                        alt={e.company_logo.alt}
-                        className={`${css_prefix}logo`}
-                      />
+                  `}
+                >
+                  <div className={`${css_prefix}container`}>
+                    <div className={`${css_prefix}designation`}>
+                      {e.designation.text}
                     </div>
                   </div>
-                );
-              } else {
-                return null;
-              }
+
+                  <div className={`${css_prefix}container`}>
+                    (
+                    <div>
+                      {DateTime.fromJSDate(
+                        new Date(e.from_date)
+                      ).toLocaleString(DateTime.DATE_MED)}
+                    </div>
+                    <div className={`${css_prefix}hypen`}>-</div>
+                    {e.is_current ? (
+                      <div>Current</div>
+                    ) : (
+                      <div>
+                        {DateTime.fromJSDate(
+                          new Date(e.to_date)
+                        ).toLocaleString(DateTime.DATE_MED)}
+                      </div>
+                    )}
+                    )
+                  </div>
+
+                  <div className={`${css_prefix}container`}>
+                    {e.technologies.map(e => {
+                      return (
+                        <div
+                          key={e.technology_image.url}
+                          className={`${css_prefix}container`}
+                        >
+                          <img
+                            src={e.technology_image.url}
+                            alt={e.technology_image.alt}
+                            className={`${css_prefix}image`}
+                          />
+                        </div>
+                      );
+                    })}
+                  </div>
+
+                  <div>
+                    {e.responsibilities.map(e => {
+                      return (
+                        <div
+                          key={e.responsibility_text.text}
+                          className={`${css_prefix}role`}
+                        >
+                          <div className={`${css_prefix}role-icon`}>
+                            <IoMdArrowDropright />
+                          </div>
+                          <div className={`${css_prefix}role-text`}>
+                            {e.responsibility_text.text}
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+
+                  <div className={`${css_prefix}company-logo`}>
+                    <img
+                      src={e.company_logo.url}
+                      alt={e.company_logo.alt}
+                      className={`${css_prefix}logo`}
+                    />
+                  </div>
+                </div>
+              );
             })}
           </div>
         </div>

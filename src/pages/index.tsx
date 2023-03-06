@@ -62,39 +62,35 @@ const Index: React.FC<IndexInterface> = ({ data }) => {
         <div className={`${css_prefix}role`}>{data.site.siteMetadata.role}</div>
 
         <div className={`${css_prefix}body`}>
-          <div className={`${css_prefix}inner-body`}>
-            <div
-              className={`${css_prefix}card ${
-                theme === "light" ? css_prefix + "card-light" : ""
-              }`}
-            >
-              <div className={`${css_prefix}description`}>
-                {bioData.bio.text}
-              </div>
+          <div
+            className={`${css_prefix}card ${
+              theme === "light" ? css_prefix + "card-light" : ""
+            }`}
+          >
+            <img
+              src={bioData.profile_picture.url}
+              alt={bioData.profile_picture.alt}
+              className={`${css_prefix}image`}
+            />
 
-              <img
-                src={bioData.profile_picture.url}
-                alt={bioData.profile_picture.alt}
-                className={`${css_prefix}image`}
-              />
-            </div>
+            <div className={`${css_prefix}description`}>{bioData.bio.text}</div>
+          </div>
 
-            <div className={`${css_prefix}expertise`}>
-              {MAIN_SKILLS.map(e => {
-                return (
-                  <div
-                    key={e.id}
-                    className={`${css_prefix}item-main ${
-                      theme === "light" ? css_prefix + "item-main-light" : ""
-                    }`}
-                  >
-                    <div className={`${css_prefix}title`}>{e.title}</div>
+          <div className={`${css_prefix}expertise`}>
+            {MAIN_SKILLS.map(e => {
+              return (
+                <div
+                  key={e.id}
+                  className={`${css_prefix}item-main ${
+                    theme === "light" ? css_prefix + "item-main-light" : ""
+                  }`}
+                >
+                  <div className={`${css_prefix}title`}>{e.title}</div>
 
-                    <div className={`${css_prefix}image`}>{e.icon}</div>
-                  </div>
-                );
-              })}
-            </div>
+                  <div className={`${css_prefix}image`}>{e.icon}</div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>
