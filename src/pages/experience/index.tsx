@@ -61,7 +61,11 @@ const Experience: React.FC<ExperienceProps> = ({ data }) => {
                 return (
                   <div
                     key={idx}
-                    className={`${css_prefix}employment-item-main`}
+                    className={`${css_prefix}employment-item-main ${
+                      theme == "dark"
+                        ? css_prefix + "employment-item-main-dark"
+                        : ""
+                    }`}
                   >
                     <div className={`${css_prefix}container`}>
                       <div className={`${css_prefix}designation`}>

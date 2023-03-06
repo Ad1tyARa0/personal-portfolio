@@ -52,12 +52,16 @@ $class_css_prefix: ".#{$css_prefix}";
 }
 
 #{$class_css_prefix}employment-item-main {
-  @include box-shadow-ver2;
+  @include neomorph-light;
 
-  padding: 20px;
-  border: 1px solid black;
+  border-radius: 50px;
+  padding: 50px;
   max-width: 800px;
   min-width: 250px;
+}
+
+#{$class_css_prefix}employment-item-main-dark {
+  @include neomorph-dark;
 }
 
 #{$class_css_prefix}logo {

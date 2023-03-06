@@ -53,3 +53,13 @@
 @mixin box-shadow-ver2() {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
+
+@mixin neomorph-light() {
+  background: linear-gradient(145deg, #c9beb0, #efe2d1);
+  box-shadow: 5px 5px 10px #beb3a6, -5px -5px 10px #fff3e0;
+}
+
+@mixin neomorph-dark() {
+  background: linear-gradient(145deg, #121212, #151515);
+  box-shadow: 5px 5px 10px #111111, -5px -5px 10px #171717;
+}

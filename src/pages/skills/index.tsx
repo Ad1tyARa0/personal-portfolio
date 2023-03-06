@@ -33,12 +33,14 @@ const Skills: React.FC<SkillsInterface> = ({ data }) => {
       <div className={`${css_prefix}main`}>
         <div className={`${css_prefix}title`}>Skills</div>
 
-        <div>
+        <div className={`${css_prefix}body`}>
           {skills.map(e => {
             return (
               <div
                 key={e.category.text}
-                className={`${css_prefix}skills-inner-main `}
+                className={`${css_prefix}skills-inner-main ${
+                  theme == "dark" ? css_prefix + "skills-inner-main-dark" : ""
+                }`}
               >
                 <div className={`${css_prefix}category-text`}>
                   {e.category.text}
