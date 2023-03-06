@@ -63,43 +63,30 @@ const Experience: React.FC<ExperienceProps> = ({ data }) => {
                     key={idx}
                     className={`${css_prefix}employment-item-main`}
                   >
-                    <div className={`${css_prefix}heading-container`}>
+                    <div className={`${css_prefix}container`}>
                       <div className={`${css_prefix}designation`}>
                         {e.designation.text}
-                      </div>
-
-                      <div className={`${css_prefix}date-container`}>
-                        (
-                        <div>
-                          {DateTime.fromJSDate(
-                            new Date(e.from_date)
-                          ).toLocaleString(DateTime.DATE_MED)}
-                        </div>
-                        <div className={`${css_prefix}hypen`}>-</div>
-                        {e.is_current ? (
-                          <div>Current</div>
-                        ) : (
-                          <div>
-                            {DateTime.fromJSDate(
-                              new Date(e.to_date)
-                            ).toLocaleString(DateTime.DATE_MED)}
-                          </div>
-                        )}
-                        )
                       </div>
                     </div>
 
                     <div className={`${css_prefix}container`}>
-                      <div className={`${css_prefix}company-name`}>
-                        {e.company_name.text}
+                      (
+                      <div>
+                        {DateTime.fromJSDate(
+                          new Date(e.from_date)
+                        ).toLocaleString(DateTime.DATE_MED)}
                       </div>
-                      <div className={`${css_prefix}company-logo`}>
-                        <img
-                          src={e.company_logo.url}
-                          alt={e.company_logo.alt}
-                          className={`${css_prefix}logo`}
-                        />
-                      </div>
+                      <div className={`${css_prefix}hypen`}>-</div>
+                      {e.is_current ? (
+                        <div>Current</div>
+                      ) : (
+                        <div>
+                          {DateTime.fromJSDate(
+                            new Date(e.to_date)
+                          ).toLocaleString(DateTime.DATE_MED)}
+                        </div>
+                      )}
+                      )
                     </div>
 
                     <div className={`${css_prefix}container`}>
@@ -135,6 +122,14 @@ const Experience: React.FC<ExperienceProps> = ({ data }) => {
                           </div>
                         );
                       })}
+                    </div>
+
+                    <div className={`${css_prefix}company-logo`}>
+                      <img
+                        src={e.company_logo.url}
+                        alt={e.company_logo.alt}
+                        className={`${css_prefix}logo`}
+                      />
                     </div>
                   </div>
                 );

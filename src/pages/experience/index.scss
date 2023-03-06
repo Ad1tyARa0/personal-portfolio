@@ -5,7 +5,7 @@ $css_prefix: "p--e__";
 $class_css_prefix: ".#{$css_prefix}";
 
 #{$class_css_prefix}main {
-  height: calc(100% - 100px);
+  height: calc(100% - 30px);
   display: flex;
   flex-direction: column;
   padding: 20px 20px 0 20px;
@@ -13,7 +13,9 @@ $class_css_prefix: ".#{$css_prefix}";
 
 #{$class_css_prefix}body {
   display: flex;
-  margin-top: 20px;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
 }
 
 #{$class_css_prefix}tabs {
@@ -47,9 +49,6 @@ $class_css_prefix: ".#{$css_prefix}";
 
 #{$class_css_prefix}employment-main {
   display: flex;
-  // flex-wrap: wrap;
-  // background-color: red;
-  flex: 1;
 }
 
 #{$class_css_prefix}employment-item-main {
@@ -57,30 +56,19 @@ $class_css_prefix: ".#{$css_prefix}";
 
   padding: 20px;
   border: 1px solid black;
-}
-
-#{$class_css_prefix}heading-container {
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  // background-color: red;
-  margin-bottom: 20px;
-}
-
-#{$class_css_prefix}company-logo {
-  @include display-flex-center;
-  padding: 5px;
-  margin-left: auto;
-  opacity: 0.7;
+  max-width: 800px;
+  min-width: 250px;
 }
 
 #{$class_css_prefix}logo {
   height: 40px;
   width: fit-content;
   filter: grayscale(100%);
+  margin-left: auto;
 }
 
 #{$class_css_prefix}company-name {
+  margin-left: auto;
   font-size: 2em;
 }
 
@@ -96,20 +84,20 @@ $class_css_prefix: ".#{$css_prefix}";
   margin-bottom: 10px;
 }
 
+#{$class_css_prefix}company-logo {
+  display: flex;
+  align-items: center;
+}
+
 #{$class_css_prefix}date-container {
   display: flex;
   align-items: center;
-  margin-left: 5px;
 }
 
 #{$class_css_prefix}image {
-  width: 25px;
-  height: 25px;
+  width: 50px;
+  height: 50px;
   margin-right: 10px;
-
-  &:first-of-type {
-    margin-left: 5px;
-  }
 }
 
 #{$class_css_prefix}role {
