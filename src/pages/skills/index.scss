@@ -28,8 +28,8 @@ $class_css_prefix: ".#{$css_prefix}";
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  // justify-content: space-evenly;
-  min-width: 300px;
+  // justify-content: spac;
+  min-width: 500px;
   padding: 30px;
   border-radius: 20px;
   margin: 15px 20px;
@@ -49,16 +49,18 @@ $class_css_prefix: ".#{$css_prefix}";
 
 #{$class_css_prefix}items-main {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-around;
   flex-wrap: wrap;
+  flex: 1;
 }
 
 #{$class_css_prefix}skills-item-main {
   display: flex;
   flex-direction: column;
   margin: 15px 15px 0 0;
-  padding: 10px;
+  min-width: 150px;
+  max-width: 170px;
   align-items: center;
   justify-content: space-around;
   flex: 1;
@@ -67,7 +69,11 @@ $class_css_prefix: ".#{$css_prefix}";
 
   &:hover {
     top: -10px;
-    transition: top 500ms ease;
+    transition: all 500ms ease;
+
+    #{$class_css_prefix}skills-item-icon {
+      filter: none;
+    }
   }
 }
 
@@ -77,22 +83,11 @@ $class_css_prefix: ".#{$css_prefix}";
   text-align: center;
 }
 
-#{$class_css_prefix}skills-title-icon {
-  @include display-flex-center;
-
-  font-size: 20px;
-  transform: rotate(0deg);
-  transition: transform 200ms linear;
-}
-
-#{$class_css_prefix}skills-title-icon-active {
-  transform: rotate(90deg);
-  transition: transform 200ms linear;
-}
-
 #{$class_css_prefix}skills-item-icon {
   width: 100px;
   height: 100px;
+  padding: 5px;
+  filter: grayscale(100%);
 }
 
 @media only screen and (max-width: 650px) {
