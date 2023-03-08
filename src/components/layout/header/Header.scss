@@ -98,8 +98,13 @@ $class_css_prefix: ".#{$css_prefix}";
 
   &:hover {
     transition: color 200ms ease;
-    color: $accentColor10;
+    color: $accentColor30;
   }
+}
+
+#{$class_css_prefix}link-item-title-active {
+  color: $accentColor30;
+  // background-color: red;
 }
 
 #{$class_css_prefix}menu {

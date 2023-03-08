@@ -12,6 +12,7 @@ import { AiOutlinePhone, AiOutlineUser } from "react-icons/ai";
 import { Sidebar } from "../../common/sidebar/Sidebar";
 import { ThemeButton } from "../../common/theme-button/ThemeButton";
 import { HamburgerIcon } from "../../common/hamburger-icon/HamburgerIcon";
+import { Location } from "@reach/router";
 
 // SCSS.
 import "./Header.scss";
@@ -27,6 +28,7 @@ const css_prefix = "c--l--h__";
 interface HeaderProps {
   theme: string;
   switchTheme: (payload: string) => void;
+  location: any;
 }
 
 const HeaderComponent: FC<HeaderProps> = ({ theme, switchTheme }) => {
@@ -40,6 +42,43 @@ const HeaderComponent: FC<HeaderProps> = ({ theme, switchTheme }) => {
 
   const onClickHideSidebar = () => {
     setShowSidebar(false);
+  };
+
+  interface LinkProps {
+    items: {
+      id: number;
+      title: string;
+      icon: JSX.Element;
+      to: string;
+    }[];
+
+    locationProps: any;
+  }
+
+  const Links: React.FC<LinkProps> = ({ items, locationProps }) => {
+    return (
+      <>
+        {items.map(e => {
+          return (
+            <div
+              className={`${css_prefix}link-item`}
+              key={e.id}
+              onClick={() => navigate(e.to)}
+            >
+              <div
+                className={`${css_prefix}link-item-title ${
+                  locationProps.location.pathname === e.to
+                    ? css_prefix + "link-item-title-active"
+                    : ""
+                }`}
+              >
+                {e.title}
+              </div>
+            </div>
+          );
+        })}
+      </>
+    );
   };
 
   const ITEMS: ItemsArrayType[] = [
@@ -93,17 +132,11 @@ const HeaderComponent: FC<HeaderProps> = ({ theme, switchTheme }) => {
         </div>
 
         <div className={`${css_prefix}links`}>
-          {ITEMS.map(e => {
-            return (
-              <div
-                className={`${css_prefix}link-item`}
-                key={e.id}
-                onClick={() => navigate(e.to)}
-              >
-                <div className={`${css_prefix}link-item-title`}>{e.title}</div>
-              </div>
-            );
-          })}
+          <Location>
+            {locationProps => (
+              <Links items={ITEMS} locationProps={locationProps} />
+            )}
+          </Location>
         </div>
 
         <div className={`${css_prefix}resume-button`}>
