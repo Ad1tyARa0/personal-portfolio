@@ -40,33 +40,39 @@ const Experience: React.FC<ExperienceProps> = ({ data }) => {
     <PageContainer>
       <div className={`${css_prefix}main`}>
         <div className={`${css_prefix}body`}>
-          <div
-            className={`${css_prefix}tab-line`}
-            style={{ height: tabRef.current?.getBoundingClientRect().height }}
-          >
+          <div className={`${css_prefix}inner-main`}>
             <div
-              className={`${css_prefix}active-tab-line ${css_prefix}${
-                EMP_HISTORY_NAME_MAPPING[tab]
-              } ${theme === "dark" ? css_prefix + "active-tab-line-dark" : ""}`}
-            ></div>
-          </div>
+              className={`${css_prefix}tab-line`}
+              style={{ height: tabRef.current?.getBoundingClientRect().height }}
+            >
+              <div
+                className={`${css_prefix}active-tab-line ${css_prefix}${
+                  EMP_HISTORY_NAME_MAPPING[tab]
+                } ${
+                  theme === "dark" ? css_prefix + "active-tab-line-dark" : ""
+                }`}
+              ></div>
+            </div>
 
-          <div className={`${css_prefix}tabs`} ref={tabRef}>
-            {employmentItems.map(e => {
-              return (
-                <div
-                  className={`${css_prefix}tab ${
-                    tab === e.company_name.text ? css_prefix + "tab-active" : ""
-                  } ${theme === "dark" ? css_prefix + "tab-dark" : ""}`}
-                  key={e.company_name.text}
-                  onClick={() => onClickSetTab(e.company_name.text)}
-                >
-                  <div className={`${css_prefix}tab-title`}>
-                    {e.company_name.text}
+            <div className={`${css_prefix}tabs`} ref={tabRef}>
+              {employmentItems.map(e => {
+                return (
+                  <div
+                    className={`${css_prefix}tab ${
+                      tab === e.company_name.text
+                        ? css_prefix + "tab-active"
+                        : ""
+                    } ${theme === "dark" ? css_prefix + "tab-dark" : ""}`}
+                    key={e.company_name.text}
+                    onClick={() => onClickSetTab(e.company_name.text)}
+                  >
+                    <div className={`${css_prefix}tab-title`}>
+                      {e.company_name.text}
+                    </div>
                   </div>
-                </div>
-              );
-            })}
+                );
+              })}
+            </div>
           </div>
 
           <div className={`${css_prefix}employment-main`}>

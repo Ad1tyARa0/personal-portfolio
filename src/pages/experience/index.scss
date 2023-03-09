@@ -31,7 +31,7 @@ $class_css_prefix: ".#{$css_prefix}";
   background-color: $accentColor30;
   width: 10px;
   height: 50px;
-  left: -2px;
+  left: -2.5px;
 }
 
 #{$class_css_prefix}active-tab-line-dark {
@@ -191,6 +191,75 @@ $class_css_prefix: ".#{$css_prefix}";
 
 #{$class_css_prefix}hypen {
   margin-inline: 5px;
+}
+
+@media only screen and (max-width: 1152px) {
+  #{$class_css_prefix}body {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #{$class_css_prefix}tabs {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    // margin-bottom: 20px;
+  }
+
+  #{$class_css_prefix}inner-main {
+    // background-color: red;
+    display: flex;
+  }
+
+  #{$class_css_prefix}tab {
+    padding: 15px 30px 15px 15px;
+    border-bottom: 5px solid rgba($color: $accentColor30, $alpha: 0.3);
+    border-left: none;
+    margin-right: 0;
+    // width: 100px;
+  }
+
+  #{$class_css_prefix}tab-title {
+    font-size: 0.7em;
+  }
+
+  #{$class_css_prefix}tab-dark {
+    border-bottom: 5px solid rgba($color: $accentColor10, $alpha: 0.3);
+    border-left: none;
+    margin-right: 0;
+  }
+
+  #{$class_css_prefix}tab-line {
+    width: 5px;
+
+    margin-right: -5px;
+    position: relative;
+  }
+
+  #{$class_css_prefix}active-tab-line {
+    position: absolute;
+    background-color: $accentColor30;
+    width: 50px;
+    height: 10px;
+    left: 0;
+    top: 50px;
+  }
+
+  #{$class_css_prefix}tricog-health {
+    left: 40px;
+    transition: left 500ms ease;
+  }
+
+  #{$class_css_prefix}quantonaut {
+    left: 180px;
+    transition: left 500ms ease;
+  }
+
+  #{$class_css_prefix}ibm {
+    left: 300px;
+    transition: left 500ms ease;
+  }
 }
 
 @media only screen and (max-width: 850px) {
