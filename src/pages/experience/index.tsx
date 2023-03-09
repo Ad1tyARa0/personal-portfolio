@@ -13,6 +13,7 @@ import { EmploymentHistoryType } from "../../utils/types/employment-history";
 
 // SCSS.
 import "./index.scss";
+import { EMP_HISTORY_NAME_MAPPING } from "../../utils/constants/emp-history";
 
 // Pages -- experience
 const css_prefix = "p--e__";
@@ -23,6 +24,8 @@ interface ExperienceProps {
 
 const Experience: React.FC<ExperienceProps> = ({ data }) => {
   const { theme } = React.useContext(ThemeContext);
+
+  const tabRef = React.useRef<HTMLDivElement | null>(null);
 
   let employmentItems: EmploymentHistoryType[] =
     data.allPrismicNewEmploymentHistory.nodes.map((e: any) => e.data);
@@ -36,20 +39,31 @@ const Experience: React.FC<ExperienceProps> = ({ data }) => {
   return (
     <PageContainer>
       <div className={`${css_prefix}main`}>
-        <div className={`${css_prefix}title`}>Experience</div>
-
         <div className={`${css_prefix}body`}>
-          <div className={`${css_prefix}tabs`}>
+          <div
+            className={`${css_prefix}tab-line`}
+            style={{ height: tabRef.current?.getBoundingClientRect().height }}
+          >
+            <div
+              className={`${css_prefix}active-tab-line ${css_prefix}${
+                EMP_HISTORY_NAME_MAPPING[tab]
+              } ${theme === "dark" ? css_prefix + "active-tab-line-dark" : ""}`}
+            ></div>
+          </div>
+
+          <div className={`${css_prefix}tabs`} ref={tabRef}>
             {employmentItems.map(e => {
               return (
                 <div
                   className={`${css_prefix}tab ${
                     tab === e.company_name.text ? css_prefix + "tab-active" : ""
-                  }`}
+                  } ${theme === "dark" ? css_prefix + "tab-dark" : ""}`}
                   key={e.company_name.text}
                   onClick={() => onClickSetTab(e.company_name.text)}
                 >
-                  {e.company_name.text}
+                  <div className={`${css_prefix}tab-title`}>
+                    {e.company_name.text}
+                  </div>
                 </div>
               );
             })}

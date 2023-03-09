@@ -1,4 +1,5 @@
 export type EmploymentHistoryType = {
+  id: string;
   company_description: {
     text: string;
   };

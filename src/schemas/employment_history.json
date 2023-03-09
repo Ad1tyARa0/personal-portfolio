@@ -1,114 +1,121 @@
 {
-  "Main" : {
-    "company_name" : {
-      "type" : "StructuredText",
-      "config" : {
-        "multi" : "paragraph",
-        "label" : "company_name",
-        "placeholder" : "Company Name"
+  "Main": {
+    "id": {
+      "type": "Text",
+      "config": {
+        "label": "id",
+        "placeholder": "id"
       }
     },
-    "company_description" : {
-      "type" : "StructuredText",
-      "config" : {
-        "multi" : "paragraph",
-        "label" : "company_description",
-        "placeholder" : "Company Description"
+    "company_name": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "paragraph",
+        "label": "company_name",
+        "placeholder": "Company Name"
       }
     },
-    "designation" : {
-      "type" : "StructuredText",
-      "config" : {
-        "single" : "paragraph",
-        "label" : "designation",
-        "placeholder" : "Designation"
+    "company_description": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "paragraph",
+        "label": "company_description",
+        "placeholder": "Company Description"
       }
     },
-    "company_logo" : {
-      "type" : "Image",
-      "config" : {
-        "constraint" : {
-          "width" : 1200,
-          "height" : 1200
+    "designation": {
+      "type": "StructuredText",
+      "config": {
+        "single": "paragraph",
+        "label": "designation",
+        "placeholder": "Designation"
+      }
+    },
+    "company_logo": {
+      "type": "Image",
+      "config": {
+        "constraint": {
+          "width": 1200,
+          "height": 1200
         },
-        "thumbnails" : [ ],
-        "label" : "company_logo"
+        "thumbnails": [],
+        "label": "company_logo"
       }
     },
-    "timestamp" : {
-      "type" : "Timestamp",
-      "config" : {
-        "label" : "timestamp",
-        "placeholder" : "timestamp"
+    "timestamp": {
+      "type": "Timestamp",
+      "config": {
+        "label": "timestamp",
+        "placeholder": "timestamp"
       }
     },
-    "location" : {
-      "type" : "GeoPoint",
-      "config" : {
-        "label" : "location"
+    "location": {
+      "type": "GeoPoint",
+      "config": {
+        "label": "location"
       }
     },
-    "technologies" : {
-      "type" : "Group",
-      "config" : {
-        "fields" : {
-          "technology_image" : {
-            "type" : "Image",
-            "config" : {
-              "constraint" : {
-                "width" : 1200,
-                "height" : 1200
+    "technologies": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "technology_image": {
+            "type": "Image",
+            "config": {
+              "constraint": {
+                "width": 1200,
+                "height": 1200
               },
-              "thumbnails" : [ ],
-              "label" : "technology_image"
+              "thumbnails": [],
+              "label": "technology_image"
             }
           },
-          "technology_title" : {
-            "type" : "StructuredText",
-            "config" : {
-              "multi" : "paragraph",
-              "label" : "technology_title",
-              "placeholder" : "Technology Title"
+          "technology_title": {
+            "type": "StructuredText",
+            "config": {
+              "multi": "paragraph",
+              "label": "technology_title",
+              "placeholder": "Technology Title"
             }
           }
         },
-        "label" : "technologies"
+        "label": "technologies"
       }
     },
-    "responsibilities" : {
-      "type" : "Group",
-      "config" : {
-        "fields" : {
-          "responsibility_text" : {
-            "type" : "StructuredText",
-            "config" : {
-              "multi" : "paragraph",
-              "label" : "responsibility_text"
+    "responsibilities": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "responsibility_text": {
+            "type": "StructuredText",
+            "config": {
+              "multi": "paragraph",
+              "label": "responsibility_text"
             }
           }
         },
-        "label" : "responsibilities"
+        "label": "responsibilities"
       }
     },
-    "is_current" : {
-      "type" : "Boolean",
-      "config" : {
-        "default_value" : false,
-        "label" : "is_current"
+    "is_current": {
+      "type": "Boolean",
+      "config": {
+        "default_value": false,
+        "label": "is_current"
       }
     },
-    "from_date" : {
-      "type" : "Date",
-      "config" : {
-        "label" : "from_date",
-        "placeholder" : "From Date"
+    "from_date": {
+      "type": "Date",
+      "config": {
+        "label": "from_date",
+        "placeholder": "From Date"
       }
     },
-    "to_date" : {
-      "type" : "Date",
-      "config" : {
-        "label" : "to_date",
-        "placeholder" : "To Date"
+    "to_date": {
+      "type": "Date",
+      "config": {
+        "label": "to_date",
+        "placeholder": "To Date"
       }
     }
   }
