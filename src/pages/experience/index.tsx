@@ -14,6 +14,7 @@ import { EmploymentHistoryType } from "../../utils/types/employment-history";
 // SCSS.
 import "./index.scss";
 import { EMP_HISTORY_NAME_MAPPING } from "../../utils/constants/emp-history";
+import { LinkedIn } from "../../assets/icons/linkedin/LinkedIn";
 
 // Pages -- experience
 const css_prefix = "p--e__";
@@ -156,12 +157,18 @@ const Experience: React.FC<ExperienceProps> = ({ data }) => {
                     })}
                   </div>
 
-                  <div className={`${css_prefix}company-logo`}>
-                    <img
-                      src={e.company_logo.url}
-                      alt={e.company_logo.alt}
-                      className={`${css_prefix}logo`}
-                    />
+                  <div className={`${css_prefix}footer-container`}>
+                    <div className={`${css_prefix}links`}>
+                      {/* <LinkedIn theme={theme} /> */}
+                    </div>
+
+                    <div className={`${css_prefix}company-logo`}>
+                      <img
+                        src={e.company_logo.url}
+                        alt={e.company_logo.alt}
+                        className={`${css_prefix}logo`}
+                      />
+                    </div>
                   </div>
                 </div>
               );

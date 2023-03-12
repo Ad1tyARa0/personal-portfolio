@@ -165,6 +165,17 @@ $class_css_prefix: ".#{$css_prefix}";
   margin-bottom: 10px;
 }
 
+#{$class_css_prefix}footer-container {
+  display: flex;
+  align-items: center;
+  // margin-bottom: 10px;
+  width: 100%;
+}
+
+#{$class_css_prefix}links {
+  margin-left: 15px;
+}
+
 #{$class_css_prefix}company-logo {
   display: flex;
   align-items: center;

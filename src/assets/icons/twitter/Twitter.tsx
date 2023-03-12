@@ -11,37 +11,41 @@ interface TwitterProps {
   height?: string;
   width?: string;
   theme: string;
+  link: string;
 }
 
 const TwitterComponent: React.FunctionComponent<TwitterProps> = ({
   height = "20px",
   width = "20px",
   theme,
+  link,
 }) => {
   return (
-    <div
-      className={`${css_prefix}main`}
-      style={{ height: height, width: width }}
-    >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        role="img"
-        viewBox="0 0 24 24"
-        fill="none"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        className={`${css_prefix}twitter ${
-          theme === "dark"
-            ? css_prefix + "twitter-dark"
-            : css_prefix + "twitter-light"
-        }`}
+    <a href={link}>
+      <div
+        className={`${css_prefix}main`}
+        style={{ height: height, width: width }}
       >
-        <title>Twitter</title>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          role="img"
+          viewBox="0 0 24 24"
+          fill="none"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          className={`${css_prefix}twitter ${
+            theme === "dark"
+              ? css_prefix + "twitter-dark"
+              : css_prefix + "twitter-light"
+          }`}
+        >
+          <title>Twitter</title>
 
-        <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
-      </svg>
-    </div>
+          <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+        </svg>
+      </div>
+    </a>
   );
 };
 
