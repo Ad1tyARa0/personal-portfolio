@@ -93,7 +93,7 @@ $class_css_prefix: ".#{$css_prefix}";
 }
 
 #{$class_css_prefix}link-item-title {
-  font-family: "Light Italic";
+  font-family: "Regular";
   transition: color 200ms ease;
 
   &:hover {
@@ -102,9 +102,14 @@ $class_css_prefix: ".#{$css_prefix}";
   }
 }
 
-#{$class_css_prefix}link-item-title-active {
-  color: $accentColor30;
-  // background-color: red;
+#{$class_css_prefix}link-item-title-dark {
+  font-family: "Regular";
+  transition: color 200ms ease;
+
+  &:hover {
+    transition: color 200ms ease;
+    color: $accentColor10;
+  }
 }
 
 #{$class_css_prefix}menu {

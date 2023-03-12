@@ -20,6 +20,7 @@ import { ItemsArrayType } from "../../../utils/types/common";
 import { navigate } from "gatsby";
 import { BsArrowRightCircle } from "react-icons/bs";
 import { Button } from "../../common/button/Button";
+import { ThemeContext } from "../../../context/ThemeContext";
 
 // Components -- layout -- header
 const css_prefix = "c--l--h__";
@@ -56,6 +57,7 @@ const HeaderComponent: FC<HeaderProps> = ({ theme, switchTheme }) => {
   }
 
   const Links: React.FC<LinkProps> = ({ items, locationProps }) => {
+    const { theme } = React.useContext(ThemeContext);
     return (
       <>
         {items.map(e => {
@@ -67,9 +69,7 @@ const HeaderComponent: FC<HeaderProps> = ({ theme, switchTheme }) => {
             >
               <div
                 className={`${css_prefix}link-item-title ${
-                  locationProps.location.pathname === e.to
-                    ? css_prefix + "link-item-title-active"
-                    : ""
+                  theme === "dark" ? css_prefix + "link-item-title-dark" : ""
                 }`}
               >
                 {e.title}
