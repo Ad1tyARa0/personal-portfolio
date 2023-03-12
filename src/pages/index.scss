@@ -28,43 +28,62 @@ $class_css_prefix: ".#{$css_prefix}";
 
 #{$class_css_prefix}body {
   display: flex;
-  // flex-direction: column;
   align-items: center;
   justify-content: center;
-  // flex: 1;
+  padding-bottom: 30px;
 }
 
 #{$class_css_prefix}card {
   display: flex;
   justify-content: center;
   border-bottom: none;
-  margin: 0 20px 50px 0;
+  margin: 0 20px;
   padding: 15px;
   @include neomorph-dark;
   border-radius: 25px;
 
   #{$class_css_prefix}description {
     font-family: "Regular";
-    max-width: 500px;
-    line-height: 1.1em;
+    line-height: 1.5em;
     padding: 15px 0 15px 15px;
     text-align: left;
-    letter-spacing: 0.05em;
+    font-size: 1.6em;
+    letter-spacing: 0.1em;
   }
 
   #{$class_css_prefix}image {
-    height: 200px;
-    width: 200px;
+    height: 500px;
+    width: 500px;
     padding: 15px;
     border-radius: 15px;
   }
 }
 
 #{$class_css_prefix}card-light {
-  @include neomorph-light;
+  display: flex;
+  justify-content: center;
+  border-bottom: none;
+  margin: 0 20px;
   padding: 15px;
+  @include neomorph-light;
   border-radius: 25px;
-  margin: 0 20px 50px 0;
+  max-width: 1200px;
+
+  #{$class_css_prefix}description {
+    font-family: "Regular";
+    line-height: 1.5em;
+    padding: 15px 0 15px 15px;
+    text-align: left;
+    font-size: 1.6em;
+    letter-spacing: 0.1em;
+  }
+
+  #{$class_css_prefix}image {
+    height: 500px;
+    width: 500px;
+    padding: 15px;
+    border-radius: 15px;
+  }
 }
 
 #{$class_css_prefix}expertise {
@@ -92,6 +111,10 @@ $class_css_prefix: ".#{$css_prefix}";
   @include neomorph-dark;
   border-radius: 20px;
   margin: 20px;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
 }
 
 #{$class_css_prefix}item-main-light {
@@ -106,43 +129,9 @@ $class_css_prefix: ".#{$css_prefix}";
   justify-content: center;
   align-items: center;
   padding: 20px;
-}
 
-@media only screen and (max-width: 2560px) {
-  #{$class_css_prefix}card {
-    #{$class_css_prefix}description {
-      font-family: "Regular";
-      line-height: 1.5em;
-      padding: 15px 0 15px 15px;
-      text-align: left;
-      font-size: 1.6em;
-      letter-spacing: 0.1em;
-    }
-
-    #{$class_css_prefix}image {
-      height: 500px;
-      width: 500px;
-      padding: 15px;
-      border-radius: 15px;
-    }
-  }
-
-  #{$class_css_prefix}card-light {
-    #{$class_css_prefix}description {
-      font-family: "Regular";
-      line-height: 1.5em;
-      padding: 15px 0 15px 15px;
-      text-align: left;
-      font-size: 1.6em;
-      letter-spacing: 0.1em;
-    }
-
-    #{$class_css_prefix}image {
-      height: 500px;
-      width: 500px;
-      padding: 15px;
-      border-radius: 15px;
-    }
+  &:last-of-type {
+    margin-bottom: 0;
   }
 }
 
@@ -208,15 +197,27 @@ $class_css_prefix: ".#{$css_prefix}";
     justify-content: center;
   }
 
+  #{$class_css_prefix}expertise {
+    margin-top: 20px;
+  }
+
   #{$class_css_prefix}item-main {
     &:first-of-type {
       margin-left: 0;
+    }
+
+    &:last-of-type {
+      margin-bottom: 30px;
     }
   }
 
   #{$class_css_prefix}item-main-light {
     &:first-of-type {
       margin-left: 0;
+    }
+
+    &:last-of-type {
+      margin-bottom: 30px;
     }
   }
 
@@ -226,7 +227,11 @@ $class_css_prefix: ".#{$css_prefix}";
   }
 
   #{$class_css_prefix}card {
-    margin-right: 0;
+    margin: 20px;
+  }
+
+  #{$class_css_prefix}card-light {
+    margin: 20px;
   }
 }
 
@@ -281,9 +286,8 @@ $class_css_prefix: ".#{$css_prefix}";
   }
 
   #{$class_css_prefix}item-main {
-    flex: 1;
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: column-reverse;
     justify-content: space-between;
     align-items: center;
     padding: 20px;
@@ -293,8 +297,7 @@ $class_css_prefix: ".#{$css_prefix}";
     margin: 0 0 30px 0;
 
     #{$class_css_prefix}title {
-      margin-right: 10px;
-      margin-bottom: 0;
+      margin: 10px 0 0 0;
     }
   }
 
@@ -303,17 +306,15 @@ $class_css_prefix: ".#{$css_prefix}";
     border-radius: 20px;
     margin: 0 0 30px 0;
 
-    flex: 1;
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: column-reverse;
     justify-content: space-between;
     align-items: center;
     padding: 20px;
     min-width: 400px;
 
     #{$class_css_prefix}title {
-      margin-right: 10px;
-      margin-bottom: 0;
+      margin: 10px 0 0 0;
     }
   }
 }

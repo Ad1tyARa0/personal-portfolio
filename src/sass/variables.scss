@@ -63,3 +63,33 @@
   background: linear-gradient(145deg, #121212, #151515);
   box-shadow: 5px 5px 10px #111111, -5px -5px 10px #171717;
 }
+
+@mixin background-animation-light() {
+  --c: #90fe22;
+  background: linear-gradient(90deg, #fff 50%, var(--c) 0)
+      calc(100% - var(--_p, 0%)) / 200% 100%,
+    linear-gradient(var(--c) 0 0) 0% 100% / var(--_p, 0%) 100% no-repeat;
+
+  -webkit-background-clip: text, padding-box;
+  background-clip: text, padding-box;
+  transition: 0.5s;
+
+  &:hover {
+    --_p: 100%;
+  }
+}
+
+@mixin background-animation-dark() {
+  --c: #ff3f02;
+  background: linear-gradient(90deg, #fff 50%, var(--c) 0)
+      calc(100% - var(--_p, 0%)) / 200% 100%,
+    linear-gradient(var(--c) 0 0) 0% 100% / var(--_p, 0%) 100% no-repeat;
+
+  -webkit-background-clip: text, padding-box;
+  background-clip: text, padding-box;
+  transition: 0.5s;
+
+  &:hover {
+    --_p: 100%;
+  }
+}
