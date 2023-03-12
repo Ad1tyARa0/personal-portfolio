@@ -36,6 +36,8 @@ const Experience: React.FC<ExperienceProps> = ({ data }) => {
     setTab(payload);
   };
 
+  console.log(employmentItems);
+
   return (
     <PageContainer>
       <div className={`${css_prefix}main`}>
