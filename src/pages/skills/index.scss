@@ -23,6 +23,7 @@ $class_css_prefix: ".#{$css_prefix}";
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+  flex: 1;
 }
 
 #{$class_css_prefix}inner-main {

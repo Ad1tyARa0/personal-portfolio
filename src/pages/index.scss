@@ -38,9 +38,9 @@ $class_css_prefix: ".#{$css_prefix}";
   justify-content: center;
   border-bottom: none;
   margin: 0 20px;
-  padding: 15px;
+  padding: 50px;
   @include neomorph-dark;
-  border-radius: 25px;
+  border-radius: 50px;
 
   #{$class_css_prefix}description {
     font-family: "Regular";
@@ -64,9 +64,9 @@ $class_css_prefix: ".#{$css_prefix}";
   justify-content: center;
   border-bottom: none;
   margin: 0 20px;
-  padding: 15px;
+  padding: 50px;
   @include neomorph-light;
-  border-radius: 25px;
+  border-radius: 50px;
   max-width: 1200px;
 
   #{$class_css_prefix}description {
