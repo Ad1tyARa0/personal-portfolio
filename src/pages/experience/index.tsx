@@ -13,7 +13,7 @@ import { EmploymentHistoryType } from "../../utils/types/employment-history";
 
 // SCSS.
 import "./index.scss";
-import { EMP_HISTORY_NAME_MAPPING } from "../../utils/constants/emp-history";
+import { EMP_HISTORY_NAME_MAPPING } from "../../utils/constants/tabs";
 import { LinkedIn } from "../../assets/icons/linkedin/LinkedIn";
 
 // Pages -- experience
@@ -36,6 +36,8 @@ const Experience: React.FC<ExperienceProps> = ({ data }) => {
   const onClickSetTab = (payload: string) => {
     setTab(payload);
   };
+
+  console.log([1, 2, 3].map(e => e + 1).reduce((prev, curr) => prev + curr));
 
   console.log(employmentItems);
 
