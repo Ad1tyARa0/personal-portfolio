@@ -21,7 +21,7 @@ const EmailComponent: React.FunctionComponent<EmailProps> = ({
   link,
 }) => {
   return (
-    <a href={link}>
+    <a href={link} target="_blank">
       <div className={`${css_prefix}main`}>
         <svg
           strokeWidth="0"

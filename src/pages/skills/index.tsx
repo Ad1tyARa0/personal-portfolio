@@ -12,6 +12,7 @@ import { SkillsType } from "../../utils/types/skills";
 
 import { RiArrowRightSLine } from "react-icons/ri";
 import { SKILLS_TABS_MAPPING } from "../../utils/constants/tabs";
+import Scrollbars from "react-custom-scrollbars-2";
 
 // Pages -- skills
 const css_prefix = "p--s__";
@@ -33,8 +34,6 @@ const Skills: React.FC<SkillsInterface> = ({ data }) => {
   const onClickSetTab = (payload: string) => {
     setTab(payload);
   };
-
-  console.log(skills);
 
   return (
     <PageContainer>
@@ -82,30 +81,32 @@ const Skills: React.FC<SkillsInterface> = ({ data }) => {
                     theme == "dark" ? css_prefix + "skills-inner-main-dark" : ""
                   }`}
                 >
-                  {/* <div className={`${css_prefix}category-text`}>
+                  <Scrollbars autoHide={true}>
+                    {/* <div className={`${css_prefix}category-text`}>
                     {e.category.text}
                   </div> */}
 
-                  <div className={`${css_prefix}items-main`}>
-                    {e.category_items.map(c => {
-                      return (
-                        <div
-                          className={`${css_prefix}skills-item-main`}
-                          key={c.image.url}
-                        >
-                          <img
-                            alt={c.image.alt}
-                            src={c.image.url}
-                            className={`${css_prefix}skills-item-icon`}
-                          />
+                    <div className={`${css_prefix}items-main`}>
+                      {e.category_items.map(c => {
+                        return (
+                          <div
+                            className={`${css_prefix}skills-item-main`}
+                            key={c.image.url}
+                          >
+                            <img
+                              alt={c.image.alt}
+                              src={c.image.url}
+                              className={`${css_prefix}skills-item-icon`}
+                            />
 
-                          <div className={`${css_prefix}skills-item-title`}>
-                            {c.title.text}
+                            <div className={`${css_prefix}skills-item-title`}>
+                              {c.title.text}
+                            </div>
                           </div>
-                        </div>
-                      );
-                    })}
-                  </div>
+                        );
+                      })}
+                    </div>
+                  </Scrollbars>
                 </div>
               );
             } else {

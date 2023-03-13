@@ -308,6 +308,81 @@ $class_css_prefix: ".#{$css_prefix}";
   #{$class_css_prefix}tabs {
     display: none;
   }
+
+  #{$class_css_prefix}tabs {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    // margin-bottom: 20px;
+  }
+
+  #{$class_css_prefix}inner-main {
+    // background-color: red;
+    display: flex;
+    flex-direction: row;
+  }
+
+  #{$class_css_prefix}tab {
+    padding: 15px 0;
+    border-bottom: 5px solid rgba($color: $accentColor30, $alpha: 0.3);
+    border-left: none;
+    margin-right: 0;
+    width: 150px;
+    @include display-flex-center;
+    position: relative;
+  }
+
+  #{$class_css_prefix}tab-title {
+    font-size: 0.7em;
+  }
+
+  #{$class_css_prefix}tab-dark {
+    border-bottom: 5px solid rgba($color: $accentColor10, $alpha: 0.3);
+    border-left: none;
+    margin-right: 0;
+  }
+
+  #{$class_css_prefix}tab-line {
+    width: 5px;
+
+    margin-right: -5px;
+    position: relative;
+    // display: none;
+  }
+
+  #{$class_css_prefix}active-tab-line {
+    position: absolute;
+    background-color: $accentColor30;
+    width: 50px;
+    height: 10px;
+    left: 0;
+    top: 40px;
+  }
+
+  #{$class_css_prefix}active-tab-line-dark {
+    background-color: $accentColor10;
+  }
+
+  #{$class_css_prefix}tricog-health {
+    left: 50px;
+    transition: left 500ms ease;
+  }
+
+  #{$class_css_prefix}quantonaut {
+    left: 200px;
+    transition: left 500ms ease;
+  }
+
+  #{$class_css_prefix}ibm {
+    left: 350px;
+    transition: left 500ms ease;
+  }
+
+  #{$class_css_prefix}employment-main {
+    margin-top: 20px;
+  }
 }
 
 @media only screen and (max-width: 650px) {

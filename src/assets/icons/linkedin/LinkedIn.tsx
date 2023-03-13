@@ -21,7 +21,7 @@ const LinkedInComponent: React.FunctionComponent<LinkedInProps> = ({
   link,
 }) => {
   return (
-    <a href={link}>
+    <a href={link} target="_blank">
       <div
         className={`${css_prefix}main`}
         style={{ height: height, width: width }}

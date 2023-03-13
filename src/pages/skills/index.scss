@@ -21,8 +21,8 @@ $class_css_prefix: ".#{$css_prefix}";
 #{$class_css_prefix}body {
   display: flex;
   flex-wrap: wrap;
-  align-items: flex-start;
-  justify-content: flex-start;
+  align-items: center;
+  justify-content: center;
 }
 
 #{$class_css_prefix}inner-main {
@@ -126,12 +126,10 @@ $class_css_prefix: ".#{$css_prefix}";
   flex-wrap: wrap;
   flex-direction: column;
   align-items: center;
-  // max-width: 50%;
-  // max-width: 50%;
-
-  // justify-content: spac;
-  padding: 30px;
-  border-radius: 20px;
+  max-width: 900px;
+  height: 400px;
+  padding: 50px;
+  border-radius: 50px;
   margin: 0 0 0 20px;
   @include neomorph-light;
 }
@@ -149,8 +147,8 @@ $class_css_prefix: ".#{$css_prefix}";
 
 #{$class_css_prefix}items-main {
   display: flex;
-  align-items: flex-start;
-  justify-content: space-around;
+  align-items: center;
+  justify-content: flex-start;
   flex-wrap: wrap;
   flex: 1;
 }
@@ -188,6 +186,16 @@ $class_css_prefix: ".#{$css_prefix}";
   height: 100px;
   padding: 5px;
   // filter: grayscale(100%);
+}
+
+@media only screen and (max-width: 800px) {
+  #{$class_css_prefix}tab-line {
+    display: none;
+  }
+
+  #{$class_css_prefix}tabs {
+    display: none;
+  }
 }
 
 @media only screen and (max-width: 650px) {

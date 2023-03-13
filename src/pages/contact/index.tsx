@@ -32,7 +32,7 @@ const Contact: FC<ContactInterface> = () => {
         }`}
         key={key}
       >
-        <a href={link} className={`${css_prefix}link`}>
+        <a href={link} className={`${css_prefix}link`} target="_blank">
           <div
             className={`${css_prefix}card-title ${
               theme === "dark" ? css_prefix + "card-title-dark" : ""
