@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect } from "react";
 
 // Common Event type for mouse click and touch.
 type Event = MouseEvent | TouchEvent;
@@ -27,14 +27,14 @@ export const useOnClickOutside = <T extends HTMLElement = HTMLElement>(
     };
 
     // Add listeners.
-    document.addEventListener('mousedown', listener);
-    document.addEventListener('touchstart', listener);
+    // document.addEventListener('mousedown', listener);
+    // document.addEventListener('touchstart', listener);
 
-    // Remove listeners.
-    return () => {
-      document.removeEventListener('mousedown', listener);
-      document.removeEventListener('touchstart', listener);
-    };
+    // // Remove listeners.
+    // return () => {
+    //   document.removeEventListener('mousedown', listener);
+    //   document.removeEventListener('touchstart', listener);
+    // };
 
     // Reload only if ref or handler changes.
   }, [ref, handler]);
