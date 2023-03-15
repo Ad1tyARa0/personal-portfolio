@@ -1,5 +1,5 @@
-import React, { createContext, useMemo, useReducer, useState } from 'react';
-import { getInitialColorMode } from '../utils/functions/getInitialColorMode';
+import React, { createContext, useMemo, useReducer, useState } from "react";
+import { getInitialColorMode } from "../utils/functions/getInitialColorMode";
 
 export interface ThemeContextInterface {
   theme: string;
@@ -7,7 +7,7 @@ export interface ThemeContextInterface {
 }
 
 const defaultState: ThemeContextInterface = {
-  theme: 'light',
+  theme: "light",
   switchTheme: () => {},
 };
 
@@ -19,7 +19,9 @@ const ThemeProvider = ({ children }: { children: JSX.Element }) => {
   const switchTheme = (payload: string) => {
     setTheme(payload);
 
-    window.localStorage.setItem('color-mode', payload);
+    // if (window !== undefined) {
+    //   window.localStorage.setItem("color-mode", payload);
+    // }
   };
 
   const value: ThemeContextInterface = {
