@@ -103,12 +103,12 @@ const HeaderComponent: FC<HeaderProps> = ({ theme, switchTheme }) => {
       to: "/skills",
     },
 
-    {
-      id: 4,
-      title: "Work",
-      icon: <BsArrowRightCircle />,
-      to: "/work",
-    },
+    // {
+    //   id: 4,
+    //   title: "Work",
+    //   icon: <BsArrowRightCircle />,
+    //   to: "/work",
+    // },
 
     {
       id: 5,
@@ -126,7 +126,7 @@ const HeaderComponent: FC<HeaderProps> = ({ theme, switchTheme }) => {
     >
       <div className={`${css_prefix}inner-main`}>
         <div className={`${css_prefix}toggle-theme-main`}>
-          <ThemeButton theme={theme} switchTheme={switchTheme} />
+          {/* <ThemeButton theme={theme} switchTheme={switchTheme} /> */}
 
           <div className={`${css_prefix}toggle-theme-title`}>invert colors</div>
         </div>
@@ -140,7 +140,13 @@ const HeaderComponent: FC<HeaderProps> = ({ theme, switchTheme }) => {
         </div>
 
         <div className={`${css_prefix}resume-button`}>
-          <Button handleClick={console.log} theme={theme} title="Resume" />
+          <a
+            href="https://drive.google.com/file/d/1-xJ2PE6sJrNVByeTWWDRSxGWr-OHtYqJ/view?usp=sharing"
+            className={`${css_prefix}button-link`}
+            target="_blank"
+          >
+            <Button handleClick={console.log} theme={theme} title="Resume" />
+          </a>
         </div>
 
         <div className={`${css_prefix}menu`}>
