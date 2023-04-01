@@ -7,20 +7,21 @@ $class_css_prefix: ".#{$css_prefix}";
 #{$class_css_prefix}main {
   height: calc(100% - 30px);
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   padding: 20px 20px 0 20px;
 }
 
 #{$class_css_prefix}title {
   @include select-none;
 
-  font-size: 8em;
+  font-size: 6em;
   font-family: "Plain Ultra Bold";
   transition: font-size 300ms linear;
 }
 
 #{$class_css_prefix}role {
-  font-size: 5em;
+  font-size: 2em;
   font-family: "Plain Light";
   transition: font-size 300ms linear;
   margin-bottom: 20px;
@@ -28,19 +29,21 @@ $class_css_prefix: ".#{$css_prefix}";
 
 #{$class_css_prefix}body {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
   justify-content: center;
-  padding-bottom: 30px;
+  // padding-bottom: 30px;
+  margin-right: 20px;
 }
 
 #{$class_css_prefix}card {
+  @include neomorph-dark;
+  max-width: 800px;
   display: flex;
   justify-content: center;
-  border-bottom: none;
-  margin: 0 20px;
-  padding: 50px;
-  @include neomorph-dark;
-  border-radius: 50px;
+  padding: 10px;
+  border-radius: 15px;
+  margin: 0;
 
   #{$class_css_prefix}description {
     font-family: "Regular";
@@ -52,22 +55,20 @@ $class_css_prefix: ".#{$css_prefix}";
   }
 
   #{$class_css_prefix}image {
-    height: 500px;
-    width: 500px;
+    height: 300px;
+    width: 300px;
     padding: 15px;
-    border-radius: 15px;
   }
 }
 
 #{$class_css_prefix}card-light {
+  max-width: 800px;
   display: flex;
   justify-content: center;
-  border-bottom: none;
-  margin: 0 20px;
-  padding: 50px;
+  padding: 10px;
   @include neomorph-light;
-  border-radius: 50px;
-  max-width: 1200px;
+  border-radius: 15px;
+  margin: 0;
 
   #{$class_css_prefix}description {
     font-family: "Regular";
@@ -79,19 +80,15 @@ $class_css_prefix: ".#{$css_prefix}";
   }
 
   #{$class_css_prefix}image {
-    height: 500px;
-    width: 500px;
+    height: 300px;
+    width: 300px;
     padding: 15px;
-    border-radius: 15px;
   }
 }
 
 #{$class_css_prefix}expertise {
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
 
   #{$class_css_prefix}title {
     font-size: 1.3em;
@@ -100,17 +97,16 @@ $class_css_prefix: ".#{$css_prefix}";
 }
 
 #{$class_css_prefix}item-main {
+  @include neomorph-dark;
+  border-radius: 10px;
+  margin: 30px 20px 0 20px;
   min-width: 250px;
-  // max-width: 300px;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 20px;
-  @include neomorph-dark;
-  border-radius: 20px;
-  margin: 20px;
 
   &:last-of-type {
     margin-bottom: 0;
@@ -119,10 +115,9 @@ $class_css_prefix: ".#{$css_prefix}";
 
 #{$class_css_prefix}item-main-light {
   @include neomorph-light;
-  border-radius: 20px;
-  margin: 0 0 30px 20px;
+  border-radius: 10px;
+  margin: 30px 20px 0 20px;
   min-width: 250px;
-  // max-width: 300px;
 
   display: flex;
   flex-direction: column;
@@ -135,220 +130,220 @@ $class_css_prefix: ".#{$css_prefix}";
   }
 }
 
-@media only screen and (max-width: 1440px) {
-  #{$class_css_prefix}title {
-    font-size: 6em;
-  }
+// @media only screen and (max-width: 1440px) {
+//   #{$class_css_prefix}title {
+//     font-size: 6em;
+//   }
 
-  #{$class_css_prefix}role {
-    font-size: 4em;
-  }
+//   #{$class_css_prefix}role {
+//     font-size: 4em;
+//   }
 
-  #{$class_css_prefix}card {
-    #{$class_css_prefix}description {
-      font-family: "Regular";
-      line-height: 1.5em;
-      padding: 15px 0 15px 15px;
-      text-align: left;
-      font-size: 1.2em;
-      letter-spacing: 0.1em;
-    }
+//   #{$class_css_prefix}card {
+//     #{$class_css_prefix}description {
+//       font-family: "Regular";
+//       line-height: 1.5em;
+//       padding: 15px 0 15px 15px;
+//       text-align: left;
+//       font-size: 1.2em;
+//       letter-spacing: 0.1em;
+//     }
 
-    #{$class_css_prefix}image {
-      height: 300px;
-      width: 300px;
-      padding: 15px;
-      border-radius: 15px;
-    }
-  }
+//     #{$class_css_prefix}image {
+//       height: 300px;
+//       width: 300px;
+//       padding: 15px;
+//       border-radius: 15px;
+//     }
+//   }
 
-  #{$class_css_prefix}card-light {
-    #{$class_css_prefix}description {
-      font-family: "Regular";
-      line-height: 1.5em;
-      padding: 15px 0 15px 15px;
-      text-align: left;
-      font-size: 1.2em;
-      letter-spacing: 0.1em;
-    }
+//   #{$class_css_prefix}card-light {
+//     #{$class_css_prefix}description {
+//       font-family: "Regular";
+//       line-height: 1.5em;
+//       padding: 15px 0 15px 15px;
+//       text-align: left;
+//       font-size: 1.2em;
+//       letter-spacing: 0.1em;
+//     }
 
-    #{$class_css_prefix}image {
-      height: 300px;
-      width: 300px;
-      padding: 15px;
-      border-radius: 15px;
-    }
-  }
-}
+//     #{$class_css_prefix}image {
+//       height: 300px;
+//       width: 300px;
+//       padding: 15px;
+//       border-radius: 15px;
+//     }
+//   }
+// }
 
-@media only screen and (max-width: 1160px) {
-  #{$class_css_prefix}title {
-    font-size: 6em;
-  }
+// @media only screen and (max-width: 1160px) {
+//   #{$class_css_prefix}title {
+//     font-size: 6em;
+//   }
 
-  #{$class_css_prefix}role {
-    font-size: 4em;
-  }
+//   #{$class_css_prefix}role {
+//     font-size: 4em;
+//   }
 
-  #{$class_css_prefix}body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
+//   #{$class_css_prefix}body {
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     justify-content: center;
+//   }
 
-  #{$class_css_prefix}expertise {
-    margin-top: 20px;
-  }
+//   #{$class_css_prefix}expertise {
+//     margin-top: 20px;
+//   }
 
-  #{$class_css_prefix}item-main {
-    &:first-of-type {
-      margin-left: 0;
-    }
+//   #{$class_css_prefix}item-main {
+//     &:first-of-type {
+//       margin-left: 0;
+//     }
 
-    &:last-of-type {
-      margin-bottom: 30px;
-    }
-  }
+//     &:last-of-type {
+//       margin-bottom: 30px;
+//     }
+//   }
 
-  #{$class_css_prefix}item-main-light {
-    &:first-of-type {
-      margin-left: 0;
-    }
+//   #{$class_css_prefix}item-main-light {
+//     &:first-of-type {
+//       margin-left: 0;
+//     }
 
-    &:last-of-type {
-      margin-bottom: 30px;
-    }
-  }
+//     &:last-of-type {
+//       margin-bottom: 30px;
+//     }
+//   }
 
-  #{$class_css_prefix}expertise {
-    display: flex;
-    flex-direction: row;
-  }
+//   #{$class_css_prefix}expertise {
+//     display: flex;
+//     flex-direction: row;
+//   }
 
-  #{$class_css_prefix}card {
-    margin: 20px;
-  }
+//   #{$class_css_prefix}card {
+//     margin: 20px;
+//   }
 
-  #{$class_css_prefix}card-light {
-    margin: 20px;
-  }
-}
+//   #{$class_css_prefix}card-light {
+//     margin: 20px;
+//   }
+// }
 
-@media only screen and (max-width: 800px) {
-  #{$class_css_prefix}title {
-    font-size: 4em;
-  }
+// @media only screen and (max-width: 800px) {
+//   #{$class_css_prefix}title {
+//     font-size: 4em;
+//   }
 
-  #{$class_css_prefix}role {
-    font-size: 2.5em;
-  }
+//   #{$class_css_prefix}role {
+//     font-size: 2.5em;
+//   }
 
-  #{$class_css_prefix}card {
-    #{$class_css_prefix}description {
-      font-family: "Regular";
-      line-height: 1.3em;
-      padding: 15px 0 15px 15px;
-      text-align: left;
-      font-size: 1.1em;
-      letter-spacing: 0.05em;
-    }
+//   #{$class_css_prefix}card {
+//     #{$class_css_prefix}description {
+//       font-family: "Regular";
+//       line-height: 1.3em;
+//       padding: 15px 0 15px 15px;
+//       text-align: left;
+//       font-size: 1.1em;
+//       letter-spacing: 0.05em;
+//     }
 
-    #{$class_css_prefix}image {
-      height: 200px;
-      width: 200px;
-      padding: 15px;
-      border-radius: 15px;
-    }
-  }
+//     #{$class_css_prefix}image {
+//       height: 200px;
+//       width: 200px;
+//       padding: 15px;
+//       border-radius: 15px;
+//     }
+//   }
 
-  #{$class_css_prefix}card-light {
-    #{$class_css_prefix}description {
-      font-family: "Regular";
-      line-height: 1.3em;
-      padding: 15px 0 15px 15px;
-      text-align: left;
-      font-size: 1.1em;
-      letter-spacing: 0.05em;
-    }
+//   #{$class_css_prefix}card-light {
+//     #{$class_css_prefix}description {
+//       font-family: "Regular";
+//       line-height: 1.3em;
+//       padding: 15px 0 15px 15px;
+//       text-align: left;
+//       font-size: 1.1em;
+//       letter-spacing: 0.05em;
+//     }
 
-    #{$class_css_prefix}image {
-      height: 200px;
-      width: 200px;
-      padding: 15px;
-      border-radius: 15px;
-    }
-  }
+//     #{$class_css_prefix}image {
+//       height: 200px;
+//       width: 200px;
+//       padding: 15px;
+//       border-radius: 15px;
+//     }
+//   }
 
-  #{$class_css_prefix}expertise {
-    display: flex;
-    flex-wrap: wrap;
-  }
+//   #{$class_css_prefix}expertise {
+//     display: flex;
+//     flex-wrap: wrap;
+//   }
 
-  #{$class_css_prefix}item-main {
-    display: flex;
-    flex-direction: column-reverse;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    @include neomorph-dark;
-    border-radius: 20px;
-    min-width: 400px;
-    margin: 0 0 30px 0;
+//   #{$class_css_prefix}item-main {
+//     display: flex;
+//     flex-direction: column-reverse;
+//     justify-content: space-between;
+//     align-items: center;
+//     padding: 20px;
+//     @include neomorph-dark;
+//     border-radius: 20px;
+//     min-width: 400px;
+//     margin: 0 0 30px 0;
 
-    #{$class_css_prefix}title {
-      margin: 10px 0 0 0;
-    }
-  }
+//     #{$class_css_prefix}title {
+//       margin: 10px 0 0 0;
+//     }
+//   }
 
-  #{$class_css_prefix}item-main-light {
-    @include neomorph-light;
-    border-radius: 20px;
-    margin: 0 0 30px 0;
+//   #{$class_css_prefix}item-main-light {
+//     @include neomorph-light;
+//     border-radius: 20px;
+//     margin: 0 0 30px 0;
 
-    display: flex;
-    flex-direction: column-reverse;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    min-width: 400px;
+//     display: flex;
+//     flex-direction: column-reverse;
+//     justify-content: space-between;
+//     align-items: center;
+//     padding: 20px;
+//     min-width: 400px;
 
-    #{$class_css_prefix}title {
-      margin: 10px 0 0 0;
-    }
-  }
-}
+//     #{$class_css_prefix}title {
+//       margin: 10px 0 0 0;
+//     }
+//   }
+// }
 
-@media only screen and (max-width: 540px) {
-  #{$class_css_prefix}title {
-    font-size: 3em;
-  }
+// @media only screen and (max-width: 540px) {
+//   #{$class_css_prefix}title {
+//     font-size: 3em;
+//   }
 
-  #{$class_css_prefix}role {
-    font-size: 1.5em;
-  }
+//   #{$class_css_prefix}role {
+//     font-size: 1.5em;
+//   }
 
-  #{$class_css_prefix}card {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-    border-bottom: none;
-    margin: 0 0 50px 0;
-    padding: 15px;
-    @include neomorph-dark;
-    border-radius: 25px;
-  }
+//   #{$class_css_prefix}card {
+//     display: flex;
+//     align-items: center;
+//     flex-direction: column;
+//     justify-content: center;
+//     border-bottom: none;
+//     margin: 0 0 50px 0;
+//     padding: 15px;
+//     @include neomorph-dark;
+//     border-radius: 25px;
+//   }
 
-  #{$class_css_prefix}card-light {
-    @include neomorph-light;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border-bottom: none;
-    margin: 0 0 50px 0;
-    padding: 15px;
-    border-radius: 25px;
-  }
-}
+//   #{$class_css_prefix}card-light {
+//     @include neomorph-light;
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+//     align-items: center;
+//     border-bottom: none;
+//     margin: 0 0 50px 0;
+//     padding: 15px;
+//     border-radius: 25px;
+//   }
+// }

@@ -26,28 +26,22 @@ const Index: React.FC<IndexInterface> = ({ data }) => {
 
   const bioData = data.allPrismicAbout.nodes[0].data;
 
-  const [showDescription, setShowDescription] = useState<boolean>(true);
-
-  const handleClickToggleDescription = () => {
-    setShowDescription(!showDescription);
-  };
-
   const MAIN_SKILLS = [
     {
       id: 1,
-      icon: <WebDevelopment theme={theme} width="180px" height="120px" />,
+      icon: <WebDevelopment theme={theme} width="160px" height="100px" />,
       title: "Web Development",
     },
 
     {
       id: 2,
-      icon: <AppDevelopment theme={theme} width="120px" height="120px" />,
+      icon: <AppDevelopment theme={theme} width="140px" height="100px" />,
       title: "App Development",
     },
 
     {
       id: 3,
-      icon: <UiUx theme={theme} width="120px" height="120px" />,
+      icon: <UiUx theme={theme} width="140px" height="100px" />,
       title: "UI and UX",
     },
   ];
@@ -55,13 +49,15 @@ const Index: React.FC<IndexInterface> = ({ data }) => {
   return (
     <PageContainer>
       <div className={`${css_prefix}main`}>
-        <div className={`${css_prefix}title`}>
-          {data.site.siteMetadata.name}
-        </div>
-
-        <div className={`${css_prefix}role`}>{data.site.siteMetadata.role}</div>
-
         <div className={`${css_prefix}body`}>
+          <div className={`${css_prefix}title`}>
+            {data.site.siteMetadata.name}
+          </div>
+
+          <div className={`${css_prefix}role`}>
+            {data.site.siteMetadata.role}
+          </div>
+
           <div
             className={`${css_prefix}card ${
               theme === "light" ? css_prefix + "card-light" : ""
@@ -75,23 +71,23 @@ const Index: React.FC<IndexInterface> = ({ data }) => {
 
             <div className={`${css_prefix}description`}>{bioData.bio.text}</div>
           </div>
+        </div>
 
-          <div className={`${css_prefix}expertise`}>
-            {MAIN_SKILLS.map(e => {
-              return (
-                <div
-                  key={e.id}
-                  className={`${css_prefix}item-main ${
-                    theme === "light" ? css_prefix + "item-main-light" : ""
-                  }`}
-                >
-                  <div className={`${css_prefix}title`}>{e.title}</div>
+        <div className={`${css_prefix}expertise`}>
+          {MAIN_SKILLS.map(e => {
+            return (
+              <div
+                key={e.id}
+                className={`${css_prefix}item-main ${
+                  theme === "light" ? css_prefix + "item-main-light" : ""
+                }`}
+              >
+                <div className={`${css_prefix}title`}>{e.title}</div>
 
-                  <div className={`${css_prefix}image`}>{e.icon}</div>
-                </div>
-              );
-            })}
-          </div>
+                <div className={`${css_prefix}image`}>{e.icon}</div>
+              </div>
+            );
+          })}
         </div>
       </div>
     </PageContainer>

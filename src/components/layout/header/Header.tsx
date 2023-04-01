@@ -140,13 +140,17 @@ const HeaderComponent: FC<HeaderProps> = ({ theme, switchTheme }) => {
         </div>
 
         <div className={`${css_prefix}resume-button`}>
-          <a
+          {/* <a
             href="https://drive.google.com/file/d/1-xJ2PE6sJrNVByeTWWDRSxGWr-OHtYqJ/view?usp=sharing"
             className={`${css_prefix}button-link`}
             target="_blank"
-          >
-            <Button handleClick={console.log} theme={theme} title="Resume" />
-          </a>
+          > */}
+          <Button
+            handleClick={() => navigate("/resume")}
+            theme={theme}
+            title="Resume"
+          />
+          {/* </a> */}
         </div>
 
         <div className={`${css_prefix}menu`}>

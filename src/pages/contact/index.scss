@@ -14,7 +14,7 @@ $class_css_prefix: ".#{$css_prefix}";
 #{$class_css_prefix}title {
   @include select-none;
 
-  font-size: 8em;
+  font-size: 6em;
   font-family: "Plain Ultra Bold";
   transition: font-size 300ms linear;
 }

@@ -19,7 +19,16 @@ module.exports = {
           new_employment_history: require("./src/schemas/new_employment_history.json"),
           about: require("./src/schemas/about.json"),
           skills: require("./src/schemas/skills.json"),
+          resume: require("./src/schemas/resume.json"),
         },
+      },
+    },
+
+    {
+      resolve: "gatsby-plugin-pdf",
+      options: {
+        paths: ["/resume"],
+        outputPath: "/assets/pdf",
       },
     },
   ],

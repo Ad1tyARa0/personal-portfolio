@@ -1,0 +1,15 @@
+{
+  "Main": {
+    "resume": {
+      "type": "Image",
+      "config": {
+        "constraint": {
+          "width": 2480,
+          "height": 3508
+        },
+        "thumbnails": [],
+        "label": "Resume"
+      }
+    }
+  }
+}
