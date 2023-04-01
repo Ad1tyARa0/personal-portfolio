@@ -23,13 +23,5 @@ module.exports = {
         },
       },
     },
-
-    {
-      resolve: "gatsby-plugin-pdf",
-      options: {
-        paths: ["/resume"],
-        outputPath: "/assets/pdf",
-      },
-    },
   ],
 };

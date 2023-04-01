@@ -21,7 +21,6 @@
     "@types/react-icons": "^3.0.0",
     "gatsby": "^5.8.1",
     "gatsby-plugin-image": "^3.8.0",
-    "gatsby-plugin-pdf": "^0.0.1",
     "gatsby-plugin-sass": "^6.8.0",
     "gatsby-source-filesystem": "^5.8.0",
     "gatsby-source-prismic": "^5.2.10",
