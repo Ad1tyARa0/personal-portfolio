@@ -126,7 +126,7 @@ const HeaderComponent: FC<HeaderProps> = ({ theme, switchTheme }) => {
     >
       <div className={`${css_prefix}inner-main`}>
         <div className={`${css_prefix}toggle-theme-main`}>
-          {/* <ThemeButton theme={theme} switchTheme={switchTheme} /> */}
+          <ThemeButton theme={theme} switchTheme={switchTheme} />
 
           <div className={`${css_prefix}toggle-theme-title`}>invert colors</div>
         </div>
