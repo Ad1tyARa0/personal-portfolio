@@ -7,16 +7,8 @@ module.exports = {
 
   plugins: [
     "gatsby-plugin-sass",
-    "gatsby-plugin-mdx",
     "gatsby-transformer-remark",
     "gatsby-plugin-image",
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        name: "markdown-bio",
-        path: `${__dirname}/md`,
-      },
-    },
     {
       resolve: "gatsby-source-prismic",
       options: {
