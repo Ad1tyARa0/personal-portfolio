@@ -21,6 +21,7 @@ import { navigate } from "gatsby";
 import { BsArrowRightCircle } from "react-icons/bs";
 import { Button } from "../../common/button/Button";
 import { ThemeContext } from "../../../context/ThemeContext";
+import { RESUME_LINK } from "../../../utils/constants/links";
 
 // Components -- layout -- header
 const css_prefix = "c--l--h__";
@@ -141,15 +142,11 @@ const HeaderComponent: FC<HeaderProps> = ({ theme, switchTheme }) => {
 
         <div className={`${css_prefix}resume-button`}>
           <a
-            href="https://drive.google.com/file/d/1-xJ2PE6sJrNVByeTWWDRSxGWr-OHtYqJ/view?usp=sharing"
+            href={RESUME_LINK}
             className={`${css_prefix}button-link`}
             target="_blank"
           >
-            <Button
-              handleClick={() => navigate("/resume")}
-              theme={theme}
-              title="Resume"
-            />
+            <Button handleClick={console.log} theme={theme} title="Resume" />
           </a>
         </div>
 
