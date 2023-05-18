@@ -12,9 +12,11 @@ interface indexProps {}
 
 const Resume: React.FC<indexProps> = () => {
   return (
-    <div className={`${css_prefix}main`}>
-      <div className={`${css_prefix}title`}>Resume</div>
-    </div>
+    <PageContainer>
+      <div className={`${css_prefix}main`}>
+        <div className={`${css_prefix}title`}>Resume</div>
+      </div>
+    </PageContainer>
   );
 };
 
