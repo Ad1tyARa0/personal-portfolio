@@ -6,344 +6,224 @@ $class_css_prefix: ".#{$css_prefix}";
 
 #{$class_css_prefix}main {
   height: calc(100% - 30px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 20px 20px 0 20px;
+  @include display-flex-center;
+  padding-top: 20px;
 }
 
 #{$class_css_prefix}title {
-  @include select-none;
-
   font-size: 6em;
   font-family: "Plain Ultra Bold";
   transition: font-size 300ms linear;
+  margin-bottom: 5px;
+  color: $accentColor30;
+  transition: color 500ms ease;
+}
+
+#{$class_css_prefix}title-dark {
+  color: $accentColor10;
 }
 
 #{$class_css_prefix}role {
-  font-size: 2em;
-  font-family: "Plain Light";
+  font-size: 1.8em;
+  line-height: 1.2em;
+  font-family: "Regular";
   transition: font-size 300ms linear;
+  text-align: center;
   margin-bottom: 20px;
+  color: $accentColor30;
+  transition: color 500ms ease;
 }
 
-#{$class_css_prefix}body {
+#{$class_css_prefix}role-dark {
+  color: $accentColor10;
+}
+
+#{$class_css_prefix}card-header {
   display: flex;
+  align-items: center;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  // padding-bottom: 30px;
-  margin-right: 20px;
 }
 
 #{$class_css_prefix}card {
-  @include neomorph-dark;
-  max-width: 800px;
   display: flex;
-  justify-content: center;
-  padding: 10px;
-  border-radius: 15px;
-  margin: 0;
+  flex-direction: column;
+  padding: 40px;
+  border-radius: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
 
   #{$class_css_prefix}description {
-    font-family: "Regular";
+    font-family: "Plain Ultra Bold Italic";
+    opacity: 0.6;
     line-height: 1.5em;
-    padding: 15px 0 15px 15px;
     text-align: left;
     font-size: 1.6em;
     letter-spacing: 0.1em;
+    text-align: center;
   }
 
   #{$class_css_prefix}image {
     height: 300px;
     width: 300px;
-    padding: 15px;
+    margin-bottom: 5px;
   }
 }
 
 #{$class_css_prefix}card-light {
-  max-width: 800px;
-  display: flex;
-  justify-content: center;
-  padding: 10px;
   @include neomorph-light;
-  border-radius: 15px;
-  margin: 0;
+}
 
-  #{$class_css_prefix}description {
-    font-family: "Regular";
-    line-height: 1.5em;
-    padding: 15px 0 15px 15px;
-    text-align: left;
-    font-size: 1.6em;
-    letter-spacing: 0.1em;
+#{$class_css_prefix}card-dark {
+  @include neomorph-dark;
+}
+
+@media only screen and (max-width: 1440px) {
+  #{$class_css_prefix}card {
+    padding: 20px;
+
+    #{$class_css_prefix}description {
+      font-size: 1.4em;
+    }
+
+    #{$class_css_prefix}image {
+      height: 250px;
+      width: 250px;
+    }
   }
 
-  #{$class_css_prefix}image {
-    height: 300px;
-    width: 300px;
-    padding: 15px;
+  #{$class_css_prefix}title {
+    font-size: 5em;
+  }
+
+  #{$class_css_prefix}role {
+    font-size: 1.4em;
+    margin-bottom: 10px;
   }
 }
 
-#{$class_css_prefix}expertise {
-  display: flex;
-  flex-direction: column;
+@media only screen and (max-width: 1152px) {
+  #{$class_css_prefix}main {
+    display: block;
+  }
+
+  #{$class_css_prefix}card {
+    padding: 20px;
+    @include none;
+
+    #{$class_css_prefix}description {
+      font-size: 1.4em;
+    }
+
+    #{$class_css_prefix}image {
+      height: 250px;
+      width: 250px;
+    }
+  }
 
   #{$class_css_prefix}title {
+    font-size: 5em;
+  }
+
+  #{$class_css_prefix}role {
+    font-size: 1.4em;
+    margin-bottom: 10px;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  #{$class_css_prefix}main {
+    display: block;
+  }
+
+  #{$class_css_prefix}card {
+    @include none;
+
+    #{$class_css_prefix}description {
+      font-size: 1.2em;
+    }
+
+    #{$class_css_prefix}image {
+      height: 250px;
+      width: 250px;
+    }
+  }
+
+  #{$class_css_prefix}title {
+    font-size: 4em;
+  }
+
+  #{$class_css_prefix}role {
     font-size: 1.3em;
     margin-bottom: 10px;
   }
 }
 
-#{$class_css_prefix}item-main {
-  @include neomorph-dark;
-  border-radius: 10px;
-  margin: 30px 20px 0 20px;
-  min-width: 250px;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-
-  &:last-of-type {
-    margin-bottom: 0;
-  }
-}
-
-#{$class_css_prefix}item-main-light {
-  @include neomorph-light;
-  border-radius: 10px;
-  margin: 30px 20px 0 20px;
-  min-width: 250px;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-
-  &:last-of-type {
-    margin-bottom: 0;
-  }
-}
-
-@media only screen and (max-width: 1440px) {
-  #{$class_css_prefix}title {
-    font-size: 6em;
-  }
-
-  #{$class_css_prefix}role {
-    font-size: 4em;
-  }
-
-  #{$class_css_prefix}card {
-    #{$class_css_prefix}description {
-      font-family: "Regular";
-      line-height: 1.5em;
-      padding: 15px 0 15px 15px;
-      text-align: left;
-      font-size: 1.2em;
-      letter-spacing: 0.1em;
-    }
-
-    #{$class_css_prefix}image {
-      height: 300px;
-      width: 300px;
-      padding: 15px;
-      border-radius: 15px;
-    }
-  }
-
-  #{$class_css_prefix}card-light {
-    #{$class_css_prefix}description {
-      font-family: "Regular";
-      line-height: 1.5em;
-      padding: 15px 0 15px 15px;
-      text-align: left;
-      font-size: 1.2em;
-      letter-spacing: 0.1em;
-    }
-
-    #{$class_css_prefix}image {
-      height: 300px;
-      width: 300px;
-      padding: 15px;
-      border-radius: 15px;
-    }
-  }
-}
-
-@media only screen and (max-width: 1160px) {
-  #{$class_css_prefix}title {
-    font-size: 6em;
-  }
-
-  #{$class_css_prefix}role {
-    font-size: 4em;
-  }
-
-  #{$class_css_prefix}body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-
-  #{$class_css_prefix}expertise {
-    margin-top: 20px;
-  }
-
-  #{$class_css_prefix}item-main {
-    &:first-of-type {
-      margin-left: 0;
-    }
-
-    &:last-of-type {
-      margin-bottom: 30px;
-    }
-  }
-
-  #{$class_css_prefix}item-main-light {
-    &:first-of-type {
-      margin-left: 0;
-    }
-
-    &:last-of-type {
-      margin-bottom: 30px;
-    }
-  }
-
-  #{$class_css_prefix}expertise {
-    display: flex;
-    flex-direction: row;
-  }
-
-  #{$class_css_prefix}card {
-    margin: 20px;
-  }
-
-  #{$class_css_prefix}card-light {
-    margin: 20px;
-  }
-}
-
 @media only screen and (max-width: 800px) {
+  #{$class_css_prefix}main {
+    display: block;
+  }
+
+  #{$class_css_prefix}card {
+    @include none;
+
+    #{$class_css_prefix}description {
+      font-size: 1.2em;
+    }
+
+    #{$class_css_prefix}image {
+      height: 250px;
+      width: 250px;
+    }
+  }
+
   #{$class_css_prefix}title {
     font-size: 4em;
   }
 
   #{$class_css_prefix}role {
-    font-size: 2.5em;
-  }
-
-  #{$class_css_prefix}card {
-    #{$class_css_prefix}description {
-      font-family: "Regular";
-      line-height: 1.3em;
-      padding: 15px 0 15px 15px;
-      text-align: left;
-      font-size: 1.1em;
-      letter-spacing: 0.05em;
-    }
-
-    #{$class_css_prefix}image {
-      height: 200px;
-      width: 200px;
-      padding: 15px;
-      border-radius: 15px;
-    }
-  }
-
-  #{$class_css_prefix}card-light {
-    #{$class_css_prefix}description {
-      font-family: "Regular";
-      line-height: 1.3em;
-      padding: 15px 0 15px 15px;
-      text-align: left;
-      font-size: 1.1em;
-      letter-spacing: 0.05em;
-    }
-
-    #{$class_css_prefix}image {
-      height: 200px;
-      width: 200px;
-      padding: 15px;
-      border-radius: 15px;
-    }
-  }
-
-  #{$class_css_prefix}expertise {
-    display: flex;
-    flex-wrap: wrap;
-  }
-
-  #{$class_css_prefix}item-main {
-    display: flex;
-    flex-direction: column-reverse;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    @include neomorph-dark;
-    border-radius: 20px;
-    min-width: 400px;
-    margin: 0 0 30px 0;
-
-    #{$class_css_prefix}title {
-      margin: 10px 0 0 0;
-    }
-  }
-
-  #{$class_css_prefix}item-main-light {
-    @include neomorph-light;
-    border-radius: 20px;
-    margin: 0 0 30px 0;
-
-    display: flex;
-    flex-direction: column-reverse;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    min-width: 400px;
-
-    #{$class_css_prefix}title {
-      margin: 10px 0 0 0;
-    }
+    font-size: 1.3em;
+    margin-bottom: 10px;
   }
 }
 
-@media only screen and (max-width: 540px) {
+@media only screen and (max-width: 600px) {
   #{$class_css_prefix}title {
-    font-size: 3em;
+    font-size: 4em !important;
+    // background-color: red;
   }
 
   #{$class_css_prefix}role {
-    font-size: 1.5em;
+    font-size: 1.4em;
+    margin-bottom: 10px;
   }
 
   #{$class_css_prefix}card {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-    border-bottom: none;
-    margin: 0 0 50px 0;
-    padding: 15px;
-    @include neomorph-dark;
-    border-radius: 25px;
+    padding: 0 5px;
+    @include none;
+
+    #{$class_css_prefix}description {
+      font-size: 1em;
+      text-align: left;
+    }
+
+    #{$class_css_prefix}image {
+      height: 250px;
+      width: 250px;
+    }
   }
 
-  #{$class_css_prefix}card-light {
-    @include neomorph-light;
+  #{$class_css_prefix}card-header {
     display: flex;
+    align-items: flex-start;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border-bottom: none;
-    margin: 0 0 50px 0;
-    padding: 15px;
-    border-radius: 25px;
+  }
+
+  #{$class_css_prefix}title {
+    font-size: 5em;
+  }
+
+  #{$class_css_prefix}role {
+    font-size: 1.2em;
+    margin-bottom: 10px;
   }
 }

@@ -59,6 +59,11 @@
   box-shadow: 5px 5px 10px #beb3a6, -5px -5px 10px #fff3e0;
 }
 
+@mixin none() {
+  background: inherit;
+  box-shadow: none;
+}
+
 @mixin neomorph-dark() {
   background: linear-gradient(145deg, #121212, #151515);
   box-shadow: 5px 5px 10px #111111, -5px -5px 10px #171717;

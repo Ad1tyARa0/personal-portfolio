@@ -2,9 +2,6 @@ import React, { useState } from "react";
 import { graphql } from "gatsby";
 
 // Components.
-import { UiUx } from "../assets/icons/about-page/UiUx";
-import { WebDevelopment } from "../assets/icons/about-page/WebDevelopment";
-import { AppDevelopment } from "../assets/icons/about-page/AppDevelopment";
 import { PageContainer } from "./../components/layout/container/PageContainer";
 
 // Types and interfaces.
@@ -26,69 +23,51 @@ const Index: React.FC<IndexInterface> = ({ data }) => {
 
   const bioData = data.allPrismicAbout.nodes[0].data;
 
-  const MAIN_SKILLS = [
-    {
-      id: 1,
-      icon: <WebDevelopment theme={theme} width="150px" height="90px" />,
-      title: "Web Development",
-    },
-
-    {
-      id: 2,
-      icon: <AppDevelopment theme={theme} width="130px" height="90px" />,
-      title: "App Development",
-    },
-
-    {
-      id: 3,
-      icon: <UiUx theme={theme} width="130px" height="90px" />,
-      title: "UI and UX",
-    },
-  ];
-
   return (
     <PageContainer>
       <div className={`${css_prefix}main`}>
-        <div className={`${css_prefix}body`}>
-          <div className={`${css_prefix}title`}>
-            {data.site.siteMetadata.name}
-          </div>
-
-          <div className={`${css_prefix}role`}>
-            {data.site.siteMetadata.role}
-          </div>
-
-          <div
-            className={`${css_prefix}card ${
-              theme === "light" ? css_prefix + "card-light" : ""
-            }`}
-          >
+        <div
+          className={`${css_prefix}card ${
+            theme === "light" ? css_prefix + "card-light" : "card-dark"
+          }`}
+        >
+          <div className={`${css_prefix}card-header`}>
             <img
               src={bioData.profile_picture.url}
               alt={bioData.profile_picture.alt}
               className={`${css_prefix}image`}
             />
 
-            <div className={`${css_prefix}description`}>{bioData.bio.text}</div>
+            <div
+              className={`${css_prefix}title ${
+                theme === "dark" ? css_prefix + "title-dark" : ""
+              }`}
+            >
+              {data.site.siteMetadata.name}
+            </div>
+
+            <div
+              className={`${css_prefix}role ${
+                theme === "dark" ? css_prefix + "role-dark" : ""
+              }`}
+            >
+              {data.site.siteMetadata.role}
+            </div>
           </div>
+
+          <div className={`${css_prefix}description`}>{bioData.bio.text}</div>
         </div>
 
-        <div className={`${css_prefix}expertise`}>
-          {MAIN_SKILLS.map(e => {
-            return (
-              <div
-                key={e.id}
-                className={`${css_prefix}item-main ${
-                  theme === "light" ? css_prefix + "item-main-light" : ""
-                }`}
-              >
-                <div className={`${css_prefix}title`}>{e.title}</div>
-
-                <div className={`${css_prefix}image`}>{e.icon}</div>
-              </div>
-            );
-          })}
-        </div>
+        {/* <div className={`${css_prefix}expertise`}>
+          <div className={`${css_prefix}title`}>Web and App Development</div>
+          <div className={`${css_prefix}skill-image`}>
+            <Dev
+              bgColor={theme === "light" ? COLOR_LIGHT : COLOR_DARK}
+              width="300px"
+              height="200px"
+            />
+          </div>
+        </div> */}
       </div>
     </PageContainer>
   );

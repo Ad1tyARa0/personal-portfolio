@@ -8,7 +8,6 @@ $class_css_prefix: ".#{$css_prefix}";
   height: calc(100% - 30px);
   display: flex;
   flex-direction: column;
-  padding: 20px 20px 0 20px;
 }
 
 #{$class_css_prefix}body {
@@ -19,89 +18,9 @@ $class_css_prefix: ".#{$css_prefix}";
   padding-bottom: 30px;
 }
 
-#{$class_css_prefix}inner-main {
-  display: flex;
-  flex-direction: row;
-}
-
-#{$class_css_prefix}tab-line {
-  width: 5px;
-
-  margin-right: -5px;
-  position: relative;
-}
-
-#{$class_css_prefix}active-tab-line {
-  position: absolute;
-  background-color: $accentColor30;
-  width: 10px;
-  height: 50px;
-  left: -2.5px;
-  top: 0;
-}
-
-#{$class_css_prefix}active-tab-line-dark {
-  background-color: $accentColor10;
-}
-
-#{$class_css_prefix}tricog-health {
-  top: 0;
-  transition: top 500ms ease;
-}
-
-#{$class_css_prefix}quantonaut {
-  top: 70px;
-  transition: top 500ms ease;
-}
-
-#{$class_css_prefix}ibm {
-  top: 140px;
-  transition: top 500ms ease;
-}
-
-#{$class_css_prefix} #{$class_css_prefix}tabs {
-  display: flex;
-  flex-direction: column;
-  margin-right: 20px;
-  align-items: flex-end;
-  justify-content: center;
-}
-
-#{$class_css_prefix}tab {
-  @include select-none;
-  cursor: pointer;
-  display: flex;
-  position: relative;
-  align-items: center;
-  justify-content: flex-start;
-  padding: 15px 10px 35px 25px;
-  // max-width: 120px;
-  margin-right: 40px;
-  font-family: "Plain Ultra Bold";
-  font-size: 1.2em;
-  // opacity: 0.6;
-  border-left: 5px solid rgba($color: $accentColor30, $alpha: 0.3);
-
-  &:last-of-type {
-    padding-bottom: 15px;
-  }
-}
-
-#{$class_css_prefix}tab-dark {
-  border-left: 5px solid rgba($color: $accentColor10, $alpha: 0.3);
-}
-
-#{$class_css_prefix}tab-active {
-  #{$class_css_prefix}tab-title {
-    opacity: 1;
-  }
-
-  transition: opacity 500ms ease;
-}
-
-#{$class_css_prefix}tab-title {
-  // background-color: red;
-  opacity: 0.5;
+#{$class_css_prefix}tab-main {
+  // padding: 20px;
+  margin: 20px;
 }
 
 #{$class_css_prefix}title {
@@ -112,40 +31,38 @@ $class_css_prefix: ".#{$css_prefix}";
   transition: font-size 300ms linear;
 }
 
-#{$class_css_prefix}employment-main {
+#{$class_css_prefix}item-main {
   display: flex;
 }
 
-#{$class_css_prefix}employment-item-main-shown {
+#{$class_css_prefix}employment-item-main-light {
   @include neomorph-light;
-  transition: all 500ms ease;
-  border-radius: 50px;
-  padding: 50px;
-  max-width: 800px;
-  min-width: 250px;
-  opacity: 1;
-  min-height: 400px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-evenly;
-}
-
-#{$class_css_prefix}employment-item-main {
-  opacity: 0;
-  transition: all 500ms ease;
-  display: none;
 }
 
 #{$class_css_prefix}employment-item-main-dark {
   @include neomorph-dark;
 }
 
+#{$class_css_prefix}employment-item-main {
+  opacity: 0;
+  transition: all 500ms ease;
+  display: none;
+  transition: all 500ms ease;
+  border-radius: 50px;
+  padding: 50px;
+  max-width: 800px;
+  opacity: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-evenly;
+}
+
 #{$class_css_prefix}logo {
   height: 40px;
   width: fit-content;
   filter: grayscale(100%);
-  margin-left: auto;
+  margin: 20px 10px 0 auto;
 }
 
 #{$class_css_prefix}company-name {
@@ -168,7 +85,6 @@ $class_css_prefix: ".#{$css_prefix}";
 #{$class_css_prefix}footer-container {
   display: flex;
   align-items: center;
-  // margin-bottom: 10px;
   width: 100%;
 }
 
@@ -210,85 +126,19 @@ $class_css_prefix: ".#{$css_prefix}";
   margin-inline: 5px;
 }
 
+@media only screen and (max-width: 1440px) {
+  #{$class_css_prefix}body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+}
+
 @media only screen and (max-width: 1152px) {
   #{$class_css_prefix}body {
     display: flex;
     flex-direction: column;
-  }
-
-  #{$class_css_prefix}tabs {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-
-    // margin-bottom: 20px;
-  }
-
-  #{$class_css_prefix}inner-main {
-    // background-color: red;
-    display: flex;
-    flex-direction: row;
-  }
-
-  #{$class_css_prefix}tab {
-    padding: 15px 0;
-    border-bottom: 5px solid rgba($color: $accentColor30, $alpha: 0.3);
-    border-left: none;
-    margin-right: 0;
-    width: 150px;
-    @include display-flex-center;
-    position: relative;
-  }
-
-  #{$class_css_prefix}tab-title {
-    font-size: 0.7em;
-  }
-
-  #{$class_css_prefix}tab-dark {
-    border-bottom: 5px solid rgba($color: $accentColor10, $alpha: 0.3);
-    border-left: none;
-    margin-right: 0;
-  }
-
-  #{$class_css_prefix}tab-line {
-    width: 5px;
-
-    margin-right: -5px;
-    position: relative;
-    // display: none;
-  }
-
-  #{$class_css_prefix}active-tab-line {
-    position: absolute;
-    background-color: $accentColor30;
-    width: 50px;
-    height: 10px;
-    left: 0;
-    top: 40px;
-  }
-
-  #{$class_css_prefix}active-tab-line-dark {
-    background-color: $accentColor10;
-  }
-
-  #{$class_css_prefix}tricog-health {
-    left: 50px;
-    transition: left 500ms ease;
-  }
-
-  #{$class_css_prefix}quantonaut {
-    left: 200px;
-    transition: left 500ms ease;
-  }
-
-  #{$class_css_prefix}ibm {
-    left: 350px;
-    transition: left 500ms ease;
-  }
-
-  #{$class_css_prefix}employment-main {
-    margin-top: 20px;
   }
 }
 
@@ -296,97 +146,23 @@ $class_css_prefix: ".#{$css_prefix}";
   #{$class_css_prefix}title {
     font-size: 6em;
   }
-
-  #{$class_css_prefix}company-name {
-    font-size: 1em;
-  }
-
-  #{$class_css_prefix}designation {
-    font-size: 1.5em;
-  }
-
-  #{$class_css_prefix}tabs {
-    display: none;
-  }
-
-  #{$class_css_prefix}tabs {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-
-    // margin-bottom: 20px;
-  }
-
-  #{$class_css_prefix}inner-main {
-    // background-color: red;
-    display: flex;
-    flex-direction: row;
-  }
-
-  #{$class_css_prefix}tab {
-    padding: 15px 0;
-    border-bottom: 5px solid rgba($color: $accentColor30, $alpha: 0.3);
-    border-left: none;
-    margin-right: 0;
-    width: 150px;
-    @include display-flex-center;
-    position: relative;
-  }
-
-  #{$class_css_prefix}tab-title {
-    font-size: 0.7em;
-  }
-
-  #{$class_css_prefix}tab-dark {
-    border-bottom: 5px solid rgba($color: $accentColor10, $alpha: 0.3);
-    border-left: none;
-    margin-right: 0;
-  }
-
-  #{$class_css_prefix}tab-line {
-    width: 5px;
-
-    margin-right: -5px;
-    position: relative;
-    // display: none;
-  }
-
-  #{$class_css_prefix}active-tab-line {
-    position: absolute;
-    background-color: $accentColor30;
-    width: 50px;
-    height: 10px;
-    left: 0;
-    top: 40px;
-  }
-
-  #{$class_css_prefix}active-tab-line-dark {
-    background-color: $accentColor10;
-  }
-
-  #{$class_css_prefix}tricog-health {
-    left: 50px;
-    transition: left 500ms ease;
-  }
-
-  #{$class_css_prefix}quantonaut {
-    left: 200px;
-    transition: left 500ms ease;
-  }
-
-  #{$class_css_prefix}ibm {
-    left: 350px;
-    transition: left 500ms ease;
-  }
-
-  #{$class_css_prefix}employment-main {
-    margin-top: 20px;
-  }
 }
 
 @media only screen and (max-width: 650px) {
   #{$class_css_prefix}title {
     font-size: 4em;
+  }
+
+  #{$class_css_prefix}body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  #{$class_css_prefix}employment-item-main-shown {
+    @include none;
+    padding: 5px;
+    border-radius: 0;
   }
 }

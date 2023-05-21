@@ -1,11 +1,11 @@
-@import 'src/sass/colors';
-@import 'src/sass/variables';
+@import "src/sass/colors";
+@import "src/sass/variables";
 
-$css_prefix: 'c--c--h-i__';
-$class_css_prefix: '.#{$css_prefix}';
+$css_prefix: "c--c--h-i__";
+$class_css_prefix: ".#{$css_prefix}";
 
 $color: #ff3f02;
-$size: 32px;
+$size: 45px;
 
 #{$class_css_prefix}main {
   position: relative;
