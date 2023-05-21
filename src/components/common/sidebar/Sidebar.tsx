@@ -8,6 +8,7 @@ import { useOnClickOutside } from "../../../hooks/useOnClickOutside";
 import "./Sidebar.scss";
 import { ItemsArrayType } from "../../../utils/types/common";
 import { Button } from "../button/Button";
+import { RESUME_LINK } from "../../../utils/constants/links";
 
 // Components -- common -- sidebar
 const css_prefix = "c--c--s__";
@@ -58,12 +59,18 @@ const SidebarComponent: React.FunctionComponent<SidebarProps> = ({
         </div>
 
         <div className={`${css_prefix}button`}>
-          <Button
-            handleClick={() => {}}
-            theme={theme}
-            title="Resume"
-            withShadow={true}
-          />
+          <a
+            href={RESUME_LINK}
+            className={`${css_prefix}button-link`}
+            target="_blank"
+          >
+            <Button
+              handleClick={() => {}}
+              theme={theme}
+              title="Resume"
+              withShadow={true}
+            />
+          </a>
         </div>
       </div>
     </div>

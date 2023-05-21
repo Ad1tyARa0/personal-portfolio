@@ -10,7 +10,7 @@ $class_css_prefix: ".#{$css_prefix}";
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 20px 20px 0 20px;
+  // padding: 5px;
 }
 
 #{$class_css_prefix}title {
@@ -22,9 +22,9 @@ $class_css_prefix: ".#{$css_prefix}";
 
 #{$class_css_prefix}body {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  flex: 1;
+  // align-items: center;
+  // justify-content: center;
+  // flex: 1;
 }
 
 #{$class_css_prefix}tab-main {
@@ -37,12 +37,14 @@ $class_css_prefix: ".#{$css_prefix}";
 }
 
 #{$class_css_prefix}item-main {
-  min-width: 500px;
-  max-width: 1000px;
+  // min-width: 1000px;
+  // max-width: 1000px;
+  // flex: 1;
+  padding: 0 20px;
 }
 
 #{$class_css_prefix}skills-inner-main {
-  flex: 1;
+  // flex: 1;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -50,7 +52,7 @@ $class_css_prefix: ".#{$css_prefix}";
 
   padding: 50px;
   border-radius: 50px;
-  margin: 0 0 0 20px;
+  // margin: 0 0 0 20px;
   @include neomorph-light;
 }
 
@@ -104,7 +106,7 @@ $class_css_prefix: ".#{$css_prefix}";
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
   }
 
   #{$class_css_prefix}skills-inner-main {
@@ -116,12 +118,47 @@ $class_css_prefix: ".#{$css_prefix}";
   #{$class_css_prefix}body {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  // #{$class_css_prefix}item-main {
+  //   max-width: 800px;
+  // }
+
+  #{$class_css_prefix}skills-inner-main {
+    margin-top: 30px;
+    display: flex;
+    // flex-direction: c;
   }
 }
 
 @media only screen and (max-width: 850px) {
+  #{$class_css_prefix}main {
+    height: calc(100% - 30px);
+    // display: flex;
+    // flex-direction: column;
+    // align-items: center;
+    // justify-content: center;
+    display: block;
+    // padding: 5px;
+  }
+
   #{$class_css_prefix}title {
     font-size: 6em;
+  }
+
+  #{$class_css_prefix}skills-inner-main {
+    @include none;
+  }
+
+  #{$class_css_prefix}skills-inner-main-dark {
+    @include none;
+  }
+
+  #{$class_css_prefix}skills-inner-main {
+    padding: 10px;
+    border-radius: 0;
   }
 }
 
@@ -129,8 +166,8 @@ $class_css_prefix: ".#{$css_prefix}";
   #{$class_css_prefix}body {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
+    // align-items: center;
+    // justify-content: flex-start;
   }
 
   #{$class_css_prefix}employment-item-main-shown {

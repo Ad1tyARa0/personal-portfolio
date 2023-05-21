@@ -8,6 +8,7 @@ $class_css_prefix: ".#{$css_prefix}";
   height: calc(100% - 30px);
   display: flex;
   flex-direction: column;
+  padding: 5px;
 }
 
 #{$class_css_prefix}body {
@@ -140,11 +141,23 @@ $class_css_prefix: ".#{$css_prefix}";
     display: flex;
     flex-direction: column;
   }
+
+  #{$class_css_prefix}employment-item-main-light {
+    @include none;
+  }
+
+  #{$class_css_prefix}employment-item-main-dark {
+    @include none;
+  }
 }
 
 @media only screen and (max-width: 850px) {
   #{$class_css_prefix}title {
     font-size: 6em;
+  }
+
+  #{$class_css_prefix}employment-item-main {
+    padding: 0;
   }
 }
 

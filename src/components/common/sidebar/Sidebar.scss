@@ -45,6 +45,11 @@ $class_css_prefix: ".#{$css_prefix}";
   margin-bottom: 20px;
 }
 
+#{$class_css_prefix}button-link {
+  text-decoration: none;
+  color: inherit;
+}
+
 #{$class_css_prefix}link-main {
   text-decoration: none;
   width: 100%;

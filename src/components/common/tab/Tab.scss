@@ -39,6 +39,7 @@ $class_css_prefix: ".#{$css_prefix}";
 }
 
 #{$class_css_prefix}tab {
+  @include display-flex-center;
   padding: 10px;
   margin: 5px 0 2.5px 0;
   width: 150px;
