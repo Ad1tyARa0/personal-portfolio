@@ -10,7 +10,7 @@ $class_css_prefix: ".#{$css_prefix}";
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  // padding: 5px;
+  padding: 5px;
 }
 
 #{$class_css_prefix}title {
@@ -22,9 +22,7 @@ $class_css_prefix: ".#{$css_prefix}";
 
 #{$class_css_prefix}body {
   display: flex;
-  // align-items: center;
-  // justify-content: center;
-  // flex: 1;
+  align-items: center;
 }
 
 #{$class_css_prefix}tab-main {
@@ -37,23 +35,32 @@ $class_css_prefix: ".#{$css_prefix}";
 }
 
 #{$class_css_prefix}item-main {
-  // min-width: 1000px;
-  // max-width: 1000px;
-  // flex: 1;
-  padding: 0 20px;
+  min-width: 1100px;
+  min-height: 500px;
+
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
 }
 
 #{$class_css_prefix}skills-inner-main {
   // flex: 1;
+  // width: 500px;
+  // min-height: 400px;
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  max-width: 1000px;
+  // flex-wrap: wrap;
+  // align-items: center;
+  // justify-content: center;
 
   padding: 50px;
   border-radius: 50px;
   // margin: 0 0 0 20px;
   @include neomorph-light;
+  // background-color: red;
 }
 
 #{$class_css_prefix}skills-inner-main-dark {
@@ -70,7 +77,7 @@ $class_css_prefix: ".#{$css_prefix}";
 #{$class_css_prefix}skills-item-main {
   display: flex;
   flex-direction: column;
-  margin: 15px 15px 0 0;
+  margin: 20px 0 0 0;
   min-width: 150px;
   max-width: 170px;
   align-items: center;
@@ -102,6 +109,10 @@ $class_css_prefix: ".#{$css_prefix}";
 }
 
 @media only screen and (max-width: 1440px) {
+  #{$class_css_prefix}main {
+    display: block;
+  }
+
   #{$class_css_prefix}body {
     display: flex;
     flex-direction: column;
@@ -111,6 +122,13 @@ $class_css_prefix: ".#{$css_prefix}";
 
   #{$class_css_prefix}skills-inner-main {
     margin-top: 30px;
+  }
+
+  #{$class_css_prefix}item-main {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    min-width: 0;
   }
 }
 
@@ -131,6 +149,13 @@ $class_css_prefix: ".#{$css_prefix}";
     display: flex;
     // flex-direction: c;
   }
+
+  #{$class_css_prefix}item-main {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    min-width: 0;
+  }
 }
 
 @media only screen and (max-width: 850px) {
@@ -144,16 +169,31 @@ $class_css_prefix: ".#{$css_prefix}";
     // padding: 5px;
   }
 
+  #{$class_css_prefix}item-main {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    min-width: 0;
+  }
+
   #{$class_css_prefix}title {
     font-size: 6em;
   }
 
   #{$class_css_prefix}skills-inner-main {
     @include none;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
   }
 
   #{$class_css_prefix}skills-inner-main-dark {
     @include none;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
   }
 
   #{$class_css_prefix}skills-inner-main {

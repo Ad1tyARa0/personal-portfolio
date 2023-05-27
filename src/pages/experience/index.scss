@@ -21,7 +21,7 @@ $class_css_prefix: ".#{$css_prefix}";
 
 #{$class_css_prefix}tab-main {
   // padding: 20px;
-  margin: 20px;
+  // margin: 20px;
 }
 
 #{$class_css_prefix}title {
@@ -34,6 +34,7 @@ $class_css_prefix: ".#{$css_prefix}";
 
 #{$class_css_prefix}item-main {
   display: flex;
+  margin-top: 50px;
 }
 
 #{$class_css_prefix}employment-item-main-light {

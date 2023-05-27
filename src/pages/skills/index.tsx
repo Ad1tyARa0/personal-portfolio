@@ -80,6 +80,7 @@ const Skills: React.FC<SkillsInterface> = ({ data }) => {
                         : ""
                     }`}
                   >
+                    {/* <Scrollbars> */}
                     {e.category_items.map(c => {
                       return (
                         <div
@@ -98,6 +99,7 @@ const Skills: React.FC<SkillsInterface> = ({ data }) => {
                         </div>
                       );
                     })}
+                    {/* </Scrollbars> */}
                   </div>
                 );
               } else {
