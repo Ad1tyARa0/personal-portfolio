@@ -30,11 +30,18 @@ html {
 body {
   margin: 0;
   padding: 0;
+  // background: radial-gradient(
+  //   circle,
+  //   rgba(223, 211, 195, 1) 63%,
+  //   rgba(144, 254, 34, 1) 82%,
+  //   rgba(255, 63, 2, 1) 100%
+  // );
 }
 
 #___gatsby {
-  margin: 0 auto;
-  height: 100vh;
+  // margin: 0 auto;
+  // background-color: grey;
+  // max-width: 1600px;
 }
 
 input,

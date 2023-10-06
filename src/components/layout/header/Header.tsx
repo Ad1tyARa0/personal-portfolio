@@ -30,13 +30,14 @@ const css_prefix = "c--l--h__";
 interface HeaderProps {
   theme: string;
   switchTheme: (payload: string) => void;
-  location: any;
 }
 
 const HeaderComponent: FC<HeaderProps> = ({ theme, switchTheme }) => {
   const sidebarRef = useRef<HTMLDivElement>(null);
 
   const [showSidebar, setShowSidebar] = useState<boolean>(false);
+
+  // console.log(url);
 
   const onClickToggleSidebar = () => {
     setShowSidebar(!showSidebar);
@@ -141,13 +142,13 @@ const HeaderComponent: FC<HeaderProps> = ({ theme, switchTheme }) => {
         </div>
 
         <div className={`${css_prefix}resume-button`}>
-          <a
+          {/* <a
             href={RESUME_LINK}
             className={`${css_prefix}button-link`}
             target="_blank"
-          >
-            <Button handleClick={console.log} theme={theme} title="Resume" />
-          </a>
+          > */}
+          {/* <Button handleClick={console.log} theme={theme} title="Resume" /> */}
+          {/* </a> */}
         </div>
 
         <div className={`${css_prefix}menu`}>

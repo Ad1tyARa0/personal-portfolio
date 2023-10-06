@@ -4,6 +4,7 @@ import { Header } from "../header/Header";
 import { Footer } from "../footer/Footer";
 import ThemeProvider, { ThemeContext } from "../../../context/ThemeContext";
 import { Scrollbars } from "react-custom-scrollbars-2";
+import { graphql } from "gatsby";
 
 import "./PageContainer.scss";
 

@@ -9,33 +9,39 @@ const css_prefix = "c--c--b__";
 // Component props.
 interface ButtonProps {
   theme: string;
-  title: string;
-  children?: JSX.Element;
+  title?: string;
   handleClick: () => void;
-  withShadow?: boolean;
-  maxWidth?: boolean;
+  icon?: JSX.Element;
+  appearence: "primary" | "secondary";
 }
 
 const ButtonComponent: React.FunctionComponent<ButtonProps> = ({
   theme,
   title,
-  children,
   handleClick,
-  withShadow,
-  maxWidth,
+  icon,
+  appearence,
 }) => {
   return (
     <div
       className={`${css_prefix}main ${
-        theme === "dark" ? css_prefix + "main-dark" : css_prefix + "main-light"
-      } ${withShadow ? css_prefix + "main-with-shadow" : ""} ${
-        maxWidth ? css_prefix + "max-width" : ""
+        theme === "dark"
+          ? css_prefix + `main-dark-${appearence}`
+          : css_prefix + `main-light-${appearence}`
       }`}
       onClick={handleClick}
     >
-      <div className={`${css_prefix}title`}>{title}</div>
+      {title && (
+        <div
+          className={`${css_prefix}title ${
+            theme === "dark" ? css_prefix + "icon-dark" : ""
+          }`}
+        >
+          {title}
+        </div>
+      )}
 
-      {children && <div className={`${css_prefix}body`}>{children}</div>}
+      {icon && <div className={`${css_prefix}icon`}>{icon}</div>}
     </div>
   );
 };

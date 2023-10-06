@@ -1,36 +1,41 @@
 @import "src/sass/colors";
 @import "src/sass/variables";
 
-$css_prefix: "c--c--b__";
-$class_css_prefix: ".#{$css_prefix}";
+$css_prefix: ".c--c--b__";
 
-#{$class_css_prefix}main {
+#{$css_prefix}main {
   @include select-none;
   display: flex;
   align-items: center;
 
-  padding: 10px 12px 6px 12px;
+  padding: 10px 12px 10px 12px;
   width: fit-content;
   cursor: pointer;
 }
 
-#{$class_css_prefix}max-width {
+#{$css_prefix}max-width {
   width: 100%;
 }
 
-#{$class_css_prefix}main-light {
+#{$css_prefix}main-light-primary {
   @include background-animation-dark;
   border-bottom: 4px solid $accentColor30;
 
   background-color: rgba($color: $accentColor30, $alpha: 0.3);
   &:hover {
-    #{$class_css_prefix}title {
+    #{$css_prefix}title {
+      color: $color-font-light;
+    }
+
+    #{$css_prefix}icon {
       color: $color-font-light;
     }
   }
+
+  border-radius: 25px;
 }
 
-#{$class_css_prefix}main-dark {
+#{$css_prefix}main-dark-primary {
   @include background-animation-light;
   background-color: rgba($color: $accentColor10, $alpha: 0.3);
   border-bottom: 4px solid $accentColor10;
@@ -38,22 +43,67 @@ $class_css_prefix: ".#{$css_prefix}";
   &:hover {
     background-color: rgba($color: $accentColor10, $alpha: 1);
 
-    #{$class_css_prefix}title {
+    #{$css_prefix}title {
+      color: $color-font-dark;
+    }
+
+    #{$css_prefix}icon {
+      color: $color-font-dark;
+    }
+  }
+  border-radius: 25px;
+  color: #fff;
+}
+
+#{$css_prefix}main-light-secondary {
+  border: 1px solid $accentColor30;
+  border-bottom: 4px solid $accentColor30;
+
+  border-radius: 25px;
+
+  &:hover {
+    background-color: rgba($color: $accentColor30, $alpha: 0.3);
+
+    #{$css_prefix}title {
       color: $color-font-dark;
     }
   }
 }
 
-#{$class_css_prefix}main-with-shadow {
+#{$css_prefix}main-dark-secondary {
+  border: 1px solid $accentColor10;
+  border-bottom: 4px solid $accentColor10;
+
+  border-radius: 25px;
+
+  color: #fff;
+
+  &:hover {
+    background-color: rgba($color: $accentColor10, $alpha: 0.3);
+  }
+}
+
+#{$css_prefix}main-with-shadow {
   @include box-shadow-ver2;
 }
 
-#{$class_css_prefix}title {
-  margin-top: 3px;
+#{$css_prefix}title {
   font-family: "Plain Ultra Bold";
   flex: 1;
+  margin: 3px 5px 0 0;
 }
 
-#{$class_css_prefix}body {
+#{$css_prefix}body {
   margin-left: 10px;
+}
+
+#{$css_prefix}icon {
+  @include display-flex-center;
+
+  // margin-left: 5px;
+  font-size: 20px;
+}
+
+#{$css_prefix}icon-dark {
+  color: #fff;
 }

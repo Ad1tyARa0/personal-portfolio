@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
     siteUrl: "https://test.website.com",
-    name: "Aditya S Rao",
-    role: "Software Engineer & Computer Enthusiast",
+    name: "Aditya",
+    role: "Front End Developer",
   },
 
   plugins: [
@@ -20,6 +20,7 @@ module.exports = {
           about: require("./src/schemas/about.json"),
           skills: require("./src/schemas/skills.json"),
           resume: require("./src/schemas/resume.json"),
+          resumetype: require("./src/schemas/resumetype.json"),
         },
       },
     },
