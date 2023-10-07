@@ -243,35 +243,28 @@
 $css_prefix: ".p--h__";
 
 #{$css_prefix}main {
-  min-height: 100vh;
   background-color: $color-background-light;
   transition: background 500ms linear;
 }
 
 #{$css_prefix}main-dark {
-  min-height: 100vh;
   background-color: $color-background-dark;
   transition: background 500ms linear;
 }
 
 #{$css_prefix}components-container {
   max-width: 1600px;
-  position: relative;
   margin: 0 auto;
-
-  min-height: 100vh;
+  position: relative;
 }
 
 #{$css_prefix}theme-button {
   // @include box-shadow-ver1;
 
-  position: absolute;
+  position: sticky;
   bottom: 0;
-  right: 0;
   padding: 10px;
-  border-radius: 50%;
   display: flex;
   align-items: center;
-  justify-content: center;
-  // margin: 10px;
+  justify-content: flex-end;
 }

@@ -16,6 +16,7 @@ import Experience from "./experience";
 import { Intro } from "../components/intro/Intro";
 import { ThemeButton } from "../components/common/theme-button/ThemeButton";
 import { Nav } from "../components/nav/Nav";
+import { About } from "../components/about/About";
 
 // Pages -- home
 const css_prefix = "p--h__";
@@ -29,6 +30,8 @@ const Index: React.FC<IndexInterface> = ({ data }) => {
   const { theme, switchTheme } = React.useContext(ThemeContext);
 
   const payload = data.allPrismicAbout.nodes[0].data;
+
+  const aboutRef = React.useRef<HTMLDivElement | null>(null);
 
   return (
     // <PageContainer>
@@ -98,6 +101,8 @@ const Index: React.FC<IndexInterface> = ({ data }) => {
           role={data.site.siteMetadata.role}
           theme={theme}
         />
+
+        <About ref={aboutRef} theme={theme} />
 
         <div className={`${css_prefix}theme-button`}>
           <ThemeButton theme={theme} switchTheme={switchTheme} />

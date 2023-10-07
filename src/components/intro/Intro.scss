@@ -8,7 +8,8 @@ $css_prefix: ".c--i__";
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  //   height: 100vh;
+  min-height: 100vh;
+  //   padding: 20px 0;
 }
 
 #{$css_prefix}main-dark {
@@ -72,6 +73,7 @@ $css_prefix: ".c--i__";
 #{$css_prefix}title {
   //   text-align: end;
   font-size: 24px;
+  line-height: 1.5em;
 }
 
 #{$css_prefix}color-text {
@@ -98,4 +100,10 @@ $css_prefix: ".c--i__";
   border: 1px solid $accentColor30;
   padding: 10px;
   border-radius: 50%;
+}
+
+@media only screen and (max-width: 700px) {
+  #{$css_prefix}main {
+    justify-content: flex-start;
+  }
 }

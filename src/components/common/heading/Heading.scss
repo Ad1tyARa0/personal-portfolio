@@ -1,0 +1,10 @@
+@import "src/sass/colors";
+@import "src/sass/variables";
+
+$css_prefix: ".c--c--h__";
+
+#{$css_prefix}main {
+  font-size: 32px;
+  font-family: "Ultra Bold";
+  text-transform: uppercase;
+}

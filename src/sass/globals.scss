@@ -11,7 +11,7 @@ body::-webkit-scrollbar-track {
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: $accentColor10;
+  background-color: rgba($color: $color-font-dark, $alpha: 0.3);
 }
 
 ::selection {
