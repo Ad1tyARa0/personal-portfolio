@@ -24,7 +24,8 @@ const AboutComponent: React.FunctionComponent<AboutProps> = ({
         theme === "dark" ? css_prefix + "main-dark" : ""
       }`}
       initial={{ opacity: 0, y: 100 }}
-      animate={{ opacity: 1, y: 0 }}
+      //   animate={{ opacity: 1, y: 0 }}
+      whileInView={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.175 }}
       id="about"
     >

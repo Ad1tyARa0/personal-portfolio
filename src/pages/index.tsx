@@ -17,6 +17,7 @@ import { Intro } from "../components/intro/Intro";
 import { ThemeButton } from "../components/common/theme-button/ThemeButton";
 import { Nav } from "../components/nav/Nav";
 import { About } from "../components/about/About";
+import { Projects } from "../components/projects/Projects";
 
 // Pages -- home
 const css_prefix = "p--h__";
@@ -32,6 +33,18 @@ const Index: React.FC<IndexInterface> = ({ data }) => {
   const payload = data.allPrismicAbout.nodes[0].data;
 
   const aboutRef = React.useRef<HTMLDivElement | null>(null);
+
+  const handleClickNavigateToPage = (pageId: string) => {
+    console.log(pageId);
+    // switch (pageId) {
+    //   case "2":
+    //     aboutRef.current?.scroll({ behavior: "smooth" });
+    // }
+
+    if (pageId === "2") {
+      aboutRef.current?.scroll({ behavior: "smooth" });
+    }
+  };
 
   return (
     // <PageContainer>
@@ -92,7 +105,7 @@ const Index: React.FC<IndexInterface> = ({ data }) => {
       }`}
     >
       <div className={`${css_prefix}components-container`}>
-        <Nav />
+        <Nav handleClickNavigateToPage={handleClickNavigateToPage} />
 
         <Intro
           imageUrl={payload.profile_picture.url}
@@ -103,6 +116,8 @@ const Index: React.FC<IndexInterface> = ({ data }) => {
         />
 
         <About ref={aboutRef} theme={theme} />
+
+        <Projects />
 
         <div className={`${css_prefix}theme-button`}>
           <ThemeButton theme={theme} switchTheme={switchTheme} />

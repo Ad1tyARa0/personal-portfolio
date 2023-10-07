@@ -35,7 +35,7 @@ const IntroComponent: React.FunctionComponent<IntroProps> = ({
     <section className={`${css_prefix}main`}>
       <motion.div
         initial={{ opacity: 0, scale: 0 }}
-        animate={{ opacity: 1, scale: 1 }}
+        whileInView={{ opacity: 1, scale: 1 }}
         transition={{
           type: "tween",
           duration: 0.2,
@@ -47,7 +47,7 @@ const IntroComponent: React.FunctionComponent<IntroProps> = ({
         <motion.span
           className={`${css_prefix}icon-wrapper`}
           initial={{ opacity: 0, scale: 0 }}
-          animate={{ opacity: 1, scale: 1 }}
+          whileInView={{ opacity: 1, scale: 1 }}
           transition={{
             type: "spring",
             stiffness: 125,
@@ -60,9 +60,8 @@ const IntroComponent: React.FunctionComponent<IntroProps> = ({
       </motion.div>
 
       <motion.div
-        // className="mb-10 mt-4 px-4 text-2xl font-medium !leading-[1.5] sm:text-4xl"
         initial={{ opacity: 0, y: 100 }}
-        animate={{ opacity: 1, y: 0 }}
+        whileInView={{ opacity: 1, y: 0 }}
         className={`${css_prefix}intro-text-container ${
           theme === "dark" ? css_prefix + "intro-text-container-dark" : ""
         }`}
@@ -86,7 +85,7 @@ const IntroComponent: React.FunctionComponent<IntroProps> = ({
         className={`${css_prefix}button-container`}
         // className="flex flex-col sm:flex-row items-center justify-center gap-2 px-4 text-lg font-medium"
         initial={{ opacity: 0, y: 100 }}
-        animate={{ opacity: 1, y: 0 }}
+        whileInView={{ opacity: 1, y: 0 }}
         transition={{
           delay: 0.1,
         }}
