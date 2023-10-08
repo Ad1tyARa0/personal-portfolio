@@ -22,6 +22,7 @@ interface IntroProps {
   name: string;
   role: string;
   theme: string;
+  //   introRef: React.Ref<HTMLElement> | undefined;
 }
 
 const IntroComponent: React.FunctionComponent<IntroProps> = ({
@@ -30,12 +31,13 @@ const IntroComponent: React.FunctionComponent<IntroProps> = ({
   name,
   role,
   theme,
+  //   introRef,
 }) => {
   return (
     <section className={`${css_prefix}main`}>
       <motion.div
         initial={{ opacity: 0, scale: 0 }}
-        whileInView={{ opacity: 1, scale: 1 }}
+        animate={{ opacity: 1, scale: 1 }}
         transition={{
           type: "tween",
           duration: 0.2,
@@ -47,7 +49,7 @@ const IntroComponent: React.FunctionComponent<IntroProps> = ({
         <motion.span
           className={`${css_prefix}icon-wrapper`}
           initial={{ opacity: 0, scale: 0 }}
-          whileInView={{ opacity: 1, scale: 1 }}
+          animate={{ opacity: 1, scale: 1 }}
           transition={{
             type: "spring",
             stiffness: 125,
@@ -61,7 +63,7 @@ const IntroComponent: React.FunctionComponent<IntroProps> = ({
 
       <motion.div
         initial={{ opacity: 0, y: 100 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        animate={{ opacity: 1, y: 0 }}
         className={`${css_prefix}intro-text-container ${
           theme === "dark" ? css_prefix + "intro-text-container-dark" : ""
         }`}
@@ -85,7 +87,7 @@ const IntroComponent: React.FunctionComponent<IntroProps> = ({
         className={`${css_prefix}button-container`}
         // className="flex flex-col sm:flex-row items-center justify-center gap-2 px-4 text-lg font-medium"
         initial={{ opacity: 0, y: 100 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        animate={{ opacity: 1, y: 0 }}
         transition={{
           delay: 0.1,
         }}

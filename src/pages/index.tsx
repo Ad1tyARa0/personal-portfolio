@@ -32,18 +32,26 @@ const Index: React.FC<IndexInterface> = ({ data }) => {
 
   const payload = data.allPrismicAbout.nodes[0].data;
 
-  const aboutRef = React.useRef<HTMLDivElement | null>(null);
+  const aboutRef = React.useRef<HTMLElement | null>(null);
+  const introRef = React.useRef<HTMLDivElement | null>(null);
 
   const handleClickNavigateToPage = (pageId: string) => {
-    console.log(pageId);
-    // switch (pageId) {
-    //   case "2":
-    //     aboutRef.current?.scroll({ behavior: "smooth" });
-    // }
-
-    if (pageId === "2") {
-      aboutRef.current?.scroll({ behavior: "smooth" });
+    console.log(pageId, aboutRef);
+    switch (pageId) {
+      case "1":
+        if (introRef.current) {
+          introRef.current.scrollIntoView({ behavior: "smooth" });
+        }
     }
+
+    switch (pageId) {
+      case "2":
+        aboutRef.current?.scrollIntoView({ behavior: "smooth" });
+    }
+
+    // if (pageId === "2") {
+    //   aboutRef.current?.scrollIntoView({ behavior: "smooth" });
+    // }
   };
 
   return (
@@ -103,21 +111,27 @@ const Index: React.FC<IndexInterface> = ({ data }) => {
       className={`${css_prefix}main ${
         theme === "dark" ? css_prefix + "main-dark" : ""
       }`}
+      ref={introRef}
     >
       <div className={`${css_prefix}components-container`}>
         <Nav handleClickNavigateToPage={handleClickNavigateToPage} />
 
-        <Intro
-          imageUrl={payload.profile_picture.url}
-          title={payload.bio.text}
-          name={data.site.siteMetadata.name}
-          role={data.site.siteMetadata.role}
-          theme={theme}
-        />
+        <div className={`${css_prefix}container`}>
+          <Intro
+            imageUrl={payload.profile_picture.url}
+            title={payload.bio.text}
+            name={data.site.siteMetadata.name}
+            role={data.site.siteMetadata.role}
+            theme={theme}
+            // introRef={introRef}
+          />
+        </div>
 
-        <About ref={aboutRef} theme={theme} />
+        <div className={`${css_prefix}container`}>
+          <About aboutRef={aboutRef} theme={theme} />
+        </div>
 
-        <Projects />
+        {/* <Projects /> */}
 
         <div className={`${css_prefix}theme-button`}>
           <ThemeButton theme={theme} switchTheme={switchTheme} />

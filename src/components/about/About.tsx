@@ -9,17 +9,18 @@ const css_prefix = "c--a__";
 
 // Component props.
 interface AboutProps {
-  ref: React.Ref<HTMLElement> | undefined;
+  aboutRef: React.Ref<HTMLElement> | undefined;
   theme: string;
 }
 
 const AboutComponent: React.FunctionComponent<AboutProps> = ({
-  ref,
+  aboutRef,
   theme,
 }) => {
+  console.log(aboutRef);
   return (
     <motion.section
-      ref={ref}
+      ref={aboutRef}
       className={`${css_prefix}main ${
         theme === "dark" ? css_prefix + "main-dark" : ""
       }`}
@@ -63,12 +64,11 @@ const AboutComponent: React.FunctionComponent<AboutProps> = ({
           full-time position
         </span>{" "}
         as a software developer.
-        <p className={`${css_prefix}`}>
-          <span className={`${css_prefix}font-italic`}>
-            When I'm not coding
-          </span>
-          , I enjoy playing soccer, video games and going on hikes.
-        </p>
+      </p>
+
+      <p className={`${css_prefix}about-text`}>
+        <span className={`${css_prefix}font-italic`}>When I'm not coding</span>,
+        I enjoy playing soccer, video games and going on hikes.
       </p>
     </motion.section>
   );
