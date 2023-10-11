@@ -26,7 +26,10 @@ interface IndexInterface {
   data: AboutType;
 }
 
-const Index: React.FC<IndexInterface> = ({ data }) => {
+const Index: React.FC<IndexInterface> = ({
+  // data
+  data,
+}) => {
   // const { theme } = React.useContext(ThemeContext);
   const { theme, switchTheme } = React.useContext(ThemeContext);
 
@@ -37,16 +40,10 @@ const Index: React.FC<IndexInterface> = ({ data }) => {
 
   const handleClickNavigateToPage = (pageId: string) => {
     console.log(pageId, aboutRef);
-    switch (pageId) {
-      case "1":
-        if (introRef.current) {
-          introRef.current.scrollIntoView({ behavior: "smooth" });
-        }
-    }
-
-    switch (pageId) {
-      case "2":
-        aboutRef.current?.scrollIntoView({ behavior: "smooth" });
+    if (pageId === "1") {
+      introRef?.current!.scrollIntoView({ behavior: "smooth" });
+    } else if (pageId === "2") {
+      aboutRef.current?.scrollIntoView({ behavior: "smooth" });
     }
   };
 
@@ -57,23 +54,23 @@ const Index: React.FC<IndexInterface> = ({ data }) => {
       }`}
       ref={introRef}
     >
+      <Nav handleClickNavigateToPage={handleClickNavigateToPage} />
+
       <div className={`${css_prefix}components-container`}>
-        <Nav handleClickNavigateToPage={handleClickNavigateToPage} />
+        <Intro
+          imageUrl={payload.profile_picture.url}
+          title={payload.bio.text}
+          name={data.site.siteMetadata.name}
+          role={data.site.siteMetadata.role}
+          // imageUrl={""}
+          // title={""}
+          // name={""}
+          // role={""}
+          theme={theme}
+          // introRef={introRef}
+        />
 
-        <div className={`${css_prefix}container`}>
-          <Intro
-            imageUrl={payload.profile_picture.url}
-            title={payload.bio.text}
-            name={data.site.siteMetadata.name}
-            role={data.site.siteMetadata.role}
-            theme={theme}
-            // introRef={introRef}
-          />
-        </div>
-
-        <div className={`${css_prefix}container`}>
-          <About aboutRef={aboutRef} theme={theme} />
-        </div>
+        <About theme={theme} aboutRef={aboutRef} />
 
         {/* <Projects /> */}
 

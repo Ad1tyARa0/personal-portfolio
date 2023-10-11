@@ -6,6 +6,7 @@ $css_prefix: ".p--h__";
 #{$css_prefix}main {
   background-color: $color-background-light;
   transition: background 500ms linear;
+  position: relative;
 }
 
 #{$css_prefix}main-dark {
@@ -16,7 +17,6 @@ $css_prefix: ".p--h__";
 #{$css_prefix}components-container {
   max-width: 1600px;
   margin: 0 auto;
-  position: relative;
 }
 
 #{$css_prefix}theme-button {
@@ -28,8 +28,4 @@ $css_prefix: ".p--h__";
   display: flex;
   align-items: center;
   justify-content: flex-end;
-}
-
-#{$css_prefix}container {
-  min-height: 100vh;
 }

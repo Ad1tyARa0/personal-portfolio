@@ -17,7 +17,7 @@ const AboutComponent: React.FunctionComponent<AboutProps> = ({
   aboutRef,
   theme,
 }) => {
-  console.log(aboutRef);
+  // console.log(aboutRef);
   return (
     <motion.section
       ref={aboutRef}

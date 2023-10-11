@@ -4,13 +4,12 @@
 $css_prefix: ".c--a__";
 
 #{$css_prefix}main {
-  //   margin-top: 100px;
-  //   padding: 50px 10px;
-  //   display: flex;
-  //   flex-direction: column;
-  //   align-items: center;
-  //   justify-content: center;
-  //   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 25px 0;
 }
 
 #{$css_prefix}main-dark {
