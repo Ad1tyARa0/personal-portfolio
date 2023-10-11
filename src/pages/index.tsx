@@ -35,15 +35,17 @@ const Index: React.FC<IndexInterface> = ({
 
   const payload = data.allPrismicAbout.nodes[0].data;
 
-  const aboutRef = React.useRef<HTMLElement | null>(null);
+  const aboutRef = React.useRef<HTMLDivElement | null>(null);
   const introRef = React.useRef<HTMLDivElement | null>(null);
+  const projectsRef = React.useRef<HTMLDivElement | null>(null);
 
   const handleClickNavigateToPage = (pageId: string) => {
-    console.log(pageId, aboutRef);
     if (pageId === "1") {
       introRef?.current!.scrollIntoView({ behavior: "smooth" });
     } else if (pageId === "2") {
       aboutRef.current?.scrollIntoView({ behavior: "smooth" });
+    } else if (pageId === "3") {
+      projectsRef.current?.scrollIntoView({ behavior: "smooth" });
     }
   };
 
@@ -62,17 +64,12 @@ const Index: React.FC<IndexInterface> = ({
           title={payload.bio.text}
           name={data.site.siteMetadata.name}
           role={data.site.siteMetadata.role}
-          // imageUrl={""}
-          // title={""}
-          // name={""}
-          // role={""}
           theme={theme}
-          // introRef={introRef}
         />
 
         <About theme={theme} aboutRef={aboutRef} />
 
-        {/* <Projects /> */}
+        <Projects theme={theme} projectsRef={projectsRef} />
 
         <div className={`${css_prefix}theme-button`}>
           <ThemeButton theme={theme} switchTheme={switchTheme} />

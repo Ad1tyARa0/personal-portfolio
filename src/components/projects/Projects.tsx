@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 // SCSS.
 import "./Projects.scss";
@@ -7,11 +8,25 @@ import { Heading } from "../common/heading/Heading";
 const css_prefix = "c--p__";
 
 // Component props.
-interface ProjectsProps {}
+interface ProjectsProps {
+  projectsRef: React.Ref<HTMLDivElement> | undefined;
+  theme: string;
+}
 
-const ProjectsComponent: React.FunctionComponent<ProjectsProps> = () => {
+const ProjectsComponent: React.FunctionComponent<ProjectsProps> = ({
+  projectsRef,
+  theme,
+}) => {
   return (
-    <section className={`${css_prefix}main`}>
+    <motion.div
+      ref={projectsRef}
+      className={`${css_prefix}main ${
+        theme === "dark" ? css_prefix + "main-dark" : ""
+      }`}
+      initial={{ opacity: 0, y: 100 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.175 }}
+    >
       <Heading text="Projects" />
 
       <div style={{ maxWidth: "800px" }}>
@@ -20,7 +35,7 @@ const ProjectsComponent: React.FunctionComponent<ProjectsProps> = () => {
         aperiam recusandae doloribus illum perferendis ea neque, quod
         voluptatibus.
       </div>
-    </section>
+    </motion.div>
   );
 };
 
