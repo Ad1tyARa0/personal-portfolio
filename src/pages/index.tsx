@@ -48,65 +48,9 @@ const Index: React.FC<IndexInterface> = ({ data }) => {
       case "2":
         aboutRef.current?.scrollIntoView({ behavior: "smooth" });
     }
-
-    // if (pageId === "2") {
-    //   aboutRef.current?.scrollIntoView({ behavior: "smooth" });
-    // }
   };
 
   return (
-    // <PageContainer>
-    //   <div className={`${css_prefix}main`}>
-    //     <div
-    //       className={`${css_prefix}card ${
-    //         theme === "light" ? css_prefix + "card-light" : "card-dark"
-    //       }`}
-    //     >
-    //       <div className={`${css_prefix}card-header`}>
-    //         {/* <img
-    //           src={bioData.profile_picture.url}
-    //           alt={bioData.profile_picture.alt}
-    //           className={`${css_prefix}image`}
-    //         /> */}
-
-    //         <div
-    //           className={`${css_prefix}title ${
-    //             theme === "dark" ? css_prefix + "title-dark" : ""
-    //           }`}
-    //         >
-    //           {data.site.siteMetadata.name}
-    //         </div>
-
-    //         <div
-    //           className={`${css_prefix}role ${
-    //             theme === "dark" ? css_prefix + "role-dark" : ""
-    //           }`}
-    //         >
-    //           {data.site.siteMetadata.role}
-    //         </div>
-    //       </div>
-
-    //       <motion.div
-    //         className={`${css_prefix}description`}
-    //         initial={{ opacity: 0, y: 100 }}
-    //         animate={{ opacity: 1, y: 0 }}
-    //       >
-    //         {bioData.bio.text}
-    //       </motion.div>
-    //     </div>
-
-    //     {/* <div className={`${css_prefix}expertise`}>
-    //       <div className={`${css_prefix}title`}>Web and App Development</div>
-    //       <div className={`${css_prefix}skill-image`}>
-    //         <Dev
-    //           bgColor={theme === "light" ? COLOR_LIGHT : COLOR_DARK}
-    //           width="300px"
-    //           height="200px"
-    //         />
-    //       </div>
-    //     </div> */}
-    //   </div>
-    // </PageContainer>
     <div
       className={`${css_prefix}main ${
         theme === "dark" ? css_prefix + "main-dark" : ""
