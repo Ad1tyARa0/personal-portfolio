@@ -8,8 +8,9 @@ $css_prefix: ".c--a__";
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
-  padding: 25px 0;
+  height: 100vh;
+  padding: 25px 10px;
+  border: 1px solid red;
 }
 
 #{$css_prefix}main-dark {
@@ -20,6 +21,7 @@ $css_prefix: ".c--a__";
   max-width: 800px;
   font-size: 24px;
   line-height: 1.5em;
+  text-align: center;
 }
 
 #{$css_prefix}font-bold {

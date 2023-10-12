@@ -22,7 +22,7 @@ $css_prefix: ".p--h__";
 #{$css_prefix}theme-button {
   // @include box-shadow-ver1;
 
-  position: sticky;
+  position: fixed;
   bottom: 0;
   padding: 10px;
   display: flex;

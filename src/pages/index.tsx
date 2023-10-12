@@ -41,11 +41,14 @@ const Index: React.FC<IndexInterface> = ({
 
   const handleClickNavigateToPage = (pageId: string) => {
     if (pageId === "1") {
-      introRef?.current!.scrollIntoView({ behavior: "smooth" });
+      introRef?.current!.scrollIntoView({ behavior: "smooth", block: "start" });
     } else if (pageId === "2") {
-      aboutRef.current?.scrollIntoView({ behavior: "smooth" });
+      aboutRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
     } else if (pageId === "3") {
-      projectsRef.current?.scrollIntoView({ behavior: "smooth" });
+      projectsRef.current?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
     }
   };
 
