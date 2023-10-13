@@ -1,14 +1,7 @@
-import React, { useState } from "react";
-import { graphql } from "gatsby";
-
-// Components.
-import { PageContainer } from "../components/layout/container/PageContainer";
+import React from "react";
 
 // Types and interfaces.
-import { AboutType } from "../utils/types/about";
 import ThemeProvider, { ThemeContext } from "../context/ThemeContext";
-
-import { motion } from "framer-motion";
 
 // SCSS.
 import "./index.scss";
@@ -18,26 +11,20 @@ import { ThemeButton } from "../components/common/theme-button/ThemeButton";
 import { Nav } from "../components/nav/Nav";
 import { About } from "../components/about/About";
 import { Projects } from "../components/projects/Projects";
+import { Skills } from "../components/skills/Skills";
 
 // Pages -- home
 const css_prefix = "p--h__";
 
-interface IndexInterface {
-  data: AboutType;
-}
+interface IndexInterface {}
 
-const Index: React.FC<IndexInterface> = ({
-  // data
-  data,
-}) => {
-  // const { theme } = React.useContext(ThemeContext);
+const Index: React.FC<IndexInterface> = ({}) => {
   const { theme, switchTheme } = React.useContext(ThemeContext);
-
-  const payload = data.allPrismicAbout.nodes[0].data;
 
   const aboutRef = React.useRef<HTMLDivElement | null>(null);
   const introRef = React.useRef<HTMLDivElement | null>(null);
   const projectsRef = React.useRef<HTMLDivElement | null>(null);
+  const skillsRef = React.useRef<HTMLDivElement | null>(null);
 
   const handleClickNavigateToPage = (pageId: string) => {
     if (pageId === "1") {
@@ -52,6 +39,11 @@ const Index: React.FC<IndexInterface> = ({
       });
     } else if (pageId === "3") {
       projectsRef.current?.scrollIntoView({
+        behavior: "smooth",
+        inline: "start",
+      });
+    } else if (pageId === "4") {
+      skillsRef.current?.scrollIntoView({
         behavior: "smooth",
         inline: "start",
       });
@@ -71,17 +63,13 @@ const Index: React.FC<IndexInterface> = ({
           theme={theme}
         />
 
-        <Intro
-          imageUrl={payload.profile_picture.url}
-          title={payload.bio.text}
-          name={data.site.siteMetadata.name}
-          role={data.site.siteMetadata.role}
-          theme={theme}
-        />
+        <Intro theme={theme} />
 
         <About theme={theme} aboutRef={aboutRef} />
 
         <Projects theme={theme} projectsRef={projectsRef} />
+
+        <Skills theme={theme} skillsRef={skillsRef} />
 
         <div
           className={`${css_prefix}theme-button ${
@@ -96,28 +84,3 @@ const Index: React.FC<IndexInterface> = ({
 };
 
 export default Index;
-
-export const query = graphql`
-  {
-    site {
-      siteMetadata {
-        name
-        role
-      }
-    }
-
-    allPrismicAbout {
-      nodes {
-        data {
-          bio {
-            text
-          }
-          profile_picture {
-            alt
-            url
-          }
-        }
-      }
-    }
-  }
-`;

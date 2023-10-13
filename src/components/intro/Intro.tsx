@@ -12,27 +12,58 @@ import "./Intro.scss";
 import { Github } from "../../assets/icons/github/Github";
 import { LinkedIn } from "../../assets/icons/linkedin/LinkedIn";
 import { Button } from "../common/button/Button";
+import { graphql, useStaticQuery } from "gatsby";
 
 const css_prefix = "c--i__";
 
 // Component props.
 interface IntroProps {
-  imageUrl: string;
-  title: string;
-  name: string;
-  role: string;
+  // imageUrl: string;
+  // title: string;
+  // name: string;
+  // role: string;
   theme: string;
   //   introRef: React.Ref<HTMLElement> | undefined;
 }
 
 const IntroComponent: React.FunctionComponent<IntroProps> = ({
-  imageUrl,
-  title,
-  name,
-  role,
+  // imageUrl,
+  // title,
+  // name,
+  // role,
   theme,
   //   introRef,
 }) => {
+  const data = useStaticQuery(graphql`
+    {
+      site {
+        siteMetadata {
+          name
+          role
+        }
+      }
+      allPrismicAbout {
+        nodes {
+          data {
+            bio {
+              text
+            }
+            profile_picture {
+              alt
+              url
+            }
+          }
+        }
+      }
+    }
+  `);
+
+  const payload = data.allPrismicAbout.nodes[0].data;
+  const imageUrl = payload.profile_picture.url;
+  const title = payload.bio.text;
+  const name = data.site.siteMetadata.name;
+  const role = data.site.siteMetadata.role;
+
   return (
     <div className={`${css_prefix}main`}>
       <motion.div

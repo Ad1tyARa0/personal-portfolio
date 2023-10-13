@@ -73,7 +73,7 @@ const AboutComponent: React.FunctionComponent<AboutProps> = ({
           <span className={`${css_prefix}font-italic`}>
             When I'm not coding
           </span>
-          , I enjoy playing soccer and going on hikes.
+          , I enjoy playing soccer.
         </p>
       </motion.div>
     </div>
