@@ -41,13 +41,19 @@ const Index: React.FC<IndexInterface> = ({
 
   const handleClickNavigateToPage = (pageId: string) => {
     if (pageId === "1") {
-      introRef?.current!.scrollIntoView({ behavior: "smooth", block: "start" });
+      introRef?.current!.scrollIntoView({
+        behavior: "smooth",
+        inline: "start",
+      });
     } else if (pageId === "2") {
-      aboutRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+      aboutRef.current?.scrollIntoView({
+        behavior: "smooth",
+        inline: "start",
+      });
     } else if (pageId === "3") {
       projectsRef.current?.scrollIntoView({
         behavior: "smooth",
-        block: "start",
+        inline: "start",
       });
     }
   };
@@ -59,9 +65,12 @@ const Index: React.FC<IndexInterface> = ({
       }`}
       ref={introRef}
     >
-      <Nav handleClickNavigateToPage={handleClickNavigateToPage} />
-
       <div className={`${css_prefix}components-container`}>
+        <Nav
+          handleClickNavigateToPage={handleClickNavigateToPage}
+          theme={theme}
+        />
+
         <Intro
           imageUrl={payload.profile_picture.url}
           title={payload.bio.text}
@@ -74,7 +83,11 @@ const Index: React.FC<IndexInterface> = ({
 
         <Projects theme={theme} projectsRef={projectsRef} />
 
-        <div className={`${css_prefix}theme-button`}>
+        <div
+          className={`${css_prefix}theme-button ${
+            theme === "dark" ? css_prefix + "theme-button-dark" : ""
+          }`}
+        >
           <ThemeButton theme={theme} switchTheme={switchTheme} />
         </div>
       </div>

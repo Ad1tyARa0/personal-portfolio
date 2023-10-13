@@ -6,21 +6,19 @@ $css_prefix: ".c--n__";
 #{$css_prefix}main {
   display: flex;
   align-items: center;
-  //   background-color: #fff;
-  // border: 1px solid red;
   background-color: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(5px);
-  // margin: 0 auto;
   border-radius: 25px;
-  position: fixed;
+  position: sticky;
   top: 20px;
-  // right: 30%;
-  // left: 30%;
-  padding-bottom: 5px;
+  margin: 0 auto;
+  transform: translateX(-50%);
+  padding: 0 5px 5px 5px;
   z-index: 20;
   flex-wrap: wrap;
   justify-content: space-evenly;
   max-width: 600px;
+  color: $color-font-dark;
 
   &::-webkit-scrollbar {
     width: 0.3em;
@@ -38,6 +36,10 @@ $css_prefix: ".c--n__";
   }
 }
 
+#{$css_prefix}main-dark {
+  // color: $color-font-light;
+}
+
 #{$css_prefix}tab {
   @include select-none;
   @include display-flex-center;
@@ -49,21 +51,33 @@ $css_prefix: ".c--n__";
   font-family: "Ultra Bold";
   font-size: 11px;
   text-transform: uppercase;
+  position: relative;
 
-  &:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(5px);
-  }
+  // &:hover {
+  //   background-color: rgba(255, 255, 255, 0.1);
+  //   backdrop-filter: blur(5px);
+  // }
 }
 
 #{$css_prefix}selected-tab {
-  //   background-color: red;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: $accentColor30;
+
+  // background-color: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(5px);
+  position: absolute;
+  inset: 0;
+  z-index: -10;
+  border-radius: 30px;
 }
 
-@media only screen and (max-width: 600px) {
-  #{$css_prefix}main {
-    margin: 0 10px;
-  }
+#{$css_prefix}selected-tab-dark {
+  background-color: $accentColor10;
+
+  color: $color-font-dark !important;
 }
+
+// @media only screen and (max-width: 600px) {
+//   #{$css_prefix}main {
+//     margin: 0 10px;
+//   }
+// }

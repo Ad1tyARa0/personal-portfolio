@@ -34,7 +34,7 @@ const IntroComponent: React.FunctionComponent<IntroProps> = ({
   //   introRef,
 }) => {
   return (
-    <section className={`${css_prefix}main`}>
+    <div className={`${css_prefix}main`}>
       <motion.div
         initial={{ opacity: 0, scale: 0 }}
         animate={{ opacity: 1, scale: 1 }}
@@ -130,7 +130,7 @@ const IntroComponent: React.FunctionComponent<IntroProps> = ({
           />
         </div>
       </motion.div>
-    </section>
+    </div>
   );
 };
 

@@ -27,13 +27,7 @@ export const PageContainer: FC<PageContainerProps> = ({ children }) => {
             : css_prefix + "main-light"
         }`}
       >
-        <Header theme={theme} switchTheme={switchTheme} />
-
-        <div className={`${css_prefix}container`}>
-          <Scrollbars>{children}</Scrollbars>
-        </div>
-
-        <Footer theme={theme} />
+        {children}
       </main>
     </ThemeProvider>
   );

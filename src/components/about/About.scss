@@ -8,9 +8,8 @@ $css_prefix: ".c--a__";
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  min-height: 100vh;
   padding: 25px 10px;
-  border: 1px solid red;
 }
 
 #{$css_prefix}main-dark {

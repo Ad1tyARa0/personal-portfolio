@@ -6,7 +6,6 @@ $css_prefix: ".p--h__";
 #{$css_prefix}main {
   background-color: $color-background-light;
   transition: background 500ms linear;
-  position: relative;
 }
 
 #{$css_prefix}main-dark {
@@ -17,15 +16,24 @@ $css_prefix: ".p--h__";
 #{$css_prefix}components-container {
   max-width: 1600px;
   margin: 0 auto;
+  position: relative;
+  // border: 1px solid red;
 }
 
 #{$css_prefix}theme-button {
-  // @include box-shadow-ver1;
-
   position: fixed;
   bottom: 0;
-  padding: 10px;
+  right: 0;
+  margin: 10px;
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  z-index: 10;
+  width: min-content;
+  border-radius: 50%;
+  background-color: $color-background-light;
+}
+
+#{$css_prefix}theme-button-dark {
+  background-color: $color-background-dark;
 }

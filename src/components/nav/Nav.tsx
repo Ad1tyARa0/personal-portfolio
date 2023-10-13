@@ -10,10 +10,12 @@ const css_prefix = "c--n__";
 // Component props.
 interface NavProps {
   handleClickNavigateToPage: (pageId: string) => void;
+  theme: string;
 }
 
 const NavComponent: React.FunctionComponent<NavProps> = ({
   handleClickNavigateToPage,
+  theme,
 }) => {
   const TABS = [
     {
@@ -43,24 +45,33 @@ const NavComponent: React.FunctionComponent<NavProps> = ({
 
     {
       id: "6",
+      title: "Services",
+    },
+
+    {
+      id: "7",
       title: "Contact",
     },
   ];
 
   const [tab, seTab] = React.useState<string>("1");
 
+  // ${
+  //   tab === e.id ? css_prefix + "selected-tab" : ""
+  // }
+
   return (
     <motion.div
-      className={`${css_prefix}main`}
+      className={`${css_prefix}main ${
+        theme === "dark" ? css_prefix + "main-dark" : ""
+      }`}
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
     >
       {TABS.map(e => {
         return (
           <motion.div
-            className={`${css_prefix}tab ${
-              tab === e.id ? css_prefix + "selected-tab" : ""
-            }`}
+            className={`${css_prefix}tab`}
             key={e.id}
             onClick={() => {
               seTab(e.id);
@@ -70,6 +81,21 @@ const NavComponent: React.FunctionComponent<NavProps> = ({
             animate={{ y: 0, opacity: 1 }}
           >
             {e.title}
+
+            {tab === e.id && (
+              <motion.span
+                className={`${css_prefix}selected-tab ${
+                  theme === "dark" ? css_prefix + "selected-tab-dark" : ""
+                }`}
+                // className="bg-gray-100 rounded-full absolute inset-0 -z-10 dark:bg-gray-800"
+                layoutId="activeSection"
+                transition={{
+                  type: "spring",
+                  stiffness: 380,
+                  damping: 30,
+                }}
+              ></motion.span>
+            )}
           </motion.div>
         );
       })}
