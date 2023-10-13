@@ -6,7 +6,7 @@ import { PageContainer } from "../components/layout/container/PageContainer";
 
 // Types and interfaces.
 import { AboutType } from "../utils/types/about";
-import { ThemeContext } from "../context/ThemeContext";
+import ThemeProvider, { ThemeContext } from "../context/ThemeContext";
 
 import { motion } from "framer-motion";
 
@@ -59,13 +59,13 @@ const Index: React.FC<IndexInterface> = ({
   };
 
   return (
-    <div
-      className={`${css_prefix}main ${
-        theme === "dark" ? css_prefix + "main-dark" : ""
-      }`}
-      ref={introRef}
-    >
-      <div className={`${css_prefix}components-container`}>
+    <ThemeProvider>
+      <main
+        className={`${css_prefix}main ${
+          theme === "dark" ? css_prefix + "main-dark" : ""
+        }`}
+        ref={introRef}
+      >
         <Nav
           handleClickNavigateToPage={handleClickNavigateToPage}
           theme={theme}
@@ -90,8 +90,8 @@ const Index: React.FC<IndexInterface> = ({
         >
           <ThemeButton theme={theme} switchTheme={switchTheme} />
         </div>
-      </div>
-    </div>
+      </main>
+    </ThemeProvider>
   );
 };
 

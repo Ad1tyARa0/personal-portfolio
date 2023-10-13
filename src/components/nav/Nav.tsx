@@ -70,7 +70,7 @@ const NavComponent: React.FunctionComponent<NavProps> = ({
     >
       {TABS.map(e => {
         return (
-          <motion.div
+          <motion.li
             className={`${css_prefix}tab`}
             key={e.id}
             onClick={() => {
@@ -96,7 +96,7 @@ const NavComponent: React.FunctionComponent<NavProps> = ({
                 }}
               ></motion.span>
             )}
-          </motion.div>
+          </motion.li>
         );
       })}
     </motion.div>
