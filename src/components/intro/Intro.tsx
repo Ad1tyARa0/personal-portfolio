@@ -13,27 +13,18 @@ import { Github } from "../../assets/icons/github/Github";
 import { LinkedIn } from "../../assets/icons/linkedin/LinkedIn";
 import { Button } from "../common/button/Button";
 import { graphql, useStaticQuery } from "gatsby";
+import { useSectionInView } from "../../hooks/useIntersectionObserver";
 
 const css_prefix = "c--i__";
 
 // Component props.
 interface IntroProps {
-  // imageUrl: string;
-  // title: string;
-  // name: string;
-  // role: string;
   theme: string;
-  //   introRef: React.Ref<HTMLElement> | undefined;
 }
 
-const IntroComponent: React.FunctionComponent<IntroProps> = ({
-  // imageUrl,
-  // title,
-  // name,
-  // role,
-  theme,
-  //   introRef,
-}) => {
+const IntroComponent: React.FunctionComponent<IntroProps> = ({ theme }) => {
+  const { ref } = useSectionInView("Home");
+
   const data = useStaticQuery(graphql`
     {
       site {
@@ -65,7 +56,7 @@ const IntroComponent: React.FunctionComponent<IntroProps> = ({
   const role = data.site.siteMetadata.role;
 
   return (
-    <div className={`${css_prefix}main`}>
+    <div className={`${css_prefix}main`} ref={ref}>
       <motion.div
         initial={{ opacity: 0, scale: 0 }}
         animate={{ opacity: 1, scale: 1 }}
@@ -111,7 +102,13 @@ const IntroComponent: React.FunctionComponent<IntroProps> = ({
           </span>
         </div>
         <div className={`${css_prefix}bold-text`}>{role}</div>
-        <div className={`${css_prefix}title`}>{title}</div>
+        <div className={`${css_prefix}title`}>
+          {title}
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus
+          veritatis exercitationem vitae ratione, iusto animi sequi odit quam!
+          Impedit recusandae possimus nihil corporis deserunt amet assumenda
+          modi. Quis, ullam modi.
+        </div>
       </motion.div>
 
       <motion.div

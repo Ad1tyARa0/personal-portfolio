@@ -6,6 +6,7 @@ import { graphql, navigate, useStaticQuery } from "gatsby";
 // SCSS.
 import "./Skills.scss";
 import { SkillsType } from "../../utils/types/skills";
+import { useSectionInView } from "../../hooks/useIntersectionObserver";
 
 const css_prefix = "c--s__";
 
@@ -25,14 +26,12 @@ const fadeInAnimationVariants = {
 
 // Component props.
 interface SkillsProps {
-  skillsRef: React.Ref<HTMLDivElement> | undefined;
   theme: string;
 }
 
-const SkillsComponent: React.FunctionComponent<SkillsProps> = ({
-  skillsRef,
-  theme,
-}) => {
+const SkillsComponent: React.FunctionComponent<SkillsProps> = ({ theme }) => {
+  const { ref } = useSectionInView("Skills");
+
   const data = useStaticQuery(graphql`
     {
       allPrismicSkills {
@@ -76,7 +75,7 @@ const SkillsComponent: React.FunctionComponent<SkillsProps> = ({
   );
 
   return (
-    <div ref={skillsRef}>
+    <div ref={ref}>
       <motion.div
         className={`${css_prefix}main ${
           theme === "dark" ? css_prefix + "main-dark" : ""

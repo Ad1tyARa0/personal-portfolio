@@ -40,6 +40,11 @@ $css_prefix: ".c--n__";
   // color: $color-font-light;
 }
 
+#{$css_prefix}link {
+  text-decoration: none;
+  color: inherit;
+}
+
 #{$css_prefix}tab {
   @include select-none;
   @include display-flex-center;

@@ -4,23 +4,23 @@ import { motion } from "framer-motion";
 // SCSS.
 import "./About.scss";
 import { Heading } from "../common/heading/Heading";
+import { useSectionInView } from "../../hooks/useIntersectionObserver";
 
 const css_prefix = "c--a__";
 
 // Component props.
 interface AboutProps {
-  aboutRef: React.Ref<HTMLDivElement> | undefined;
   theme: string;
 }
 
-const AboutComponent: React.FunctionComponent<AboutProps> = ({
-  aboutRef,
-  theme,
-}) => {
+const AboutComponent: React.FunctionComponent<AboutProps> = ({ theme }) => {
   // console.log(aboutRef);
+
+  const { ref } = useSectionInView("About");
+
   return (
     <div
-      ref={aboutRef}
+      ref={ref}
       className={`${css_prefix}main ${
         theme === "dark" ? css_prefix + "main-dark" : ""
       }`}

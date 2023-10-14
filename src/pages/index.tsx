@@ -12,6 +12,8 @@ import { Nav } from "../components/nav/Nav";
 import { About } from "../components/about/About";
 import { Projects } from "../components/projects/Projects";
 import { Skills } from "../components/skills/Skills";
+import ActiveSectionContextProvider from "../context/ActiveSessionContext";
+import { PageBreak } from "../components/common/page-break/PageBreak";
 
 // Pages -- home
 const css_prefix = "p--h__";
@@ -21,70 +23,41 @@ interface IndexInterface {}
 const Index: React.FC<IndexInterface> = ({}) => {
   const { theme, switchTheme } = React.useContext(ThemeContext);
 
-  const aboutRef = React.useRef<HTMLDivElement | null>(null);
-  const introRef = React.useRef<HTMLDivElement | null>(null);
-  const projectsRef = React.useRef<HTMLDivElement | null>(null);
-  const skillsRef = React.useRef<HTMLDivElement | null>(null);
-
-  console.log(introRef.current?.clientTop);
-
-  // useEffect(() => {
-  //   if (introRef.current?.)
-  // }, [])
-
-  const handleClickNavigateToPage = (pageId: string) => {
-    if (pageId === "1") {
-      introRef?.current!.scrollIntoView({
-        behavior: "smooth",
-        inline: "start",
-      });
-    } else if (pageId === "2") {
-      aboutRef.current?.scrollIntoView({
-        behavior: "smooth",
-        inline: "start",
-      });
-    } else if (pageId === "3") {
-      projectsRef.current?.scrollIntoView({
-        behavior: "smooth",
-        inline: "start",
-      });
-    } else if (pageId === "4") {
-      skillsRef.current?.scrollIntoView({
-        behavior: "smooth",
-        inline: "start",
-      });
-    }
-  };
-
   return (
     <ThemeProvider>
-      <main
-        className={`${css_prefix}main ${
-          theme === "dark" ? css_prefix + "main-dark" : ""
-        }`}
-        ref={introRef}
-      >
-        <Nav
-          handleClickNavigateToPage={handleClickNavigateToPage}
-          theme={theme}
-        />
-
-        <Intro theme={theme} />
-
-        <About theme={theme} aboutRef={aboutRef} />
-
-        <Projects theme={theme} projectsRef={projectsRef} />
-
-        <Skills theme={theme} skillsRef={skillsRef} />
-
-        <div
-          className={`${css_prefix}theme-button ${
-            theme === "dark" ? css_prefix + "theme-button-dark" : ""
+      <ActiveSectionContextProvider>
+        <main
+          className={`${css_prefix}main ${
+            theme === "dark" ? css_prefix + "main-dark" : ""
           }`}
         >
-          <ThemeButton theme={theme} switchTheme={switchTheme} />
-        </div>
-      </main>
+          <Nav theme={theme} />
+
+          <Intro theme={theme} />
+
+          <PageBreak />
+
+          <About theme={theme} />
+
+          <PageBreak />
+
+          <Projects theme={theme} />
+
+          <PageBreak />
+
+          <Skills theme={theme} />
+
+          <PageBreak />
+
+          <div
+            className={`${css_prefix}theme-button ${
+              theme === "dark" ? css_prefix + "theme-button-dark" : ""
+            }`}
+          >
+            <ThemeButton theme={theme} switchTheme={switchTheme} />
+          </div>
+        </main>
+      </ActiveSectionContextProvider>
     </ThemeProvider>
   );
 };

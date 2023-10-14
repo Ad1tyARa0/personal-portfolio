@@ -1,4 +1,10 @@
-import React, { createContext, useMemo, useReducer, useState } from "react";
+import React, {
+  createContext,
+  useMemo,
+  useReducer,
+  useState,
+  useContext,
+} from "react";
 
 export interface ThemeContextInterface {
   theme: string;
@@ -30,3 +36,13 @@ const ThemeProvider = ({ children }: { children: JSX.Element }) => {
 };
 
 export default ThemeProvider;
+
+export const useThemeContext = () => {
+  const context = useContext(ThemeContext);
+
+  if (context === null) {
+    throw new Error("useThemeContext must be used within an ThemeProvider");
+  }
+
+  return context;
+};

@@ -4,61 +4,22 @@ import { motion } from "framer-motion";
 // SCSS.
 import "./Nav.scss";
 import Scrollbars from "react-custom-scrollbars-2";
+import { LINKS } from "../../utils/constants/links";
+import { useActiveSectionContext } from "../../context/ActiveSessionContext";
+import { SectionName } from "../../utils/types/tabs";
+import { ThemeContext, useThemeContext } from "../../context/ThemeContext";
+import { Link } from "gatsby";
 
 const css_prefix = "c--n__";
 
 // Component props.
 interface NavProps {
-  handleClickNavigateToPage: (pageId: string) => void;
   theme: string;
 }
 
-const NavComponent: React.FunctionComponent<NavProps> = ({
-  handleClickNavigateToPage,
-  theme,
-}) => {
-  const TABS = [
-    {
-      id: "1",
-      title: "Home",
-    },
-
-    {
-      id: "2",
-      title: "About",
-    },
-
-    {
-      id: "3",
-      title: "Projects",
-    },
-
-    {
-      id: "4",
-      title: "Skills",
-    },
-
-    {
-      id: "5",
-      title: "Experience",
-    },
-
-    {
-      id: "6",
-      title: "Services",
-    },
-
-    {
-      id: "7",
-      title: "Contact",
-    },
-  ];
-
-  const [tab, seTab] = React.useState<string>("1");
-
-  // ${
-  //   tab === e.id ? css_prefix + "selected-tab" : ""
-  // }
+const NavComponent: React.FunctionComponent<NavProps> = ({ theme }) => {
+  const { activeSection, setActiveSection, setTimeOfLastClick } =
+    useActiveSectionContext();
 
   return (
     <motion.div
@@ -68,35 +29,37 @@ const NavComponent: React.FunctionComponent<NavProps> = ({
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
     >
-      {TABS.map(e => {
+      {LINKS.map((e: any) => {
         return (
-          <motion.li
-            className={`${css_prefix}tab`}
-            key={e.id}
-            onClick={() => {
-              seTab(e.id);
-              handleClickNavigateToPage(e.id);
-            }}
-            initial={{ y: -100, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-          >
-            {e.title}
+          <Link to={e.hash} className={`${css_prefix}link`}>
+            <motion.li
+              className={`${css_prefix}tab`}
+              key={e.hash}
+              onClick={() => {
+                setActiveSection(e.name);
+                setTimeOfLastClick(Date.now());
+              }}
+              initial={{ y: -100, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+            >
+              {e.name}
 
-            {tab === e.id && (
-              <motion.span
-                className={`${css_prefix}selected-tab ${
-                  theme === "dark" ? css_prefix + "selected-tab-dark" : ""
-                }`}
-                // className="bg-gray-100 rounded-full absolute inset-0 -z-10 dark:bg-gray-800"
-                layoutId="activeSection"
-                transition={{
-                  type: "spring",
-                  stiffness: 380,
-                  damping: 30,
-                }}
-              ></motion.span>
-            )}
-          </motion.li>
+              {activeSection === e.name && (
+                <motion.span
+                  className={`${css_prefix}selected-tab ${
+                    theme === "dark" ? css_prefix + "selected-tab-dark" : ""
+                  }`}
+                  // className="bg-gray-100 rounded-full absolute inset-0 -z-10 dark:bg-gray-800"
+                  layoutId="activeSection"
+                  transition={{
+                    type: "spring",
+                    stiffness: 380,
+                    damping: 30,
+                  }}
+                ></motion.span>
+              )}
+            </motion.li>
+          </Link>
         );
       })}
     </motion.div>
