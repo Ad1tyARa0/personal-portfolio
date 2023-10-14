@@ -14,16 +14,21 @@ import { LinkedIn } from "../../assets/icons/linkedin/LinkedIn";
 import { Button } from "../common/button/Button";
 import { graphql, useStaticQuery } from "gatsby";
 import { useSectionInView } from "../../hooks/useIntersectionObserver";
+import { useThemeContext } from "../../context/ThemeContext";
 
 const css_prefix = "c--i__";
 
 // Component props.
 interface IntroProps {
-  theme: string;
+  // theme: string;
 }
 
-const IntroComponent: React.FunctionComponent<IntroProps> = ({ theme }) => {
+const IntroComponent: React.FunctionComponent<IntroProps> = () => {
   const { ref } = useSectionInView("Home", 0.5);
+
+  const { theme } = useThemeContext();
+
+  console.log(theme);
 
   const data = useStaticQuery(graphql`
     {
@@ -55,10 +60,14 @@ const IntroComponent: React.FunctionComponent<IntroProps> = ({ theme }) => {
   const name = data.site.siteMetadata.name;
   const role = data.site.siteMetadata.role;
 
-  console.log(imageUrl);
-
   return (
-    <div id="Home" className={`${css_prefix}main`} ref={ref}>
+    <div
+      id="Home"
+      className={`${css_prefix}main ${
+        theme === "dark" ? css_prefix + "main-dark" : ""
+      }`}
+      ref={ref}
+    >
       <motion.div
         initial={{ opacity: 0, scale: 0 }}
         animate={{ opacity: 1, scale: 1 }}

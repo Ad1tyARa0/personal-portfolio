@@ -5,18 +5,17 @@ import { motion } from "framer-motion";
 import "./About.scss";
 import { Heading } from "../common/heading/Heading";
 import { useSectionInView } from "../../hooks/useIntersectionObserver";
+import { ThemeContext, useThemeContext } from "../../context/ThemeContext";
 
 const css_prefix = "c--a__";
 
 // Component props.
-interface AboutProps {
-  theme: string;
-}
+interface AboutProps {}
 
-const AboutComponent: React.FunctionComponent<AboutProps> = ({ theme }) => {
-  // console.log(aboutRef);
-
+const AboutComponent: React.FunctionComponent<AboutProps> = () => {
   const { ref } = useSectionInView("About");
+
+  const { theme } = useThemeContext();
 
   return (
     <div
@@ -31,8 +30,10 @@ const AboutComponent: React.FunctionComponent<AboutProps> = ({ theme }) => {
         //   animate={{ opacity: 1, y: 0 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.175 }}
+        className={`${css_prefix}inner-main`}
       >
         <Heading text="About Me" />
+
         <p className={`${css_prefix}about-text`}>
           While graduating with a degree in{" "}
           <span

@@ -8,11 +8,17 @@ $css_prefix: ".c--i__";
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 50px 10px 10px 10px;
+  // padding: 50px 10px 10px 10px;
+  padding: 100px 10px 10px 10px;
+
+  background-color: $color-background-light;
+  transition: background 200ms linear;
 }
 
 #{$css_prefix}main-dark {
-  color: "#fff";
+  color: $color-font-light;
+  background-color: $color-background-dark;
+  transition: background 200ms linear;
 }
 
 #{$css_prefix}image-container {

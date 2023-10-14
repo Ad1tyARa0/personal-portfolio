@@ -2,19 +2,24 @@ import React from "react";
 
 // SCSS.
 import "./ThemeButton.scss";
+import { ThemeContext } from "../../../context/ThemeContext";
 
 const css_prefix = "c--c--t-b__";
 
 // Component props.
 interface ThemeButtonProps {
-  theme: string;
-  switchTheme: (payload: string) => void;
+  // theme: string;
+  // switchTheme: (payload: string) => void;
 }
 
-const ThemeButtonComponent: React.FunctionComponent<ThemeButtonProps> = ({
-  theme,
-  switchTheme,
-}) => {
+const ThemeButtonComponent: React.FunctionComponent<ThemeButtonProps> = (
+  {
+    // theme,
+    // switchTheme,
+  }
+) => {
+  const { theme, switchTheme } = React.useContext(ThemeContext);
+
   return (
     <svg
       aria-hidden="true"

@@ -2,7 +2,7 @@ import React, { FC, useState } from "react";
 import { SiLinkedin, SiGithub, SiMinutemailer } from "react-icons/si";
 
 // Components.
-import { PageContainer } from "../../components/layout/container/PageContainer";
+// import { PageContainer } from "../../components/layout/container/PageContainer";
 
 // Context.
 import { ThemeContext } from "../../context/ThemeContext";
@@ -77,17 +77,16 @@ const Contact: FC<ContactInterface> = () => {
   ];
 
   return (
-    <PageContainer>
-      <div className={`${css_prefix}main`}>
-        <div className={`${css_prefix}title`}>
-          Follow me and hit me up for future projects. Or just to chat
-        </div>
-
-        <div className={`${css_prefix}inner-main`}>
-          {contactList.map(e => renderContainer(e.title, e.icon, e.id, e.link))}
-        </div>
+    // <PageContainer>
+    <div className={`${css_prefix}main`}>
+      <div className={`${css_prefix}title`}>
+        Follow me and hit me up for future projects. Or just to chat
       </div>
-    </PageContainer>
+
+      <div className={`${css_prefix}inner-main`}>
+        {contactList.map(e => renderContainer(e.title, e.icon, e.id, e.link))}
+      </div>
+    </div>
   );
 };
 

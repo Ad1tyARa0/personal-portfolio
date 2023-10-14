@@ -14,6 +14,7 @@ import { Projects } from "../components/projects/Projects";
 import { Skills } from "../components/skills/Skills";
 import ActiveSectionContextProvider from "../context/ActiveSessionContext";
 import { PageBreak } from "../components/common/page-break/PageBreak";
+import { Layout } from "../layout/Layout";
 
 // Pages -- home
 const css_prefix = "p--h__";
@@ -22,43 +23,66 @@ interface IndexInterface {}
 
 const Index: React.FC<IndexInterface> = ({}) => {
   const { theme, switchTheme } = React.useContext(ThemeContext);
+  console.log(theme);
 
   return (
-    <ThemeProvider>
-      <ActiveSectionContextProvider>
-        <main
-          className={`${css_prefix}main ${
-            theme === "dark" ? css_prefix + "main-dark" : ""
-          }`}
-        >
-          <Nav theme={theme} />
+    // <ThemeProvider>
+    //   <ActiveSectionContextProvider>
+    //     <main
+    //       className={`${css_prefix}main ${
+    //         theme === "dark" ? css_prefix + "main-dark" : ""
+    //       }`}
+    //     >
+    //       <Nav theme={theme} />
 
-          <Intro theme={theme} />
+    //       <Intro />
 
-          <PageBreak />
+    //       <PageBreak />
 
-          <About theme={theme} />
+    //
 
-          <PageBreak />
+    //       <PageBreak />
 
-          <Projects theme={theme} />
+    //       <Projects theme={theme} />
 
-          <PageBreak />
+    //       <PageBreak />
 
-          <Skills theme={theme} />
+    //       <Skills theme={theme} />
 
-          <PageBreak />
+    //       <PageBreak />
 
-          <div
-            className={`${css_prefix}theme-button ${
-              theme === "dark" ? css_prefix + "theme-button-dark" : ""
-            }`}
-          >
-            <ThemeButton theme={theme} switchTheme={switchTheme} />
-          </div>
-        </main>
-      </ActiveSectionContextProvider>
-    </ThemeProvider>
+    //       <div
+    //         uclassName={`${css_prefix}theme-button ${
+    //           theme === "dark" ? css_prefix + "theme-button-dark" : ""
+    //         }`}
+    //       >
+    //         <ThemeBtton theme={theme} switchTheme={switchTheme} />
+    //       </div>
+    //     </main>
+    //   </ActiveSectionContextProvider>
+    // </ThemeProvider>
+
+    <Layout>
+      {/* <Nav theme={theme} /> */}
+
+      <>
+        <Intro />
+
+        {/* <PageBreak /> */}
+
+        <About />
+
+        {/* <PageBreak /> */}
+
+        <Projects />
+
+        {/* <PageBreak /> */}
+
+        <Skills />
+
+        {/* <PageBreak /> */}
+      </>
+    </Layout>
   );
 };
 

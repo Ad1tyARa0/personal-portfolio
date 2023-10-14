@@ -14,12 +14,14 @@ const css_prefix = "c--n__";
 
 // Component props.
 interface NavProps {
-  theme: string;
+  // theme: string;
 }
 
-const NavComponent: React.FunctionComponent<NavProps> = ({ theme }) => {
+const NavComponent: React.FunctionComponent<NavProps> = () => {
   const { activeSection, setActiveSection, setTimeOfLastClick } =
     useActiveSectionContext();
+
+  const { theme } = React.useContext(ThemeContext);
 
   return (
     <motion.div

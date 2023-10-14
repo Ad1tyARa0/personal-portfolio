@@ -7,6 +7,7 @@ import { graphql, navigate, useStaticQuery } from "gatsby";
 import "./Skills.scss";
 import { SkillsType } from "../../utils/types/skills";
 import { useSectionInView } from "../../hooks/useIntersectionObserver";
+import { useThemeContext } from "../../context/ThemeContext";
 
 const css_prefix = "c--s__";
 
@@ -25,12 +26,11 @@ const fadeInAnimationVariants = {
 };
 
 // Component props.
-interface SkillsProps {
-  theme: string;
-}
+interface SkillsProps {}
 
-const SkillsComponent: React.FunctionComponent<SkillsProps> = ({ theme }) => {
+const SkillsComponent: React.FunctionComponent<SkillsProps> = () => {
   const { ref } = useSectionInView("Skills");
+  const { theme } = useThemeContext();
 
   const data = useStaticQuery(graphql`
     {

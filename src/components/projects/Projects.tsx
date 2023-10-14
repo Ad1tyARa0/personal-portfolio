@@ -5,18 +5,17 @@ import { motion } from "framer-motion";
 import "./Projects.scss";
 import { Heading } from "../common/heading/Heading";
 import { useSectionInView } from "../../hooks/useIntersectionObserver";
+import { useThemeContext } from "../../context/ThemeContext";
 
 const css_prefix = "c--p__";
 
 // Component props.
-interface ProjectsProps {
-  theme: string;
-}
+interface ProjectsProps {}
 
-const ProjectsComponent: React.FunctionComponent<ProjectsProps> = ({
-  theme,
-}) => {
+const ProjectsComponent: React.FunctionComponent<ProjectsProps> = () => {
   const { ref } = useSectionInView("Projects");
+
+  const { theme } = useThemeContext();
 
   return (
     <div ref={ref} id="Projects">
