@@ -5,15 +5,6 @@ $css_prefix: ".c--a__";
 
 #{$css_prefix}main {
   padding: 100px 10px 10px 10px;
-
-  background-color: $color-background-light;
-  transition: background 200ms linear;
-}
-
-#{$css_prefix}main-dark {
-  color: $color-font-light;
-  background-color: $color-background-dark;
-  transition: background 200ms linear;
 }
 
 #{$css_prefix}inner-main {

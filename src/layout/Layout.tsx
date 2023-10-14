@@ -1,14 +1,15 @@
 import React from "react";
 
+// Components.
+import { Nav } from "../components/nav/Nav";
+import { ThemeButton } from "../components/common/theme-button/ThemeButton";
+
+// Contexts.
+import { useThemeContext } from "../context/ThemeContext";
+import ActiveSectionContextProvider from "../context/ActiveSessionContext";
+
 // SCSS.
 import "./Layout.scss";
-import ThemeProvider, {
-  ThemeContext,
-  useThemeContext,
-} from "../context/ThemeContext";
-import ActiveSectionContextProvider from "../context/ActiveSessionContext";
-import { ThemeButton } from "../components/common/theme-button/ThemeButton";
-import { Nav } from "../components/nav/Nav";
 
 const css_prefix = "l__";
 
@@ -22,26 +23,22 @@ const LayoutComponent: React.FunctionComponent<LayoutProps> = ({
 }) => {
   const { theme } = useThemeContext();
 
-  console.log(theme);
-
   return (
-    <ThemeProvider>
-      <ActiveSectionContextProvider>
+    <ActiveSectionContextProvider>
+      <main
+        className={`${css_prefix}main ${
+          theme === "dark" ? css_prefix + "main-dark" : ""
+        }`}
+      >
         <Nav />
 
-        <main
-          className={`${css_prefix}main ${
-            theme === "dark" ? css_prefix + "main-dark" : ""
-          }`}
-        >
-          {children}
-        </main>
+        {children}
 
         <div className={`${css_prefix}theme-button`}>
           <ThemeButton />
         </div>
-      </ActiveSectionContextProvider>
-    </ThemeProvider>
+      </main>
+    </ActiveSectionContextProvider>
   );
 };
 

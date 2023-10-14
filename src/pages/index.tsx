@@ -1,7 +1,10 @@
 import React, { useEffect } from "react";
 
 // Types and interfaces.
-import ThemeProvider, { ThemeContext } from "../context/ThemeContext";
+import ThemeProvider, {
+  ThemeContext,
+  useThemeContext,
+} from "../context/ThemeContext";
 
 // SCSS.
 import "./index.scss";
@@ -22,7 +25,7 @@ const css_prefix = "p--h__";
 interface IndexInterface {}
 
 const Index: React.FC<IndexInterface> = ({}) => {
-  const { theme, switchTheme } = React.useContext(ThemeContext);
+  const { theme, switchTheme } = useThemeContext();
   console.log(theme);
 
   return (
@@ -68,19 +71,19 @@ const Index: React.FC<IndexInterface> = ({}) => {
       <>
         <Intro />
 
-        {/* <PageBreak /> */}
+        <PageBreak />
 
         <About />
 
-        {/* <PageBreak /> */}
+        <PageBreak />
 
         <Projects />
 
-        {/* <PageBreak /> */}
+        <PageBreak />
 
         <Skills />
 
-        {/* <PageBreak /> */}
+        <PageBreak />
       </>
     </Layout>
   );

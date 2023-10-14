@@ -4,16 +4,16 @@
 $css_prefix: ".l__";
 
 #{$css_prefix}main {
-  // background-color: $color-background-light;
-  //   transition: background 500ms linear;
-  // max-width: 1600px;
-  //   margin: 0 auto;
+  background-color: $color-background-light;
+  transition: background 200ms linear;
   position: relative;
 }
 
 #{$css_prefix}main-dark {
+  color: $color-font-light;
+
   background-color: $color-background-dark;
-  transition: background 500ms linear;
+  transition: background 200ms linear;
 }
 
 #{$css_prefix}theme-button {

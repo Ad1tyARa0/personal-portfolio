@@ -1,11 +1,15 @@
 import React from "react";
 import { motion } from "framer-motion";
 
+// Components.
+import { Heading } from "../common/heading/Heading";
+
+// Hooks.
+import { useThemeContext } from "../../context/ThemeContext";
+import { useSectionInView } from "../../hooks/useIntersectionObserver";
+
 // SCSS.
 import "./About.scss";
-import { Heading } from "../common/heading/Heading";
-import { useSectionInView } from "../../hooks/useIntersectionObserver";
-import { ThemeContext, useThemeContext } from "../../context/ThemeContext";
 
 const css_prefix = "c--a__";
 
@@ -18,13 +22,7 @@ const AboutComponent: React.FunctionComponent<AboutProps> = () => {
   const { theme } = useThemeContext();
 
   return (
-    <div
-      ref={ref}
-      className={`${css_prefix}main ${
-        theme === "dark" ? css_prefix + "main-dark" : ""
-      }`}
-      id="About"
-    >
+    <div ref={ref} className={`${css_prefix}main`} id="About">
       <motion.div
         initial={{ opacity: 0, y: 100 }}
         //   animate={{ opacity: 1, y: 0 }}

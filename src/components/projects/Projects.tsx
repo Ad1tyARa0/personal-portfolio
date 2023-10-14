@@ -1,11 +1,14 @@
 import React from "react";
 import { motion } from "framer-motion";
 
+// Components.
+import { Heading } from "../common/heading/Heading";
+
+// Hooks.
+import { useSectionInView } from "../../hooks/useIntersectionObserver";
+
 // SCSS.
 import "./Projects.scss";
-import { Heading } from "../common/heading/Heading";
-import { useSectionInView } from "../../hooks/useIntersectionObserver";
-import { useThemeContext } from "../../context/ThemeContext";
 
 const css_prefix = "c--p__";
 
@@ -15,14 +18,10 @@ interface ProjectsProps {}
 const ProjectsComponent: React.FunctionComponent<ProjectsProps> = () => {
   const { ref } = useSectionInView("Projects");
 
-  const { theme } = useThemeContext();
-
   return (
     <div ref={ref} id="Projects">
       <motion.div
-        className={`${css_prefix}main ${
-          theme === "dark" ? css_prefix + "main-dark" : ""
-        }`}
+        className={`${css_prefix}main`}
         initial={{ opacity: 0, y: 100 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.175 }}

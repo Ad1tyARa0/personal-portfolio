@@ -10,15 +10,6 @@ $css_prefix: ".c--i__";
   justify-content: center;
   // padding: 50px 10px 10px 10px;
   padding: 100px 10px 10px 10px;
-
-  background-color: $color-background-light;
-  transition: background 200ms linear;
-}
-
-#{$css_prefix}main-dark {
-  color: $color-font-light;
-  background-color: $color-background-dark;
-  transition: background 200ms linear;
 }
 
 #{$css_prefix}image-container {
@@ -52,12 +43,6 @@ $css_prefix: ".c--i__";
   display: flex;
   flex-direction: column;
   max-width: 800px;
-  // padding: 0 10px;
-  //   font-size: 32px;
-}
-
-#{$css_prefix}intro-text-container-dark {
-  color: #fff;
 }
 
 #{$css_prefix}bold-text {

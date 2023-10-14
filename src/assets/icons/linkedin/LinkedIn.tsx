@@ -2,6 +2,7 @@ import React from "react";
 
 // SCSS.
 import "./LinkedIn.scss";
+import { useThemeContext } from "../../../context/ThemeContext";
 
 // assets -- icons -- linkedin
 const css_prefix = "a--i--l__";
@@ -10,16 +11,18 @@ const css_prefix = "a--i--l__";
 interface LinkedInProps {
   height?: string;
   width?: string;
-  theme: string;
+  // theme: string;
   link: string;
 }
 
 const LinkedInComponent: React.FunctionComponent<LinkedInProps> = ({
   height = "20px",
   width = "20px",
-  theme,
+  // theme,
   link,
 }) => {
+  const { theme } = useThemeContext();
+
   return (
     <a href={link} target="_blank">
       <div

@@ -1,34 +1,35 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { graphql, useStaticQuery } from "gatsby";
 
+// Icons.
 import {
+  PiArrowRightBold,
   PiHandWavingDuotone,
   PiArrowLineDownBold,
-  PiArrowRightBold,
 } from "react-icons/pi";
+
+// Componennts.
+import { Button } from "../common/button/Button";
+import { Github } from "../../assets/icons/github/Github";
+import { LinkedIn } from "../../assets/icons/linkedin/LinkedIn";
+
+// Hooks.
+import { useThemeContext } from "../../context/ThemeContext";
+import { useSectionInView } from "../../hooks/useIntersectionObserver";
 
 // SCSS.
 import "./Intro.scss";
-import { Github } from "../../assets/icons/github/Github";
-import { LinkedIn } from "../../assets/icons/linkedin/LinkedIn";
-import { Button } from "../common/button/Button";
-import { graphql, useStaticQuery } from "gatsby";
-import { useSectionInView } from "../../hooks/useIntersectionObserver";
-import { useThemeContext } from "../../context/ThemeContext";
 
 const css_prefix = "c--i__";
 
 // Component props.
-interface IntroProps {
-  // theme: string;
-}
+interface IntroProps {}
 
 const IntroComponent: React.FunctionComponent<IntroProps> = () => {
   const { ref } = useSectionInView("Home", 0.5);
 
   const { theme } = useThemeContext();
-
-  console.log(theme);
 
   const data = useStaticQuery(graphql`
     {
@@ -61,13 +62,7 @@ const IntroComponent: React.FunctionComponent<IntroProps> = () => {
   const role = data.site.siteMetadata.role;
 
   return (
-    <div
-      id="Home"
-      className={`${css_prefix}main ${
-        theme === "dark" ? css_prefix + "main-dark" : ""
-      }`}
-      ref={ref}
-    >
+    <div id="Home" className={`${css_prefix}main`} ref={ref}>
       <motion.div
         initial={{ opacity: 0, scale: 0 }}
         animate={{ opacity: 1, scale: 1 }}
@@ -97,9 +92,7 @@ const IntroComponent: React.FunctionComponent<IntroProps> = () => {
       <motion.div
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
-        className={`${css_prefix}intro-text-container ${
-          theme === "dark" ? css_prefix + "intro-text-container-dark" : ""
-        }`}
+        className={`${css_prefix}intro-text-container`}
       >
         <div className={`${css_prefix}text`}>Hello,</div>
         <div className={`${css_prefix}bold-text`}>
@@ -113,18 +106,11 @@ const IntroComponent: React.FunctionComponent<IntroProps> = () => {
           </span>
         </div>
         <div className={`${css_prefix}bold-text`}>{role}</div>
-        <div className={`${css_prefix}title`}>
-          {title}
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus
-          veritatis exercitationem vitae ratione, iusto animi sequi odit quam!
-          Impedit recusandae possimus nihil corporis deserunt amet assumenda
-          modi. Quis, ullam modi.
-        </div>
+        <div className={`${css_prefix}title`}>{title}</div>
       </motion.div>
 
       <motion.div
         className={`${css_prefix}button-container`}
-        // className="flex flex-col sm:flex-row items-center justify-center gap-2 px-4 text-lg font-medium"
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{
@@ -133,7 +119,6 @@ const IntroComponent: React.FunctionComponent<IntroProps> = () => {
       >
         <div className={`${css_prefix}button`}>
           <Button
-            theme={theme}
             title="Contact Me"
             handleClick={console.log}
             icon={<PiArrowRightBold />}
@@ -143,7 +128,6 @@ const IntroComponent: React.FunctionComponent<IntroProps> = () => {
 
         <div className={`${css_prefix}button`}>
           <Button
-            theme={theme}
             title="Download CV"
             handleClick={console.log}
             icon={<PiArrowLineDownBold />}
@@ -153,18 +137,16 @@ const IntroComponent: React.FunctionComponent<IntroProps> = () => {
 
         <div className={`${css_prefix}button`}>
           <Button
-            theme={theme}
             handleClick={console.log}
-            icon={<LinkedIn theme={theme} link="/" />}
+            icon={<LinkedIn link="/" />}
             appearence="secondary"
           />
         </div>
 
         <div className={`${css_prefix}button`}>
           <Button
-            theme={theme}
             handleClick={console.log}
-            icon={<Github theme={theme} link="/" />}
+            icon={<Github link="/" />}
             appearence="secondary"
           />
         </div>

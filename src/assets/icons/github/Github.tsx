@@ -2,6 +2,7 @@ import React from "react";
 
 // SCSS.
 import "./Github.scss";
+import { useThemeContext } from "../../../context/ThemeContext";
 
 // assets -- icon -- githhub
 const css_prefix = "a--i--g__";
@@ -10,16 +11,18 @@ const css_prefix = "a--i--g__";
 interface GithubProps {
   height?: string;
   width?: string;
-  theme: string;
+  // theme: string;
   link: string;
 }
 
 const GithubComponent: React.FunctionComponent<GithubProps> = ({
   height = "20px",
   width = "20px",
-  theme,
+  // theme,
   link,
 }) => {
+  const { theme } = useThemeContext();
+
   return (
     <a href={link} target="_blank">
       <div

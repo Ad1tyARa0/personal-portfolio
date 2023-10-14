@@ -1,27 +1,27 @@
 import React from "react";
-
 import { motion } from "framer-motion";
+import { Link, navigate } from "gatsby";
+
+// Constants.
+import { LINKS } from "../../utils/constants/links";
+
+// Hooks.
+import { useThemeContext } from "../../context/ThemeContext";
+import { useActiveSectionContext } from "../../context/ActiveSessionContext";
+
 // SCSS.
 import "./Nav.scss";
-import Scrollbars from "react-custom-scrollbars-2";
-import { LINKS } from "../../utils/constants/links";
-import { useActiveSectionContext } from "../../context/ActiveSessionContext";
-import { SectionName } from "../../utils/types/tabs";
-import { ThemeContext, useThemeContext } from "../../context/ThemeContext";
-import { Link, navigate } from "gatsby";
 
 const css_prefix = "c--n__";
 
 // Component props.
-interface NavProps {
-  // theme: string;
-}
+interface NavProps {}
 
 const NavComponent: React.FunctionComponent<NavProps> = () => {
   const { activeSection, setActiveSection, setTimeOfLastClick } =
     useActiveSectionContext();
 
-  const { theme } = React.useContext(ThemeContext);
+  const { theme } = useThemeContext();
 
   return (
     <motion.div

@@ -1,13 +1,15 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { graphql, useStaticQuery } from "gatsby";
+
+// Components.
 import { Heading } from "../common/heading/Heading";
-import { graphql, navigate, useStaticQuery } from "gatsby";
+
+// Hooks.
+import { useSectionInView } from "../../hooks/useIntersectionObserver";
 
 // SCSS.
 import "./Skills.scss";
-import { SkillsType } from "../../utils/types/skills";
-import { useSectionInView } from "../../hooks/useIntersectionObserver";
-import { useThemeContext } from "../../context/ThemeContext";
 
 const css_prefix = "c--s__";
 
@@ -30,7 +32,6 @@ interface SkillsProps {}
 
 const SkillsComponent: React.FunctionComponent<SkillsProps> = () => {
   const { ref } = useSectionInView("Skills");
-  const { theme } = useThemeContext();
 
   const data = useStaticQuery(graphql`
     {
@@ -77,9 +78,7 @@ const SkillsComponent: React.FunctionComponent<SkillsProps> = () => {
   return (
     <div ref={ref} id="Skills">
       <motion.div
-        className={`${css_prefix}main ${
-          theme === "dark" ? css_prefix + "main-dark" : ""
-        }`}
+        className={`${css_prefix}main`}
         initial={{ opacity: 0, y: 100 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.175 }}
@@ -94,7 +93,6 @@ const SkillsComponent: React.FunctionComponent<SkillsProps> = () => {
             return (
               <motion.li
                 className={`${css_prefix}skills-item-main`}
-                // className="bg-white borderBlack rounded-xl px-5 py-3 dark:bg-white/10 dark:text-white/80"
                 key={index}
                 variants={fadeInAnimationVariants}
                 initial="initial"

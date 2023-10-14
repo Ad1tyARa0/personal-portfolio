@@ -2,13 +2,14 @@ import React from "react";
 
 // SCSS.
 import "./Button.scss";
+import { useThemeContext } from "../../../context/ThemeContext";
 
 // Components -- common -- button
 const css_prefix = "c--c--b__";
 
 // Component props.
 interface ButtonProps {
-  theme: string;
+  // theme: string;
   title?: string;
   handleClick: () => void;
   icon?: JSX.Element;
@@ -16,12 +17,14 @@ interface ButtonProps {
 }
 
 const ButtonComponent: React.FunctionComponent<ButtonProps> = ({
-  theme,
+  // theme,
   title,
   handleClick,
   icon,
   appearence,
 }) => {
+  const { theme } = useThemeContext();
+
   return (
     <div
       className={`${css_prefix}main ${
