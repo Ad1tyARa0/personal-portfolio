@@ -21,6 +21,7 @@ module.exports = {
           skills: require("./src/schemas/skills.json"),
           resume: require("./src/schemas/resume.json"),
           resumetype: require("./src/schemas/resumetype.json"),
+          projects: require("./src/schemas/projects.json"),
         },
       },
     },
