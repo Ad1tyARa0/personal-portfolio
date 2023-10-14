@@ -6,6 +6,9 @@ $css_prefix: ".p--h__";
 #{$css_prefix}main {
   background-color: $color-background-light;
   transition: background 500ms linear;
+  max-width: 1600px;
+  margin: 0 auto;
+  position: relative;
 }
 
 #{$css_prefix}main-dark {
@@ -14,9 +17,6 @@ $css_prefix: ".p--h__";
 }
 
 #{$css_prefix}components-container {
-  max-width: 1600px;
-  margin: 0 auto;
-  position: relative;
   // border: 1px solid red;
 }
 
