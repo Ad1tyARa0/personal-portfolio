@@ -8,7 +8,7 @@ import { LINKS } from "../../utils/constants/links";
 import { useActiveSectionContext } from "../../context/ActiveSessionContext";
 import { SectionName } from "../../utils/types/tabs";
 import { ThemeContext, useThemeContext } from "../../context/ThemeContext";
-import { Link } from "gatsby";
+import { Link, navigate } from "gatsby";
 
 const css_prefix = "c--n__";
 
@@ -38,6 +38,10 @@ const NavComponent: React.FunctionComponent<NavProps> = ({ theme }) => {
               onClick={() => {
                 setActiveSection(e.name);
                 setTimeOfLastClick(Date.now());
+                navigate(e.hash);
+                document
+                  .getElementById(`${e.name}`)
+                  ?.scrollIntoView({ behavior: "smooth" });
               }}
               initial={{ y: -100, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}

@@ -19,7 +19,7 @@ const ProjectsComponent: React.FunctionComponent<ProjectsProps> = ({
   const { ref } = useSectionInView("Projects");
 
   return (
-    <div ref={ref}>
+    <div ref={ref} id="Projects">
       <motion.div
         className={`${css_prefix}main ${
           theme === "dark" ? css_prefix + "main-dark" : ""

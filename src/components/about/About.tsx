@@ -24,6 +24,7 @@ const AboutComponent: React.FunctionComponent<AboutProps> = ({ theme }) => {
       className={`${css_prefix}main ${
         theme === "dark" ? css_prefix + "main-dark" : ""
       }`}
+      id="About"
     >
       <motion.div
         initial={{ opacity: 0, y: 100 }}

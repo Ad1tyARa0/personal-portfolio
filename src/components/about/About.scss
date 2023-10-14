@@ -8,8 +8,7 @@ $css_prefix: ".c--a__";
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  // min-height: 100vh;
-  padding: 25px 10px;
+  padding: 60px 10px 10px 10px;
 }
 
 #{$css_prefix}main-dark {
@@ -45,5 +44,9 @@ $css_prefix: ".c--a__";
   #{$css_prefix}about-text {
     line-height: 1.3em;
     text-align: start;
+  }
+
+  #{$css_prefix}main {
+    padding-top: 100px;
   }
 }

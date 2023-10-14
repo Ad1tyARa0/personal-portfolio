@@ -75,7 +75,7 @@ const SkillsComponent: React.FunctionComponent<SkillsProps> = ({ theme }) => {
   );
 
   return (
-    <div ref={ref}>
+    <div ref={ref} id="Skills">
       <motion.div
         className={`${css_prefix}main ${
           theme === "dark" ? css_prefix + "main-dark" : ""

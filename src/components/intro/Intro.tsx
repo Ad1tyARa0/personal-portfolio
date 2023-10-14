@@ -23,7 +23,7 @@ interface IntroProps {
 }
 
 const IntroComponent: React.FunctionComponent<IntroProps> = ({ theme }) => {
-  const { ref } = useSectionInView("Home");
+  const { ref } = useSectionInView("Home", 0.5);
 
   const data = useStaticQuery(graphql`
     {
@@ -55,8 +55,10 @@ const IntroComponent: React.FunctionComponent<IntroProps> = ({ theme }) => {
   const name = data.site.siteMetadata.name;
   const role = data.site.siteMetadata.role;
 
+  console.log(imageUrl);
+
   return (
-    <div className={`${css_prefix}main`} ref={ref}>
+    <div id="Home" className={`${css_prefix}main`} ref={ref}>
       <motion.div
         initial={{ opacity: 0, scale: 0 }}
         animate={{ opacity: 1, scale: 1 }}

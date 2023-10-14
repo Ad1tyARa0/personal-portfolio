@@ -43,6 +43,10 @@ $css_prefix: ".c--n__";
 #{$css_prefix}link {
   text-decoration: none;
   color: inherit;
+
+  &:active {
+    inset: unset;
+  }
 }
 
 #{$css_prefix}tab {
