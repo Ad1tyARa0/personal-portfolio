@@ -1,11 +1,13 @@
 export type SkillsType = {
-  id?: string;
+  data: {
+    id?: string;
 
-  category: {
-    text: string;
+    category: {
+      text: string;
+    };
+
+    category_items: CategoryItemInterface[];
   };
-
-  category_items: CategoryItemInterface[];
 };
 
 interface CategoryItemInterface {
