@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 // Types and interfaces.
 import ThemeProvider, { ThemeContext } from "../context/ThemeContext";
@@ -25,6 +25,12 @@ const Index: React.FC<IndexInterface> = ({}) => {
   const introRef = React.useRef<HTMLDivElement | null>(null);
   const projectsRef = React.useRef<HTMLDivElement | null>(null);
   const skillsRef = React.useRef<HTMLDivElement | null>(null);
+
+  console.log(introRef.current?.clientTop);
+
+  // useEffect(() => {
+  //   if (introRef.current?.)
+  // }, [])
 
   const handleClickNavigateToPage = (pageId: string) => {
     if (pageId === "1") {
