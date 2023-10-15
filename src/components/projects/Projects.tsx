@@ -9,6 +9,9 @@ import { useSectionInView } from "../../hooks/useIntersectionObserver";
 
 // SCSS.
 import "./Projects.scss";
+import { graphql, useStaticQuery } from "gatsby";
+import { ProjectsType } from "../../utils/types/projects";
+import { Project } from "./Project";
 
 const css_prefix = "c--p__";
 
@@ -17,6 +20,54 @@ interface ProjectsProps {}
 
 const ProjectsComponent: React.FunctionComponent<ProjectsProps> = () => {
   const { ref } = useSectionInView("Projects");
+
+  const data: ProjectsType = useStaticQuery(graphql`
+    query {
+      allPrismicProjects {
+        nodes {
+          data {
+            title {
+              text
+            }
+
+            description {
+              text
+            }
+
+            link {
+              url
+            }
+
+            images {
+              project_image {
+                alt
+                url
+              }
+            }
+
+            tech_stack {
+              stack {
+                text
+              }
+
+              stack_image {
+                alt
+                url
+              }
+            }
+
+            features {
+              feature {
+                text
+              }
+            }
+          }
+        }
+      }
+    }
+  `);
+
+  console.log(data);
 
   return (
     <div ref={ref} id="Projects">
@@ -29,33 +80,9 @@ const ProjectsComponent: React.FunctionComponent<ProjectsProps> = () => {
         <Heading text="Projects" />
 
         <div style={{ maxWidth: "800px" }}>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe atque
-            alias unde veniam eos? Impedit corporis facere quia veritatis nobis
-            aut aperiam recusandae doloribus illum perferendis ea neque, quod
-            voluptatibus.
-          </p>
-
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe atque
-            alias unde veniam eos? Impedit corporis facere quia veritatis nobis
-            aut aperiam recusandae doloribus illum perferendis ea neque, quod
-            voluptatibus.
-          </p>
-
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe atque
-            alias unde veniam eos? Impedit corporis facere quia veritatis nobis
-            aut aperiam recusandae doloribus illum perferendis ea neque, quod
-            voluptatibus.
-          </p>
-
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe atque
-            alias unde veniam eos? Impedit corporis facere quia veritatis nobis
-            aut aperiam recusandae doloribus illum perferendis ea neque, quod
-            voluptatibus.
-          </p>
+          {data.allPrismicProjects.nodes.map(e => {
+            return <Project payload={e} />;
+          })}
         </div>
       </motion.div>
     </div>
