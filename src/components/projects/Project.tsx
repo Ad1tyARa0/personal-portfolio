@@ -5,7 +5,11 @@ import "./Projects.scss";
 import { ProjectType } from "../../utils/types/projects";
 import { useScroll, useTransform, motion } from "framer-motion";
 
-import { PiArrowSquareOutBold, PiDotOutlineBold } from "react-icons/pi";
+import {
+  PiArrowSquareOutBold,
+  PiDotOutlineBold,
+  PiCircleDuotone,
+} from "react-icons/pi";
 import { Heading } from "../common/heading/Heading";
 
 const css_prefix = "c--p__";
@@ -45,11 +49,35 @@ const ProjectComponent: React.FunctionComponent<ProjectProps> = ({
       </div>
 
       <div className={`${css_prefix}project-images-container`}>
-        <img
-          className={`${css_prefix}project-image`}
-          src={payload.data.images[0].project_image.url}
-          alt={payload.data.images[0].project_image.alt}
-        />
+        <div className={`${css_prefix}project-images`}>
+          {payload.data.images.map(e => {
+            return (
+              <img
+                key={e.project_image.url}
+                className={`${css_prefix}project-image`}
+                src={e.project_image.url}
+                alt={e.project_image.alt}
+                id={e.project_image.alt}
+              />
+            );
+          })}
+        </div>
+
+        <div className={`${css_prefix}slider-nav`}>
+          {new Array(payload.data.images.length).fill(0).map((e, i) => {
+            return (
+              <a
+                href="javascript:;"
+                onClick={() => {
+                  window.location.href = `#${payload.data.images[i].project_image.alt}`;
+                }}
+                key={i}
+              >
+                <PiCircleDuotone />
+              </a>
+            );
+          })}
+        </div>
       </div>
 
       <div className={`${css_prefix}project-footer`}>

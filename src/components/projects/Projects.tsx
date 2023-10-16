@@ -79,7 +79,7 @@ const ProjectsComponent: React.FunctionComponent<ProjectsProps> = () => {
       >
         <Heading text="Projects" />
 
-        <div style={{ maxWidth: "800px" }}>
+        <div className={`${css_prefix}inner-main`}>
           {data.allPrismicProjects.nodes.map(e => {
             return <Project payload={e} />;
           })}
