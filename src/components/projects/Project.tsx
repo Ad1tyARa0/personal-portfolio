@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 
 // SCSS.
 import "./Projects.scss";
@@ -59,22 +59,6 @@ const ProjectComponent: React.FunctionComponent<ProjectProps> = ({
                 alt={e.project_image.alt}
                 id={e.project_image.alt}
               />
-            );
-          })}
-        </div>
-
-        <div className={`${css_prefix}slider-nav`}>
-          {new Array(payload.data.images.length).fill(0).map((e, i) => {
-            return (
-              <a
-                href="javascript:;"
-                onClick={() => {
-                  window.location.href = `#${payload.data.images[i].project_image.alt}`;
-                }}
-                key={i}
-              >
-                <PiCircleDuotone />
-              </a>
             );
           })}
         </div>
