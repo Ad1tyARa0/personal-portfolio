@@ -64,13 +64,13 @@ const CarouselComponent: React.FunctionComponent<CarouselProps> = ({
 
   return (
     <div className={`${css_prefix}main`}>
-      {/* <div className={`${css_prefix}left-button`}>
+      <div className={`${css_prefix}left-button`}>
         <Button
           handleClick={handlePrevious}
           appearence="primary"
           icon={<PiCaretLeftBold />}
         />
-      </div> */}
+      </div>
 
       <AnimatePresence>
         <motion.img
