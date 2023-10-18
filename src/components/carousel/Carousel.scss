@@ -1,0 +1,39 @@
+@import "src/sass/colors";
+@import "src/sass/variables";
+
+$css_prefix: ".c--c__";
+
+#{$css_prefix}main {
+  //   background-color: red;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+#{$css_prefix}image {
+  aspect-ratio: 16 / 9;
+  max-width: 780px;
+  height: 400px;
+}
+
+#{$css_prefix}left-button {
+  @include display-flex-center;
+
+  position: absolute;
+  z-index: 10;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#{$css_prefix}right-button {
+  @include display-flex-center;
+
+  position: absolute;
+  z-index: 10;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}

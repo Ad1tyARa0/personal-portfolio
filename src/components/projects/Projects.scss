@@ -44,38 +44,7 @@ $css_prefix: ".c--p__";
 #{$css_prefix}project-images-container {
   display: flex;
   flex-direction: column;
-  position: relative;
-}
-
-#{$css_prefix}project-images {
-  display: flex;
-  overflow-x: hidden;
-  max-width: 780px;
-  scroll-margin-top: 50px;
-  aspect-ratio: 16 / 9;
-  // display: none;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-  border-radius: 5px;
-}
-
-#{$css_prefix}slider-nav {
-  display: flex;
-  position: absolute;
-  z-index: 10;
-  bottom: 20px;
-  left: 50%;
-  transform: translate(-50%);
-  z-index: 1;
-}
-
-#{$css_prefix}project-image {
-  width: 780px;
-  height: 400px;
-  flex: 1 0 100%;
-  scroll-snap-align: start;
-  object-fit: cover;
-  margin-right: 10px;
+  // position: relative;
 }
 
 #{$css_prefix}project-footer {

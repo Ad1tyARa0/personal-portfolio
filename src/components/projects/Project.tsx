@@ -11,6 +11,7 @@ import {
   PiCircleDuotone,
 } from "react-icons/pi";
 import { Heading } from "../common/heading/Heading";
+import { Carousel } from "../carousel/Carousel";
 
 const css_prefix = "c--p__";
 
@@ -28,8 +29,16 @@ const ProjectComponent: React.FunctionComponent<ProjectProps> = ({
     target: ref,
     offset: ["0 1", "1.33 1"],
   });
+
   const scaleProgess = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
   const opacityProgess = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
+
+  const images = payload.data.images.map(e => {
+    return {
+      alt: e.project_image.alt,
+      url: e.project_image.url,
+    };
+  });
 
   return (
     <motion.div
@@ -49,19 +58,7 @@ const ProjectComponent: React.FunctionComponent<ProjectProps> = ({
       </div>
 
       <div className={`${css_prefix}project-images-container`}>
-        <div className={`${css_prefix}project-images`}>
-          {payload.data.images.map(e => {
-            return (
-              <img
-                key={e.project_image.url}
-                className={`${css_prefix}project-image`}
-                src={e.project_image.url}
-                alt={e.project_image.alt}
-                id={e.project_image.alt}
-              />
-            );
-          })}
-        </div>
+        <Carousel images={images} />
       </div>
 
       <div className={`${css_prefix}project-footer`}>
