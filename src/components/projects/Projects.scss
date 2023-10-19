@@ -41,6 +41,11 @@ $css_prefix: ".c--p__";
   cursor: pointer;
 }
 
+#{$css_prefix}project-images-description {
+  margin-bottom: 10px;
+  padding: 0 10px;
+}
+
 #{$css_prefix}project-images-container {
   display: flex;
   flex-direction: column;

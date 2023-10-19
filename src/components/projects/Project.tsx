@@ -57,6 +57,10 @@ const ProjectComponent: React.FunctionComponent<ProjectProps> = ({
         </div>
       </div>
 
+      <div className={`${css_prefix}project-images-description`}>
+        {payload.data.description.text}
+      </div>
+
       <div className={`${css_prefix}project-images-container`}>
         <Carousel images={images} />
       </div>
@@ -84,22 +88,28 @@ const ProjectComponent: React.FunctionComponent<ProjectProps> = ({
         </div>
 
         <div className={`${css_prefix}project-features-container`}>
-          {/* {payload.data.features.map(e => {
-            return (
-              <div className={`${css_prefix}project-features-container-item`}>
-                <div className={`${css_prefix}project-features-container-icon`}>
-                  <PiDotOutlineBold />
-                </div>
+          {payload.data.features.text.split(".").map(e => {
+            if (e.length !== 0) {
+              return (
+                <div className={`${css_prefix}project-features-container-item`}>
+                  <div
+                    className={`${css_prefix}project-features-container-icon`}
+                  >
+                    <PiDotOutlineBold />
+                  </div>
 
-                <div
-                  className={`${css_prefix}project-features-container-text`}
-                  key={e.feature.text}
-                >
-                  {e.feature.text}
+                  <div
+                    className={`${css_prefix}project-features-container-text`}
+                    key={e}
+                  >
+                    {e}
+                  </div>
                 </div>
-              </div>
-            );
-          })} */}
+              );
+            } else {
+              return null;
+            }
+          })}
         </div>
       </div>
     </motion.div>

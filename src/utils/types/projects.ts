@@ -9,10 +9,8 @@ export type ProjectType = {
     description: { text: string };
 
     features: {
-      feature: {
-        text: string;
-      };
-    }[];
+      text: string;
+    };
 
     images: {
       project_image: {

@@ -1,36 +1,26 @@
 import React, { useState } from "react";
+import { motion } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 
+import { Button } from "../common/button/Button";
 import { PiCaretLeftBold, PiCaretRightBold } from "react-icons/pi";
 
 import { ImagesType } from "../../utils/types/common";
 
 // SCSS.
 import "./Carousel.scss";
-import { Button } from "../common/button/Button";
-import { AnimatePresence } from "framer-motion";
-import { motion } from "framer-motion";
 
 const css_prefix = "c--c__";
 
 const slideVariants = {
   hiddenRight: {
-    x: "100%",
-    // opacity: 0,
+    x: "-10%",
   },
   hiddenLeft: {
-    x: "-100%",
-    // opacity: 0,
+    x: "10%",
   },
   visible: {
     x: "0",
-    // opacity: 1,
-    transition: {
-      duration: 0.5,
-    },
-  },
-  exit: {
-    opacity: 0,
-    scale: 0.8,
     transition: {
       duration: 0.5,
     },
@@ -87,7 +77,7 @@ const CarouselComponent: React.FunctionComponent<CarouselProps> = ({
 
       <div className={`${css_prefix}right-button`}>
         <Button
-          handleClick={handlePrevious}
+          handleClick={handleNext}
           appearence="primary"
           icon={<PiCaretRightBold />}
         />
