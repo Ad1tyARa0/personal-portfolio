@@ -84,7 +84,7 @@ const ProjectComponent: React.FunctionComponent<ProjectProps> = ({
         </div>
 
         <div className={`${css_prefix}project-features-container`}>
-          {payload.data.features.map(e => {
+          {/* {payload.data.features.map(e => {
             return (
               <div className={`${css_prefix}project-features-container-item`}>
                 <div className={`${css_prefix}project-features-container-icon`}>
@@ -99,7 +99,7 @@ const ProjectComponent: React.FunctionComponent<ProjectProps> = ({
                 </div>
               </div>
             );
-          })}
+          })} */}
         </div>
       </div>
     </motion.div>
