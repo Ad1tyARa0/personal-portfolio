@@ -57,9 +57,7 @@ const ProjectsComponent: React.FunctionComponent<ProjectsProps> = () => {
             }
 
             features {
-              feature {
-                text
-              }
+              text
             }
           }
         }
