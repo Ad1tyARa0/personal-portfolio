@@ -14,13 +14,16 @@ const css_prefix = "c--c__";
 
 const slideVariants = {
   hiddenRight: {
-    x: "-10%",
+    x: "-80%",
+    opacity: 0,
   },
   hiddenLeft: {
-    x: "10%",
+    x: "80%",
+    opacity: 0,
   },
   visible: {
     x: "0",
+    opacity: 1,
     transition: {
       duration: 0.5,
     },
