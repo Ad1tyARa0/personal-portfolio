@@ -54,7 +54,7 @@ const AboutComponent: React.FunctionComponent<AboutProps> = () => {
               theme === "dark" ? css_prefix + "font-bold-dark" : ""
             }`}
           >
-            React, GraphQL, Express / Apollo / Nest, Node, and PostgreSQL
+            React, GraphQL, Express / Apollo, Node, and PostgreSQL
           </span>
           . I use TypeScript with all my personal and professional projects. I
           am always looking to learn new technologies. I am currently looking

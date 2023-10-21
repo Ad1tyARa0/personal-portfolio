@@ -30,7 +30,7 @@ $css_prefix: ".c--p__";
 }
 
 #{$css_prefix}project-header {
-  padding: 10px;
+  padding: 10px 0;
   display: flex;
   align-items: center;
 }
@@ -43,7 +43,7 @@ $css_prefix: ".c--p__";
 
 #{$css_prefix}project-images-description {
   margin-bottom: 10px;
-  padding: 0 10px;
+  // padding: 0 10px;
 }
 
 #{$css_prefix}project-images-container {
@@ -59,7 +59,7 @@ $css_prefix: ".c--p__";
 #{$css_prefix}project-ts-container {
   @include display-flex-center;
 
-  justify-content: flex-start;
+  justify-content: flex-end;
   flex-wrap: wrap;
   margin: 10px 0;
 }

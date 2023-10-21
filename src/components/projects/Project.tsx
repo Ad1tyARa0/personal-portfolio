@@ -66,27 +66,6 @@ const ProjectComponent: React.FunctionComponent<ProjectProps> = ({
       </div>
 
       <div className={`${css_prefix}project-footer`}>
-        <div className={`${css_prefix}project-ts-container`}>
-          {payload.data.tech_stack.map(e => {
-            return (
-              <div
-                key={e.stack.text}
-                className={`${css_prefix}project-ts-item`}
-              >
-                <img
-                  src={e.stack_image.url}
-                  alt={e.stack_image.alt}
-                  className={`${css_prefix}project-ts-item-icon`}
-                />
-
-                <div className={`${css_prefix}project-ts-item-text`}>
-                  {e.stack.text}
-                </div>
-              </div>
-            );
-          })}
-        </div>
-
         <div className={`${css_prefix}project-features-container`}>
           {payload.data.features.text.split(".").map(e => {
             if (e.length !== 0) {
@@ -109,6 +88,27 @@ const ProjectComponent: React.FunctionComponent<ProjectProps> = ({
             } else {
               return null;
             }
+          })}
+        </div>
+
+        <div className={`${css_prefix}project-ts-container`}>
+          {payload.data.tech_stack.map(e => {
+            return (
+              <div
+                key={e.stack.text}
+                className={`${css_prefix}project-ts-item`}
+              >
+                <img
+                  src={e.stack_image.url}
+                  alt={e.stack_image.alt}
+                  className={`${css_prefix}project-ts-item-icon`}
+                />
+
+                <div className={`${css_prefix}project-ts-item-text`}>
+                  {e.stack.text}
+                </div>
+              </div>
+            );
           })}
         </div>
       </div>
