@@ -14,11 +14,11 @@ const css_prefix = "c--c__";
 
 const slideVariants = {
   hiddenRight: {
-    x: "-80%",
+    x: "-100%",
     opacity: 0,
   },
   hiddenLeft: {
-    x: "80%",
+    x: "100%",
     opacity: 0,
   },
   visible: {
@@ -65,18 +65,20 @@ const CarouselComponent: React.FunctionComponent<CarouselProps> = ({
         />
       </div>
 
-      <AnimatePresence>
-        <motion.img
-          key={currentIndex}
-          src={images[currentIndex].url}
-          alt={images[currentIndex].alt}
-          variants={slideVariants}
-          initial={direction === "right" ? "hiddenRight" : "hiddenLeft"}
-          animate="visible"
-          exit="exit"
-          className={`${css_prefix}image`}
-        />
-      </AnimatePresence>
+      <div className={`${css_prefix}image-container`}>
+        <AnimatePresence>
+          <motion.img
+            key={currentIndex}
+            src={images[currentIndex].url}
+            alt={images[currentIndex].alt}
+            variants={slideVariants}
+            initial={direction === "right" ? "hiddenRight" : "hiddenLeft"}
+            animate="visible"
+            exit="exit"
+            className={`${css_prefix}image`}
+          />
+        </AnimatePresence>
+      </div>
 
       <div className={`${css_prefix}right-button`}>
         <Button

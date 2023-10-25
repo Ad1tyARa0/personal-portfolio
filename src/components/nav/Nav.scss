@@ -35,6 +35,10 @@ $css_prefix: ".c--n__";
   }
 }
 
+#{$css_prefix}main-dark {
+  background-color: rgba(56, 55, 55, 0.2);
+}
+
 #{$css_prefix}link {
   all: unset;
 }

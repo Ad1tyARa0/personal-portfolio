@@ -70,7 +70,7 @@
 }
 
 @mixin background-animation-light() {
-  --c: #90fe22;
+  --c: #95f071;
   background: linear-gradient(90deg, #fff 50%, var(--c) 0)
       calc(100% - var(--_p, 0%)) / 200% 100%,
     linear-gradient(var(--c) 0 0) 0% 100% / var(--_p, 0%) 100% no-repeat;
@@ -85,7 +85,7 @@
 }
 
 @mixin background-animation-dark() {
-  --c: #ff3f02;
+  --c: #338e0f;
   background: linear-gradient(90deg, #fff 50%, var(--c) 0)
       calc(100% - var(--_p, 0%)) / 200% 100%,
     linear-gradient(var(--c) 0 0) 0% 100% / var(--_p, 0%) 100% no-repeat;

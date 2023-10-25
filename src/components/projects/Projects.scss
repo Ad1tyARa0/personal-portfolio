@@ -21,7 +21,6 @@ $css_prefix: ".c--p__";
 }
 
 #{$css_prefix}project-main {
-  max-width: 800px;
   // border: 1px solid red;
   padding: 10px;
 
@@ -59,22 +58,26 @@ $css_prefix: ".c--p__";
 #{$css_prefix}project-ts-container {
   @include display-flex-center;
 
-  justify-content: flex-end;
+  justify-content: flex-start;
   flex-wrap: wrap;
-  margin: 10px 0;
+  margin-top: 10px;
 }
 
 #{$css_prefix}project-ts-item {
   display: flex;
   align-items: center;
-  padding: 5px;
-  border: 1px solid slategrey;
+  // border: 1px solid slategrey;
   margin-right: 10px;
-  margin-bottom: 10px;
   border-radius: 5px;
+  padding: 5px 10px;
+
+  border: 1px solid;
+  &:last-of-type {
+    margin-right: 0;
+  }
 }
 
-#{$css_prefix}project-ts-item-text {
+#{$css_prefix}project-ts-item-title {
   margin: 5px 0 0 5px;
 }
 

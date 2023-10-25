@@ -4,15 +4,33 @@
 $css_prefix: ".l__";
 
 #{$css_prefix}main {
-  background-color: $color-background-light;
-  transition: background 200ms linear;
+  // background-color: $color-background-light;
+  // transition: background 200ms linear;
+
+  background-image: radial-gradient(
+    circle,
+    #c2ddb7,
+    #e0cfa6,
+    #f2c0ad,
+    #efb7c5,
+    #d2b7dd
+  );
+
   position: relative;
 }
 
 #{$css_prefix}main-dark {
   color: $color-font-light;
 
-  background-color: $color-background-dark;
+  // background-color: $color-background-dark;
+  background-image: radial-gradient(
+    circle,
+    #338e0f,
+    #866a00,
+    #af2e01,
+    #ae004e,
+    #6a0f8e
+  );
   transition: background 200ms linear;
 }
 
