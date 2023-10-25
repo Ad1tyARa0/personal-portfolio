@@ -85,12 +85,14 @@ const ExperienceComponent: React.FunctionComponent<ExperienceProps> = () => {
               contentStyle={{
                 background: "rgba(209, 209, 209, 0.05)",
                 boxShadow: "none",
-                border: "1px solid rgba(0, 0, 0, 0.05)",
+                border: "1px solid #585858",
                 textAlign: "left",
-                padding: "10px 15px",
+                padding: "20px",
+                borderRadius: "20px",
               }}
               contentArrowStyle={{
-                borderRight: "0.4rem solid rgba(255, 255, 255, 0.5)",
+                // borderRight: "0.4rem solid rgba(255, 255, 255, 0.5)",
+                display: "none",
               }}
               date={
                 e.is_current
