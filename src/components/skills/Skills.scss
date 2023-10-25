@@ -31,12 +31,12 @@ $css_prefix: ".c--s__";
   display: flex;
   align-items: center;
   padding: 8px 15px;
-  // border: 1px solid slategrey;
+  border: 1px solid $border;
   margin-right: 10px;
   margin-bottom: 15px;
   border-radius: 5px;
 
-  @include box-shadow-ver2;
+  // @include box-shadow-ver2;
 }
 
 #{$css_prefix}skills-item-image {

@@ -12,7 +12,8 @@ $css_prefix: ".c--p__";
 }
 
 #{$css_prefix}main-dark {
-  color: #fff;
+  // color: #fff;
+  color: $color-font-dark;
 }
 
 #{$css_prefix}inner-main {
@@ -22,16 +23,19 @@ $css_prefix: ".c--p__";
 
 #{$css_prefix}project-main {
   // border: 1px solid red;
-  padding: 10px;
+  padding: 20px;
 
-  @include box-shadow-ver1;
   border-radius: 20px;
+  @include box-shadow-ver1;
 }
 
 #{$css_prefix}project-header {
   padding: 10px 0;
   display: flex;
   align-items: center;
+
+  border-bottom: 1px solid $border;
+  margin-bottom: 10px;
 }
 
 #{$css_prefix}project-header-icon {
@@ -84,29 +88,4 @@ $css_prefix: ".c--p__";
 #{$css_prefix}project-ts-item-icon {
   width: 20px;
   height: 20px;
-}
-
-#{$css_prefix}project-features-container {
-  display: flex;
-  flex-direction: column;
-}
-
-#{$css_prefix}project-features-container-item {
-  display: flex;
-  align-items: center;
-  margin-bottom: 5px;
-}
-
-#{$css_prefix}project-features-container-icon {
-  @include display-flex-center;
-}
-
-#{$css_prefix}project-features-container-text {
-  margin-left: 5px;
-}
-
-@media only screen and (max-width: 700px) {
-  #{$css_prefix}main {
-    padding-top: 100px;
-  }
 }

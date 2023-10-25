@@ -7,6 +7,7 @@ import { About } from "../components/about/About";
 import { Skills } from "../components/skills/Skills";
 import { Projects } from "../components/projects/Projects";
 import { PageBreak } from "../components/common/page-break/PageBreak";
+import { Experience } from "../components/experience/Experience";
 
 interface IndexInterface {}
 
@@ -27,6 +28,10 @@ const Index: React.FC<IndexInterface> = ({}) => {
         <PageBreak />
 
         <Skills />
+
+        <PageBreak />
+
+        <Experience />
 
         <PageBreak />
       </>

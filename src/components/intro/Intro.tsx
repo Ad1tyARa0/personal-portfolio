@@ -127,12 +127,20 @@ const IntroComponent: React.FunctionComponent<IntroProps> = () => {
         </div>
 
         <div className={`${css_prefix}button`}>
-          <Button
-            title="Download CV"
-            handleClick={console.log}
-            icon={<PiArrowLineDownBold />}
-            appearence="secondary"
-          />
+          <a
+            style={{ all: "unset" }}
+            href={"https://1drv.ms/b/s!Ag98EnUm4trDiU0q2N-jd_mk9Zpb?e=E2XcSx"}
+            target="_blank"
+            type="application/pdf"
+            rel="alternate"
+          >
+            <Button
+              title="Download CV"
+              handleClick={console.log}
+              icon={<PiArrowLineDownBold />}
+              appearence="secondary"
+            />
+          </a>
         </div>
 
         <div className={`${css_prefix}button`}>

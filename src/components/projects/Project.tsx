@@ -52,9 +52,13 @@ const ProjectComponent: React.FunctionComponent<ProjectProps> = ({
       <div className={`${css_prefix}project-header`}>
         <Heading text={payload.data.title.text} variant="subheading" />
 
-        <div className={`${css_prefix}project-header-icon`}>
+        <a
+          href={payload.data.link.url}
+          target="_blank"
+          className={`${css_prefix}project-header-icon`}
+        >
           <PiArrowSquareOutBold />
-        </div>
+        </a>
       </div>
 
       <div className={`${css_prefix}project-images-description`}>
@@ -87,30 +91,7 @@ const ProjectComponent: React.FunctionComponent<ProjectProps> = ({
       </div>
 
       <div className={`${css_prefix}project-footer`}>
-        <div className={`${css_prefix}project-features-container`}>
-          {payload.data.features.text.split(".").map(e => {
-            if (e.length !== 0) {
-              return (
-                <div className={`${css_prefix}project-features-container-item`}>
-                  <div
-                    className={`${css_prefix}project-features-container-icon`}
-                  >
-                    <PiDotOutlineBold />
-                  </div>
-
-                  <div
-                    className={`${css_prefix}project-features-container-text`}
-                    key={e}
-                  >
-                    {e}
-                  </div>
-                </div>
-              );
-            } else {
-              return null;
-            }
-          })}
-        </div>
+        {payload.data.features.text}
       </div>
     </motion.div>
   );

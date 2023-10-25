@@ -1,0 +1,92 @@
+@import "src/sass/colors";
+@import "src/sass/variables";
+
+$css_prefix: ".c--e__";
+
+#{$css_prefix}main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 10px 10px 10px;
+}
+
+#{$css_prefix}employment-item-main-light {
+  //   @include neomorph-light;
+}
+
+#{$css_prefix}employment-item-main-dark {
+  //   @include neomorph-dark;
+}
+
+#{$css_prefix}employment-item-main {
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-evenly;
+
+  &:nth-of-type(2n - 1) {
+    #{$css_prefix}role {
+      text-align: end;
+    }
+  }
+}
+
+#{$css_prefix}logo {
+  height: 40px;
+  width: fit-content;
+  filter: grayscale(100%);
+  margin: 20px 10px 0 auto;
+}
+
+#{$css_prefix}company-name {
+  margin-left: auto;
+  font-size: 2em;
+}
+
+#{$css_prefix}designation {
+  font-family: "Plain Ultra Bold";
+  font-size: 3em;
+  flex: 1;
+}
+
+#{$css_prefix}container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+#{$css_prefix}footer-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+#{$css_prefix}links {
+  margin-left: 15px;
+}
+
+#{$css_prefix}company-logo {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+#{$css_prefix}date-container {
+  display: flex;
+  align-items: center;
+}
+
+#{$css_prefix}image {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+#{$css_prefix}role {
+  margin-top: 10px;
+  display: flex;
+  line-height: 1.5em;
+  align-items: flex-end;
+}
