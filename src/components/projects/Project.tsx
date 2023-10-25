@@ -12,6 +12,7 @@ import {
 } from "react-icons/pi";
 import { Heading } from "../common/heading/Heading";
 import { Carousel } from "../carousel/Carousel";
+import { useThemeContext } from "../../context/ThemeContext";
 
 const css_prefix = "c--p__";
 
@@ -24,6 +25,8 @@ const ProjectComponent: React.FunctionComponent<ProjectProps> = ({
   payload,
 }) => {
   const ref = useRef<HTMLDivElement>(null);
+
+  const { theme } = useThemeContext();
 
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -42,7 +45,9 @@ const ProjectComponent: React.FunctionComponent<ProjectProps> = ({
 
   return (
     <motion.div
-      className={`${css_prefix}project-main`}
+      className={`${css_prefix}project-main ${
+        theme === "dark" ? css_prefix + "project-main-dark" : ""
+      }`}
       ref={ref}
       style={{
         scale: scaleProgess,

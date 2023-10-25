@@ -33,10 +33,6 @@ const LayoutComponent: React.FunctionComponent<LayoutProps> = ({
         <Nav />
 
         {children}
-
-        <div className={`${css_prefix}theme-button`}>
-          <ThemeButton />
-        </div>
       </main>
     </ActiveSectionContextProvider>
   );

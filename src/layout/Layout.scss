@@ -16,7 +16,7 @@ $css_prefix: ".l__";
     #d2b7dd
   );
 
-  position: relative;
+  transition: background-image 200ms ease;
 }
 
 #{$css_prefix}main-dark {
@@ -31,13 +31,15 @@ $css_prefix: ".l__";
     #ae004e,
     #6a0f8e
   );
+
   transition: background 200ms linear;
+  transition: background-image 200ms ease;
 }
 
 #{$css_prefix}theme-button {
   position: fixed;
   bottom: 0;
-  right: 0;
+  right: 100%;
   margin: 10px;
   display: flex;
   align-items: center;
@@ -45,9 +47,9 @@ $css_prefix: ".l__";
   z-index: 10;
   width: min-content;
   border-radius: 50%;
-  background-color: $color-background-light;
+  // background-color: $color-background-light;
 }
 
 #{$css_prefix}theme-button-dark {
-  background-color: $color-background-dark;
+  // background-color: $color-background-dark;
 }

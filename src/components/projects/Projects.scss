@@ -22,20 +22,20 @@ $css_prefix: ".c--p__";
 }
 
 #{$css_prefix}project-main {
-  // border: 1px solid red;
   padding: 20px;
 
   border-radius: 20px;
-  @include box-shadow-ver1;
+  @include glass-light;
+}
+
+#{$css_prefix}project-main-dark {
+  @include glass-dark;
 }
 
 #{$css_prefix}project-header {
   padding: 10px 0;
   display: flex;
   align-items: center;
-
-  border-bottom: 1px solid $border;
-  margin-bottom: 10px;
 }
 
 #{$css_prefix}project-header-icon {

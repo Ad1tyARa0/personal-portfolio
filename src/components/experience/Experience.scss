@@ -36,8 +36,8 @@ $css_prefix: ".c--e__";
 #{$css_prefix}logo {
   height: 30px;
   width: fit-content;
-  filter: grayscale(100%);
-  //   margin: 10px 10px 0 auto;
+  margin-left: 10px;
+  //   filter: grayscale(100%);
 }
 
 #{$css_prefix}company-name {
@@ -54,7 +54,20 @@ $css_prefix: ".c--e__";
 #{$css_prefix}container {
   display: flex;
   align-items: center;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
+  width: 100%;
+  justify-content: flex-start;
+}
+
+#{$css_prefix}container-alt {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+#{$css_prefix}text {
+  flex: 1;
 }
 
 #{$css_prefix}footer-container {
@@ -82,11 +95,12 @@ $css_prefix: ".c--e__";
   width: 30px;
   height: 30px;
   margin-right: 10px;
+  filter: grayscale(100%);
 }
 
 #{$css_prefix}role {
   margin-top: 4px;
   display: flex;
-  line-height: 1.5em;
+  line-height: 1.2em;
   align-items: flex-end;
 }

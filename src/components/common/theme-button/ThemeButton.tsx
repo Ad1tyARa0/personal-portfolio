@@ -30,13 +30,13 @@ const ThemeButtonComponent: React.FunctionComponent<ThemeButtonProps> = () => {
         id="Symbols"
         stroke="none"
         strokeWidth="1"
-        fill={theme === "light" ? "none" : "#1D1D1D"}
+        fill={theme === "light" ? "none" : "#6a0f8e"}
         fillRule="evenodd"
       >
         <g id="Group" transform="translate(1.000000, 1.000000)">
           <circle
             id="Oval"
-            stroke={theme === "light" ? "#1D1D1D" : "#dfd3c3"}
+            stroke={theme === "light" ? "#6a0f8e" : "rgba(255, 255, 255, 0.15)"}
             cx="15"
             cy="15"
             r="15"
@@ -44,7 +44,7 @@ const ThemeButtonComponent: React.FunctionComponent<ThemeButtonProps> = () => {
           <path
             d="M15,30 L15,0 C6.71572875,0 0,6.71572875 0,15 C0,23.2842712 6.71572875,30 15,30 Z"
             id="Oval"
-            fill={theme === "light" ? "#1D1D1D" : "#dfd3c3"}
+            fill={theme === "light" ? "#6a0f8e" : "rgba(255, 255, 255, 0.15)"}
           ></path>
         </g>
       </g>

@@ -12,6 +12,7 @@ import "./Projects.scss";
 import { graphql, useStaticQuery } from "gatsby";
 import { ProjectsType } from "../../utils/types/projects";
 import { Project } from "./Project";
+import { useThemeContext } from "../../context/ThemeContext";
 
 const css_prefix = "c--p__";
 

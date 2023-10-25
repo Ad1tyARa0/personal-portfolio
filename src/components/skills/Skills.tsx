@@ -10,6 +10,7 @@ import { useSectionInView } from "../../hooks/useIntersectionObserver";
 
 // SCSS.
 import "./Skills.scss";
+import { useThemeContext } from "../../context/ThemeContext";
 
 const css_prefix = "c--s__";
 
@@ -32,6 +33,8 @@ interface SkillsProps {}
 
 const SkillsComponent: React.FunctionComponent<SkillsProps> = () => {
   const { ref } = useSectionInView("Skills");
+
+  const { theme } = useThemeContext();
 
   const data = useStaticQuery(graphql`
     {
@@ -92,7 +95,9 @@ const SkillsComponent: React.FunctionComponent<SkillsProps> = () => {
           {skills.map((e: SkillInterface, index: number) => {
             return (
               <motion.li
-                className={`${css_prefix}skills-item-main`}
+                className={`${css_prefix}skills-item-main ${
+                  theme === "dark" ? css_prefix + "skills-item-main-dark" : ""
+                }`}
                 key={index}
                 variants={fadeInAnimationVariants}
                 initial="initial"

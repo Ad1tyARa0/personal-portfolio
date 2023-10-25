@@ -13,6 +13,7 @@ import { useSectionInView } from "../../hooks/useIntersectionObserver";
 import { Heading } from "../common/heading/Heading";
 import { useThemeContext } from "../../context/ThemeContext";
 import { DateTime } from "luxon";
+import { PiBriefcaseLight } from "react-icons/pi";
 
 const css_prefix = "c--e__";
 
@@ -83,15 +84,17 @@ const ExperienceComponent: React.FunctionComponent<ExperienceProps> = () => {
           <React.Fragment key={index}>
             <VerticalTimelineElement
               contentStyle={{
-                background: "rgba(209, 209, 209, 0.05)",
+                backgroundColor:
+                  theme === "dark"
+                    ? "rgba(56, 55, 55, 0.4)"
+                    : "rgba(255, 255, 255, 0.4)",
+                backdropFilter: "blur(5px)",
                 boxShadow: "none",
-                border: "1px solid #585858",
                 textAlign: "left",
                 padding: "20px",
                 borderRadius: "20px",
               }}
               contentArrowStyle={{
-                // borderRight: "0.4rem solid rgba(255, 255, 255, 0.5)",
                 display: "none",
               }}
               date={
@@ -109,10 +112,12 @@ const ExperienceComponent: React.FunctionComponent<ExperienceProps> = () => {
                       DateTime.DATE_MED
                     )
               }
+              icon={<PiBriefcaseLight />}
               iconStyle={{
                 background:
                   theme === "light" ? "white" : "rgba(255, 255, 255, 0.15)",
                 fontSize: "1.5rem",
+                marginTop: "5px",
               }}
             >
               <div
@@ -124,22 +129,26 @@ const ExperienceComponent: React.FunctionComponent<ExperienceProps> = () => {
                 }`}
               >
                 <div className={`${css_prefix}container`}>
-                  <Heading variant="subheading" text={e.designation.text} />
+                  <div className={`${css_prefix}text`}>
+                    <Heading variant="subheading" text={e.designation.text} />
+                  </div>
+
+                  <img
+                    src={e.company_logo.url}
+                    alt={e.company_logo.alt}
+                    className={`${css_prefix}logo`}
+                  />
                 </div>
 
-                <div className={`${css_prefix}container`}>
+                <div className={`${css_prefix}container-alt`}>
                   {e.technologies.map(e => {
                     return (
-                      <div
-                        key={e.technology_image.url}
-                        className={`${css_prefix}container`}
-                      >
-                        <img
-                          src={e.technology_image.url}
-                          alt={e.technology_image.alt}
-                          className={`${css_prefix}image`}
-                        />
-                      </div>
+                      <img
+                        src={e.technology_image.url}
+                        alt={e.technology_image.alt}
+                        key={e.technology_image.alt}
+                        className={`${css_prefix}image`}
+                      />
                     );
                   })}
                 </div>
@@ -158,20 +167,7 @@ const ExperienceComponent: React.FunctionComponent<ExperienceProps> = () => {
                 </div>
 
                 <div className={`${css_prefix}footer-container`}>
-                  {/* <div className={`${css_prefix}links`}>
-                        <LinkedIn
-                          theme={theme}
-                          link={LINKED_IN_PERSONAL_LINK}
-                        />
-                      </div> */}
-
-                  <div className={`${css_prefix}company-logo`}>
-                    <img
-                      src={e.company_logo.url}
-                      alt={e.company_logo.alt}
-                      className={`${css_prefix}logo`}
-                    />
-                  </div>
+                  <div className={`${css_prefix}company-logo`}></div>
                 </div>
               </div>
             </VerticalTimelineElement>
