@@ -11,6 +11,7 @@ import { Projects } from "../components/projects/Projects";
 import { PageBreak } from "../components/common/page-break/PageBreak";
 import { Experience } from "../components/experience/Experience";
 import { ThemeButton } from "../components/common/theme-button/ThemeButton";
+import { Services } from "../components/services/services";
 
 const css_prefix = "p--h__";
 
@@ -39,6 +40,8 @@ const Index: React.FC<IndexInterface> = ({}) => {
         <Experience />
 
         <PageBreak />
+
+        <Services />
 
         <div className={`${css_prefix}theme-button`}>
           <ThemeButton />
