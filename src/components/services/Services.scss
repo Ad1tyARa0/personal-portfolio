@@ -4,4 +4,42 @@
 $css_prefix: ".c--se__";
 
 #{$css_prefix}main {
+  display: flex;
+  //   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+
+#{$css_prefix}container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#{$css_prefix}service-item-main {
+  @include glass-light;
+  @include display-flex-center;
+
+  flex-direction: column;
+  padding: 15px 20px;
+  //   width: 300px;
+  border-radius: 20px;
+  margin: 10px;
+}
+
+#{$css_prefix}service-item-main-dark {
+  @include glass-light;
+}
+
+#{$css_prefix}service-label {
+  margin-top: 20px;
+}
+
+#{$css_prefix}service-image {
+  max-width: 500px;
+  min-height: 320px;
+  //   height: 300px;
+  //   padding: 10px;
 }
