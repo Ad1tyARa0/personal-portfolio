@@ -63,18 +63,31 @@ const ProjectComponent: React.FunctionComponent<ProjectProps> = ({
           <div className={`${css_prefix}project-header-button`}>
             <Button
               handleClick={console.log}
-              icon={<Github link="/" title="View Source" />}
+              icon={
+                <Github
+                  link={payload.data.source_code.url}
+                  title="View Source"
+                />
+              }
               appearence="secondary"
             />
           </div>
 
-          <div className={`${css_prefix}project-header-button`}>
-            <Button
-              handleClick={console.log}
-              icon={<PiArrowSquareOutBold />}
-              appearence="primary"
-            />
-          </div>
+          {payload.data.website.url && (
+            <div className={`${css_prefix}project-header-button`}>
+              <a
+                href={payload.data.website.url}
+                target="_blank"
+                className={`${css_prefix}link`}
+              >
+                <Button
+                  handleClick={console.log}
+                  icon={<PiArrowSquareOutBold />}
+                  appearence="primary"
+                />
+              </a>
+            </div>
+          )}
         </div>
       </div>
 

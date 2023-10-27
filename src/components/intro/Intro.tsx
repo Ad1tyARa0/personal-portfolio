@@ -20,6 +20,10 @@ import { useSectionInView } from "../../hooks/useIntersectionObserver";
 
 // SCSS.
 import "./Intro.scss";
+import {
+  GITHUB_PROFILE_PERSONAL_LINK,
+  LINKED_IN_PERSONAL_LINK,
+} from "../../utils/constants/links";
 
 const css_prefix = "c--i__";
 
@@ -146,7 +150,7 @@ const IntroComponent: React.FunctionComponent<IntroProps> = () => {
         <div className={`${css_prefix}button`}>
           <Button
             handleClick={console.log}
-            icon={<LinkedIn link="/" />}
+            icon={<LinkedIn link={LINKED_IN_PERSONAL_LINK} />}
             appearence="secondary"
           />
         </div>
@@ -154,7 +158,7 @@ const IntroComponent: React.FunctionComponent<IntroProps> = () => {
         <div className={`${css_prefix}button`}>
           <Button
             handleClick={console.log}
-            icon={<Github link="/" />}
+            icon={<Github link={GITHUB_PROFILE_PERSONAL_LINK} />}
             appearence="secondary"
           />
         </div>

@@ -60,6 +60,10 @@ $css_prefix: ".c--p__";
   }
 }
 
+#{$css_prefix}link {
+  all: unset;
+}
+
 #{$css_prefix}project-image {
   display: flex;
   flex-direction: column;
