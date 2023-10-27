@@ -12,14 +12,16 @@ export type ProjectType = {
       text: string;
     };
 
-    images: {
-      project_image: {
-        url: string;
-        alt: string;
-      };
-    }[];
+    project_image: {
+      url: string;
+      alt: string;
+    };
 
-    link: {
+    website: {
+      url: string;
+    };
+
+    source_code: {
       url: string;
     };
 

@@ -35,15 +35,25 @@ const ProjectsComponent: React.FunctionComponent<ProjectsProps> = () => {
               text
             }
 
-            link {
+            features {
+              text
+            }
+
+            title {
+              text
+            }
+
+            project_image {
+              alt
               url
             }
 
-            images {
-              project_image {
-                alt
-                url
-              }
+            source_code {
+              url
+            }
+
+            website {
+              url
             }
 
             tech_stack {
@@ -55,10 +65,6 @@ const ProjectsComponent: React.FunctionComponent<ProjectsProps> = () => {
                 alt
                 url
               }
-            }
-
-            features {
-              text
             }
           }
         }

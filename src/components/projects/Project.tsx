@@ -36,12 +36,12 @@ const ProjectComponent: React.FunctionComponent<ProjectProps> = ({
   const scaleProgess = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
   const opacityProgess = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
 
-  const images = payload.data.images.map(e => {
-    return {
-      alt: e.project_image.alt,
-      url: e.project_image.url,
-    };
-  });
+  // const images = payload.data.images.map(e => {
+  //   return {
+  //     alt: e.project_image.alt,
+  //     url: e.project_image.url,
+  //   };
+  // });
 
   return (
     <motion.div
@@ -58,7 +58,7 @@ const ProjectComponent: React.FunctionComponent<ProjectProps> = ({
         <Heading text={payload.data.title.text} variant="subheading" />
 
         <a
-          href={payload.data.link.url}
+          // href={payload.data.link.url}
           target="_blank"
           className={`${css_prefix}project-header-icon`}
         >
@@ -66,37 +66,42 @@ const ProjectComponent: React.FunctionComponent<ProjectProps> = ({
         </a>
       </div>
 
-      <div className={`${css_prefix}project-images-description`}>
+      <div className={`${css_prefix}project-description`}>
         {payload.data.description.text}
+      </div>
 
-        <div className={`${css_prefix}project-ts-container`}>
-          {payload.data.tech_stack.map(e => {
-            return (
-              <div
-                key={e.stack.text}
-                className={`${css_prefix}project-ts-item`}
-              >
-                <img
-                  src={e.stack_image.url}
-                  alt={e.stack_image.alt}
-                  className={`${css_prefix}project-ts-item-icon`}
-                />
+      <div className={`${css_prefix}project-ts-container`}>
+        {payload.data.tech_stack.map(e => {
+          return (
+            <div key={e.stack.text} className={`${css_prefix}project-ts-item`}>
+              <img
+                src={e.stack_image.url}
+                alt={e.stack_image.alt}
+                className={`${css_prefix}project-ts-item-icon`}
+              />
 
-                <div className={`${css_prefix}project-ts-item-title`}>
-                  {e.stack.text}
-                </div>
+              <div className={`${css_prefix}project-ts-item-title`}>
+                {e.stack.text}
               </div>
-            );
-          })}
-        </div>
+            </div>
+          );
+        })}
       </div>
 
-      <div className={`${css_prefix}project-images-container`}>
-        <Carousel images={images} />
-      </div>
+      <img
+        className={`${css_prefix}project-image`}
+        src={payload.data.project_image.url}
+        alt={payload.data.project_image.alt}
+      />
 
       <div className={`${css_prefix}project-footer`}>
-        {payload.data.features.text}
+        {payload.data.features.text.split(".").map(e => {
+          return (
+            <div className={`${css_prefix}feature`} key={e}>
+              {e}
+            </div>
+          );
+        })}
       </div>
     </motion.div>
   );

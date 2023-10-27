@@ -131,7 +131,10 @@ const ExperienceComponent: React.FunctionComponent<ExperienceProps> = () => {
                 >
                   <div className={`${css_prefix}container`}>
                     <div className={`${css_prefix}text`}>
-                      <Heading variant="subheading" text={e.designation.text} />
+                      <Heading
+                        variant="subheading2"
+                        text={e.designation.text}
+                      />
                     </div>
 
                     <img

@@ -11,7 +11,7 @@ import { Projects } from "../components/projects/Projects";
 import { PageBreak } from "../components/common/page-break/PageBreak";
 import { Experience } from "../components/experience/Experience";
 import { ThemeButton } from "../components/common/theme-button/ThemeButton";
-import { Services } from "../components/services/services";
+import { Services } from "../components/services/Services";
 
 const css_prefix = "p--h__";
 

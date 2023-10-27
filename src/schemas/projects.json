@@ -23,31 +23,37 @@
         "placeholder": "description"
       }
     },
-    "link": {
+    "features": {
+      "type": "StructuredText",
+      "config": {
+        "single": "list-item",
+        "label": "features",
+        "placeholder": "features"
+      }
+    },
+    "website": {
       "type": "Link",
       "config": {
-        "label": "link",
-        "placeholder": "link",
+        "label": "website",
         "select": null
       }
     },
-    "images": {
-      "type": "Group",
+    "source_code": {
+      "type": "Link",
       "config": {
-        "fields": {
-          "project_image": {
-            "type": "Image",
-            "config": {
-              "constraint": {
-                "width": 1920,
-                "height": 1080
-              },
-              "thumbnails": [],
-              "label": "project image"
-            }
-          }
+        "label": "source code",
+        "select": null
+      }
+    },
+    "project-image": {
+      "type": "Image",
+      "config": {
+        "constraint": {
+          "width": 1920,
+          "height": 958
         },
-        "label": "images"
+        "thumbnails": [],
+        "label": "project-image"
       }
     },
     "tech_stack": {
@@ -75,14 +81,6 @@
           }
         },
         "label": "tech stack"
-      }
-    },
-    "features": {
-      "type": "StructuredText",
-      "config": {
-        "multi": "list-item",
-        "label": "features",
-        "placeholder": "features"
       }
     }
   }
