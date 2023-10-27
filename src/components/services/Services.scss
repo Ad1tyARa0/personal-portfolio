@@ -4,12 +4,19 @@
 $css_prefix: ".c--se__";
 
 #{$css_prefix}main {
+  flex-direction: column;
   display: flex;
-  //   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 20px;
   flex-wrap: wrap;
+}
+
+#{$css_prefix}container-main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
 }
 
 #{$css_prefix}container {

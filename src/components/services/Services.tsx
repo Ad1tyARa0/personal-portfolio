@@ -34,33 +34,32 @@ const ServicesComponent: React.FunctionComponent<ServicesProps> = () => {
 
   return (
     <div className={`${css_prefix}main`} ref={ref} id="Services">
-      {illustrations.map(e => {
-        return (
-          <div className={`${css_prefix}container`}>
-            <div className={`${css_prefix}service-label`}>
-              <Heading variant="subheading2" text={e.label} />
-            </div>
+      <Heading text="My Services" />
 
-            <div
-              key={e.id}
-              className={`${css_prefix}service-item-main ${
-                theme === "dark" ? css_prefix + "service-item-main-dark" : ""
-              }`}
-            >
-              <img
-                className={`${css_prefix}service-image`}
-                src={e.img}
-                alt={e.label}
-              />
-            </div>
-          </div>
-        );
-      })}
+      <div className={`${css_prefix}container-main`}>
+        {illustrations.map(e => {
+          return (
+            <div className={`${css_prefix}container`}>
+              <div className={`${css_prefix}service-label`}>
+                <Heading variant="subheading2" text={e.label} />
+              </div>
 
-      {/* <img
-        src={webDevelopmentIllustration}
-        className={`${css_prefix}service-image`}
-      /> */}
+              <div
+                key={e.id}
+                className={`${css_prefix}service-item-main ${
+                  theme === "dark" ? css_prefix + "service-item-main-dark" : ""
+                }`}
+              >
+                <img
+                  className={`${css_prefix}service-image`}
+                  src={e.img}
+                  alt={e.label}
+                />
+              </div>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 };
