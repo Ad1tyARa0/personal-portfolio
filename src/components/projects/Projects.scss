@@ -35,7 +35,7 @@ $css_prefix: ".c--p__";
 }
 
 #{$css_prefix}project-header {
-  padding: 10px 0;
+  padding-bottom: 10px;
   display: flex;
   align-items: center;
 }
@@ -44,6 +44,20 @@ $css_prefix: ".c--p__";
   margin-left: auto;
   font-size: 20px;
   cursor: pointer;
+}
+
+#{$css_prefix}project-header-button-main {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+
+#{$css_prefix}project-header-button {
+  margin-right: 10px;
+
+  &:last-of-type {
+    margin-right: 0;
+  }
 }
 
 #{$css_prefix}project-image {

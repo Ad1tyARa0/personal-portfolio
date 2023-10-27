@@ -13,6 +13,8 @@ import {
 import { Heading } from "../common/heading/Heading";
 import { Carousel } from "../carousel/Carousel";
 import { useThemeContext } from "../../context/ThemeContext";
+import { Button } from "../common/button/Button";
+import { Github } from "../../assets/icons/github/Github";
 
 const css_prefix = "c--p__";
 
@@ -57,13 +59,23 @@ const ProjectComponent: React.FunctionComponent<ProjectProps> = ({
       <div className={`${css_prefix}project-header`}>
         <Heading text={payload.data.title.text} variant="subheading" />
 
-        <a
-          // href={payload.data.link.url}
-          target="_blank"
-          className={`${css_prefix}project-header-icon`}
-        >
-          <PiArrowSquareOutBold />
-        </a>
+        <div className={`${css_prefix}project-header-button-main`}>
+          <div className={`${css_prefix}project-header-button`}>
+            <Button
+              handleClick={console.log}
+              icon={<Github link="/" title="View Source" />}
+              appearence="secondary"
+            />
+          </div>
+
+          <div className={`${css_prefix}project-header-button`}>
+            <Button
+              handleClick={console.log}
+              icon={<PiArrowSquareOutBold />}
+              appearence="primary"
+            />
+          </div>
+        </div>
       </div>
 
       <div className={`${css_prefix}project-description`}>

@@ -4,7 +4,7 @@ import React from "react";
 import "./services.scss";
 import { useSectionInView } from "../../hooks/useIntersectionObserver";
 
-const css_prefix = "c--s__";
+const css_prefix = "c--se__";
 
 // Component props.
 interface ServicesProps {}
