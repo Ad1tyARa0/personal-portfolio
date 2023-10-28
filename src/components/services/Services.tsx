@@ -14,7 +14,7 @@ const css_prefix = "c--se__";
 interface ServicesProps {}
 
 const ServicesComponent: React.FunctionComponent<ServicesProps> = () => {
-  const { ref } = useSectionInView("Services");
+  // const { ref } = useSectionInView("Services");
 
   const { theme } = useThemeContext();
 
@@ -33,7 +33,7 @@ const ServicesComponent: React.FunctionComponent<ServicesProps> = () => {
   ];
 
   return (
-    <div className={`${css_prefix}main`} ref={ref} id="Services">
+    <div className={`${css_prefix}main`} id="Services">
       <Heading text="My Services" />
 
       <div className={`${css_prefix}container-main`}>

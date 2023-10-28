@@ -1,18 +1,19 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { graphql, useStaticQuery } from "gatsby";
 
 // Components.
+import { Project } from "./Project";
 import { Heading } from "../common/heading/Heading";
 
 // Hooks.
 import { useSectionInView } from "../../hooks/useIntersectionObserver";
 
+// Types.
+import { ProjectsType } from "../../utils/types/projects";
+
 // SCSS.
 import "./Projects.scss";
-import { graphql, useStaticQuery } from "gatsby";
-import { ProjectsType } from "../../utils/types/projects";
-import { Project } from "./Project";
-import { useThemeContext } from "../../context/ThemeContext";
 
 const css_prefix = "c--p__";
 
@@ -20,7 +21,7 @@ const css_prefix = "c--p__";
 interface ProjectsProps {}
 
 const ProjectsComponent: React.FunctionComponent<ProjectsProps> = () => {
-  const { ref } = useSectionInView("Projects");
+  const { ref } = useSectionInView("Projects", 0.5);
 
   const data: ProjectsType = useStaticQuery(graphql`
     query {
@@ -72,8 +73,6 @@ const ProjectsComponent: React.FunctionComponent<ProjectsProps> = () => {
     }
   `);
 
-  console.log(data);
-
   return (
     <div ref={ref} id="Projects">
       <motion.div
@@ -86,7 +85,7 @@ const ProjectsComponent: React.FunctionComponent<ProjectsProps> = () => {
 
         <div className={`${css_prefix}inner-main`}>
           {data.allPrismicProjects.nodes.map(e => {
-            return <Project payload={e} />;
+            return <Project payload={e} key={e.data.title.text} />;
           })}
         </div>
       </motion.div>

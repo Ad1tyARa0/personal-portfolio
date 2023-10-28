@@ -115,3 +115,17 @@ $css_prefix: ".c--p__";
   width: 20px;
   height: 20px;
 }
+
+@media only screen and (max-width: 800px) {
+  #{$css_prefix}project-image {
+    max-width: 600px;
+    margin: 10px auto;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  #{$css_prefix}project-image {
+    max-width: 300px;
+    margin: 10px auto;
+  }
+}

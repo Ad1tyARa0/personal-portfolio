@@ -1,19 +1,25 @@
 import React from "react";
+import { DateTime } from "luxon";
 import {
   VerticalTimeline,
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
 import { graphql, useStaticQuery } from "gatsby";
-import { EmploymentHistoryType } from "../../utils/types/employment-history";
+import { PiBriefcaseLight } from "react-icons/pi";
 
 // SCSS.
 import "./Experience.scss";
-import { useSectionInView } from "../../hooks/useIntersectionObserver";
+
+// Components.
 import { Heading } from "../common/heading/Heading";
+
+// Types.
+import { EmploymentHistoryType } from "../../utils/types/employment-history";
+
+// Hooks.
 import { useThemeContext } from "../../context/ThemeContext";
-import { DateTime } from "luxon";
-import { PiBriefcaseLight } from "react-icons/pi";
+import { useSectionInView } from "../../hooks/useIntersectionObserver";
 
 const css_prefix = "c--e__";
 
@@ -72,8 +78,6 @@ const ExperienceComponent: React.FunctionComponent<ExperienceProps> = () => {
 
   let employmentData: EmploymentHistoryType[] =
     data.allPrismicNewEmploymentHistory.nodes.map((e: any) => e.data);
-
-  console.log(data);
 
   return (
     <div ref={ref} id="Experience">

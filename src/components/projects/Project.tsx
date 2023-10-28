@@ -1,20 +1,20 @@
-import React, { useRef, useState } from "react";
+import React, { useRef } from "react";
+import { PiArrowSquareOutBold } from "react-icons/pi";
+import { useScroll, useTransform, motion } from "framer-motion";
+
+// Componennts.
+import { Heading } from "../common/heading/Heading";
+import { Button } from "../common/button/Button";
+import { Github } from "../../assets/icons/github/Github";
+
+// Hooks
+import { useThemeContext } from "../../context/ThemeContext";
+
+// Types.
+import { ProjectType } from "../../utils/types/projects";
 
 // SCSS.
 import "./Projects.scss";
-import { ProjectType } from "../../utils/types/projects";
-import { useScroll, useTransform, motion } from "framer-motion";
-
-import {
-  PiArrowSquareOutBold,
-  PiDotOutlineBold,
-  PiCircleDuotone,
-} from "react-icons/pi";
-import { Heading } from "../common/heading/Heading";
-import { Carousel } from "../carousel/Carousel";
-import { useThemeContext } from "../../context/ThemeContext";
-import { Button } from "../common/button/Button";
-import { Github } from "../../assets/icons/github/Github";
 
 const css_prefix = "c--p__";
 
@@ -38,13 +38,6 @@ const ProjectComponent: React.FunctionComponent<ProjectProps> = ({
   const scaleProgess = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
   const opacityProgess = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
 
-  // const images = payload.data.images.map(e => {
-  //   return {
-  //     alt: e.project_image.alt,
-  //     url: e.project_image.url,
-  //   };
-  // });
-
   return (
     <motion.div
       className={`${css_prefix}project-main ${
@@ -55,6 +48,7 @@ const ProjectComponent: React.FunctionComponent<ProjectProps> = ({
         scale: scaleProgess,
         opacity: opacityProgess,
       }}
+      key={payload.data.title.text}
     >
       <div className={`${css_prefix}project-header`}>
         <Heading text={payload.data.title.text} variant="subheading" />

@@ -33,7 +33,7 @@ const NavComponent: React.FunctionComponent<NavProps> = () => {
     >
       {LINKS.map((e: any) => {
         return (
-          <Link to={e.hash} className={`${css_prefix}link`}>
+          <Link to={e.hash} className={`${css_prefix}link`} key={e.hash}>
             <motion.li
               className={`${css_prefix}tab`}
               key={e.hash}

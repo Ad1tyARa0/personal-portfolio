@@ -1,0 +1,67 @@
+@import "src/sass/colors";
+@import "src/sass/variables";
+
+$css_prefix: ".c-c__";
+
+#{$css_prefix}main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+#{$css_prefix}title {
+  margin: 10px 0 24px 0;
+}
+
+#{$css_prefix}input {
+  padding: 15px 20px;
+  margin-bottom: 20px;
+  border: 1px solid $border;
+  resize: none;
+  border-radius: 7px;
+  font-family: "Plain Light Italic" !important;
+  font-size: 18px;
+  background-color: $color-background-light;
+
+  @include box-shadow-ver1;
+}
+
+#{$css_prefix}dark-input {
+  background-color: $color-background-dark;
+
+  color: $accentColor10;
+}
+
+#{$css_prefix}form-container {
+  @include glass-light;
+
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 800px;
+  min-width: 600px;
+  //   flex: 1;
+}
+
+#{$css_prefix}button {
+  margin-left: auto;
+
+  margin-top: 20px;
+}
+
+#{$css_prefix}form-container-dark {
+  @include glass-dark;
+}
+
+@media only screen and (max-width: 600px) {
+  #{$css_prefix}form-container {
+    min-width: 300px;
+  }
+
+  #{$css_prefix}main {
+    display: block;
+  }
+}

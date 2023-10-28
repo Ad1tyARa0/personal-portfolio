@@ -24,6 +24,7 @@ import {
   GITHUB_PROFILE_PERSONAL_LINK,
   LINKED_IN_PERSONAL_LINK,
 } from "../../utils/constants/links";
+import { useActiveSectionContext } from "../../context/ActiveSessionContext";
 
 const css_prefix = "c--i__";
 
@@ -32,7 +33,7 @@ interface IntroProps {}
 
 const IntroComponent: React.FunctionComponent<IntroProps> = () => {
   const { ref } = useSectionInView("Home", 0.5);
-
+  const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
   const { theme } = useThemeContext();
 
   const data = useStaticQuery(graphql`
@@ -124,7 +125,10 @@ const IntroComponent: React.FunctionComponent<IntroProps> = () => {
         <div className={`${css_prefix}button`}>
           <Button
             title="Contact Me"
-            handleClick={console.log}
+            handleClick={() => {
+              setActiveSection("Contact");
+              setTimeOfLastClick(Date.now());
+            }}
             icon={<PiArrowRightBold />}
             appearence="primary"
           />
