@@ -27,12 +27,14 @@ const ContactComponent: React.FunctionComponent<ContactProps> = () => {
 
   const handleClick = async () => {
     try {
-      const response = await resend.emails.send({
-        from: email,
-        to: "aditya.s.rao12@gmail.com",
-        subject: "Portfolio message!",
-        html: `<p>${message}</p>`,
-      });
+      const response = await resend.apiKeys.create({ name: "Development" });
+      console.log(response);
+      // const response = await resend.emails.send({
+      //   from: email,
+      //   to: "aditya.s.rao12@gmail.com",
+      //   subject: "Portfolio message!",
+      //   html: `<p>${message}</p>`,
+      // });
     } catch (error) {
       console.log(error);
     }
