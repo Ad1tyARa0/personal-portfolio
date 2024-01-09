@@ -35,11 +35,14 @@ const ContactComponent: React.FunctionComponent<ContactProps> = () => {
 
   const [state, handleSubmit] = useForm("mnqenaqn");
 
-  if (state.succeeded) {
-    successToast();
-  } else if (state.errors) {
-    failedToast();
-  };
+
+  React.useEffect(() => {
+    if (state.succeeded) {
+      successToast();
+    } else {
+      failedToast();
+    };
+  }, [state.submitting])
 
   return (
     <div className={`${css_prefix}main`} ref={ref} id="Contact">
