@@ -13,9 +13,15 @@ import { Button } from "../common/button/Button";
 
 const css_prefix = "c-c__";
 
-const successToast = () => toast.success('Your Message Has Been Sent!', { icon: '👏', });
+const successToast = () => toast.success('Your Message Has Been Sent!', {
+  icon: '👏',
+  id: new Date().getTime().toString(),
+});
 
-const failedToast = () => toast.error('Unable to Send Your Message!', { icon: '❌' });
+const failedToast = () => toast.error('Unable to Send Your Message!', {
+  icon: '❌',
+  id: new Date().getTime().toString(),
+});
 
 // Component props.
 interface ContactProps { }
