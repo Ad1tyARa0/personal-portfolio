@@ -47,9 +47,57 @@ $css_prefix: ".c-c__";
 }
 
 #{$css_prefix}button {
-  margin-left: auto;
+  min-width: 120px;
 
-  margin-top: 20px;
+  background: none;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  font-family: 'Ultra Bold';
+  padding: 12px 0 10px 0;
+  font-size: 16px;
+  color: $color-font-light;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-left: auto
+}
+
+#{$css_prefix}button-light {
+  @include background-animation-dark;
+  border-bottom: 4px solid $accentColor30;
+
+  background-color: rgba($color: $accentColor30, $alpha: 0.3);
+  &:hover {
+    #{$css_prefix}title {
+      color: $color-font-light;
+    }
+
+    #{$css_prefix}icon {
+      color: $color-font-light;
+    }
+  }
+
+  border-radius: 25px;
+}
+
+#{$css_prefix}button-dark {
+  @include background-animation-light;
+  background-color: rgba($color: $accentColor10, $alpha: 0.3);
+  border-bottom: 4px solid $accentColor10;
+
+  &:hover {
+    background-color: rgba($color: $accentColor10, $alpha: 1);
+
+    #{$css_prefix}title {
+      color: $color-font-dark;
+    }
+
+    #{$css_prefix}icon {
+      color: $color-font-dark;
+    }
+  }
+  border-radius: 25px;
+  color: #fff;
 }
 
 #{$css_prefix}form-container-dark {

@@ -18,7 +18,7 @@ const css_prefix = "p--h__";
 
 interface IndexInterface {}
 
-const Index: React.FC<IndexInterface> = ({}) => {
+const Index: React.FC<IndexInterface> = () => {
   return (
     <Layout>
       <div className={`${css_prefix}main`}>

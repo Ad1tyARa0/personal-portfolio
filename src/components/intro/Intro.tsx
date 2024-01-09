@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { graphql, useStaticQuery } from "gatsby";
+import { graphql, navigate, useStaticQuery } from "gatsby";
 
 // Icons.
 import {
@@ -23,6 +23,7 @@ import "./Intro.scss";
 import {
   GITHUB_PROFILE_PERSONAL_LINK,
   LINKED_IN_PERSONAL_LINK,
+  RESUME_LINK,
 } from "../../utils/constants/links";
 import { useActiveSectionContext } from "../../context/ActiveSessionContext";
 
@@ -65,6 +66,14 @@ const IntroComponent: React.FunctionComponent<IntroProps> = () => {
   const title = payload.bio.text;
   const name = data.site.siteMetadata.name;
   const role = data.site.siteMetadata.role;
+
+  const handleDownload = () => {
+    if (typeof window === undefined) {
+      return;
+    }
+
+    window.open(RESUME_LINK, '_blank');
+  };
 
   return (
     <div id="Home" className={`${css_prefix}main`} ref={ref}>
@@ -123,18 +132,23 @@ const IntroComponent: React.FunctionComponent<IntroProps> = () => {
         }}
       >
         <div className={`${css_prefix}button`}>
-          <Button
-            title="Contact Me"
-            handleClick={() => {
-              setActiveSection("Contact");
-              setTimeOfLastClick(Date.now());
-            }}
-            icon={<PiArrowRightBold />}
-            appearence="primary"
-          />
+          {/* <a
+            style={{ all: "unset" }}
+            href={"https://1drv.ms/b/s!Ag98EnUm4trDiU0q2N-jd_mk9Zpb?e=E2XcSx"}
+            target="_blank"
+            type="application/pdf"
+            rel="alternate"
+          > */}
+            <Button
+              title="Download CV"
+              handleClick={handleDownload}
+              icon={<PiArrowLineDownBold />}
+              appearence="primary"
+            />
+          {/* </a> */}
         </div>
 
-        <div className={`${css_prefix}button`}>
+        {/* <div className={`${css_prefix}button`}>
           <a
             style={{ all: "unset" }}
             href={"https://1drv.ms/b/s!Ag98EnUm4trDiU0q2N-jd_mk9Zpb?e=E2XcSx"}
@@ -149,7 +163,7 @@ const IntroComponent: React.FunctionComponent<IntroProps> = () => {
               appearence="secondary"
             />
           </a>
-        </div>
+        </div> */}
 
         <div className={`${css_prefix}button`}>
           <Button
