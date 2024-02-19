@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     siteUrl: "https://test.website.com",
     name: "Aditya",
-    role: "Front End Developer",
+    role: "Software Engineer | Full Stack web & mobile developer",
   },
 
   plugins: [

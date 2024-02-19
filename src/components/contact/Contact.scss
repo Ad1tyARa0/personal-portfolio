@@ -24,8 +24,6 @@ $css_prefix: ".c-c__";
   font-family: "Plain Light Italic" !important;
   font-size: 18px;
   background-color: $color-background-light;
-
-  @include box-shadow-ver1;
 }
 
 #{$css_prefix}dark-input {
@@ -60,56 +58,4 @@ $css_prefix: ".c-c__";
   cursor: pointer;
   margin-top: 10px;
   margin-left: auto
-}
-
-#{$css_prefix}button-light {
-  @include background-animation-dark;
-  border-bottom: 4px solid $accentColor30;
-
-  background-color: rgba($color: $accentColor30, $alpha: 0.3);
-  &:hover {
-    #{$css_prefix}title {
-      color: $color-font-light;
-    }
-
-    #{$css_prefix}icon {
-      color: $color-font-light;
-    }
-  }
-
-  border-radius: 25px;
-}
-
-#{$css_prefix}button-dark {
-  @include background-animation-light;
-  background-color: rgba($color: $accentColor10, $alpha: 0.3);
-  border-bottom: 4px solid $accentColor10;
-
-  &:hover {
-    background-color: rgba($color: $accentColor10, $alpha: 1);
-
-    #{$css_prefix}title {
-      color: $color-font-dark;
-    }
-
-    #{$css_prefix}icon {
-      color: $color-font-dark;
-    }
-  }
-  border-radius: 25px;
-  color: #fff;
-}
-
-#{$css_prefix}form-container-dark {
-  @include glass-dark;
-}
-
-@media only screen and (max-width: 600px) {
-  #{$css_prefix}form-container {
-    min-width: 300px;
-  }
-
-  #{$css_prefix}main {
-    display: block;
-  }
 }

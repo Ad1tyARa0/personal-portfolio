@@ -36,25 +36,33 @@ const ContactComponent: React.FunctionComponent<ContactProps> = () => {
   const [state, handleSubmit] = useForm("mnqenaqn");
 
 
-  React.useEffect(() => {
-    if (state.succeeded) {
-      successToast();
-    } else {
+  const onSubmit = async () => {
+    try {
+      await handleSubmit({
+        email,
+        message,
+      });
+
+      if (state.succeeded) {
+        successToast();
+
+        setEmail('');
+        setMessage('');
+      } else {
+        failedToast();
+      };
+    } catch (error) {
       failedToast();
-    };
-  }, [state.submitting])
+    }
+  }
 
   return (
     <div className={`${css_prefix}main`} ref={ref} id="Contact">
       <div className={`${css_prefix}title`}>
         <Heading text="Contact Me" />
       </div>
-
-      <form
-        className={`${css_prefix}form-container ${theme === "dark" ? css_prefix + "form-container-dark" : ""
-          }`}
-        onSubmit={handleSubmit}
-      >
+      <div className={`${css_prefix}form-container ${theme === "dark" ? css_prefix + "form-container-dark" : ""
+        }`}>
         <input
           className={`${css_prefix}input ${theme === "dark" ? css_prefix + "dark-input" : ""
             }`}
@@ -75,17 +83,13 @@ const ContactComponent: React.FunctionComponent<ContactProps> = () => {
           value={message}
           onChange={({ currentTarget }) => setMessage(currentTarget.value)}
         />
-
-        <button className={`${css_prefix}button ${theme === "dark"
-          ? css_prefix + `button-dark`
-          : css_prefix + `button-light`
-          }`}
-          type='submit'>Submit</button>
-
-        {/* <div className={`${css_prefix}button`}>
-          <Button handleClick={handleClick} appearence="primary" title="Send" />
-        </div> */}
-      </form>
+        
+        <Button
+          handleClick={onSubmit}
+          title="Submit"
+          appearence="primary"
+        />
+      </div>
 
       <Toaster
         position="bottom-right"
