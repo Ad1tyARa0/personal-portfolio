@@ -91,8 +91,8 @@ const ExperienceComponent: React.FunctionComponent<ExperienceProps> = () => {
                 contentStyle={{
                   backgroundColor:
                     theme === "dark"
-                      ? "rgba(56, 55, 55, 0.4)"
-                      : "rgba(255, 255, 255, 0.4)",
+                      ? "rgba(56, 55, 55, 0.2)"
+                      : "rgba(255, 255, 255, 0.2)",
                   backdropFilter: "blur(5px)",
                   boxShadow: "none",
                   textAlign: "left",
