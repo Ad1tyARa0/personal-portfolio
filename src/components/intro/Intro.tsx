@@ -58,6 +58,15 @@ const IntroComponent: React.FunctionComponent<IntroProps> = () => {
           }
         }
       }
+      allPrismicResume {
+        nodes {
+          data {
+            resume {
+              url
+            }
+          }
+        }
+      }
     }
   `);
 
@@ -66,13 +75,14 @@ const IntroComponent: React.FunctionComponent<IntroProps> = () => {
   const title = payload.bio.text;
   const name = data.site.siteMetadata.name;
   const role = data.site.siteMetadata.role;
+  const resumeUrl = data.allPrismicResume.nodes[0].data.resume.url;
 
   const handleDownload = () => {
     if (typeof window === undefined) {
       return;
     }
 
-    window.open(RESUME_LINK, '_blank');
+    window.open(resumeUrl, '_blank');
   };
 
   return (

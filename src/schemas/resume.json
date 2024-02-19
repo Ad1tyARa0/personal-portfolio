@@ -3,7 +3,9 @@
     "resume": {
       "type": "Link",
       "config": {
-        "label": "Resume"
+        "select": "media",
+        "label": "Resume",
+        "placeholder": "resume"
       }
     }
   }
